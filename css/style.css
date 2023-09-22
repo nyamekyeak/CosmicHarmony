@@ -1,0 +1,17 @@
+*
+{
+     color:  white;
+     text-align: center;
+     margin: 0;
+     font-family: Tahoma, sans-serif;
+}
+
+body
+{
+    background-color:  black;
+}
+
+main
+{
+    line-height: 50px;
+}

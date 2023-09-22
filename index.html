@@ -2,8 +2,90 @@
      <head>
         <!-- Base CSS -->
         <link rel="stylesheet" href="css/style.css">
+        <link rel = "stylesheet" href="css/navbar.css">
+        <link rel = "stylesheet" href="css/mainWidget.css">
      </head>
      <body>
-        
+        <header>
+            <nav id="navigation">
+                <ul id = "leftNav"> 
+                    <li>
+                        <a href="index.html">home</a>
+                    </li>
+                    <li>
+                        <a href="#">nav 2</a>
+                    </li>
+                    <li>
+                        <a href="#">nav 3</a>
+                    </li>
+                </ul>
+                <span id="navLogo">
+                    <a href="index.html">
+                        <img src="assets/graphics/logo.png" alt="">
+                    </a>
+                </span>
+                <ul id="rightNav">
+                    <li>
+                        <a href="#">nav 4</a>
+                    </li>
+                    <li>
+                        <a href="#">nav 5</a>
+                    </li>
+                    <li>
+                        <a href="#">nav 6</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <!-- Search Bar -->
+            <div id="search">
+                <input type="text">
+                <button>Search</button>
+            </div>
+            <!-- Widget -->
+            <div class = "widget">
+                <section id="glance">
+                    glance
+                </section>
+                <section id="player">
+                    <span class = "widgetTitle">
+                        player
+                    </span>
+                    <div id="media">
+
+                    </div>
+                    <div id="bottomPane">
+                        <div id="controlPanel">
+                            <div id="playback">
+                                <span>
+                                    volume up
+                                </span>
+                                <span>
+                                    mute
+                                </span>
+                                <span>
+                                    volume down
+                                </span>
+                            </div>
+
+                            <div id="playlistToggle">
+                                playlist
+                            </div>
+                        </div>
+                        <div id="playlistQueue">
+
+                        </div>
+                    </div>
+                </section>
+                <section id="lyrics">
+                    lyrics
+                </section>
+            </div>
+            <!-- Timeline -->
+        </main>
+        <footer>
+
+        </footer>
      </body>
 </html>

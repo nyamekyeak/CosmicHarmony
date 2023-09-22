@@ -1,0 +1,65 @@
+nav
+{
+    /* position: fixed; */
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    margin-left: 10%;
+    height: 100px;
+    overflow: hidden;
+    margin-top: 1%;
+    z-index: 100;
+}
+
+#leftNav
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+    list-style: none;
+    align-items: center;
+    width: 35%;
+}
+
+#rightNav
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+    list-style: none;
+    align-items: center;
+    width: 35%;
+
+}
+
+nav ul li
+{
+    display: flex;
+    width: 60%;
+    height: 25%;
+    background-color: #D9D9D9;
+    backdrop-filter: blur(5px);
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25%;
+}
+
+nav ul li:hover
+{
+    background-color: blue;
+}
+nav a
+{
+    text-decoration: none;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 4px;
+}
+
+#navLogo
+{
+    margin-top: -2%;
+    width: 30%;
+}
