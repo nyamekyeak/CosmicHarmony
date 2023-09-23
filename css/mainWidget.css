@@ -25,7 +25,7 @@ main .widget
 {
     background-color: #D9D9D9;
     position: relative;
-    width: 50%;
+    width: 40%;
     height: 80%;
     border-radius: 4%;
     overflow: hidden;
@@ -74,4 +74,40 @@ main .widget
 {
     display: flex;
     gap: 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#playlistToggle
+{
+    background-color: black;
+    width: 5%;
+    height: 30px;
+    margin-right: 2%;
+    overflow: hidden;
+}
+
+#playback
+{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.volumeControl
+{
+    display: flex;
+    background-color: blue;
+    height: 20px;
+    width: 20px;
+    border-radius: 90%;
+}
+
+.muteSound
+{
+    display: flex;
+    background-color: blue;
+    height: 35px;
+    width: 35px;
+    border-radius: 90%;
 }
