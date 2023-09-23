@@ -101,6 +101,7 @@ main .widget
     height: 20px;
     width: 20px;
     border-radius: 90%;
+    overflow: hidden;
 }
 
 .muteSound
@@ -110,4 +111,10 @@ main .widget
     height: 35px;
     width: 35px;
     border-radius: 90%;
+}
+
+#volumeUp
+{
+    height: 55px;
+    width: 55px;
 }
