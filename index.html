@@ -1,5 +1,6 @@
 <!DOCTYPE html>
      <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <!-- Base CSS -->
         <link rel="stylesheet" href="css/style.css">
         <link rel = "stylesheet" href="css/navbar.css">
@@ -63,20 +64,31 @@
                             <div id="playback">
                                 <span class="volumeControl">
                                     <!-- TODO: icon and button here -->
-                                    <button id = "volumeUp">
-                                        <!-- TODO: icon here -->
+                                    <button id = "volumeDown">
+                                        <!-- TODO: icon here --> 
+                                        <img src="assets/icons/volumedown.svg" alt="" id = "volumeDownIcon">
                                     </button>
                                 </span>
                                 <span class = "muteSound">
-                                    <!-- TODO: icon here -->
+                                    <input type="checkbox" id="muteSound">
+                                    <label for="muteSound" id = "muteSoundLabel">
+                                        <!-- TODO: icon here -->
+                                        <img src="assets/icons/mute.svg" alt = "mute icon" id = "muteSoundIcon">
+                                    </label>
                                 </span>
                                 <span class="volumeControl">
-                                    <!-- TODO: icon here -->
+                                    <button id="volumeUp">
+                                        <!-- TODO: icon here -->
+                                        <img src="assets/icons/volumeup.svg" alt="" id = "volumeUpIcon">
+                                    </button>
+                                    
                                 </span>
                             </div>
-
                             <div id="playlistToggle">
-                                playlist
+                                <button id = "playlistToggleButton">
+                                    <!-- TODO: icon here -->
+                                    <img src="assets/icons/playlist.svg" alt="playlist icon" id = "playlistHideIcon">
+                                </button>
                             </div>
                         </div>
                         <div id="playlistQueue">
