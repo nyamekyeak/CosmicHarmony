@@ -25,6 +25,17 @@
               "done": false,
               "start": 1695636116797
             }
+          },
+          {
+            "key": 1695636467371,
+            "children": [],
+            "todo": {
+              "content": "See how it shows on the others' computers",
+              "id": 1695636467371,
+              "level": "default",
+              "done": false,
+              "start": 1695636467371
+            }
           }
         ],
         "todo": {
@@ -109,6 +120,6 @@
     "simpleMode": false,
     "lang": "en",
     "desc": "Checklist for things to do so we do not forget.\nCheck here if unsure on what you can do.",
-    "version": "1695636319046"
+    "version": "1695636484153"
   }
 }
