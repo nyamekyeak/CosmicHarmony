@@ -1,0 +1,114 @@
+{
+  "todotree": {
+    "tree": [
+      {
+        "key": 1695636074041,
+        "children": [
+          {
+            "key": 1695636102389,
+            "children": [],
+            "todo": {
+              "content": "Fix positioning issues.",
+              "id": 1695636102389,
+              "level": "default",
+              "done": false,
+              "start": 1695636102389
+            }
+          },
+          {
+            "key": 1695636116797,
+            "children": [],
+            "todo": {
+              "content": "Fix sizing issues.",
+              "id": 1695636116797,
+              "level": "default",
+              "done": false,
+              "start": 1695636116797
+            }
+          }
+        ],
+        "todo": {
+          "content": "Fix rendering",
+          "id": 1695636074041,
+          "level": "default",
+          "done": false,
+          "start": 1695636074041
+        }
+      },
+      {
+        "key": 1695636136090,
+        "children": [
+          {
+            "key": 1695636231838,
+            "children": [],
+            "todo": {
+              "content": "Footer",
+              "id": 1695636231838,
+              "level": "default",
+              "done": false,
+              "start": 1695636231838
+            }
+          },
+          {
+            "key": 1695636240225,
+            "children": [],
+            "todo": {
+              "content": "Navigation",
+              "id": 1695636240225,
+              "level": "default",
+              "done": false,
+              "start": 1695636240225
+            }
+          },
+          {
+            "key": 1695636280255,
+            "children": [],
+            "todo": {
+              "content": "Main widget",
+              "id": 1695636280255,
+              "level": "default",
+              "done": false,
+              "start": 1695636280255
+            }
+          },
+          {
+            "key": 1695636313406,
+            "children": [],
+            "todo": {
+              "content": "Search bar",
+              "id": 1695636313406,
+              "level": "default",
+              "done": false,
+              "start": 1695636313406
+            }
+          }
+        ],
+        "todo": {
+          "content": "Build main screen",
+          "id": 1695636136090,
+          "level": "default",
+          "done": false,
+          "start": 1695636136090
+        }
+      }
+    ],
+    "expandKeys": [
+      1695636074041,
+      1695636136090,
+      1695636240225
+    ],
+    "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
+    "add_mode": "bottom",
+    "virtual": false,
+    "showLine": false,
+    "restDays": [],
+    "playFontSize": 24,
+    "title": "CHECKLIST",
+    "autoSort": false,
+    "showEndTime": false,
+    "simpleMode": false,
+    "lang": "en",
+    "desc": "Checklist for things to do so we do not forget.\nCheck here if unsure on what you can do.",
+    "version": "1695636319046"
+  }
+}

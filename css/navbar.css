@@ -43,13 +43,14 @@ nav ul li
     text-transform: uppercase;
     justify-content: center;
     align-items: center;
-    border-radius: 25%;
+    border-radius: 25% 0 25% 0;
 }
 
 nav ul li:hover
 {
     background-color: blue;
 }
+
 nav a
 {
     text-decoration: none;
@@ -60,6 +61,11 @@ nav a
 
 #navLogo
 {
-    margin-top: -2%;
-    width: 30%;
+    margin-top: 0%;
+    width: 25%;
+}
+
+#navLogo img
+{
+    width: 85%;
 }

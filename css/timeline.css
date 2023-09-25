@@ -1,0 +1,35 @@
+.timeline
+{
+    width: 80%;
+    /* background-color: red; */
+    height: 32%;
+    margin-top: 30%;
+    margin-left: 10%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    overflow-x: scroll;
+    color: black;
+}
+
+.event
+{
+    background-color: aliceblue;
+    width: 16.75%;
+    height: 70%;
+    border-radius: 15%;
+    color: black;
+    overflow: hidden;
+}
+
+.nextEvent
+{
+    width: 25%;
+    height: 90%;
+    background-color: aliceblue;
+    border-radius: 15%;
+    color: black;
+    overflow: hidden;
+}

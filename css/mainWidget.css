@@ -59,6 +59,8 @@ main .widget
             justify-content: space-between;
             align-items: center;
             margin-top: -2.5px;
+            width: 100%;
+            height: 100%;
         }
             
             /* Control to expand the playlist */
@@ -77,7 +79,7 @@ main .widget
 
                 button[id = "playlistToggleButton"]
                 {
-                    top: -12px;
+                    top: -70%;
                     position: relative;
                     width: 30px;
                     height: 30px;
@@ -223,4 +225,38 @@ label[id = "muteSoundLabel"]
     display: block;
     width: 15px;
     margin-left: -5px;
+}
+
+
+img[id = "share"]
+{
+    width: 15px;
+    margin-left: -5px;
+    position: relative;
+}
+
+button[id = "shareSession"]
+{
+    top: -70%;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    left: -2px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#alternateButton
+{
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    margin-left: 2%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 15%;
 }
