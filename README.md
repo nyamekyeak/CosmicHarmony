@@ -18,6 +18,7 @@ We are a web-based radio station called Cosmic Harmony. We are new to the radio 
     - Secondary
     - Tertiary
 - Iconography
+    https://iconbuddy.app/
 ## DEVELOPMENT CHECKLIST
 This checklist covers the components we may need to build for the project.
 It is going to be categorized and the file paths mentioned at the top of the list.

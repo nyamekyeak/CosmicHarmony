@@ -36,6 +36,28 @@
               "done": false,
               "start": 1695636467371
             }
+          },
+          {
+            "key": 1695695009090,
+            "children": [],
+            "todo": {
+              "content": "Update colors in svg code for white icons",
+              "id": 1695695009090,
+              "level": "default",
+              "done": false,
+              "start": 1695695009090
+            }
+          },
+          {
+            "key": 1695695037588,
+            "children": [],
+            "todo": {
+              "content": "Update links to black and white icons",
+              "id": 1695695037588,
+              "level": "default",
+              "done": false,
+              "start": 1695695037588
+            }
           }
         ],
         "todo": {
@@ -62,7 +84,19 @@
           },
           {
             "key": 1695636240225,
-            "children": [],
+            "children": [
+              {
+                "key": 1695694120831,
+                "children": [],
+                "todo": {
+                  "content": "Use outline for rounding corners so it looks smoother?",
+                  "id": 1695694120831,
+                  "level": "default",
+                  "done": false,
+                  "start": 1695694120831
+                }
+              }
+            ],
             "todo": {
               "content": "Navigation",
               "id": 1695636240225,
@@ -120,6 +154,6 @@
     "simpleMode": false,
     "lang": "en",
     "desc": "Checklist for things to do so we do not forget.\nCheck here if unsure on what you can do.",
-    "version": "1695636484153"
+    "version": "1695695051635"
   }
 }

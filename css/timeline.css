@@ -43,14 +43,19 @@
 
 .event .eventDetails
 {
-    background-color: black;
+    background-color: rgb(112, 112, 112);
     width: 20px;
     height: 20px;
     justify-self: center;
     overflow: hidden;
     border-radius: 50%;
     margin-left: 46%;
-    margin-top: -2px;
+    margin-top: 1%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    outline: solid 1px rgb(119, 118, 118);
+    outline-offset: 1.25px;
 }
 
 .event .eventHeader
@@ -102,4 +107,18 @@
     color: black;
     text-transform: uppercase;
     font-size: 11px;
+}
+
+.detailsIcon
+{
+    width: 15px;
+    display: block;
+    position: relative;
+}
+
+#nextDJname
+{
+    color: black;
+    text-transform: uppercase;
+    font-size: 36px;
 }
