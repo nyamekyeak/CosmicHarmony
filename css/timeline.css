@@ -122,3 +122,25 @@
     text-transform: uppercase;
     font-size: 36px;
 }
+
+.eventButtons
+{
+    display: flex;
+    justify-content: center;
+}
+
+#likeButton
+{
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 15%;
+    align-items: center;
+    justify-content: center;
+}
+
+input[id = "like"]
+{
+    display: none;
+}
