@@ -36,6 +36,73 @@
               "done": false,
               "start": 1695636467371
             }
+          },
+          {
+            "key": 1695695009090,
+            "children": [],
+            "todo": {
+              "content": "Update colors in svg code for white icons",
+              "id": 1695695009090,
+              "level": "default",
+              "done": false,
+              "start": 1695695009090
+            }
+          },
+          {
+            "key": 1695695037588,
+            "children": [],
+            "todo": {
+              "content": "Update links to black and white icons",
+              "id": 1695695037588,
+              "level": "default",
+              "done": false,
+              "start": 1695695037588
+            }
+          },
+          {
+            "key": 1695747955216,
+            "children": [
+              {
+                "key": 1695790906233,
+                "children": [],
+                "todo": {
+                  "content": "navigation",
+                  "id": 1695790906233,
+                  "level": "default",
+                  "done": false,
+                  "start": 1695790906233
+                }
+              },
+              {
+                "key": 1695790916799,
+                "children": [],
+                "todo": {
+                  "content": "footer",
+                  "id": 1695790916799,
+                  "level": "default",
+                  "done": false,
+                  "start": 1695790916799
+                }
+              },
+              {
+                "key": 1695790925798,
+                "children": [],
+                "todo": {
+                  "content": "main widget",
+                  "id": 1695790925798,
+                  "level": "default",
+                  "done": false,
+                  "start": 1695790925798
+                }
+              }
+            ],
+            "todo": {
+              "content": "Switch to using vw and vh for measurements",
+              "id": 1695747955216,
+              "level": "default",
+              "done": false,
+              "start": 1695747955216
+            }
           }
         ],
         "todo": {
@@ -62,7 +129,32 @@
           },
           {
             "key": 1695636240225,
-            "children": [],
+            "children": [
+              {
+                "key": 1695694120831,
+                "children": [],
+                "todo": {
+                  "content": "Use outline for rounding corners so it looks smoother?",
+                  "id": 1695694120831,
+                  "level": "default",
+                  "done": true,
+                  "start": 1695694120831,
+                  "focus": false,
+                  "end": 1695790871367
+                }
+              },
+              {
+                "key": 1695790879799,
+                "children": [],
+                "todo": {
+                  "content": "Polish and color",
+                  "id": 1695790879799,
+                  "level": "default",
+                  "done": false,
+                  "start": 1695790879799
+                }
+              }
+            ],
             "todo": {
               "content": "Navigation",
               "id": 1695636240225,
@@ -106,7 +198,8 @@
     "expandKeys": [
       1695636074041,
       1695636136090,
-      1695636240225
+      1695636240225,
+      1695747955216
     ],
     "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
     "add_mode": "bottom",
@@ -120,6 +213,6 @@
     "simpleMode": false,
     "lang": "en",
     "desc": "Checklist for things to do so we do not forget.\nCheck here if unsure on what you can do.",
-    "version": "1695636484153"
+    "version": "1695790939272"
   }
 }

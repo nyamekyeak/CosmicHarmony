@@ -1,0 +1,51 @@
+/* Styling for search container */
+div[id = "SearchBox"]
+{
+    display: flex;
+    width: 90vw;
+    justify-content: center;
+    margin-left: 5vw;
+}
+
+    /* Styling for search input */
+    input[id = "searchEntry"]
+    {
+        width: 50%;
+        height: 2.5vh;
+        color: black;
+        text-transform: uppercase;
+    }
+
+    /* Styling for search button container*/
+    span[id = "searchButtonBox"]
+    {
+        overflow: hidden;
+        height: 2.5vh;
+        width: 2.5vh;
+    }
+
+    /* Styling for search button */
+    button[id = "searchButton"]
+    {
+        height: 3.2vh;
+        width: 3.5vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    /* Styling for search icons 
+        * TODO: Add hover effect
+    */
+    img[id = "searchIcon"]
+    {
+        height: 2.5vh;
+        width: 2.5vh;
+    }
+
+    img[id = "searchIconActive"]
+    {
+        height: 2.5vh;
+        width: 2.5vh;
+        display: none;
+    }

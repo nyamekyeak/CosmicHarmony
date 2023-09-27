@@ -1,0 +1,8 @@
+section[id = "player"]
+{
+    display: flex;
+    width: 90vw;
+    height: 50vh;
+    margin-left: 5vw;
+    background-color: beige;
+}

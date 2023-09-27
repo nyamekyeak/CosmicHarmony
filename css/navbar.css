@@ -1,0 +1,79 @@
+/* Style for nav box */
+nav
+{
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+    margin-left: 5vw;
+    height: 12vh;
+    max-height: 120px;
+    overflow: hidden;
+    z-index: 100;
+    align-items: center;
+}
+
+/* Style for left and right nav boxes */
+    ul[id = "leftNav"]
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        list-style: none;
+        align-items: center;
+        width: 35vw;
+        grid-gap: 0%;
+    }
+
+    ul[id = "rightNav"]
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        list-style: none;
+        align-items: center;
+        width: 35vw;
+        grid-gap: 0%;
+    }
+
+    /* Style for nav links */
+    nav a
+    {
+        text-decoration: none;
+        text-align: center;
+        color: rgba(0, 0, 0, 1);
+        letter-spacing: 4px;
+    }
+
+    /* Style for content in navigation, left and right */
+    nav ul li
+    {
+        background-color: #D9D9D9;
+        backdrop-filter: blur(5px);
+        text-align: center;
+        text-transform: uppercase;
+        justify-content: space-between;
+        align-items: center;
+        outline: solid 0.1vw rgb(110, 110, 110);
+        border-radius: 5px 0 5px 0;
+        transition: 0.3s all ease-in-out;
+        width: 50%;
+    }
+
+    /* Hover effect for nav links */
+    nav ul li:hover
+    {
+        background-color: rgb(38, 88, 195);
+        color: rgb(0, 157, 165);
+        outline: solid 0.15vw;
+    }
+
+    /* Style for logo container */
+    span[id = "navLogo"]
+    {
+        width: 20vw;
+        margin-top: -0.5vh;
+        margin-left: -2.5vw;
+    }
+
+    img[id = "logo"]
+    {
+        width: 100%;
+    }
