@@ -90,7 +90,6 @@
     line-height: 15px;
     justify-content: center;
     text-align: center;
-    padding-top: 45%;
 }
 
 .event .eventFooter .top
@@ -131,16 +130,40 @@
 
 #likeButton
 {
-    display: block;
-    width: 25px;
-    height: 25px;
-    background-color: black;
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(90, 90, 90);
     border-radius: 15%;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    line-height: 3px;
+    overflow: hidden;
 }
 
 input[id = "like"]
 {
     display: none;
+}
+
+#likeIcon
+{
+    width: 65%;
+    top: -6px;
+    display: flex;
+    position: relative;
+    margin-left: 20%;
+}
+
+#likeCounter
+{
+    color: white;
+    display: flex;
+    top: -10px;
+    text-align: center;
+    width: 100%;
+    font-size: 11px;
+    margin-left: 40%;
+    /* position: absolute; */
 }
