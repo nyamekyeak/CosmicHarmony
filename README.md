@@ -19,6 +19,8 @@ We are a web-based radio station called Cosmic Harmony. We are new to the radio 
     - Primary
     - Secondary
     - Tertiary
+    - Backgronud
+       * Dark Blue: rgba(0, 8, 51, 1)
 - Iconography
     Library: https://iconbuddy.com
 ## DEVELOPMENT CHECKLIST
