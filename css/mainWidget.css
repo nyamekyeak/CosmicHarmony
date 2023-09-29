@@ -1,8 +1,30 @@
-section[id = "player"]
+div[id = "MainWidget"]
 {
     display: flex;
     width: 90vw;
+    background-color: bisque;
+    margin-left: 5vw;
+    height: 50vh;
+    overflow: hidden;
+}
+/* Styles for glance section */
+section[id = "glance"]
+{
+    position: relative;
+    display: flex;
+    width: 20vw;
+    height: 40vh;
+    background-color: aqua;
+    align-self: center;
+}
+/* Styles for player section */
+section[id = "player"]
+{
+    display: flex;
+    width: 50vw;
     height: 50vh;
     margin-left: 5vw;
     background-color: beige;
 }
+/* Styles for lyrics section */
+
