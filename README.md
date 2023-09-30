@@ -23,6 +23,9 @@ We are a web-based radio station called Cosmic Harmony. We are new to the radio 
        * Dark Blue: rgba(0, 8, 51, 1)
 - Iconography
     Library: https://iconbuddy.com
+- Images
+    Library: https://unsplash.com
+    Library: https://www.freepik.com
 ## DEVELOPMENT CHECKLIST
 This checklist covers the components we may need to build for the project.
 It is going to be categorized and the file paths mentioned at the top of the list.

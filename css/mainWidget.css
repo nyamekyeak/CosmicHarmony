@@ -1,11 +1,20 @@
+.sectionTitle
+{
+    display: none;
+}
+
 div[id = "MainWidget"]
 {
-    display: flex;
+    /* display: flex; */
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
     width: 90vw;
     background-color: bisque;
     margin-left: 5vw;
-    height: 50vh;
+    height: 51vh;
     overflow: hidden;
+    grid-gap: 0.25vw;
 }
 /* Styles for glance section */
 section[id = "glance"]
@@ -21,10 +30,123 @@ section[id = "glance"]
 section[id = "player"]
 {
     display: flex;
+    flex-direction: column;
     width: 50vw;
     height: 50vh;
-    margin-left: 5vw;
     background-color: beige;
+    overflow: hidden;
+    border-radius: 3%;
 }
-/* Styles for lyrics section */
+    /* media styling */
+    div[id = "media"]
+    {
+        display: flex;
+        width: 100%;
+        height: 90%;
+        background-color: blueviolet;
+    }
 
+    /* Styles for bottom pane */
+    div[id="bottomPane"]
+    {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(196, 241, 255);
+        justify-content: center;
+    }
+
+        /* Style for control panel */
+        div[id = "controlPanel"]
+        {
+            display: flex;
+            width: 95%;
+            height: 100%;
+            align-items: center;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            /* Style for button containers */
+            div .buttonContainer
+            {
+                background-color: rgb(255, 140, 0);
+                width: 2.2vw;
+                height: 2.2vw;
+                border-radius: 25%;
+                overflow: hidden;
+                position: relative;
+            }
+
+            div .buttonContainer-small
+            {
+                background-color: rgb(255, 140, 0);
+                width: 1.75vw;
+                height: 1.75vw;
+                border-radius: 25%;
+                overflow: hidden;
+                position: relative;
+                margin-top: 0.25vw;
+            }
+
+                /* Style for buttons */
+                button[id = "shareSession"],
+                button[id = "playlistToggle"],
+                button[id = "volumeDown"],
+                button[id = "volumeUp"],
+                button[id = "mute"]
+                {
+                    height: 100%;
+                    width: 100%;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                /* Style for icons */
+                img[id = "shareIcon"],
+                img[id = "volumeDownIcon"],
+                img[id = "songQueueIcon"],
+                img[id = "volumeUpIcon"],
+                img[id = "muteIcon"]
+                {
+                    width: 100%;
+                    transition: all 0.35s ease-in-out;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                img[id = "shareIcon-active"],
+                img[id = "songQueueIcon-active"]
+                {
+                    width: 100%;
+                    position: relative;
+                    z-index: 2;
+                    display: none;
+                }
+
+                input[id = "playlistToggleCheckbox"],
+                input[id = "mutedCheckbox"]
+                {
+                    display: none;
+                }
+
+                /* Animation for button and icons */
+
+            /* Container for playback controls */
+            div[id  ="playbackControls"]
+            {
+                display: flex;
+                width: 30%;
+                justify-content: center;
+                gap: 0.25vw;
+            }
+/* Styles for lyrics section */
+section[id = "lyrics"]
+{
+    display: flex;
+    width: 20vw;
+    height: 40vh;
+    background-color: rgb(196, 241, 255);
+    align-self: center;
+}

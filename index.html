@@ -78,12 +78,65 @@
                   </div>
 
                   <!-- Bottom pane for controls and more -->
-                  <div>
-                     
+                  <div id = "bottomPane">
+                     <div id="controlPanel">
+                        <div class = "buttonContainer">
+							<button id="shareSession">
+								<!-- Share icons -->
+								<img src="assets/icons/black/share.svg" alt="share icon" id = "shareIcon">
+								<img src="assets/icons/black/share-active.svg" alt="share icon active" id = "shareIcon-active">
+							</button>
+                        </div>
+
+						<div id="playbackControls">
+							<div class="buttonContainer-small">
+								<button id="volumeDown">
+									<!-- volume down icons -->
+									<img src="assets/icons/black/volumedown.svg" alt="volume down active" id = "volumeDownIcon">
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<input type="checkbox" id = "mutedCheckbox">
+								<label for="mutedCheckbox">								
+									<button id="mute">
+										<!-- mute icons -->
+										<img src="assets/icons/black/volumemute.svg" alt="mute icon" id = "muteIcon">
+									</button>
+								</label>
+
+							</div>
+							<div class="buttonContainer-small">
+								<button id="volumeUp">
+									<!-- volume up icons -->
+									<img src="assets/icons/black/volumeup.svg" alt="volume up icon" id = "volumeUpIcon">
+								</button>
+							</div>
+						</div>
+
+						<div class="buttonContainer">
+							<input type="checkbox" id = "playlistToggleCheckbox">
+							<label for="playlistToggleCheckbox">
+								<button id="playlistToggle">
+									<!-- playlist icons -->
+									<img src="assets/icons/black/playlist.svg" alt="playlist icon" id = "songQueueIcon">
+									<img src="assets/icons/black/playlist-active.svg" alt="playlist icon active" id = "songQueueIcon-active">
+								</button>
+							</label>
+						</div>
+                     </div>
+                     <!-- Queue display goes here -->
+					 <div id="songQueue">
+
+					 </div>
                   </div>
                </section>
 
                <!-- Lyrics -->
+               <section id="lyrics">
+                  <span class="sectionTitle">
+                     lyrics section
+                  </span>
+               </section>
             </div>
          </main>
      </body>
