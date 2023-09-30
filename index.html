@@ -74,7 +74,8 @@
                      player section
                   </span>
                   <div id="media">
-                     <!-- where song cover and stuff goes -->
+                     <!-- where song cover will be in css and stuff goes -->
+					 
                   </div>
 
                   <!-- Bottom pane for controls and more -->
@@ -126,15 +127,60 @@
                      </div>
                      <!-- Queue display goes here -->
 					 <div id="songQueue">
-
+						<table id = "playlist">
+							<thead>
+								<th>Song Title</th>
+								<th>Song Artist</th>
+								<th>Album</th>
+								<th>Release Year</th>
+								<th>Runtime</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Song title 1</td>
+									<td>Song artist 1</td>
+									<td>Song album 1</td>
+									<td>2022</td>
+									<td>3min 45sec</td>
+								</tr>
+							</tbody>
+						</table>
 					 </div>
                   </div>
                </section>
 
                <!-- Lyrics -->
                <section id="lyrics">
-                  <span class="sectionTitle">
-                     lyrics section
+                  <span id="songLyrics">
+                     <span class="songLines">
+						<span class="line">
+							This is the first line of the song
+						</span>
+						<hr class = "lyricSeparator">
+						<span class="line" id = "currentLine">
+							This is the second line of the song
+						</span>
+						<hr class = "lyricSeparator">
+						<span class="line" id = "activeLine">
+							This is the third and active line of the song
+						</span>
+						<hr class = "lyricSeparator">
+						<span class="line">
+							This is the fourth line of the song
+						</span>
+						<hr class = "lyricSeparator">
+						<span class="line">
+							This is the fifth line of the song
+						</span>
+						<hr class = "lyricSeparator">
+						<span class="line">
+							This is the sixth line of the song
+						</span>
+						<hr class = "lyricSeparator">
+						<span class="line">
+							This is the seventh line of the song
+						</span>
+					 </span>
                   </span>
                </section>
             </div>

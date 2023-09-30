@@ -9,7 +9,7 @@ div[id = "MainWidget"]
     display: grid;
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
-    width: 90vw;
+    width: 92vw;
     background-color: bisque;
     margin-left: 5vw;
     height: 51vh;
@@ -25,6 +25,7 @@ section[id = "glance"]
     height: 40vh;
     background-color: aqua;
     align-self: center;
+    border-radius: 10% 0 0 10%;
 }
 /* Styles for player section */
 section[id = "player"]
@@ -43,7 +44,9 @@ section[id = "player"]
         display: flex;
         width: 100%;
         height: 90%;
-        background-color: blueviolet;
+        background-image: url("../assets/images/placeholderImages/placeholder1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     /* Styles for bottom pane */
@@ -51,10 +54,12 @@ section[id = "player"]
     {
         position: relative;
         display: flex;
+        flex-direction: column;
         width: 100%;
         height: 10%;
         background-color: rgb(196, 241, 255);
         justify-content: center;
+        align-items: center;
     }
 
         /* Style for control panel */
@@ -66,6 +71,7 @@ section[id = "player"]
             align-items: center;
             justify-content: space-between;
             align-items: center;
+            z-index: 2;
         }
 
             /* Style for button containers */
@@ -141,6 +147,31 @@ section[id = "player"]
                 justify-content: center;
                 gap: 0.25vw;
             }
+
+            div[id = "songQueue"]
+            {
+                /* display: none; */
+                z-index: 1;
+                margin-top: -6.25%;
+                background-color: rgb(99, 99, 99);
+                width: 100%;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+            }
+
+            /* Styles for playlist table */
+            table[id = "playlist"]
+            {
+                display: block;
+                text-align: left;
+            }
+
+                /* Styles for table cells */
+                table[id = "playlist"] td
+                {
+                    text-transform: uppercase;
+                }
 /* Styles for lyrics section */
 section[id = "lyrics"]
 {
@@ -149,4 +180,30 @@ section[id = "lyrics"]
     height: 40vh;
     background-color: rgb(196, 241, 255);
     align-self: center;
+    border-radius: 0 10% 10% 0;
+    overflow: hidden;
 }
+
+    /* Styles for lyrics paragraph */
+    span[id = "songLyrics"]
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: blueviolet;
+    }
+
+        /* Styles for song lines */
+        span .songLines
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5vh;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(149, 149, 149);
+        }
