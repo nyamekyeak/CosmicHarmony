@@ -11,7 +11,7 @@ div[id = "MainWidget"]
     grid-template-columns: repeat(3, 1fr);
     width: 92vw;
     background-color: bisque;
-    margin-left: 5vw;
+    margin-left: 3.5vw;
     height: 51vh;
     overflow: hidden;
     grid-gap: 0.25vw;
@@ -47,8 +47,28 @@ section[id = "player"]
         background-image: url("../assets/images/placeholderImages/placeholder1.jpg");
         background-size: cover;
         background-repeat: no-repeat;
+        justify-content: center;
     }
 
+        span[id = "songInfo"]
+        {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(240, 248, 255, 0.431);
+            width: 30%;
+            height: 15%;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0 0 25% 25%;
+            backdrop-filter: blur(5px);
+            box-shadow: 5px 5px 0.5 rgb(123, 123, 123);
+        }
+
+            span[id = "songTitle"]
+            {
+                display: flex;
+                text-transform: capitalize;
+            }
     /* Styles for bottom pane */
     div[id="bottomPane"]
     {

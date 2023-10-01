@@ -1,0 +1,74 @@
+/* Styles for the timeline */
+div[id = "timeLine"]
+{
+    width: 92vw;
+    height: 40vh;
+    background-color: bisque;
+    margin-left: 3.5vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.25vw;
+    place-items: center;
+    overflow: hidden;
+}
+
+    /* Styles for event cards */
+    div .event
+    {
+        display: flex;
+        flex-direction: column;
+        width: 15vw;
+        height: 15vw;
+        border-radius: 15%;
+        overflow: hidden;
+    }
+
+    div .nextEvent
+    {
+        display: flex;
+        flex-direction: column;
+        background-color: aliceblue;
+        width: 23vw;
+        height: 23vw;
+        border-radius: 15%;
+    }
+
+    /* Styles for event headers */
+    .event .eventHeader
+    {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(240, 248, 255, 0.547);
+        backdrop-filter: blur(5px);
+        box-shadow: 5px 0px 0.9 rgb(51, 51, 51);
+    }
+
+        /* Style for dj name */
+        .event .eventHeader .djName
+        {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Styles for program content */
+        .event .eventHeader .programContent
+        {
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+
+/* Image styles for event cards */
+div[id = "earlierEvent"]
+{
+    background-image: url("../assets/images/placeholderImages/placeholder4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div[id = "mostRecentEvent"]
+{
+    background-image: url("../assets/images/placeholderImages/placeholder1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
