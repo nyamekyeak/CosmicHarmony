@@ -1,6 +1,18 @@
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    /* background-color: rgba(0, 8, 51, 1); */
+    background: linear-gradient(45deg, rgba(0, 8, 51, 1) 0%, rgba(45, 122, 164, 0.889) 100%);
+}
+
 main
 {
     display: flex;
     flex-direction: column;
-    gap: 5vh;
+    gap: 3.5vh;
+    overflow: scroll;
 }

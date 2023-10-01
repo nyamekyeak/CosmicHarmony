@@ -11,7 +11,7 @@ div[id = "SearchBox"]
     input[id = "searchEntry"]
     {
         width: 50%;
-        height: 2.5vh;
+        height: 2.75vh;
         color: black;
         text-transform: uppercase;
     }
@@ -32,6 +32,7 @@ div[id = "SearchBox"]
         justify-content: center;
         align-items: center;
         display: flex;
+        cursor: pointer;
     }
 
     /* Styling for search icons 

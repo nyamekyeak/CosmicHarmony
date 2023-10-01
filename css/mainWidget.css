@@ -5,17 +5,17 @@
 
 div[id = "MainWidget"]
 {
-    /* display: flex; */
     display: grid;
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
     width: 92vw;
-    background-color: bisque;
+    /* background-color: bisque; */
     margin-left: 3.5vw;
     height: 51vh;
     overflow: hidden;
     grid-gap: 0.25vw;
 }
+
 /* Styles for glance section */
 section[id = "glance"]
 {
@@ -26,6 +26,8 @@ section[id = "glance"]
     background-color: aqua;
     align-self: center;
     border-radius: 10% 0 0 10%;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 /* Styles for player section */
 section[id = "player"]
@@ -175,6 +177,7 @@ section[id = "player"]
                 margin-top: -6.25%;
                 background-color: rgb(99, 99, 99);
                 width: 100%;
+                height: 100%;
                 justify-content: center;
                 display: flex;
                 align-items: center;

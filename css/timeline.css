@@ -3,13 +3,13 @@ div[id = "timeLine"]
 {
     width: 92vw;
     height: 40vh;
-    background-color: bisque;
+    /* background-color: rgb(210, 184, 152); */
     margin-left: 3.5vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 0.25vw;
     place-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
     /* Styles for event cards */
@@ -21,8 +21,10 @@ div[id = "timeLine"]
         height: 15vw;
         border-radius: 15%;
         overflow: hidden;
+        background-color: aliceblue;
     }
 
+    /* Style for the immediate next event */
     div .nextEvent
     {
         display: flex;
@@ -31,6 +33,7 @@ div[id = "timeLine"]
         width: 23vw;
         height: 23vw;
         border-radius: 15%;
+        overflow: hidden;
     }
 
     /* Styles for event headers */
@@ -67,6 +70,27 @@ div[id = "earlierEvent"]
 }
 
 div[id = "mostRecentEvent"]
+{
+    background-image: url("../assets/images/placeholderImages/placeholder1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div[id = "nextEvent"]
+{
+    background-image: url("../assets/images/placeholderImages/placeholder2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div[id = "comingUp"]
+{
+    background-image: url("../assets/images/placeholderImages/placeholder3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div[id = "laterEvent"]
 {
     background-image: url("../assets/images/placeholderImages/placeholder1.jpg");
     background-size: cover;
