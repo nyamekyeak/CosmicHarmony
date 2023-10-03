@@ -194,7 +194,7 @@ section[id = "player"]
             /* Styles for playlist table */
             table[id = "playlist"]
             {
-                display: block;
+                display: none;
                 text-align: left;
             }
 
