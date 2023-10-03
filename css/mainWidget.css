@@ -118,6 +118,14 @@ section[id = "player"]
                 margin-top: 0.25vw;
             }
 
+            div .buttonContainer-wide
+            {
+                background-color: rgb(255, 140, 0);
+                width: 4.5vw;
+                height: 1.75vw;
+                border-radius: 15%;
+                overflow: hidden;
+            }
                 /* Style for buttons */
                 button[id = "shareSession"],
                 button[id = "playlistToggle"],
