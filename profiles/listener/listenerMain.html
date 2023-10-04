@@ -8,6 +8,7 @@
         <link rel = "stylesheet" href="../../css/mainWidget.css">
         <link rel="stylesheet" href="../../css/timeline.css">
         <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./../../css/footer.css">
       </head>
      
       <body>
@@ -25,8 +26,8 @@
                     </li>
                 </ul>
                 <span id="navLogo">
-                    <a href="index.html">
-                        <img src="assets/graphics/svg/grayLogo.svg" alt="">
+                    <a href="../../index.html">
+                        <img src="../../assets/graphics/svg/grayLogo.svg" alt="">
                     </a>
                 </span>
                 <ul id="rightNav">
@@ -263,23 +264,23 @@
                             <img src="../../assets/images/music.jpg" id="UpNextImage">
                         </div>
                         
-                        <span class="eventHeader">
-                            <span id="djName">
+                        <div class="eventHeader">
+                            <div id="djName">
                                 DJ Name
-                            </span>
-                            <span id="programContent">
+                            </div>
+                            <div id="programContent">
                                 Genre | Genre | Genre
-                            </span>
-                        </span>
+                            </div>
+                        </div>
     
-                        <span class="eventFooter">
-                            <span class="top">
+                        <div class="eventFooter">
+                            <div class="top">
                                 Produced By
-                            </span>
-                            <span id="producerName">
+                            </div>
+                            <div id="producerName">
                                 Producer Name
-                            </span>
-                        </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -333,21 +334,51 @@
 
         <footer>
             <div class="FooterLogo">
-                <a href="index.html">
-                    <img src="assets/graphics/svg/grayLogo.svg" alt="">
+                <a href="../../index.html">
+                    <img src="../../assets/graphics/svg/grayLogo.svg" id="FooterLogo">
                 </a>
             </div>
+            
             <div class='FooterPlayer'>
-                <div>
-                    <img> 
+                <div></div>
+                <div class = "FooterPlayerAudio">
+                    <div class ='FooterSoundWave'>
+                        <img src="../../assets/icons/black/soundwave.svg" id="FooterSoundWave">
+                    </div>
+                    <div class="FooterVolumeControls">
+                        <button id="volumeUp" background-color="aqua">
+                            <!-- TODO: icon here -->
+                            <img src="../../assets/icons/volumeup.svg" alt="volume up icon" id = "volumeUpIcon" width="30px">
+                        </button>
+                        <button id = "volumeDown" background-color="aqua">
+                            <!-- TODO: icon here --> 
+                            <img src="../../assets/icons/volumedown.svg" alt="volume down icon" id = "volumeDownIcon" width="30px">
+                        </button>
+                    </div>
                 </div>
-                <div>
-
+                <div class="FooterMetadata">
+                    <img src="../../assets/images/music.jpg" id="FooterSongAlbumArt">
+                    <figcaption>
+                        <p>Album - Song</p>
+                    </figcaption>
                 </div>
+                <div></div>
             </div >
-            <div class='Footer Profile'>
-
+            
+            <div class='FooterProfile'>
+                <div>
+                    <button class="ButtonFooter">
+                        <img src="../../assets/icons/white/profile.svg" id="ProfilePicture">
+                    </button>
+                    <button class="ButtonFooter">
+                        <img src='../../assets/icons/white/settings.svg' id="Settings">
+                    </button>
+                </div>
+                <div>
+                    <p>Location Here</p>
+                </div>
             </div>
+
         </footer>
-     </body>
+    </body>
 </html>

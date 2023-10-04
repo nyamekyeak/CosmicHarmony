@@ -1,0 +1,63 @@
+footer {
+    position:fixed;
+    bottom:0;
+    background-color: white;
+    width:100%;
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 2fr 4fr 2fr;
+    column-gap: 10px; 
+}
+
+#FooterLogo {
+    width: 200px;    
+    font-family: Tahoma, san-serif;
+    font-style: italic;
+}
+
+#FooterSongAlbumArt{
+    width: 50px;    
+}
+
+img.FooterProfile {
+    color: white;
+}
+
+ButtonFooter {
+    border-radius: 10px;
+}
+
+button.FooterProfile:hover {
+    color: grey;
+
+}
+
+#ProfilePicture {
+    width: 20px;    
+}
+
+#Settings {
+    width:20px;
+}
+
+.FooterProfile {
+        display: grid;
+        align-items: center; 
+        grid-template-rows: 1fr 1fr;
+        column-gap: 10px;
+        font-family: Tahoma, san-serif;
+        font-style: italic;
+}
+
+.FooterPlayer {
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 5fr 2fr 2fr 5fr ;
+    column-gap: 0px;
+    font-family: Tahoma, san-serif;
+    font-style: italic;
+}
+
+p.FooterClass {
+    font-family: Tahoma, sans-serif;
+}

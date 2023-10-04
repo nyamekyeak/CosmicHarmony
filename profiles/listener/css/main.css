@@ -5,6 +5,10 @@
     column-gap: 10px;
 }
 
+.timeline {
+    padding-bottom: 7%;
+}
+
 .widgetTitle {
     display:inline;
     text-align: center;
@@ -152,6 +156,6 @@ p.event {
     column-gap: 10px;
 }
 
-.muteSoundIcon{
+#muteSoundIcon{
     width:125%;
 }
