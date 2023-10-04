@@ -14,7 +14,6 @@ main
     display: flex;
     flex-direction: column;
     gap: 3.5vh;
-    overflow: scroll;
 }
 
 button

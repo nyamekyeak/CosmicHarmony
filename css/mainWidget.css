@@ -26,7 +26,6 @@ section[id = "glance"]
     background-color: aqua;
     align-self: center;
     border-radius: 10% 0 0 10%;
-    overflow-x: scroll;
     overflow-y: hidden;
 }
 /* Styles for player section */
