@@ -71,9 +71,12 @@ nav
         width: 20vw;
         margin-top: -0.5vh;
         margin-left: -2.5vw;
+        object-fit: contain;
+        object-position: center;
     }
 
     img[id = "logo"]
     {
         width: 100%;
+
     }

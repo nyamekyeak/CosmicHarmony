@@ -2,8 +2,173 @@
      <head>
         <!-- Base CSS -->
         <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/navbar.css">
+        <link rel="stylesheet" href="../../css/mainWidget.css">
+        <link rel="stylesheet" href="../../css/timeline.css">
+        <link rel="stylesheet" href="../../css/searchBar.css">
+		<link rel="stylesheet" href="css/dashboard.css">
+        <!-- Title -->
+        <title>Cosmic Harmony - Producer</title>
+        <!-- Logo Icon -->
+        <link rel="icon" href="../../assets/squareLogo.png">
      </head>
      <body>
-        
+      <header>
+         <nav>
+            <!-- Left Navigation -->
+            <ul id = "leftNav"> 
+               <li>
+                   <a href="index.html">home</a>
+               </li>
+               <li>
+                   <a href="#">Library</a>
+               </li>
+               <li>
+                   <a href="#">Schedule</a>
+               </li>
+           </ul>
+           <!-- Centered logo -->
+            <span id="navLogo">
+               <a href="index.html">
+                  <img src="../../assets/graphics/svg/logo.svg" alt="cosmic harmony logo" id = "logo">
+               </a>
+            </span>
+            <!-- Right Navigation -->
+            <ul id="rightNav">
+               <li>
+                   <a href="#">DJ Pool</a>
+               </li>
+               <li>
+                   <a href="#">Stats</a>
+               </li>
+               <li>
+                   <a href="#">About</a>
+               </li>
+           </ul>
+         </nav>
+      </header>
+
+	  <main>
+		<div id="searchWfilters">
+			<!-- Search Bar -->
+			<div id = "SearchBox">
+				<input type="text" id = "searchEntry" placeholder="Search...">
+				<span id = "SearchButtonBox">
+					<button id = "searchButton">
+						<!-- search icons -->
+						<img src="../../assets/icons/black/enter.svg" alt="search icon" id = "searchIcon">
+						<img src="../../assets/icons/black/enter-active.svg" alt="search icon active" id = "searchIconActive">
+					</button>
+				</span>
+			</div>
+			<div id="searchFilters">
+				<span id="allFilter" class = "activeFilter">
+					All
+				</span>
+				<span id="songsFilter">
+					Songs
+				</span>
+				<span id="djFilter">
+					DJs
+				</span>
+				<span id="producerFilter">
+					Producers
+				</span>
+			</div>
+		</div>
+		<!-- Main widget -->
+		<div id="MainWidget">
+			<section id="glance">
+
+			</section>
+			<section id = mainDashboard>
+				<div id="metricsContainer">
+					<div id="metrics">
+						<span id="currentListeners">
+							<span>current listeners</span>
+							<span id="currentListenerCount">
+								00
+							</span>
+						</span>
+						<span id="totalListeners">
+							<span>total listeners</span>
+							<span id="totalListenerCount">
+								00
+							</span>
+						</span>
+						<span id="programReactions">
+							<span>program reactions</span>
+							<span id="programReactionCount">
+								00
+							</span>
+						</span>
+					</div>
+					<span id="detailedMetrics">
+						<a href="#" id="detailedMetricsLink">detailed metrics</a>
+					</span>
+				</div>
+				<div id="producerPlaylist">
+					<span id="playlistHeader">
+						<span id="playlistRuntime">
+							99<sup>minutes</sup> 60<sub>seconds</sub>
+						</span>
+						<span id="songCount">
+							00songs
+						</span>
+					</span>
+					<span id="playlistTable">
+						<table>
+							<thead>
+								<tr>
+									<th>Song title</th>
+									<th>Song artist</th>
+									<th>Song album</th>
+									<th>Song year</th>
+									<th>Song run</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Song 1</td>
+									<td>Some artist</td>
+									<td>Some album</td>
+									<td>2022</td>
+									<td>3min 45sec</td>
+								</tr>
+								<tr>
+									<td>Song 2</td>
+									<td>Some artist</td>
+									<td>Some album</td>
+									<td>2022</td>
+									<td>3min 45sec</td>
+								</tr>
+								<tr>
+									<td>Song 3</td>
+									<td>Some artist</td>
+									<td>Some album</td>
+									<td>2022</td>
+									<td>3min 45sec</td>
+								</tr>
+								<tr>
+									<td>Song 4</td>
+									<td>Some artist</td>
+									<td>Some album</td>
+									<td>2022</td>
+									<td>3min 45sec</td>
+							</tbody>
+						</table>
+					</span>
+					<span id="playlistButtons">
+						<button>manage</button>
+						<button>save</button>
+						<button>approve</button>
+					</span>
+				</div>
+			</section>
+			<section id="chatScreen">
+
+			</section>
+		</div>
+	  </main>
      </body>
 </html>

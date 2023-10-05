@@ -9,7 +9,7 @@
         <!-- Title -->
         <title>Cosmic Harmony</title>
         <!-- Logo Icon -->
-        <link rel="icon" href="assets/graphics/svg/grayLogo.svg">
+        <link rel="icon" href="assets/squareLogo.png">
      </head>
      <body>
          <header>
@@ -20,7 +20,7 @@
                       <a href="index.html">home</a>
                   </li>
                   <li>
-                      <a href="#">nav 2</a>
+                      <a href="#">timeline</a>
                   </li>
                   <li>
                       <a href="#">nav 3</a>
@@ -35,13 +35,13 @@
                <!-- Right Navigation -->
                <ul id="rightNav">
                   <li>
-                      <a href="#">nav 4</a>
+                      <a href="#">News</a>
                   </li>
                   <li>
                       <a href="#">nav 5</a>
                   </li>
                   <li>
-                      <a href="#">nav 6</a>
+                      <a href="#">About</a>
                   </li>
               </ul>
             </nav>
@@ -68,23 +68,143 @@
                     </span>
 					<div class="glanceContent">
 						<div id="djBio">
-							<!-- TODO: dj bio info goes here -->
-							<span>
+							<span id="liveStatus">
+								live now
+							</span>
+							<span id = "djBioContent">
 								<span id="liveDJname">
 									DJ Name
 								</span>
 								<span class="DJsocials">
-									<span class="social">1</span>
-									<span class="social">2</span>
-									<span class="social">3</span>
+									<span class="social">
+										<i class="fa-brands fa-instagram"></i>
+									</span>
+									<span class="social">
+										<i class="fa-brands fa-spotify"></i>
+									</span>
+									<span class="social">
+										<i class="fa-brands fa-x-twitter"></i>
+									</span>
+								</span>
+								<span id="djBio">
+									This short text would be the dj bio, highlighting some basics about the dj who is currently live.
 								</span>
 							</span>
 						</div>
 						<div id="weatherInfo">
-							<!-- TODO: weather info goes here -->
+							<span id="dayWeather">
+								<span id="temperatureContainer">
+									<span id="temperatureUnit">
+										<!-- TODO: implement switch for units -->
+										&deg;F - &deg;C
+									</span>
+									<span id="temperature">
+										00
+									</span>
+								</span>
+								<span id="weatherSummary">
+									<span id="weatherIcon">
+										<i class="fa-solid fa-cloud-sun"></i>
+									</span>
+									<p>This is a brief description of the weather condition</p>
+								</span>
+							</span>
+							<span id="currentDateTimeContainer">
+								<span id="date">October 10 2023</span>
+								<span id="time">10:45 <sub>AM</sub></span>
+								<!-- TODO: make "special day a link" -->
+								<span id="caption">name of special day</span>
+							</span>
+							<span id="weekWeatherContainer">
+								<ul id="weatherForecast">
+									<li id="dayOfweek">
+										<span id="mondayIcon">
+											<i class="fa-solid fa-cloud-sun"></i>
+										</span>
+										<span id="monday">
+											mon
+										</span>
+										<span id="mondayTemperature">
+											00&deg;C
+										</span>
+									</li>
+									<li id="dayOfweek">
+										<span id="tuesdayIcon">
+											<i class="fa-solid fa-cloud-sun"></i>
+										</span>
+										<span id="tuesday">
+											tue
+										</span>
+										<span id="tuesdayTemperature">
+											00&deg;C
+										</span>
+									</li>
+									<li id="dayOfweek">
+										<span id="wednesdayIcon">
+											<i class="fa-solid fa-cloud-sun"></i>
+										</span>
+										<span id="wednesday">
+											wed
+										</span>
+										<span id="wednesdayTemperature">
+											00&deg;C
+										</span>
+									</li>
+									<li id="dayOfweek">
+										<span id="thursdayIcon">
+											<i class="fa-solid fa-cloud-sun"></i>
+										</span>
+										<span id="thursday">
+											thu
+										</span>
+										<span id="thursdayTemperature">
+											00&deg;C
+										</span>
+									</li>
+									<li id="dayOfweek">
+										<span id="fridayIcon">
+											<i class="fa-solid fa-cloud-sun"></i>
+										</span>
+										<span id="friday">
+											fri
+										</span>
+										<span id="fridayTemperature">
+											00&deg;C
+										</span>
+									</li>
+									<li id="dayOfweek">
+										<span id="saturdayIcon">
+											<i class="fa-solid fa-cloud-sun"></i>
+										</span>
+										<span id="saturday">
+											sat
+										</span>
+										<span id="saturdayTemperature">
+											00&deg;C
+										</span>
+									</li>
+									<li id="dayOfweek">
+										<span id="sundayIcon">
+											<i class="fa-solid fa-cloud-sun"></i>
+										</span>
+										<span id="sunday">
+											sun
+										</span>
+										<span id="sundayTemperature">
+											00&deg;C
+										</span>
+									</li>
+								</ul>
+							</span>
 						</div>
 						<div id="trafficInfo">
 							<!-- TODO: traffic info goes here -->
+							<span id="alertContainer">
+
+							</span>
+							<span id="areaMap">
+								<!-- TODO: area map goes here -->
+							</span>
 						</div>
 						<div id="newsFlash">
 							<!-- TODO: news flash goes here -->
