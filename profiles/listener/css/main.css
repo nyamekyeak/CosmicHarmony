@@ -43,7 +43,10 @@ input {
     
 }
 
-
+.PlayerTitleMetadata {
+    margin-top:auto;
+    margin-bottom:0%;
+}
 
 .SongHeader {
     color: blue;
@@ -90,7 +93,7 @@ h2 {
 }
 
 .AlbumArt {
-    width:30%;
+    width:25%;
     display:center;
     orientation:landscape;
 }
@@ -133,10 +136,8 @@ p.lyricStanza {
     background-color: #7293A0;
 }
 
-
-
 #upNextImage {
-    height: 20%;
+    height:20%;
     width:20%;
 }
 
@@ -152,10 +153,24 @@ p.event {
 .upNextHeader {
     display:grid;
     align-items: center; 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
     column-gap: 10px;
 }
 
+.upNextHeader div {
+    color:black;
+}
 #muteSoundIcon{
     width:125%;
+}
+
+#likeButton:hover {
+    background-color:red;
+}
+
+.upNextMetadataAll {
+    display:grid;
+    align-items: center; 
+    grid-template-columns: 1fr 1fr 1f;
+    column-gap: 0px;
 }

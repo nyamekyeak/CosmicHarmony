@@ -1,0 +1,68 @@
+p {
+    color:white;
+    text-align:left;
+    margin-left:10%;
+    word-wrap:normal;
+}
+
+h3 {
+    text-align:center;
+}
+
+.LocationAbout{
+    display: grid;
+    align-items: left; 
+    grid-template-rows: 1fr 5fr;
+    column-gap: 10px;
+}
+
+.LocationAboutInfo {
+    display: grid;
+    align-items: left; 
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+.ContactAboutInfo{
+    display: grid;
+    align-items: left;
+    align-content:left; 
+    text-align:left;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px; 
+}
+
+.ContactAboutStats {
+    margin-left:10%;
+}
+
+.ContactAboutInsta {
+    align-items:center;
+}
+
+.ContactAboutInsta p {
+    text-align:center;
+}
+
+
+.LocationAboutSummary p{
+    margin-left:20%;
+}
+
+.main {
+    padding-bottom:10%;
+}
+
+.ConnectWithUs {
+    align-items:left;
+    margin-left:10%;
+    display:inline;
+}
+
+form {
+    align-self:left;
+    margin-left:0%;
+}
+.formitself label input {
+    display:inline-block;
+}
