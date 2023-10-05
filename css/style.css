@@ -10,9 +10,8 @@ html
 }
 
 body
-{
-    /* background-color: rgba(0, 8, 51, 1); */
-    background: linear-gradient(45deg, rgba(0, 8, 51, 1) 0%, rgba(45, 122, 164, 0.889) 100%);
+{   
+    background: linear-gradient(52deg, rgba(0, 8, 51, 1) 0%, rgb(39, 50, 117) 65%, rgba(0, 8, 51, 1) 100%);
     background-repeat: no-repeat;
 }
 

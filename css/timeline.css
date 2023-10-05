@@ -2,7 +2,7 @@
 div[id = "timeLine"]
 {
     width: 92vw;
-    height: 40vh;
+    height: 43vh;
     /* background-color: rgb(210, 184, 152); */
     margin-left: 3.5vw;
     display: grid;
@@ -10,6 +10,8 @@ div[id = "timeLine"]
     grid-gap: 0.25vw;
     place-items: center;
     overflow-x: hidden;
+    overflow-y: hidden;
+    
 }
 
     /* Styles for event cards */

@@ -38,20 +38,20 @@ nav
     {
         text-decoration: none;
         text-align: center;
-        color: rgba(0, 0, 0, 1);
+        color: rgb(255, 255, 255);
         letter-spacing: 4px;
     }
 
     /* Style for content in navigation, left and right */
     nav ul li
     {
-        background-color: #D9D9D9;
+        background-color: rgba(114, 147, 160, 1);
         backdrop-filter: blur(5px);
         text-align: center;
         text-transform: uppercase;
         justify-content: space-between;
         align-items: center;
-        outline: solid 0.1vw rgb(110, 110, 110);
+        outline: solid 0.1vw rgba(99, 128, 140, 0.903);
         border-radius: 5px 0 5px 0;
         transition: 0.3s all ease-in-out;
         width: 50%;
@@ -60,8 +60,8 @@ nav
     /* Hover effect for nav links */
     nav ul li:hover
     {
-        background-color: rgb(38, 88, 195);
-        color: rgb(0, 157, 165);
+        background-color: rgb(0, 8, 51, 1);
+        color: rgb(226, 226, 226);
         outline: solid 0.15vw;
     }
 
@@ -78,5 +78,4 @@ nav
     img[id = "logo"]
     {
         width: 100%;
-
     }

@@ -86,7 +86,7 @@ div[id = "metricsContainer"]
         flex-direction: column;
         height: 40%;
         margin-top: 3%;
-        background-color: aliceblue;
+        /* background-color: aliceblue; */
     }
 
         span[id = "playlistHeader"]
@@ -117,3 +117,81 @@ div[id = "metricsContainer"]
                     {
                         text-align: left;
                     }
+
+            span[id = "playlistButtons"]
+            {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                gap: 3%;
+                position: relative;
+                top: 1.5vh;
+            }
+
+                span[id = "playlistButtons"] button
+                {
+                    background-color: aliceblue;
+                    border-radius: 15%;
+                    text-transform: uppercase;
+                }
+
+div[id = "djGlance"]
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../../../assets/images/placeholderImages/placeholder3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+    span[id = "djStatus"]
+    {
+        text-align: center;
+        text-transform: uppercase;
+        background-color: aliceblue;
+        width: 30%;
+    }
+
+    span[id = "djInfo"]
+    {
+        display: flex;
+        flex-direction: column;
+        margin-top: 12.5vh;
+        margin-left: 5.5vw;
+    }
+
+        span[id = "djName"]
+        {
+            font-size: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        span[id = "glanceDJgenre"]
+        {
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+    span[id = "sessionInfo"]
+    {
+        display: flex;
+        flex-direction: column;
+        margin-top: 8vh;
+    }
+
+        span[id = "leadProducer"],
+        span[id = assistantProducer]
+        {
+            text-align: left;
+            margin-left: -10vh;
+            text-transform: uppercase;
+        }
+
+        span[id = "sessionTime"]
+        {
+            text-align: center;
+            margin-top: 3vh;
+        }

@@ -23,7 +23,7 @@ section[id = "glance"]
     display: flex;
     width: 20vw;
     height: 40vh;
-    background-color: aqua;
+    background-color: rgba(86, 180, 218, 1);
     align-self: center;
     border-radius: 10% 0 0 10%;
     overflow-y: scroll;
@@ -440,8 +440,10 @@ section[id = "chatScreen"]
     display: flex;
     width: 20vw;
     height: 40vh;
-    background-color: rgb(196, 241, 255);
+    background-color: rgba(114, 147, 160);
     align-self: center;
     border-radius: 0 10% 10% 0;
     overflow: hidden;
+    backdrop-filter: blur(1.2vw);
+    /* filter: blur(1.2vw); */
 }
