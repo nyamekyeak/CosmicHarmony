@@ -422,17 +422,18 @@
                 <div></div>
                 <div class = "FooterPlayerAudio">
                     <div class ='FooterSoundWave'>
-                        <img src="../../assets/icons/black/soundwave.svg" id="FooterSoundWave">
+                        <audio controls> 
+                            <source src="../../assets/audio/Kirk Osamayo - Peace And Love.mp3" autoplay="True" type='audio/mp3'> </source>
+                        </audio>
                     </div>
                     <div class="FooterVolumeControls">
-                        <button id="volumeUp" background-color="aqua">
-                            <!-- TODO: icon here -->
-                            <img src="../../assets/icons/volumeup.svg" alt="volume up icon" id = "volumeUpIcon" width="30px">
+                        <button id = "Like" background-color="aqua">
+                            <img src="../../assets/icons/black/like.svg" alt="like" class = 'LikeButton' id = 'volumeDownIcon' width="30px">
                         </button>
-                        <button id = "volumeDown" background-color="aqua">
-                            <!-- TODO: icon here --> 
-                            <img src="../../assets/icons/volumedown.svg" alt="volume down icon" id = "volumeDownIcon" width="30px">
+                        <button id = "Like" background-color="aqua">
+                            <img src="../../assets/icons/black/dislike.svg" alt="like" class = 'DislikeButton' id = 'volumeDownIcon' width="30px">
                         </button>
+
                     </div>
                 </div>
                 <div class="FooterMetadata">
@@ -447,10 +448,11 @@
             <div class='FooterProfile'>
                 <div>
                     <button class="ButtonFooter">
-                        <img src="../../assets/icons/white/profile.svg" id="ProfilePicture">
+                        <a href="../listener/listener_profile.html"><img src="../../assets/icons/white/profile.svg" id="ProfilePicture"></a>
                     </button>
+
                     <button class="ButtonFooter">
-                        <img src='../../assets/icons/white/settings.svg' id="Settings">
+                                <img src='../../assets/icons/white/settings.svg' id="Settings">
                     </button>
                 </div>
                 <div>
