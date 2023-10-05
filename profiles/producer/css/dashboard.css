@@ -85,7 +85,8 @@ div[id = "metricsContainer"]
         display: flex;
         flex-direction: column;
         height: 40%;
-        margin-top: 5%;
+        margin-top: 3%;
+        background-color: aliceblue;
     }
 
         span[id = "playlistHeader"]
@@ -100,4 +101,19 @@ div[id = "metricsContainer"]
                 background-color: aliceblue;
             }
 
-            
+            span[id = "playlistTable"]
+            {
+                height: 80%;
+                overflow: scroll;
+                width: 100%;
+            }
+
+                span[id = "playlistTable"] table
+                {
+                    width: 100%;
+                }
+
+                    span[id = "playlistTable"] thead tr
+                    {
+                        text-align: left;
+                    }
