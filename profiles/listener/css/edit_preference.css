@@ -1,0 +1,82 @@
+.FormPreferencesEdit {
+    align-items:left;
+    color:skyblue;
+    text-align:left;
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.FormUpdatePreference {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0px;
+    position:relative;
+    display: inline-block;
+}
+
+
+.FormUpdatePreference select {
+    width:auto;
+    margin-right:10%
+}
+
+.FormUpdatePreference option:hover {
+    background-color: skyblue;
+}
+
+
+label {
+    align-self:left;
+}
+
+option {
+    color:black
+}
+
+button {
+    margin-top:5%;
+    color:black;
+    background-color: aquamarine;
+    font-size:200%;
+}
+
+main {
+    display:block;
+    align-content: left;
+}
+
+button:hover {
+    background-color: grey;
+}
+
+
+
+.DropDownButton {
+    background-color: white;
+    width:fit-content;
+}
+
+.DropDownContent {
+    display:none;
+    position:absolute;
+    background-color: white;
+    z-index: 1;
+}
+
+.DropDownContent p {
+    color:skyblue;
+    display: block;
+}
+
+.DropDownContent p:hover {
+    background-color: grey;
+}
+
+.FormUpdatePreference:hover .DropDownContent {
+    display:block;
+    width: auto;
+}
+
+.FormUpdatePreference:hover .DropDownButton {
+    background-color: skyblue;
+}

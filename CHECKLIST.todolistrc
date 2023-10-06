@@ -11,8 +11,10 @@
               "content": "Fix positioning issues.",
               "id": 1695636102389,
               "level": "default",
-              "done": false,
-              "start": 1695636102389
+              "done": true,
+              "start": 1695636102389,
+              "focus": false,
+              "end": 1696598560593
             }
           },
           {
@@ -22,8 +24,10 @@
               "content": "Fix sizing issues.",
               "id": 1695636116797,
               "level": "default",
-              "done": false,
-              "start": 1695636116797
+              "done": true,
+              "start": 1695636116797,
+              "focus": false,
+              "end": 1696598561809
             }
           },
           {
@@ -44,8 +48,10 @@
               "content": "Update colors in svg code for white icons",
               "id": 1695695009090,
               "level": "default",
-              "done": false,
-              "start": 1695695009090
+              "done": true,
+              "start": 1695695009090,
+              "focus": false,
+              "end": 1696122772266
             }
           },
           {
@@ -55,19 +61,87 @@
               "content": "Update links to black and white icons",
               "id": 1695695037588,
               "level": "default",
-              "done": false,
-              "start": 1695695037588
+              "done": true,
+              "start": 1695695037588,
+              "focus": false,
+              "end": 1696598566309
+            }
+          },
+          {
+            "key": 1696122749223,
+            "children": [],
+            "todo": {
+              "content": "box shadow rendering",
+              "id": 1696122749223,
+              "level": "default",
+              "done": true,
+              "start": 1696122749223,
+              "focus": false,
+              "end": 1696598569029
             }
           },
           {
             "key": 1695747955216,
-            "children": [],
+            "children": [
+              {
+                "key": 1695790906233,
+                "children": [],
+                "todo": {
+                  "content": "navigation",
+                  "id": 1695790906233,
+                  "level": "default",
+                  "done": true,
+                  "start": 1695790906233,
+                  "focus": false,
+                  "end": 1696598572175
+                }
+              },
+              {
+                "key": 1695790916799,
+                "children": [],
+                "todo": {
+                  "content": "footer",
+                  "id": 1695790916799,
+                  "level": "default",
+                  "done": true,
+                  "start": 1695790916799,
+                  "focus": false,
+                  "end": 1696598574126
+                }
+              },
+              {
+                "key": 1695790925798,
+                "children": [],
+                "todo": {
+                  "content": "main widget",
+                  "id": 1695790925798,
+                  "level": "default",
+                  "done": true,
+                  "start": 1695790925798,
+                  "focus": false,
+                  "end": 1696598574847
+                }
+              }
+            ],
             "todo": {
               "content": "Switch to using vw and vh for measurements",
               "id": 1695747955216,
               "level": "default",
+              "done": true,
+              "start": 1695747955216,
+              "focus": false,
+              "end": 1696598575643
+            }
+          },
+          {
+            "key": 1696122742509,
+            "children": [],
+            "todo": {
+              "content": "",
+              "id": 1696122742509,
+              "level": "default",
               "done": false,
-              "start": 1695747955216
+              "start": 1696122742509
             }
           }
         ],
@@ -103,8 +177,21 @@
                   "content": "Use outline for rounding corners so it looks smoother?",
                   "id": 1695694120831,
                   "level": "default",
+                  "done": true,
+                  "start": 1695694120831,
+                  "focus": false,
+                  "end": 1695790871367
+                }
+              },
+              {
+                "key": 1695790879799,
+                "children": [],
+                "todo": {
+                  "content": "Polish and color",
+                  "id": 1695790879799,
+                  "level": "default",
                   "done": false,
-                  "start": 1695694120831
+                  "start": 1695790879799
                 }
               }
             ],
@@ -151,7 +238,8 @@
     "expandKeys": [
       1695636074041,
       1695636136090,
-      1695636240225
+      1695636240225,
+      1695747955216
     ],
     "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
     "add_mode": "bottom",
@@ -165,6 +253,6 @@
     "simpleMode": false,
     "lang": "en",
     "desc": "Checklist for things to do so we do not forget.\nCheck here if unsure on what you can do.",
-    "version": "1695747972462"
+    "version": "1696598575688"
   }
 }

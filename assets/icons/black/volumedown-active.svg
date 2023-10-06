@@ -1,3 +1,9 @@
-<svg width="128" height="128" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#000000" d="M18.5 12A4.5 4.5 0 0 0 16 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5z"/>
+<svg width="128" height="128" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <mask id="ipSVolumeDown0">
+        <g fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="4">
+            <path fill="#fff" d="M24 6v36c-7 0-12.201-9.16-12.201-9.16H6a2 2 0 0 1-2-2V17.01a2 2 0 0 1 2-2h5.799S17 6 24 6Z"/>
+            <path stroke-linecap="round" d="M32 24h12"/>
+        </g>
+    </mask>
+    <path fill="#000000" d="M0 0h48v48H0z" mask="url(#ipSVolumeDown0)"/>
 </svg>
