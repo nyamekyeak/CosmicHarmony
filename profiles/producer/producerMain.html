@@ -134,7 +134,7 @@
 				<div id="producerPlaylist">
 					<span id="playlistHeader">
 						<span id="playlistRuntime">
-							99<sup>minutes</sup> 59<sub>seconds</sub>
+							99<sub>minutes</sub> 59<sub>seconds</sub>
 						</span>
 						<span id="songCount">
 							05songs
@@ -158,12 +158,13 @@
 									<td>Some album</td>
 									<td>2022</td>
 									<td>3min 45sec</td>
-									<td>
-										<audio src="../../assets/audio/placeholderAudio/placeholder1.mp3" class = "songPreview"></audio>
-										<button><i class="fa-regular fa-circle-play"></i></button>
+									<td class = "playlistItemControl">
+										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										<audio src="../../assets/audio/placeholderAudio/placeholder1.mp3" class="songPreview"></audio>
+										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
 									</td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
 									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									<td><button><i class="fa-solid fa-trash"></i></button></td>
 								</tr>
 								<tr>
 									<td>Song 2</td>
@@ -171,12 +172,13 @@
 									<td>Some album</td>
 									<td>2022</td>
 									<td>3min 45sec</td>
-									<td>
-										<audio src="../../assets/audio/placeholderAudio/placeholder2.mp3" class = "songPreview"></audio>
-										<button><i class="fa-regular fa-circle-play"></i></button>
+									<td class = "playlistItemControl">
+										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										<audio src="../../assets/audio/placeholderAudio/placeholder2.mp3" class="songPreview"></audio>
+										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
 									</td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
 									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									<td><button><i class="fa-solid fa-trash"></i></button></td>
 								</tr>
 								<tr>
 									<td>Song 3</td>
@@ -184,12 +186,14 @@
 									<td>Some album</td>
 									<td>2022</td>
 									<td>3min 45sec</td>
-									<td>
-										<audio src="../../assets/audio/placeholderAudio/placeholder1.mp3" class = "songPreview"></audio>
-										<button><i class="fa-regular fa-circle-play"></i></button>
+									<td class = "playlistItemControl">
+										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										<audio src="../../assets/audio/placeholderAudio/placeholder4.mp3" class="songPreview"></audio>
+										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
+										
 									</td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
 									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									<td><button><i class="fa-solid fa-trash"></i></button></td>
 								</tr>
 								<tr>
 									<td>Song 4</td>
@@ -197,12 +201,14 @@
 									<td>Some album</td>
 									<td>2022</td>
 									<td>3min 45sec</td>
-									<td>
-										<audio src="../../assets/audio/placeholderAudio/placeholder1.mp3" class="songPreview"></audio>
-										<button><i class="fa-regular fa-circle-play"></i></button>
+									<td class = "playlistItemControl">
+										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										<audio src="../../assets/audio/placeholderAudio/placeholder3.mp3" class="songPreview"></audio>
+										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
+										
 									</td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
 									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									<td><button><i class="fa-solid fa-trash"></i></button></td>
 								</tr>
 								<tr>
 									<td>Song 5</td>
@@ -210,12 +216,13 @@
 									<td>Some album</td>
 									<td>2019</td>
 									<td>3min 45sec</td>
-									<td>
+									<td class = "playlistItemControl">
+										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
 										<audio src="../../assets/audio/placeholderAudio/placeholder1.mp3" class="songPreview"></audio>
-										<button><i class="fa-regular fa-circle-play"></i></button>
+										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
 									</td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
 									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									<td><button><i class="fa-solid fa-trash"></i></button></td>
 								</tr>
 								<tr>
 									<td>Song 6</td>
@@ -223,19 +230,53 @@
 									<td>Some album</td>
 									<td>2023</td>
 									<td>3min 45sec</td>
-									<td>
+									<td class = "playlistItemControl">
+										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
 										<audio src="../../assets/audio/placeholderAudio/placeholder1.mp3" class="songPreview"></audio>
-										<button><i class="fa-regular fa-circle-play"></i></button>
+										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
 									</td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
 									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									<td><button><i class="fa-solid fa-trash"></i></button></td>
 								</tr>
 							</tbody>
 						</table>
+						<script>
+							function playAudio(button) 
+							{
+								var allAudio = document.getElementsByTagName("audio");
+								var allPlay = document.getElementsByClassName("playPreview");
+								var allStop = document.getElementsByClassName("stopPreview");
+								for(var i = 0; i < allAudio.length; i++)
+								{
+									allAudio[i].pause();
+									allAudio[i].currentTime = 0;
+									allPlay[i].style.display = "block";
+									allStop[i].style.display = "none";
+								}
+								var controls = button.parentElement.children;
+								var soundTrack = controls[1];
+								var matchingStopButton = controls[0];
+								matchingStopButton.style.display = "block";
+								button.style.display = "none";
+								console.log("playing...\n" + soundTrack.getAttribute("src"));
+								soundTrack.play();
+							}
+							function stopAudio(button) 
+							{
+								var controls = button.parentElement.children;
+								var soundTrack = controls[1];
+								var matchingPlayButton = controls[2];
+								matchingPlayButton.style.display = "block";
+								button.style.display = "none";
+								console.log("stopping...\n" + soundTrack.getAttribute("src"));
+								soundTrack.pause();
+								soundTrack.currentTime = 0;
+							}
+						</script>						
 					</span>
 					<span id="playlistButtons">
 						<button>manage</button>
-						<button>save</button>
+						<button>save changes</button>
 						<button>approve</button>
 					</span>
 				</div>
@@ -454,27 +495,8 @@
 			</div>
 		</div>
 	  </main>
-	  <footer class = "Footer">
-		<div class="FooterLogo">
-			<a href="../../index.html">
-				<img src="../../assets/graphics/svg/grayLogo.svg" id="FooterLogo">
-			</a>
-		</div>
-		
-		<div class='FooterProfile'>
-			<div style="margin-top: 1.75vh;">
-				<button class="ButtonFooter">
-					<img src="../../assets/icons/black/profile.svg" id="ProfilePicture">
-				</button>
-				<button class="ButtonFooter">
-					<img src='../../assets/icons/black/settings.svg' id="Settings">
-				</button>
-			</div>
-			<div style="margin-top: -1.5vh;">
-				<p>Location</p>
-			</div>
-		</div>
-	</footer>
+	  <script src="javascript/main.js"></script>
+	  <script src="javascript/playlistManage.js"></script>
 	  <script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
      </body>
 </html>

@@ -81,14 +81,15 @@ div[id = "metricsContainer"]
                 text-decoration: none;
                 color: black;
             }
-
+/* 
+    * Playlist table for producer 
+*/
     div[id = "producerPlaylist"]
     {
         display: flex;
         flex-direction: column;
         height: 40%;
         margin-top: 3%;
-        /* background-color: aliceblue; */
     }
 
         span[id = "playlistHeader"]
@@ -126,6 +127,11 @@ div[id = "metricsContainer"]
                     span[id = "playlistTable"] tbody tr:nth-child(odd)
                     {
                         color: rgb(214, 214, 214);
+                    }
+
+                    td[class = "playlistItemControl"] > button[class = "stopPreview"]
+                    {
+                        display: none;
                     }
             span[id = "playlistButtons"]
             {
