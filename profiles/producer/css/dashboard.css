@@ -206,6 +206,14 @@ div[id = "djGlance"]
             color: rgba(255, 255, 255, 0.8);
         }
 
+        span[id = "highlightDJsocials"]
+        {
+            display: flex;
+            color: white;
+            gap: 0.75vw;
+            padding-top: 0.75vh;
+        }
+
         span[id = "currentDJphoto"]
         {
             width: 2.75vw;
