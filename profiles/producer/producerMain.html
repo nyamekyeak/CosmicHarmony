@@ -19,7 +19,7 @@
             <!-- Left Navigation -->
             <ul id = "leftNav"> 
                <li>
-                   <a href="index.html">home</a>
+                   <a href="../../index.html">home</a>
                </li>
                <li>
                    <a href="#">Library</a>
@@ -55,12 +55,13 @@
 			<div id = "SearchBox">
 				<input type="text" id = "searchEntry" placeholder="Search...">
 				<span id = "SearchButtonBox">
-					<button id = "searchButton">
+					<button id = "searchButton" onclick="validateSearch()">
 						<!-- search icons -->
 						<img src="../../assets/icons/black/enter.svg" alt="search icon" id = "searchIcon">
 						<img src="../../assets/icons/black/enter-active.svg" alt="search icon active" id = "searchIconActive">
 					</button>
 				</span>
+				<span id="invalidAlert">Please enter a search term</span>
 			</div>
 			<div id="searchFilters">
 				<span id="allFilter" class = "activeFilter">
@@ -545,7 +546,6 @@
 			</span>
 			<span class="userInfo">
 				<span id="userName">
-					<!-- TODO: user name -->
 					User Name
 				</span>
 				<span id="userLocation">
@@ -556,6 +556,8 @@
 	  </footer>
 	  <script src="javascript/main.js"></script>
 	  <script src="javascript/playlistManage.js"></script>
+	  <script src="javascript/searchFeature.js"></script>
+	  <script src = "javascript/chatFeature.js"></script>
 	  <script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
      </body>
 </html>

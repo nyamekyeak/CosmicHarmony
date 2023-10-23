@@ -97,12 +97,15 @@ div[id = "metricsContainer"]
             display: flex;
             text-transform: uppercase;
             gap: 3%;
+            justify-content: end;
+            margin-right: 1.5vw;
         }
 
             span[id = "playlistHeader"] span
             {
                 background-color: none;
                 color: white;
+                text-align: right;
             }
 
             span[id = "playlistTable"]

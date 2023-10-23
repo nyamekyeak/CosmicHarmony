@@ -67,3 +67,18 @@ div[id = "searchFilters"]
         text-transform: uppercase;
         cursor: pointer;
     }
+
+span[id = "invalidAlert"]
+{
+    
+    position: absolute;
+    z-index: -1;
+    left: 26.85vw;
+    /* top: -2vh; */
+    top: 11.75vh;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bold;
+    color: red;
+    transition: all 0.3s ease-in-out;
+}
