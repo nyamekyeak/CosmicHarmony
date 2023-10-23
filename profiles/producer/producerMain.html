@@ -84,14 +84,20 @@
 					<span id="djStatus">
 						live now
 					</span>
-					<span id="djInfo">
-						<span id="djName">
-							DJ Name
+					<span id = "highlightDJ">
+						<span id="currentDJphoto">
+							<img src="../../assets/images/placeholderImages/djPlaceholder3.jpg" alt="">
 						</span>
-						<span id="glanceDJgenre">
-							genre | genre | genre
+						<span id="djInfo">
+							<span id="djName">
+								DJ Name
+							</span>
+							<span id="glanceDJgenre">
+								genre | genre | genre
+							</span>
 						</span>
 					</span>
+
 					<span id="sessionInfo">
 						<span id="leadProducer">
 							Lead Producer Name
@@ -131,13 +137,14 @@
 						<a href="#" id="detailedMetricsLink">detailed metrics</a>
 					</span>
 				</div>
+				<!-- Producer Playlist -->
 				<div id="producerPlaylist">
 					<span id="playlistHeader">
 						<span id="playlistRuntime">
 							99<sub>minutes</sub> 59<sub>seconds</sub>
 						</span>
 						<span id="songCount">
-							05songs
+							05 songs
 						</span>
 					</span>
 					<span id="playlistTable">
@@ -157,50 +164,41 @@
 									<td>Some artist</td>
 									<td>Some album</td>
 									<td>2022</td>
-									<td>3min 45sec</td>
+									<td>
+										0<sub>min</sub>00<sub>sec</sub>
+									</td>
 									<td class = "playlistItemControl">
 										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
 										<audio src="../../assets/audio/placeholderAudio/placeholder1.mp3" class="songPreview"></audio>
 										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
 									</td>
 									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
+									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
 								</tr>
 								<tr>
 									<td>Song 2</td>
 									<td>Some artist</td>
 									<td>Some album</td>
 									<td>2022</td>
-									<td>3min 45sec</td>
+									<td>
+										0<sub>min</sub>00<sub>sec</sub>
+									</td>
 									<td class = "playlistItemControl">
 										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
 										<audio src="../../assets/audio/placeholderAudio/placeholder2.mp3" class="songPreview"></audio>
 										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
 									</td>
 									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
+									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
 								</tr>
 								<tr>
 									<td>Song 3</td>
 									<td>Some artist</td>
 									<td>Some album</td>
 									<td>2022</td>
-									<td>3min 45sec</td>
-									<td class = "playlistItemControl">
-										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
-										<audio src="../../assets/audio/placeholderAudio/placeholder4.mp3" class="songPreview"></audio>
-										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
-										
+									<td>
+										0<sub>min</sub>00<sub>sec</sub>
 									</td>
-									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
-								</tr>
-								<tr>
-									<td>Song 4</td>
-									<td>Some artist</td>
-									<td>Some album</td>
-									<td>2022</td>
-									<td>3min 45sec</td>
 									<td class = "playlistItemControl">
 										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
 										<audio src="../../assets/audio/placeholderAudio/placeholder3.mp3" class="songPreview"></audio>
@@ -208,35 +206,72 @@
 										
 									</td>
 									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
+									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
+								</tr>
+								<tr>
+									<td>Song 4</td>
+									<td>Some artist</td>
+									<td>Some album</td>
+									<td>2022</td>
+									<td>
+										0<sub>min</sub>00<sub>sec</sub>
+									</td>
+									<td class = "playlistItemControl">
+										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										<audio src="../../assets/audio/placeholderAudio/placeholder4.mp3" class="songPreview"></audio>
+										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
+										
+									</td>
+									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
 								</tr>
 								<tr>
 									<td>Song 5</td>
 									<td>Some artist</td>
 									<td>Some album</td>
 									<td>2019</td>
-									<td>3min 45sec</td>
+									<td>
+										0<sub>min</sub>00<sub>sec</sub>
+									</td>
 									<td class = "playlistItemControl">
 										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
-										<audio src="../../assets/audio/placeholderAudio/placeholder1.mp3" class="songPreview"></audio>
+										<audio src="../../assets/audio/placeholderAudio/placeholder5.mp3" class="songPreview"></audio>
 										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
 									</td>
 									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
+									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
 								</tr>
 								<tr>
 									<td>Song 6</td>
 									<td>Some artist</td>
 									<td>Some album</td>
 									<td>2023</td>
-									<td>3min 45sec</td>
+									<td>
+										0<sub>min</sub>00<sub>sec</sub>
+									</td>
 									<td class = "playlistItemControl">
 										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
-										<audio src="../../assets/audio/placeholderAudio/placeholder1.mp3" class="songPreview"></audio>
+										<audio src="../../assets/audio/placeholderAudio/placeholder6.mp3" class="songPreview"></audio>
 										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
 									</td>
 									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button><i class="fa-solid fa-trash"></i></button></td>
+									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
+								</tr>
+								<tr>
+									<td>Song 7</td>
+									<td>Some artist</td>
+									<td>Some album</td>
+									<td>2023</td>
+									<td>
+										0<sub>min</sub>00<sub>sec</sub>
+									</td>
+									<td class = "playlistItemControl">
+										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										<audio src="../../assets/audio/placeholderAudio/placeholder7.mp3" class="songPreview"></audio>
+										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
+									</td>
+									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
 								</tr>
 							</tbody>
 						</table>
@@ -349,6 +384,9 @@
 						genre | genre | genre
 					</span>
 				</span>
+				<span class="djCover">
+					<img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo">
+				</span>
 				<span class="eventInteractions">
 					<div class="eventButtons">
 						<div class="buttonContainer-small">
@@ -422,7 +460,6 @@
 				</span>
 
 			</div>
-
 			<div class="event" id = "comingUp">
 				<span class="eventHeader">
 					<span class="djName" style="text-transform: uppercase;">
@@ -495,6 +532,28 @@
 			</div>
 		</div>
 	  </main>
+	  <!-- Footer goes here -->
+	  <footer>
+		<span id="footerBrand">
+			<span id="footerBrandName">
+				Cosmic Harmony
+			</span>
+		</span>
+		<span id="userProfile">
+			<span id="profilePhoto">
+				<img src="../../assets/images/placeholderImages/djPlaceholder4.jpg" alt="">
+			</span>
+			<span class="userInfo">
+				<span id="userName">
+					<!-- TODO: user name -->
+					User Name
+				</span>
+				<span id="userLocation">
+					<span>State</span>, <span>Country</span>
+				</span>
+			</span>
+		</span>
+	  </footer>
 	  <script src="javascript/main.js"></script>
 	  <script src="javascript/playlistManage.js"></script>
 	  <script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>

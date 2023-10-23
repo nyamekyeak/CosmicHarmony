@@ -42,6 +42,7 @@ div[id = "timeLine"]
     .event .eventHeader
     {
         display: flex;
+        z-index: 2;
         flex-direction: column;
         background-color: rgba(240, 248, 255, 0.547);
         backdrop-filter: blur(1.2vw);
@@ -62,6 +63,19 @@ div[id = "timeLine"]
             justify-content: center;
             text-transform: uppercase;
         }
+
+    span[class = "djCover"]
+    {
+        /* display: none; */
+        overflow: hidden;
+        display: flex;
+        width: 15vw;
+        height: 18vh;
+        position: absolute;
+        z-index: 0;
+        object-fit: cover;
+        border-radius: 18.75% 18.75% 0px 0px;
+    }
 
     .event .eventInteractions
     {

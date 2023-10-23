@@ -430,10 +430,11 @@ section[id = "mainDashboard"]
     flex-direction: column;
     width: 50vw;
     height: 50vh;
-    background-color: beige;
     overflow: hidden;
     border-radius: 3%;
-    background-image: url("../../../assets/images/placeholderImages/placeholder1.jpg");
+    background-image: url("../../../assets/images/placeholderImages/placeholder6.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 section[id = "chatScreen"]
@@ -447,6 +448,7 @@ section[id = "chatScreen"]
     border-radius: 0 10% 10% 0;
     overflow: hidden;
     backdrop-filter: blur(1.2vw);
-    background-image: url("../../../assets/images/placeholderImages/placeholder5.jpg");
+    background-image: url("../../../assets/images/placeholderImages/placeholder6.jpg");
+    background-size: cover;
     /* filter: blur(1.2vw); */
 }

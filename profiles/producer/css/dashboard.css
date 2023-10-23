@@ -124,9 +124,14 @@ div[id = "metricsContainer"]
                         text-transform: uppercase; 
                     }
 
+                    span[id = "playlistTable"] tbody tr td
+                    {
+                        border-bottom: 1.5px solid white;
+                    }
+
                     span[id = "playlistTable"] tbody tr:nth-child(odd)
                     {
-                        color: rgb(214, 214, 214);
+                        color: rgb(184, 184, 184);
                     }
 
                     td[class = "playlistItemControl"] > button[class = "stopPreview"]
@@ -155,7 +160,7 @@ div[id = "djGlance"]
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(../../../assets/images/placeholderImages/placeholder3.jpg);
+    background-image: url(../../../assets/images/placeholderImages/placeholder6.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -167,6 +172,12 @@ div[id = "djGlance"]
         text-transform: uppercase;
         background-color: aliceblue;
         width: 30%;
+    }
+
+    span[id = "highlightDJ"]
+    {
+        display: flex;
+        top: -15vh;
     }
 
     span[id = "djInfo"]
@@ -191,6 +202,24 @@ div[id = "djGlance"]
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.8);
         }
+
+        span[id = "currentDJphoto"]
+        {
+            width: 2.75vw;
+            height: 2.75vw;
+            position: relative;
+            top: 7.3vw;
+            left: 4.25vw;
+        }
+
+            span[id = "currentDJphoto"] img
+            {
+                display: block;
+                width: 3.75vw;
+                height: 3.75vw;
+                object-fit: cover;
+                border-radius: 25%;
+            }
 
     span[id = "sessionInfo"]
     {
