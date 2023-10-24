@@ -13,14 +13,17 @@ sendMessageButton.addEventListener("click", function()
     console.log(timestamp);
     console.log(outgoingMessageTemplate);
     console.log(allMessages);
-    if(timestamp[3] === 1)
+    if(messageInput.value.trim !== "")
+    {
+        if(timestamp[3] === 1)
         newOutgoingMessage.children[0].innerHTML = timestamp[0] + ":" + timestamp[1] + "<sub>AM</sub>";
-    else
-        newOutgoingMessage.children[0].innerHTML = timestamp[0] + ":" + timestamp[1] + "<sub>PM</sub>";
-    newOutgoingMessage.children[1].innerHTML = messageInput.value;
-    allMessages.insertAdjacentElement("beforeend", newOutgoingMessage);
-    messageInput.value = "";
-    allMessages.scrollTop = allMessages.scrollHeight;
+        else
+            newOutgoingMessage.children[0].innerHTML = timestamp[0] + ":" + timestamp[1] + "<sub>PM</sub>";
+        newOutgoingMessage.children[1].innerHTML = messageInput.value;
+        allMessages.insertAdjacentElement("beforeend", newOutgoingMessage);
+        messageInput.value = "";
+        allMessages.scrollTop = allMessages.scrollHeight;
+    }
 });
 
 messageInput.addEventListener("keydown", function(event)
@@ -32,14 +35,17 @@ messageInput.addEventListener("keydown", function(event)
         console.log(timestamp);
         console.log(outgoingMessageTemplate);
         console.log(allMessages);
-        if(timestamp[3] === 1)
+        if(messageInput.value.trim !== "")
+        {
+            if(timestamp[3] === 1)
             newOutgoingMessage.children[0].innerHTML = timestamp[0] + ":" + timestamp[1] + "<sub>AM</sub>";
-        else
-            newOutgoingMessage.children[0].innerHTML = timestamp[0] + ":" + timestamp[1] + "<sub>PM</sub>";
-        newOutgoingMessage.children[1].innerHTML = messageInput.value;
-        allMessages.insertAdjacentElement("beforeend", newOutgoingMessage);
-        messageInput.value = "";
-        allMessages.scrollTop = allMessages.scrollHeight;
+            else
+                newOutgoingMessage.children[0].innerHTML = timestamp[0] + ":" + timestamp[1] + "<sub>PM</sub>";
+            newOutgoingMessage.children[1].innerHTML = messageInput.value;
+            allMessages.insertAdjacentElement("beforeend", newOutgoingMessage);
+            messageInput.value = "";
+            allMessages.scrollTop = allMessages.scrollHeight;
+        }
     }
 })
 

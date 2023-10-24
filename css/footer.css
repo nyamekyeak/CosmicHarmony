@@ -4,10 +4,13 @@ footer
     width: 100vw;
     height: 3.75vw;
     margin-left: -10px;
-    background-color: blanchedalmond;
+    background-color: rgba(105, 105, 105, 0.84);
+    backdrop-filter: blur(10vw);
     justify-content: space-between;
     overflow: hidden;
     align-items: center;
+    text-transform: uppercase;
+    color: white;
 }
 
     span[id = "footerBrand"]
