@@ -1,0 +1,22 @@
+div[id = "heroContainer"]
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin-left: -10px;
+    height: 45vh;
+    color: white;
+    background-image: url(../assets/images/placeholderImages/placeholder3.jpg);
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    line-height: 0.75vh;
+}
+
+    div[id = "heroContainer"] h1
+    {
+        font-size: 3.5vw;
+        text-transform: uppercase;
+    }

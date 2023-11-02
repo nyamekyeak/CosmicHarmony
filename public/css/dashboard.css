@@ -295,9 +295,12 @@ div[id = "messages"]
         {
             width: 5vh;
             height: 5vh;
-            border-radius: 50%;
+            margin-top: 0.25vh;
+            margin-bottom: 0.25vh;
+            border-radius: 20%;
             overflow: hidden;
             object-fit: cover;
+            margin-left: 0.25vw;
             background-image: url("../../../assets/images/placeholderImages/placeholder1.jpg");
             background-position: center;
             background-size: cover;

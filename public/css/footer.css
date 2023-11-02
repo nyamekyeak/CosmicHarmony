@@ -3,7 +3,7 @@ footer
     display: flex;
     width: 100vw;
     height: 3.75vw;
-    margin-left: -10px;
+    margin-left: -5px;
     background-color: rgba(105, 105, 105, 0.84);
     backdrop-filter: blur(10vw);
     justify-content: space-between;
@@ -11,6 +11,8 @@ footer
     align-items: center;
     text-transform: uppercase;
     color: white;
+    z-index: 1000;
+    position: relative;
 }
 
     span[id = "footerBrand"]

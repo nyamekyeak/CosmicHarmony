@@ -14,589 +14,508 @@
         <link rel="icon" href="../../assets/squareLogo.png">
      </head>
      <body>
-      <header>
-         <nav>
-            <!-- Left Navigation -->
-            <ul id = "leftNav"> 
-               <li>
-                   <a href="../../index.html">home</a>
-               </li>
-               <li>
-                   <a href="#">Library</a>
-               </li>
-               <li>
-                   <a href="#">Schedule</a>
-               </li>
-           </ul>
-           <!-- Centered logo -->
-            <span id="navLogo">
-               <a href="index.html">
-                  <img src="../../assets/graphics/svg/grayLogo.svg" alt="cosmic harmony logo" id = "logo">
-               </a>
-            </span>
-            <!-- Right Navigation -->
-            <ul id="rightNav">
-               <li>
-                   <a href="#">DJ Pool</a>
-               </li>
-               <li>
-                   <a href="#">Stats</a>
-               </li>
-               <li>
-                   <a href="#">About</a>
-               </li>
-           </ul>
-         </nav>
-      </header>
-
-	  <main>
-		<div id="searchWfilters">
-			<!-- Search Bar -->
-			<div id = "SearchBox">
-				<input type="text" id = "searchEntry" placeholder="Search...">
-				<span id = "SearchButtonBox">
-					<button id = "searchButton" onclick="validateSearch()">
-						<!-- search icons -->
-						<img src="../../assets/icons/black/enter.svg" alt="search icon" id = "searchIcon">
-						<img src="../../assets/icons/black/enter-active.svg" alt="search icon active" id = "searchIconActive">
-					</button>
-				</span>
-				<span id="invalidAlert">Please enter a search term</span>
-			</div>
-			<div id="searchFilters">
-				<span id="allFilter" class = "activeFilter">
-					All
-				</span>
-				<span id="songsFilter">
-					Songs
-				</span>
-				<span id="djFilter">
-					DJs
-				</span>
-				<span id="producerFilter">
-					Producers
-				</span>
-			</div>
-		</div>
-		<!-- Main widget -->
-		<div id="MainWidget">
-			<section id="glance">
-				<div id="djGlance">
-					<span id="djStatus">
-						live now
-					</span>
-					<span id = "highlightDJ">
-						<span id="currentDJphoto">
-							<img src="../../assets/images/placeholderImages/djPlaceholder3.jpg" alt="">
-						</span>
-						<span id="djInfo">
-							<span id="djName">
-								DJ Name
-							</span>
-							<span id="glanceDJgenre">
-								genre | genre | genre
-							</span>
-							<span id ="highlightDJsocials">
-								<i class="fa-brands fa-facebook"></i>
-								<i class="fa-brands fa-instagram"></i>
-								<i class="fa-brands fa-spotify"></i>
-							</span>
-						</span>
-					</span>
-
-					<span id="sessionInfo">
-						<span id="leadProducer">
-							Lead Producer Name
-						</span>
-						<span id="assistantProducer">
-							Assistant Producer Name
-						</span>
-						<span id="sessionTime">
-							00:00<sub>PM</sub> - 00:20<sub>PM</sub>
-						</span>
-					</span>
-				</div>
-			</section>
-			<section id = mainDashboard>
-				<div id="metricsContainer">
-					<div id="metrics">
-						<span id="currentListeners">
-							<span>current listeners</span>
-							<span id="currentListenerCount">
-								00
-							</span>
-						</span>
-						<span id="totalListeners">
-							<span>total listeners</span>
-							<span id="totalListenerCount">
-								00
-							</span>
-						</span>
-						<span id="programReactions">
-							<span>program reactions</span>
-							<span id="programReactionCount">
-								00
-							</span>
-						</span>
-					</div>
-					<span id="detailedMetrics">
-						<a href="#" id="detailedMetricsLink">detailed metrics</a>
-					</span>
-				</div>
-				<!-- Producer Playlist -->
-				<div id="producerPlaylist">
-					<span id="playlistHeader">
-						<span id="playlistRuntime">
-							99<sub>minutes</sub> 59<sub>seconds</sub>
-						</span>
-						<span id="songCount">
-							05 songs
-						</span>
-					</span>
-					<span id="playlistTable">
-						<table>
-							<thead>
-								<tr>
-									<th>Song title</th>
-									<th>Song artist</th>
-									<th>Song album</th>
-									<th>Song year</th>
-									<th>Song run</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Song 1</td>
-									<td>Some artist</td>
-									<td>Some album</td>
-									<td>2022</td>
-									<td>
-										0<sub>min</sub>00<sub>sec</sub>
-									</td>
-									<td class = "playlistItemControl">
-										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
-										<audio src="../../assets/audio/placeholderAudio/placeholder1.mp3" class="songPreview"></audio>
-										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
-									</td>
-									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
-								</tr>
-								<tr>
-									<td>Song 2</td>
-									<td>Some artist</td>
-									<td>Some album</td>
-									<td>2022</td>
-									<td>
-										0<sub>min</sub>00<sub>sec</sub>
-									</td>
-									<td class = "playlistItemControl">
-										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
-										<audio src="../../assets/audio/placeholderAudio/placeholder2.mp3" class="songPreview"></audio>
-										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
-									</td>
-									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
-								</tr>
-								<tr>
-									<td>Song 3</td>
-									<td>Some artist</td>
-									<td>Some album</td>
-									<td>2022</td>
-									<td>
-										0<sub>min</sub>00<sub>sec</sub>
-									</td>
-									<td class = "playlistItemControl">
-										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
-										<audio src="../../assets/audio/placeholderAudio/placeholder3.mp3" class="songPreview"></audio>
-										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
-										
-									</td>
-									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
-								</tr>
-								<tr>
-									<td>Song 4</td>
-									<td>Some artist</td>
-									<td>Some album</td>
-									<td>2022</td>
-									<td>
-										0<sub>min</sub>00<sub>sec</sub>
-									</td>
-									<td class = "playlistItemControl">
-										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
-										<audio src="../../assets/audio/placeholderAudio/placeholder4.mp3" class="songPreview"></audio>
-										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
-										
-									</td>
-									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
-								</tr>
-								<tr>
-									<td>Song 5</td>
-									<td>Some artist</td>
-									<td>Some album</td>
-									<td>2019</td>
-									<td>
-										0<sub>min</sub>00<sub>sec</sub>
-									</td>
-									<td class = "playlistItemControl">
-										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
-										<audio src="../../assets/audio/placeholderAudio/placeholder5.mp3" class="songPreview"></audio>
-										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
-									</td>
-									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
-								</tr>
-								<tr>
-									<td>Song 6</td>
-									<td>Some artist</td>
-									<td>Some album</td>
-									<td>2023</td>
-									<td>
-										0<sub>min</sub>00<sub>sec</sub>
-									</td>
-									<td class = "playlistItemControl">
-										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
-										<audio src="../../assets/audio/placeholderAudio/placeholder6.mp3" class="songPreview"></audio>
-										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
-									</td>
-									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
-								</tr>
-								<tr>
-									<td>Song 7</td>
-									<td>Some artist</td>
-									<td>Some album</td>
-									<td>2023</td>
-									<td>
-										0<sub>min</sub>00<sub>sec</sub>
-									</td>
-									<td class = "playlistItemControl">
-										<button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
-										<audio src="../../assets/audio/placeholderAudio/placeholder7.mp3" class="songPreview"></audio>
-										<button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
-									</td>
-									<td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
-									<td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
-								</tr>
-							</tbody>
-						</table>
-						<script>
-							function playAudio(button) 
-							{
-								var allAudio = document.getElementsByTagName("audio");
-								var allPlay = document.getElementsByClassName("playPreview");
-								var allStop = document.getElementsByClassName("stopPreview");
-								for(var i = 0; i < allAudio.length; i++)
-								{
-									allAudio[i].pause();
-									allAudio[i].currentTime = 0;
-									allPlay[i].style.display = "block";
-									allStop[i].style.display = "none";
-								}
-								var controls = button.parentElement.children;
-								var soundTrack = controls[1];
-								var matchingStopButton = controls[0];
-								matchingStopButton.style.display = "block";
-								button.style.display = "none";
-								console.log("playing...\n" + soundTrack.getAttribute("src"));
-								soundTrack.play();
-							}
-							function stopAudio(button) 
-							{
-								var controls = button.parentElement.children;
-								var soundTrack = controls[1];
-								var matchingPlayButton = controls[2];
-								matchingPlayButton.style.display = "block";
-								button.style.display = "none";
-								console.log("stopping...\n" + soundTrack.getAttribute("src"));
-								soundTrack.pause();
-								soundTrack.currentTime = 0;
-							}
-						</script>						
-					</span>
-					<span id="playlistButtons">
-						<button>manage</button>
-						<button>save changes</button>
-						<button>approve</button>
-					</span>
-				</div>
-			</section>
-			<section id="chatScreen">
-				<div id="messages">
-					<div id="recipientInfoContainer">
-						<span id="recipientPhoto">
-							<!-- <img src="../../assets/images/placeholderImages/placeholder3.jpg" alt="profile photo"> -->
-						</span>
-						<span id="recipientInfo">
-							<span id="recipientName">Recipient Name</span>
-							<span id="recipientRole">DJ / Producer</span>
-						</span>
-					</div>
-					<div class="incomingMessage">
-						<span class="timeStamp">
-							3:45<sub>PM</sub>
-						</span>
-						<span class="messageContent">This is a message coming in to a recipient</span>
-					</div>
-					<div class="outgoingMessage">
-						<span class="timeStamp">
-							3:48<sub>PM</sub>
-						</span>
-						<span class="messageContent">This is a message going out to a recipient</span>
-					</div>
-					<div class="incomingMessage">
-						<span class="timeStamp">
-							3:49<sub>PM</sub>
-						</span>
-						<span class="messageContent"> Hey, how's it going?</span>
-					</div>
-					<div class="outgoingMessage">
-						<span class="timeStamp">
-							3:57<sub>PM</sub>
-						</span>
-						<span class="messageContent">Hi! I'm doing well, thanks. How about you?</span>
-					</div>
-					<div class="incomingMessage">
-						<span class="timeStamp">
-							3:58<sub>PM</sub>
-						</span>
-						<span class="messageContent">I'm good too. Just working on a project.&#x1F622; <br> What about you?</span>
-					</div>
-					<div class="outgoingMessage">
-						<span class="timeStamp">
-							4:00<sub>PM</sub>
-						</span>
-						<span class="messageContent">
-							I believe we should be all set for your show later on Mr DJ &#x1F600;
-							<br>The time should still be the same as planned &#x1F44D;
-						</span>
-					</div>
-				</div>
-				<div id="newMessage">
-					<input type="text" id = "newMessageInput" placeholder="Type a message...">
-					<button id="sendMessage"><i class="fa-regular fa-paper-plane"></i></button>
-				</div>
-			</section>
-		</div>
-		<!-- Timeline -->
-		<div id="timeLine"> 
-			<div class="event" id = "earlierEvent">
-				<span class="eventHeader">
-					<span class="djName" style="text-transform: uppercase;">
-						DJ Name
-					</span>
-					<span class="programContent">
-						genre | genre | genre
-					</span>
-				</span>
-				<span id="earlierDJcover">
-					<span id="earlierDJsocials">
-						<i class="fa-brands fa-twitter"></i>
-						<i class="fa-brands fa-facebook"></i>
-						<i class="fa-brands fa-instagram"></i>
-						<i class="fa-brands fa-spotify"></i>
-					</span>
-					<!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
-				</span>
-				<span class="eventInteractions">
-					<div class="eventButtons">
-						<div class="buttonContainer-small">
-							<button id="likeButton">
-								<!-- TODO: like icon and counter go here -->
-							</button>
-						</div>
-						<div class="buttonContainer-wide" style="margin-top: 0.35vh;">
-							<button id="eventDetailsButton">
-								<i class="fa-solid fa-circle-info"></i>details
-							</button>
-						</div>
-						<div class="buttonContainer-small">
-							<button id="dislikeButton">
-								<!-- TODO: dislike icon and counter go here -->
-							</button>
-						</div>
-					</div>
-					<span class="eventFooter">
-						Produced by
-						<span id="producerName">
-							Producer Name
-						</span>
-					</span>
-				</span>
-			</div>
-			<div class="event" id = "mostRecentEvent">
-				<span class="eventHeader">
-					<span class="djName" style="text-transform: uppercase;">
-						DJ Name
-					</span>
-					<span class="programContent">
-						genre | genre | genre
-					</span>
-				</span>
-				<span id="mostRecentDJcover">
-					<span id="mostRecentDJsocials">
-						<i class="fa-brands fa-twitter"></i>
-						<i class="fa-brands fa-facebook"></i>
-						<i class="fa-brands fa-instagram"></i>
-						<i class="fa-brands fa-spotify"></i>
-					</span>
-					<!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
-				</span>
-				<span class="eventInteractions">
-					<div class="eventButtons">
-						<div class="buttonContainer-small">
-							<button id="likeButton">
-								<!-- TODO: like icon and counter go here -->
-							</button>
-						</div>
-						<div class="buttonContainer-wide" style="margin-top: 0.35vh;">
-							<button id="eventDetailsButton">
-								<i class="fa-solid fa-circle-info"></i>details
-							</button>
-						</div>
-						<div class="buttonContainer-small">
-							<button id="dislikeButton">
-								<!-- TODO: dislike icon and counter go here -->
-							</button>
-						</div>
-					</div>
-					<span class="eventFooter">
-						Produced by
-						<span id="producerName">
-							Producer Name
-						</span>
-					</span>
-				</span>
-			</div>
-
-			<div class="nextEvent" id = "nextEvent">
-				<span class="eventHeader">
-					<span id="nextDJname" class = "djName">
-						Dj Name
-					</span>
-					<span class="programContent">
-						genre | genre | genre
-					</span>
-				</span>
-			</div>
-			<!-- event card 4 -->
-			<div class="event" id = "comingUp">
-				<span class="eventHeader">
-					<span class="djName" style="text-transform: uppercase;">
-						DJ Name
-					</span>
-					<span class="programContent">
-						genre | genre | genre
-					</span>
-				</span>
-				<span id="comingUpDJcover">
-					<span id="comingUpDJsocials">
-						<i class="fa-brands fa-twitter"></i>
-						<i class="fa-brands fa-facebook"></i>
-						<i class="fa-brands fa-instagram"></i>
-						<i class="fa-brands fa-spotify"></i>
-					</span>
-					<!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
-				</span>
-				<span class="eventInteractions">
-					<div class="eventButtons">
-						<div class="buttonContainer-small">
-							<button id="likeButton">
-								<!-- TODO: like icon and counter go here -->
-							</button>
-						</div>
-						<div class="buttonContainer-wide" style="margin-top: 0.35vh;">
-							<button id="eventDetailsButton">
-								<i class="fa-solid fa-circle-info"></i>details
-							</button>
-						</div>
-						<div class="buttonContainer-small">
-							<button id="dislikeButton">
-								<!-- TODO: dislike icon and counter go here -->
-							</button>
-						</div>
-					</div>
-					<span class="eventFooter">
-						Produced by
-						<span id="producerName">
-							Producer Name
-						</span>
-					</span>
-				</span>
-			</div>
-			<!-- event card 5 -->
-			<div class="event" id = "laterEvent">
-				<span class="eventHeader">
-					<span class="djName" style="text-transform: uppercase;">
-						DJ Name
-					</span>
-					<span class="programContent">
-						genre | genre | genre
-					</span>
-				</span>
-				<span id="laterDJcover">
-					<span id="laterDJsocials">
-						<i class="fa-brands fa-twitter"></i>
-						<i class="fa-brands fa-facebook"></i>
-						<i class="fa-brands fa-instagram"></i>
-						<i class="fa-brands fa-spotify"></i>
-					</span>
-					<!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
-				</span>
-				<span class="eventInteractions">
-					<div class="eventButtons">
-						<div class="buttonContainer-small">
-							<button id="likeButton">
-								<!-- TODO: like icon and counter go here -->
-							</button>
-						</div>
-						<div class="buttonContainer-wide" style="margin-top: 0.35vh;">
-							<button id="eventDetailsButton">
-								<i class="fa-solid fa-circle-info"></i>details
-							</button>
-						</div>
-						<div class="buttonContainer-small">
-							<button id="dislikeButton">
-								<!-- TODO: dislike icon and counter go here -->
-							</button>
-						</div>
-					</div>
-					<span class="eventFooter">
-						Produced by
-						<span id="producerName">
-							Producer Name
-						</span>
-					</span>
-				</span>
-			</div>
-		</div>
-	  </main>
-	  <!-- Footer goes here -->
-	  <footer>
-		<span id="footerBrand">
-			<span id="footerBrandName">
-				Cosmic Harmony
-			</span>
-		</span>
-		<span id="userProfile">
-			<span id="profilePhoto">
-				<img src="../../assets/images/placeholderImages/djPlaceholder4.jpg" alt="">
-			</span>
-			<span class="userInfo">
-				<span id="userName">
-					User Name
-				</span>
-				<span id="userLocation">
-					<span>State</span>, <span>Country</span>
-				</span>
-			</span>
-		</span>
-	  </footer>
-	  <script src="javascript/main.js"></script>
-	  <script src="javascript/playlistManage.js"></script>
-	  <script src="javascript/searchFeature.js"></script>
-	  <script src = "javascript/chatFeature.js"></script>
-	  <script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
-     </body>
+		<header><%- include('../partials/navbar.ejs') %></header>
+		<main>
+		  <%- include('../partials/searchBar.ejs') %>
+		  <!-- Main widget -->
+		  <div id="MainWidget">
+			  <section id="glance">
+				  <div id="djGlance">
+					  <span id="djStatus">
+						  live now
+					  </span>
+					  <span id = "highlightDJ">
+						  <span id="currentDJphoto">
+							  <img src="../../assets/images/placeholderImages/djPlaceholder3.jpg" alt="">
+						  </span>
+						  <span id="djInfo">
+							  <span id="djName">
+								  DJ Name
+							  </span>
+							  <span id="glanceDJgenre">
+								  genre | genre | genre
+							  </span>
+							  <span id ="highlightDJsocials">
+								  <i class="fa-brands fa-facebook"></i>
+								  <i class="fa-brands fa-instagram"></i>
+								  <i class="fa-brands fa-spotify"></i>
+							  </span>
+						  </span>
+					  </span>
+  
+					  <span id="sessionInfo">
+						  <span id="leadProducer">
+							  Lead Producer Name
+						  </span>
+						  <span id="assistantProducer">
+							  Assistant Producer Name
+						  </span>
+						  <span id="sessionTime">
+							  00:00<sub>PM</sub> - 00:20<sub>PM</sub>
+						  </span>
+					  </span>
+				  </div>
+			  </section>
+			  <section id = mainDashboard>
+				  <div id="metricsContainer">
+					  <div id="metrics">
+						  <span id="currentListeners">
+							  <span>current listeners</span>
+							  <span id="currentListenerCount">
+								  00
+							  </span>
+						  </span>
+						  <span id="totalListeners">
+							  <span>total listeners</span>
+							  <span id="totalListenerCount">
+								  00
+							  </span>
+						  </span>
+						  <span id="programReactions">
+							  <span>program reactions</span>
+							  <span id="programReactionCount">
+								  00
+							  </span>
+						  </span>
+					  </div>
+					  <span id="detailedMetrics">
+						  <a href="#" id="detailedMetricsLink">detailed metrics</a>
+					  </span>
+				  </div>
+				  <!-- Producer Playlist -->
+				  <div id="producerPlaylist">
+					  <span id="playlistHeader">
+						  <span id="playlistRuntime">
+							  99<sub>minutes</sub> 59<sub>seconds</sub>
+						  </span>
+						  <span id="songCount">
+							  05 songs
+						  </span>
+					  </span>
+					  <span id="playlistTable">
+						  <table>
+							  <thead>
+								  <tr>
+									  <th>Song title</th>
+									  <th>Song artist</th>
+									  <th>Song album</th>
+									  <th>Song year</th>
+									  <th>Song run</th>
+								  </tr>
+							  </thead>
+							  <tbody>
+								  <tr>
+									  <td>Song 1</td>
+									  <td>Some artist</td>
+									  <td>Some album</td>
+									  <td>2022</td>
+									  <td>
+										  0<sub>min</sub>00<sub>sec</sub>
+									  </td>
+									  <td class = "playlistItemControl">
+										  <button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										  <audio src="../../assets/audio/placeholderAudio/placeholder1.mp3" class="songPreview"></audio>
+										  <button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
+									  </td>
+									  <td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									  <td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
+								  </tr>
+								  <tr>
+									  <td>Song 2</td>
+									  <td>Some artist</td>
+									  <td>Some album</td>
+									  <td>2022</td>
+									  <td>
+										  0<sub>min</sub>00<sub>sec</sub>
+									  </td>
+									  <td class = "playlistItemControl">
+										  <button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										  <audio src="../../assets/audio/placeholderAudio/placeholder2.mp3" class="songPreview"></audio>
+										  <button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
+									  </td>
+									  <td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									  <td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
+								  </tr>
+								  <tr>
+									  <td>Song 3</td>
+									  <td>Some artist</td>
+									  <td>Some album</td>
+									  <td>2022</td>
+									  <td>
+										  0<sub>min</sub>00<sub>sec</sub>
+									  </td>
+									  <td class = "playlistItemControl">
+										  <button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										  <audio src="../../assets/audio/placeholderAudio/placeholder3.mp3" class="songPreview"></audio>
+										  <button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
+										  
+									  </td>
+									  <td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									  <td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
+								  </tr>
+								  <tr>
+									  <td>Song 4</td>
+									  <td>Some artist</td>
+									  <td>Some album</td>
+									  <td>2022</td>
+									  <td>
+										  0<sub>min</sub>00<sub>sec</sub>
+									  </td>
+									  <td class = "playlistItemControl">
+										  <button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										  <audio src="../../assets/audio/placeholderAudio/placeholder4.mp3" class="songPreview"></audio>
+										  <button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
+										  
+									  </td>
+									  <td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									  <td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
+								  </tr>
+								  <tr>
+									  <td>Song 5</td>
+									  <td>Some artist</td>
+									  <td>Some album</td>
+									  <td>2019</td>
+									  <td>
+										  0<sub>min</sub>00<sub>sec</sub>
+									  </td>
+									  <td class = "playlistItemControl">
+										  <button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										  <audio src="../../assets/audio/placeholderAudio/placeholder5.mp3" class="songPreview"></audio>
+										  <button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
+									  </td>
+									  <td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									  <td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
+								  </tr>
+								  <tr>
+									  <td>Song 6</td>
+									  <td>Some artist</td>
+									  <td>Some album</td>
+									  <td>2023</td>
+									  <td>
+										  0<sub>min</sub>00<sub>sec</sub>
+									  </td>
+									  <td class = "playlistItemControl">
+										  <button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										  <audio src="../../assets/audio/placeholderAudio/placeholder6.mp3" class="songPreview"></audio>
+										  <button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
+									  </td>
+									  <td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									  <td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
+								  </tr>
+								  <tr>
+									  <td>Song 7</td>
+									  <td>Some artist</td>
+									  <td>Some album</td>
+									  <td>2023</td>
+									  <td>
+										  0<sub>min</sub>00<sub>sec</sub>
+									  </td>
+									  <td class = "playlistItemControl">
+										  <button onclick="stopAudio(this)" class = "stopPreview"><i class="fa-regular fa-circle-stop" ></i></button>
+										  <audio src="../../assets/audio/placeholderAudio/placeholder7.mp3" class="songPreview"></audio>
+										  <button onclick="playAudio(this)" class = "playPreview"><i class="fa-regular fa-circle-play" ></i></button>
+									  </td>
+									  <td><button><i class="fa-regular fa-pen-to-square"></i></button></td>
+									  <td><button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button></td>
+								  </tr>
+							  </tbody>
+						  </table>
+						  <script>
+							  function playAudio(button) 
+							  {
+								  var allAudio = document.getElementsByTagName("audio");
+								  var allPlay = document.getElementsByClassName("playPreview");
+								  var allStop = document.getElementsByClassName("stopPreview");
+								  for(var i = 0; i < allAudio.length; i++)
+								  {
+									  allAudio[i].pause();
+									  allAudio[i].currentTime = 0;
+									  allPlay[i].style.display = "block";
+									  allStop[i].style.display = "none";
+								  }
+								  var controls = button.parentElement.children;
+								  var soundTrack = controls[1];
+								  var matchingStopButton = controls[0];
+								  matchingStopButton.style.display = "block";
+								  button.style.display = "none";
+								  console.log("playing...\n" + soundTrack.getAttribute("src"));
+								  soundTrack.play();
+							  }
+							  function stopAudio(button) 
+							  {
+								  var controls = button.parentElement.children;
+								  var soundTrack = controls[1];
+								  var matchingPlayButton = controls[2];
+								  matchingPlayButton.style.display = "block";
+								  button.style.display = "none";
+								  console.log("stopping...\n" + soundTrack.getAttribute("src"));
+								  soundTrack.pause();
+								  soundTrack.currentTime = 0;
+							  }
+						  </script>						
+					  </span>
+					  <span id="playlistButtons">
+						  <button>manage</button>
+						  <button>save changes</button>
+						  <button>approve</button>
+					  </span>
+				  </div>
+			  </section>
+			  <section id="chatScreen">
+				  <div id="messages">
+					  <div id="recipientInfoContainer">
+						  <span id="recipientPhoto">
+							  <!-- <img src="../../assets/images/placeholderImages/placeholder3.jpg" alt="profile photo"> -->
+						  </span>
+						  <span id="recipientInfo">
+							  <span id="recipientName">Recipient Name</span>
+							  <span id="recipientRole">Recipient Role</span>
+						  </span>
+					  </div>
+					  <div class="incomingMessage">
+						  <span class="timeStamp">
+							  3:45<sub>PM</sub>
+						  </span>
+						  <span class="messageContent">This is a message coming in to a recipient</span>
+					  </div>
+					  <div class="outgoingMessage">
+						  <span class="timeStamp">
+							  3:48<sub>PM</sub>
+						  </span>
+						  <span class="messageContent">This is a message going out to a recipient</span>
+					  </div>
+					  <div class="incomingMessage">
+						  <span class="timeStamp">
+							  3:49<sub>PM</sub>
+						  </span>
+						  <span class="messageContent"> Hey, how's it going?</span>
+					  </div>
+					  <div class="outgoingMessage">
+						  <span class="timeStamp">
+							  3:57<sub>PM</sub>
+						  </span>
+						  <span class="messageContent">Hi! I'm doing well, thanks. How about you?</span>
+					  </div>
+					  <div class="incomingMessage">
+						  <span class="timeStamp">
+							  3:58<sub>PM</sub>
+						  </span>
+						  <span class="messageContent">I'm good too. Just working on a project.&#x1F622; <br> What about you?</span>
+					  </div>
+					  <div class="outgoingMessage">
+						  <span class="timeStamp">
+							  4:00<sub>PM</sub>
+						  </span>
+						  <span class="messageContent">
+							  I believe we should be all set for your show later on Mr DJ &#x1F600;
+							  <br>The time should still be the same as planned &#x1F44D;
+						  </span>
+					  </div>
+				  </div>
+				  <div id="newMessage">
+					  <input type="text" id = "newMessageInput" placeholder="Type a message...">
+					  <button id="sendMessage"><i class="fa-regular fa-paper-plane"></i></button>
+				  </div>
+			  </section>
+		  </div>
+		  <!-- Timeline -->
+		  <div id="timeLine"> 
+			  <div class="event" id = "earlierEvent">
+				  <span class="eventHeader">
+					  <span class="djName" style="text-transform: uppercase;">
+						  DJ Name
+					  </span>
+					  <span class="programContent">
+						  genre | genre | genre
+					  </span>
+				  </span>
+				  <span id="earlierDJcover">
+					  <span id="earlierDJsocials">
+						  <i class="fa-brands fa-twitter"></i>
+						  <i class="fa-brands fa-facebook"></i>
+						  <i class="fa-brands fa-instagram"></i>
+						  <i class="fa-brands fa-spotify"></i>
+					  </span>
+					  <!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
+				  </span>
+				  <span class="eventInteractions">
+					  <div class="eventButtons">
+						  <div class="buttonContainer-small">
+							  <button id="likeButton">
+								  <!-- TODO: like icon and counter go here -->
+							  </button>
+						  </div>
+						  <div class="buttonContainer-wide" style="margin-top: 0.35vh;">
+							  <button id="eventDetailsButton">
+								  <i class="fa-solid fa-circle-info"></i>details
+							  </button>
+						  </div>
+						  <div class="buttonContainer-small">
+							  <button id="dislikeButton">
+								  <!-- TODO: dislike icon and counter go here -->
+							  </button>
+						  </div>
+					  </div>
+					  <span class="eventFooter">
+						  Produced by
+						  <span id="producerName">
+							  Producer Name
+						  </span>
+					  </span>
+				  </span>
+			  </div>
+			  <div class="event" id = "mostRecentEvent">
+				  <span class="eventHeader">
+					  <span class="djName" style="text-transform: uppercase;">
+						  DJ Name
+					  </span>
+					  <span class="programContent">
+						  genre | genre | genre
+					  </span>
+				  </span>
+				  <span id="mostRecentDJcover">
+					  <span id="mostRecentDJsocials">
+						  <i class="fa-brands fa-twitter"></i>
+						  <i class="fa-brands fa-facebook"></i>
+						  <i class="fa-brands fa-instagram"></i>
+						  <i class="fa-brands fa-spotify"></i>
+					  </span>
+					  <!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
+				  </span>
+				  <span class="eventInteractions">
+					  <div class="eventButtons">
+						  <div class="buttonContainer-small">
+							  <button id="likeButton">
+								  <!-- TODO: like icon and counter go here -->
+							  </button>
+						  </div>
+						  <div class="buttonContainer-wide" style="margin-top: 0.35vh;">
+							  <button id="eventDetailsButton">
+								  <i class="fa-solid fa-circle-info"></i>details
+							  </button>
+						  </div>
+						  <div class="buttonContainer-small">
+							  <button id="dislikeButton">
+								  <!-- TODO: dislike icon and counter go here -->
+							  </button>
+						  </div>
+					  </div>
+					  <span class="eventFooter">
+						  Produced by
+						  <span id="producerName">
+							  Producer Name
+						  </span>
+					  </span>
+				  </span>
+			  </div>
+  
+			  <div class="nextEvent" id = "nextEvent">
+				  <span class="eventHeader">
+					  <span id="nextDJname" class = "djName">
+						  Dj Name
+					  </span>
+					  <span class="programContent">
+						  genre | genre | genre
+					  </span>
+				  </span>
+			  </div>
+			  <!-- event card 4 -->
+			  <div class="event" id = "comingUp">
+				  <span class="eventHeader">
+					  <span class="djName" style="text-transform: uppercase;">
+						  DJ Name
+					  </span>
+					  <span class="programContent">
+						  genre | genre | genre
+					  </span>
+				  </span>
+				  <span id="comingUpDJcover">
+					  <span id="comingUpDJsocials">
+						  <i class="fa-brands fa-twitter"></i>
+						  <i class="fa-brands fa-facebook"></i>
+						  <i class="fa-brands fa-instagram"></i>
+						  <i class="fa-brands fa-spotify"></i>
+					  </span>
+					  <!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
+				  </span>
+				  <span class="eventInteractions">
+					  <div class="eventButtons">
+						  <div class="buttonContainer-small">
+							  <button id="likeButton">
+								  <!-- TODO: like icon and counter go here -->
+							  </button>
+						  </div>
+						  <div class="buttonContainer-wide" style="margin-top: 0.35vh;">
+							  <button id="eventDetailsButton">
+								  <i class="fa-solid fa-circle-info"></i>details
+							  </button>
+						  </div>
+						  <div class="buttonContainer-small">
+							  <button id="dislikeButton">
+								  <!-- TODO: dislike icon and counter go here -->
+							  </button>
+						  </div>
+					  </div>
+					  <span class="eventFooter">
+						  Produced by
+						  <span id="producerName">
+							  Producer Name
+						  </span>
+					  </span>
+				  </span>
+			  </div>
+			  <!-- event card 5 -->
+			  <div class="event" id = "laterEvent">
+				  <span class="eventHeader">
+					  <span class="djName" style="text-transform: uppercase;">
+						  DJ Name
+					  </span>
+					  <span class="programContent">
+						  genre | genre | genre
+					  </span>
+				  </span>
+				  <span id="laterDJcover">
+					  <span id="laterDJsocials">
+						  <i class="fa-brands fa-twitter"></i>
+						  <i class="fa-brands fa-facebook"></i>
+						  <i class="fa-brands fa-instagram"></i>
+						  <i class="fa-brands fa-spotify"></i>
+					  </span>
+					  <!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
+				  </span>
+				  <span class="eventInteractions">
+					  <div class="eventButtons">
+						  <div class="buttonContainer-small">
+							  <button id="likeButton">
+								  <!-- TODO: like icon and counter go here -->
+							  </button>
+						  </div>
+						  <div class="buttonContainer-wide" style="margin-top: 0.35vh;">
+							  <button id="eventDetailsButton">
+								  <i class="fa-solid fa-circle-info"></i>details
+							  </button>
+						  </div>
+						  <div class="buttonContainer-small">
+							  <button id="dislikeButton">
+								  <!-- TODO: dislike icon and counter go here -->
+							  </button>
+						  </div>
+					  </div>
+					  <span class="eventFooter">
+						  Produced by
+						  <span id="producerName">
+							  Producer Name
+						  </span>
+					  </span>
+				  </span>
+			  </div>
+		  </div>
+		</main>
+		<footer><%- include('../partials/footer.ejs') %></footer>
+		<script src="javascript/main.js"></script>
+		<script src="javascript/playlistManage.js"></script>
+		<script src="javascript/searchFeature.js"></script>
+		<script src = "javascript/chatFeature.js"></script>
+		<script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
+	   </body>
 </html>

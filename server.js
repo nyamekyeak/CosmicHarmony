@@ -19,5 +19,41 @@ app.get('/', function (req, res)
 {
     res.render('pages/producerMain');
 });
+
+app.get('/about', function (req, res)
+{
+    res.render('pages/about');
+});
+
+app.get('/stats', function (req, res)
+{
+    res.render('pages/stats');
+});
+
+app.get('/djpool', function (req, res)
+{
+    res.render('pages/djpool', 
+    {
+        pageTitle: "DJ Pool", 
+        heroHeader: "DJ Pool", 
+        heroCaption: "Browse our massive collection of DJs from all over the world",
+        djStatus : "Available", 
+        djName : "Dj Messi", 
+        djState: "Abuja", 
+        djCountry : "Nigeria",
+        djRating : 3.5,
+        eventCount : 2 
+    });
+});
+
+app.get('/schedule', function (req, res)
+{
+    res.render('pages/schedule');
+});
+
+app.get('/library', function (req, res)
+{
+    res.render('pages/library');
+});
 // Port website will run on
 app.listen(port);

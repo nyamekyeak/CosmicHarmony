@@ -6,9 +6,13 @@ function validateSearch()
 {
     if(searchInput.value.trim() === "")
     {
-        invalidAlert.style.top = "13.75vh";
+        searchInput.value = "INPUT SEARCH TERM";;
+        searchInput.style.color = "red";
+        searchInput.style.borderColor = "red";
         setTimeout(function(){
-            invalidAlert.style.top = "11.75vh";
+            searchInput.value = "";
+            searchInput.style.color = "black";
+            searchInput.style.borderColor = "white";
         }, 5000);
         return false;
     }
@@ -17,7 +21,7 @@ function validateSearch()
 
 function executeSearch(searchTerm)
 {
-    alert("searching functionality still being implemented :)");
+    // alert("searching functionality still being implemented :)");
 }
 
 searchButton.addEventListener("click", function()
@@ -26,3 +30,13 @@ searchButton.addEventListener("click", function()
     if(validateSearch() === true)
         executeSearch(searchInput.value);
 });
+
+searchInput.addEventListener("keydown", function(event)
+{
+    if(event.key === "Enter")
+    {
+        validateSearch();
+        if(validateSearch() === true)
+            executeSearch(searchInput.value);
+    }
+})
