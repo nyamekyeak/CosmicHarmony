@@ -9,16 +9,136 @@
         <link rel="stylesheet" href="../../css/searchBar.css">
 		<link rel="stylesheet" href="../../css/footer.css">
 		<link rel="stylesheet" href="css/dashboard.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="css/pageHero.css">
         <!-- Title -->
-        <title>Cosmic Harmony - Library</title>
+        <title>Cosmic Harmony - <%= pageTitle %></title>
         <!-- Logo Icon -->
         <link rel="icon" href="../../assets/squareLogo.png">
      </head>
     <body>
         <header><%- include('../partials/navbar.ejs') %></header>
         <main>
+            <%- include('../partials/hero.ejs') %>
+            <%- include('../partials/searchBar.ejs') %>
+            
+            <span id="genreCardsContainer">
+                <span id="hiphop" class="genreCard">
+                    <span class="genreTitle">Hip Hop</span>
+                    <span class="genreDescription">
+                        Looking for something energetic with a strong tempo?
+                        Checkout our collection of original Hip Hop tracks from all over the world!
+                    </span>
+                    <span class="thirdPartyFeatured">
+                        <span><i class="fa-brands fa-spotify"></i></span>
+                        <span><i class="fa-brands fa-deezer"></i></span>
+                        <span><i class="fa-brands fa-apple"></i></span>
+                    </span>
+                    <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="genre background">
+                    <span class="managementButtons">
+                        <button>Browse</button>
+                    </span>
+                </span>
+                <!-- Genre 2 -->
+                <%- include('../partials/genreCard.ejs', 
+                    {
+                        genreID: "afroBeats",
+                        genreName: "AfroBeats",
+                        genreDescription: "All the way from africa and beyond! AfroBeats are the best afro beats you can find!",
+                        genreImage: "../../assets/images/placeholderImages/djPlaceholder2.jpg",
+                    }) 
+                %>
+                <!-- Genre 3 -->
+                <%- include('../partials/genreCard.ejs', 
+                {
+                    genreID: "indiePop",
+                    genreName: "Indie-Pop",
+                    genreDescription: "Get acquainted with new independent artists who are amazing at making waves across the pop genre!",
+                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
+                }) 
+                %>
+                <!-- Genre 4 -->
+                <%- include('../partials/genreCard.ejs', 
+                {
+                    genreID: "folkMusic",
+                    genreName: "Folk",
+                    genreDescription: "Dive headfirst into some heartwarming tunes that use simple melodies and acoustic instruments to capture your heart.!",
+                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
+                }) 
+                %>
+                <!-- Genre 5 -->
+                <%- include('../partials/genreCard.ejs', 
+                {
+                    genreID: "elctronicMusic",
+                    genreName: "Electronic",
+                    genreDescription: "Explore electronic sounds and rhythms that will make you feel like you’ve been transported to the future. If you love energetic music, this is the genre for you.!",
+                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
+                }) 
+                %>
+                <!-- Genre 6 -->
+                <%- include('../partials/genreCard.ejs', 
+                {
+                    genreID: "internationalMusic",
+                    genreName: "International",
+                    genreDescription: "Want to learn more about music from different countries? Hear the latest hits in over 40 different languages!!",
+                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
+                }) 
+                %>
+                <!-- Genre 7 -->
+                <%- include('../partials/genreCard.ejs', 
+                {
+                    genreID: "funkMusic",
+                    genreName: "Indie-Pop",
+                    genreDescription: "Get ready to groove along to funky basslines and upbeat melodies. This is great music to dance and move along to",
+                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
+                }) 
+                %>
+                <!-- Genre 8 -->
+                <%- include('../partials/genreCard.ejs',
+                {
+                    genreID: "rockMusic",
+                    genreName: "Rock",
+                    genreDescription: "Featuring heavy drums and guitars, these tunes can make sure that you are jamming to the percussion and lyrics.",
+                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
+                })
+                %>
+            </span>
+            <span id="songsByGenre">
+                <span class="genreContainer" id = "hiphop">
+                    <span class="songCard">
+                        <span class="songArt">
+                            <img src="../../assets/images/placeholderImages/placeholder2.jpg" alt="placeholder">
+                        </span>
+                        <span class="songInfo">
+                            <span class="songTitle">Song Title</span>
+                            <span class="songArtist">Artist Name</span>
+                            <span class="songDuration">3:45</span>
+                        </span>
+                        <span class="songButtons">
+                            <button><i class="fa-regular fa-circle-play"></i></button>
+                            <button><i class="fa-solid fa-circle-plus"></i></button>
+                            <button><i class="fa-solid fa-share"></i></button>
+                        </span>
+                    </span>
 
+                    <!-- Song 2 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "Song 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                </span>
+            </span>
         </main>
-        <footer><%- include('../partials/footer.ejs') %></footer>
+        <!-- <footer><%- include('../partials/footer.ejs') %></footer> -->
     </body>
+    <script src="javascript/main.js"></script>
+    <script src="javascript/playlistManage.js"></script>
+    <script src="javascript/searchFeature.js"></script>
+    <script src = "javascript/chatFeature.js"></script>
+    <script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
 </html>

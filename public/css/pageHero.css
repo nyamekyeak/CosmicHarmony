@@ -8,15 +8,32 @@ div[id = "heroContainer"]
     margin-left: -10px;
     height: 45vh;
     color: white;
-    background-image: url(../assets/images/placeholderImages/placeholder3.jpg);
-    background-size: cover;
-    background-repeat: none;
-    background-position: center;
+    /* background-image: url(../assets/images/placeholderImages/placeholder3.jpg); */
     line-height: 0.75vh;
+    overflow: hidden;
+    object-fit: cover;
 }
 
     div[id = "heroContainer"] h1
     {
         font-size: 3.5vw;
         text-transform: uppercase;
+        position: absolute;
+        z-index: 10;
+    }
+
+    div[id = "heroContainer"] span
+    {
+        font-size: 0.75vw;
+        position: absolute;
+        z-index: 10;
+        margin-top: 8vh;
+    }
+
+    div[id = heroContainer] img
+    {
+        z-index: 0;
+        position: relative;
+        /* opacity: 0.2; */
+        /* display: none; */
     }

@@ -128,6 +128,166 @@ div[id = "djPoolContainer"]
             justify-content: center;
             gap: 0.25vw;
         }
+/* Genre cards */
+span[id = "genreCardsContainer"]
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
+    width: 100%;
+}
+
+    span[id = "genreCardsContainer"] .genreCard
+    {
+        display: flex;
+        flex-direction: column;
+        width: 15vw;
+        height: 10vw;
+        overflow: hidden;
+        color: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        object-fit: cover;
+        background-color: rgba(1, 69, 132, 0.673);
+    }
+
+        span[id = "genreCardsContainer"] .genreCard .genreTitle
+        {
+            display: flex;
+            z-index: 10;
+            color: white;
+            position: absolute;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: -9vh;
+            font-size: 1.75vw;
+        }
+
+        span[id = "genreCardsContainer"] .genreCard .genreDescription
+        {
+            display: flex;
+            z-index: 10;
+            color: white;
+            position: absolute;
+            width: 14vw;
+            height: 4.95vh;
+            overflow: hidden;
+            margin-top: 6vh;
+            font-size: 0.5vw;
+            text-align: center;
+            text-justify: distribute;
+        }
+        
+        span[id = "genreCardsContainer"] .genreCard .managementButtons
+        {
+            display: flex;
+            margin-top: 15vh;
+            position: absolute;
+        }
+        span[id = "genreCardsContainer"] .genreCard .thirdPartyFeatured
+        {
+            display: flex;
+            z-index: 10;
+            color: white;
+            position: absolute;
+            gap: 0.25vw;
+            margin-top: -3.75vh;
+        }
+
+        span[id = "genreCardsContainer"] .genreCard img
+        {
+            object-fit: cover;
+            z-index: 0;
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 55%;
+            margin-top: -9vh;
+        }
+/* Song cards */
+span[id = "songsByGenre"]
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+    span[id = "songsByGenre"] .genreContainer
+    {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(8, 1fr);
+        width: 100%;
+        /* display: none; */
+    }
+
+        span[id = "songsByGenre"] .genreContainer .songCard
+        {
+            width: 13vw;
+            height: 3vw;
+            overflow: hidden;
+            background-color: red;
+            display: flex;
+            flex-direction: row;
+        }
+
+            span[id = "songsByGenre"] .genreContainer .songCard .songArt
+            {
+                width: 3.0vw;
+                height: 3.0vw;
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+                span[id = "songsByGenre"] .genreContainer .songCard .songArt img
+                {
+                    width: 3vw;
+                    height: 3.0vw;
+                    object-fit: cover;
+                }
+            
+            span[id = "songsByGenre"] .genreContainer .songCard .songInfo
+            {
+                display: flex;
+                flex-direction: column;
+                color: white;
+                text-transform: uppercase;
+                margin-left: 0.1vw;
+            }
+
+                span[id = "songsByGenre"] .genreContainer .songCard .songInfo .songTitle
+                {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: 0.75vw;
+                    width: 10vw;
+                    background-color: orange;
+                }
+
+                span[id = "songsByGenre"] .genreContainer .songCard .songInfo .songArtist
+                {
+                    font-size: 0.45vw;
+                }
+
+                span[id = "songsByGenre"] .genreContainer .songCard .songInfo .songDuration
+                {
+                    font-size: 0.35vw;
+                }
+
+            span[id = "songsByGenre"] .genreContainer .songCard .songButtons
+            {
+                margin-top: 1.9vw;
+                margin-left: 8.65vw;
+                display: flex;
+                flex-direction: row;
+                gap: 0.15vw;
+                position: absolute;
+                z-index: 10;
+            }
+
 /* Cards for profiles on about page */
 /* Cards for events */
 /* Cards for search results */

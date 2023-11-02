@@ -1,0 +1,38 @@
+<span class="songCard">
+    <span class="songArt">
+        <img src="<%= songArt %>" alt="placeholder">
+    </span>
+    <span class="songInfo">
+        <span class="songTitle"><%= songTitle %></span>
+        <span class="songArtist"><%= songArtist %></span>
+        <span class="songDuration"><%= songDuration %></span>
+    </span>
+    <span class="songButtons">
+        <audio src="<%= songSource %>"></audio>
+        <button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+        <button><i class="fa-solid fa-circle-plus"></i></button>
+        <button><i class="fa-solid fa-share"></i></button>
+    </span>
+</span>
+<script>
+    function playAudio(button) 
+{
+    var allAudio = document.getElementsByTagName("audio");
+    var allPlay = document.getElementsByClassName("playPreview");
+    var allStop = document.getElementsByClassName("stopPreview");
+    for(var i = 0; i < allAudio.length; i++)
+    {
+        allAudio[i].pause();
+        allAudio[i].currentTime = 0;
+        allPlay[i].style.display = "block";
+        allStop[i].style.display = "none";
+    }
+    var controls = button.parentElement.children;
+    var soundTrack = controls[0];
+    // var matchingStopButton = controls[0];
+    // matchingStopButton.style.display = "block";
+    // button.style.display = "none";
+    console.log("playing...\n" + soundTrack.getAttribute("src"));
+    soundTrack.play();
+}
+</script>

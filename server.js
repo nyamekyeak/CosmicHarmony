@@ -37,12 +37,7 @@ app.get('/djpool', function (req, res)
         pageTitle: "DJ Pool", 
         heroHeader: "DJ Pool", 
         heroCaption: "Browse our massive collection of DJs from all over the world",
-        djStatus : "Available", 
-        djName : "Dj Messi", 
-        djState: "Abuja", 
-        djCountry : "Nigeria",
-        djRating : 3.5,
-        eventCount : 2 
+        heroImage: "assets/images/placeholderImages/placeholder3.jpg"
     });
 });
 
@@ -53,7 +48,14 @@ app.get('/schedule', function (req, res)
 
 app.get('/library', function (req, res)
 {
-    res.render('pages/library');
+    res.render('pages/library',
+    {
+        pageTitle: "Library", 
+        heroHeader: "Library", 
+        heroCaption: "Browse our expansive collection of songs from all over the world",
+        heroImage: "assets/images/placeholderImages/placeholder2.jpg"
+    });
+
 });
 // Port website will run on
 app.listen(port);
