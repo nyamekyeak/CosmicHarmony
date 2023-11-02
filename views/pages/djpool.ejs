@@ -172,42 +172,18 @@
                     </span>
                 </span>
                 <!-- DJ 5 -->
-                <span class="djCard">
-                    <span class="djStatus">
-                        <span>unavailable</span>
-                    </span>
-                    <span class = "djBasics">
-                        <span class = "djProfilePhoto">
-                            <img src="assets/images/placeholderImages/djPlaceholder5.jpg">
-                        </span>
-                        <span class="djInfo">
-                            <span class="djName">Dj Pickle</span>
-                            <span class = "djLocation">
-                                State, Country
-                                <span>
-                                    <progress value="4" max="5">rating</progress>
-                                </span>
-                            </span>
-                        </span>
-                        <span class="managementButtons">
-                            <button><i class="fa-solid fa-headphones-simple"></i> assign</button>
-                            <button><i class="fa-solid fa-message"></i> message</button>
-                            <button><i class="fa-solid fa-calendar-week"></i> schedule</button>
-                        </span>
-                    </span>
-                    <span class="aboutDJ">
-                        This is some text talking about who the dj is and highlights
-                        their genre of interest.
-                    </span>
-                    <span class="eventNote">_ events in 24hrs</span>
-                    <span class="djSocials">
-                        <span><i class="fa-brands fa-instagram"></i></span>
-                        <span><i class="fa-brands fa-facebook"></i></span>
-                        <span><i class="fa-brands fa-twitter"></i></span>
-                        <span><i class="fa-brands fa-youtube"></i></span>
-                        <span><i class="fa-brands fa-spotify"></i></span>
-                    </span>
-                </span>
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "offline", 
+                        djName : "Dj Felix", 
+                        djState: "Tema", 
+                        djCountry : "Ghana",
+                        djRating : 4.8,
+                        eventCount : 2,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder10.jpg" 
+                    }) 
+                %>
                 <!-- DJ 6 -->
                 <%- 
                     include('../partials/djCard.ejs', 
