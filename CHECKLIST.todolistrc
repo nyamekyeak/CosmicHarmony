@@ -1,0 +1,29 @@
+{
+  "todotree": {
+    "tree": [
+      {
+        "key": 1698957706939,
+        "children": [],
+        "todo": {
+          "content": "Update ejs links for added song cards",
+          "id": 1698957706939,
+          "level": "warning",
+          "done": false,
+          "start": 1698957706939
+        }
+      }
+    ],
+    "expandKeys": [],
+    "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
+    "add_mode": "bottom",
+    "virtual": false,
+    "showLine": false,
+    "playFontSize": 24,
+    "title": "CHECKLIST",
+    "autoSort": false,
+    "showEndTime": false,
+    "simpleMode": false,
+    "lang": "en",
+    "version": "1698957737064"
+  }
+}

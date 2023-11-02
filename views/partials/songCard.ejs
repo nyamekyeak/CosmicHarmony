@@ -16,23 +16,18 @@
 </span>
 <script>
     function playAudio(button) 
-{
-    var allAudio = document.getElementsByTagName("audio");
-    var allPlay = document.getElementsByClassName("playPreview");
-    var allStop = document.getElementsByClassName("stopPreview");
-    for(var i = 0; i < allAudio.length; i++)
     {
-        allAudio[i].pause();
-        allAudio[i].currentTime = 0;
-        allPlay[i].style.display = "block";
-        allStop[i].style.display = "none";
+        var allAudio = document.getElementsByTagName("audio");
+        console.log("got audio??")
+        for(var i = 0; i < allAudio.length; i++)
+        {
+            allAudio[i].pause();
+            allAudio[i].currentTime = 0;
+        }
+        var soundParent = button.parentElement;
+        var soundSiblings = soundParent.children;
+        var soundTrack = soundSiblings[0];
+        console.log(soundTrack);
+        soundTrack.play();
     }
-    var controls = button.parentElement.children;
-    var soundTrack = controls[0];
-    // var matchingStopButton = controls[0];
-    // matchingStopButton.style.display = "block";
-    // button.style.display = "none";
-    console.log("playing...\n" + soundTrack.getAttribute("src"));
-    soundTrack.play();
-}
 </script>

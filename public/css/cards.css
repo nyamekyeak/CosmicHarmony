@@ -213,14 +213,16 @@ span[id = "songsByGenre"]
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-bottom: 2vh;
 }
 
     span[id = "songsByGenre"] .genreContainer
     {
         display: grid;
         place-items: center;
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(7, 1fr);
         width: 100%;
+        row-gap: 0.25vh;
         /* display: none; */
     }
 
