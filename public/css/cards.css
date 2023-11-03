@@ -231,7 +231,7 @@ span[id = "songsByGenre"]
             width: 17vw;
             height: 3.5vw;
             overflow: hidden;
-            background-color: rgba(1, 69, 132, 0.673);
+            background-color: rgba(0, 93, 181, 0.673);
             display: flex;
             flex-direction: row;
             outline: solid 1px rgba(1, 69, 132, 0.673);
