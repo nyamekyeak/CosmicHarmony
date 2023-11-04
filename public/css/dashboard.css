@@ -268,13 +268,18 @@ div[id = "messages"]
     gap: 1.75vh;
 }
 
+div[id = "messages"]:nth-child(1)
+{
+    margin-top: 5vh;
+}
+
     div[id = "recipientInfoContainer"]
     {
         display: flex;
         gap: 0.5vw;
         justify-content: left;
         align-items: center;
-        margin-top: 0vh;
+        margin-top: -5vh;
         margin-left: -0.15vw;
         color: white;
         background: rgba(133, 133, 133, 0.717);

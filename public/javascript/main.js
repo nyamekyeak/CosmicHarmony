@@ -2,8 +2,14 @@ function secondsToTime(seconds)
 {
     var returnArray = [0, 0, 0] //hrs, minutes, seconds
     returnArray[0] = Math.floor(seconds / 3600);
+    if(returnArray[0] < 10 && returnArray[0] !== 0)
+        returnArray[0] = "0" + returnArray[0];
     returnArray[1] = Math.floor((seconds % 3600) / 60);
+    if(returnArray[1] < 10 && returnArray[1] !== 0)
+        returnArray[1] = "0" + returnArray[1];
     returnArray[2] = Math.floor((seconds % 3600) % 60);
+    if(returnArray[2] < 10 && returnArray[2] !== 0)
+        returnArray[2] = "0" + returnArray[2];
     return returnArray;
 }
 

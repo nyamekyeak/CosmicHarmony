@@ -17,7 +17,13 @@ app.set('view engine', 'ejs');
 // Root Route
 app.get('/', function (req, res) 
 {
-    res.render('pages/producerMain');
+    res.render('pages/producerMain',
+    {        
+        pageTitle: "Producer Home", 
+        heroHeader: "Producer Home", 
+        heroCaption: "Welcome back Mr Producer, time to get to work!",
+        heroImage: "assets/images/placeholderImages/placeholder3.jpg"
+    })
 });
 
 app.get('/about', function (req, res)
@@ -27,7 +33,13 @@ app.get('/about', function (req, res)
 
 app.get('/stats', function (req, res)
 {
-    res.render('pages/stats');
+    res.render('pages/stats', 
+    {
+        pageTitle: "Stats", 
+        heroHeader: "Stats", 
+        heroCaption: "Take a look at metrics generated over time.",
+        heroImage: "assets/images/placeholderImages/placeholder3.jpg"
+    });
 });
 
 app.get('/djpool', function (req, res)
@@ -43,7 +55,13 @@ app.get('/djpool', function (req, res)
 
 app.get('/schedule', function (req, res)
 {
-    res.render('pages/schedule');
+    res.render('pages/schedule',
+    {
+        pageTitle: "Schedule", 
+        heroHeader: "Schedule", 
+        heroCaption: "View and manage upcoming programs and schedules",
+        heroImage: "assets/images/placeholderImages/placeholder3.jpg"
+    });
 });
 
 app.get('/library', function (req, res)
