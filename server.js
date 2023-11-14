@@ -77,3 +77,26 @@ app.get('/library', function (req, res)
 });
 // Port website will run on
 app.listen(port);
+
+
+// Database connection
+const { MongoClient } = require('mongodb');
+
+const uri = 'mongodb://localhost:27017'; // replace with your MongoDB connection string
+const client = new MongoClient(uri);
+
+async function connectToMongoDB() 
+{
+  try 
+  {
+    await client.connect();
+    console.log('Connected to MongoDB');
+    const publicDataBase = client.db('CosmicHarmony');
+  } 
+  catch (error) 
+  {
+    console.error('Failed to connect to MongoDB', error);
+  }
+}
+
+connectToMongoDB();
