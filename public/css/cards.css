@@ -18,6 +18,11 @@ div[id = "djPoolContainer"]
         width: 20vw;
         height: 17vh;
         background-color: rgba(1, 69, 132, 0.673);
+        border-radius: 0px 46px 0px 46px;
+        background: #0042aa;
+        outline: solid 1px rgba(1, 69, 132, 0.673);
+        box-shadow: inset 5px 5px 4px #002053,
+                    inset -5px -5px 4px #0064ff;
         overflow: hidden;
     }
     
@@ -135,6 +140,7 @@ span[id = "genreCardsContainer"]
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     place-items: center;
     width: 100%;
+    row-gap: 0.5vh;
 }
 
     span[id = "genreCardsContainer"] .genreCard
@@ -150,6 +156,9 @@ span[id = "genreCardsContainer"]
         justify-content: center;
         object-fit: cover;
         background-color: rgba(1, 69, 132, 0.673);
+        background: linear-gradient(145deg, #2e6ab7, #27599a);
+        box-shadow:  5px 5px 5px #112844,
+                    
     }
 
         span[id = "genreCardsContainer"] .genreCard .genreTitle
@@ -256,6 +265,19 @@ span[id = "songsByGenre"]
             flex-direction: row;
             outline: solid 1px rgba(1, 69, 132, 0.673);
             border-radius: 20px 0px 0px 0px;
+            /* border-radius: 11px; */
+            background: rgba(0, 93, 181, 0.673);
+            box-shadow: inset 5px 5px 8px #0d979e,
+                        inset -5px -5px 8px #01588a;
+            transition: all 0.5s ease-in-out;
+        }
+
+        span[id = "songsByGenre"] .genreContainer .songCard:hover
+        {
+            background: linear-gradient(145deg, #00067a, #6cb8d9);
+            box-shadow:  3px 3px 1px #d9d9d95c,
+                        -2px -2px 1px #6d6d6d3b;
+            transition: all 0.5s ease-in-out;
         }
 
             span[id = "songsByGenre"] .genreContainer .songCard .songArt

@@ -1,0 +1,170 @@
+[
+    {
+        "genreName": "Acoustic music",
+        "genreDescription": "A pure form of music where for the runtime of the song an artist and their instrument are all that exist in the world. Perfect for a calming break from a long day or even to wake up to and are great to sing along to.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/acoustic.jpg"
+      },
+      {
+        "genreName": "Afrobeats music",
+        "genreDescription": "Afrobeats: Ignite your senses with infectious rhythms, pulsating beats, and electrifying energy. Experience the vibrant fusion of African sounds and contemporary vibes that will make you move and groove like never before.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/afrobeats.jpg"
+      },
+      {
+        "genreName": "Alternative music",
+        "genreDescription": "Break from the norm and drone of a long day with this genre of music. Guaranteed to hype you just enough to get you through the day.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/alternative.png"
+      },
+      {
+        "genreName": "Ambient music",
+        "genreDescription": "Just calm, soothing sounds to drift off to sleep to. Not likely to wake the neighbors up in the middle of the night for sure.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/ambient.jpg"
+      },
+      {
+        "genreName": "Blues music",
+        "genreDescription": "Feeling a little blue? Well, this genre may be just what you need. Sometimes it is okay to slow down before getting amped up.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/blues.jpg"
+      },
+      {
+        "genreName": "Chillout music",
+        "genreDescription": "Relax with some tunes that calm your mind and bring you a peaceful mood. Perfect for winding down after a hectic day.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/chillout.jpg"
+      },
+      {
+        "genreName": "Classical music",
+        "genreDescription": "Enjoy some beautiful music that’s sure to evoke emotions. Whether you’re trying to get focused or want to simply relax after a long day, there’s definitely a piece for you.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/classical.jpg"
+      },
+      {
+        "genreName": "Classic Rock music",
+        "genreDescription": "Tune in for some catchy guitar tunes that will take you back to the days of rock ’n’ roll. Feel free to jam out.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/classicRock.webp"
+      },
+      {
+        "genreName": "Country music",
+        "genreDescription": "Experience some hearty American music – these songs tell stories about life, love, and the countryside.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/country.png"
+      },
+      {
+        "genreName": "Dance music",
+        "genreDescription": "Get moving to the beat with Dance music. You’re guaranteed to have a blast on the dance floor with these groovy tunes.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/dance.jpg"
+      },
+      {
+        "genreName": "Electronic music",
+        "genreDescription": "Explore electronic sounds and rhythms that will make you feel like you’ve been transported to the future. If you love music powered by synthesizers, this is the genre for you.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/electronic.jpg"
+      },
+      {
+        "genreName": "Folk music",
+        "genreDescription": "Dive headfirst into some heartwarming tunes that use simple melodies and acoustic instruments to capture your heart.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/folk.jpg"
+      },
+      {
+        "genreName": "Funk music",
+        "genreDescription": "Get ready to groove along to funky basslines and upbeat melodies. This is great music to dance and move along to.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/funk.jpg"
+      },
+      {
+        "genreName": "Gospel music",
+        "genreDescription": "This is music for the soul. Filled with powerful voices and lyrics that celebrate faith, you’re bound to leave with a joyful heart.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/gospel.jpg"
+      },
+      {
+        "genreName": "HipHop music",
+        "genreDescription": "Experience urban culture through music. Here, rhythm and rhymes come together to form creative, catchy songs that you can bop your head along to.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/hipHop.webp"
+      },
+      {
+        "genreName": "Indie music",
+        "genreDescription": "Get acquainted with new independent artists who are amazing at making waves across all genres.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/indie.jpg"
+      },
+      {
+        "genreName": "Indie Pop music",
+        "genreDescription": "Get acquainted with new independent artists who are amazing at making waves across the pop genre!",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/indie.jpg"
+      },
+      {
+        "genreName": "International music",
+        "genreDescription": "Want to learn more about music from different countries? Hear the latest hits in over 40 different languages!",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/international.jpg"
+      },
+      {
+        "genreName": "Jazz music",
+        "genreDescription": "Get lost in the world of jazz. Whether you're simply looking to unwind or want something you can bop your head along to, this genre’s got something for everyone.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/jazz.jpg"
+      },
+      {
+        "genreName": "Lofi music",
+        "genreDescription": "Get in the zone with soothing, relaxing lo-fi beats. These tunes are also great to fall asleep to.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/lofi.jpg"
+      },
+      {
+        "genreName": "Metal music",
+        "genreDescription": "Rock on with the newest beats and hardcore punk tunes that get your blood moving as you rage against the machine.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/metal.jpg"
+      },
+      {
+        "genreName": "New music",
+        "genreDescription": "Newest hits by all artists! This is the newest music scouted by our DJs for artists that don’t have a mega following, but deserve it all the way!",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/new.jpg"
+      },
+      {
+        "genreName": "Pop music",
+        "genreDescription": "Sing along to today’s most popular songs with catchy tunes and relatable lyrics. Great genre for a crowd.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/pop.jpg"
+      },
+      {
+        "genreName": "Punk music",
+        "genreDescription": "These non-conformist distorted tunes will make sure you express your inner emotions and stand out from the crowd.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/punk.jpg"
+      },
+      {
+        "genreName": "RnB (Rhythm and Blues) music",
+        "genreDescription": "Having rocking jazz and figuratively smooth music, these songs can make sure that you are grooving to the rhythm.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/rnb.jpg"
+      },
+      {
+        "genreName": "Rock music",
+        "genreDescription": "Featuring heavy drums and guitars, these tunes can make sure that you are jamming to the percussion and lyrics.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/rock.jpg"
+      },
+      {
+        "genreName": "Singer-Songwriter music",
+        "genreDescription": "Connect with the emotions and stories of singer-songwriters through acoustic melodies and sincere lyrics.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/singerSongwriter.jpg"
+      },
+      {
+        "genreName": "Soul music",
+        "genreDescription": "A genre that stirs your soul and makes you feel deep emotions, powered by passionate, heartfelt lyrics.",
+        "songsInGenre": [],
+        "genreCover" : "/public/assets/images/genreCovers/soul.jpg"
+      }
+  ]

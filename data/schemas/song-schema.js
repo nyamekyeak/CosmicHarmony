@@ -9,13 +9,18 @@ const songSchema = new mongoose.Schema(
         type: String,
         required: true
     },
-    songFearturedArtists: [String],
+    songFeaturedArtists: [String],
     songGenre: 
     {
         type: [String],
         required: true
     },
-    songDuration: String,
+    songDuration: 
+    {
+        type: String,
+        required: true,
+        default: "__:__"
+    },
     releaseYear: 
     {
         type: Number,
@@ -35,11 +40,6 @@ const songSchema = new mongoose.Schema(
     },
     songLyrics: String,
     songAlbumCover: String,
-    songSourceLink:
-    {
-        type: String,
-        required: true
-    }
 })
 
 const Song = mongoose.model('Song', songSchema);

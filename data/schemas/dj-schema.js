@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 const djSchema = new mongoose.Schema(
 {
-    djId: String,
+    djId: String, // format: CH-DJ-00000000
     stageName:
     {
         type: String,
         required: true
     },
-    firstLastName: String,
+    firstLastName: String, // format: firstName lastName
     genrePreferences: [String], 
     bio: String,
     eventLineup: [String], // array of event ids
