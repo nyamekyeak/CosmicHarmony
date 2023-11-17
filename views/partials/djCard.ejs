@@ -22,7 +22,7 @@
     <span class="aboutDJ">
         <span class="djDescription"><%= document.bio %></span>
     </span>
-    <span class="eventNote">0 events in 24hrs</span>
+    <span class="eventNote"><%= document.upcomingEventCount %> events in 24hrs</span>
     <span class="djSocials">
         <% document.socials.forEach(function(social) { %>
             <span><i class="fa-brands fa-<%= social %>"></i></span>

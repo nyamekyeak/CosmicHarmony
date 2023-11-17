@@ -24,9 +24,9 @@
             <!-- DJ cards -->
             <div id = "djPoolContainer">
                 <% if (documents.length > 0) { %>
-                    <% for (let i = 0; i < documents.length; i++) { %>
-                      <% include('../partials/djCard.ejs', { document: documents[i] }) %>
-                    <% } %>
+                    <% documents.forEach((document) => { %>
+                      <%- include('../partials/djCard.ejs', { document: document }) %>
+                    <% }) %>
                   <% } %>
             </div>
         </main>

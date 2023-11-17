@@ -10,8 +10,9 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["California", "United States"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV7.jpg",
-        "rating": 4.8
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV7.jpg",
+        "rating": 4.8,
+        "upcomingEventCount": 0
     },
     {
         "djId": "CH-DJ-XYZ98765",
@@ -24,8 +25,9 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["London", "United Kingdom"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV12.jpg",
-        "rating": 4.7
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV12.jpg",
+        "rating": 4.7,
+        "upcomingEventCount": 0
     },
     {
         "djId": "CH-DJ-DEF45678",
@@ -38,8 +40,9 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["Paris", "France"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV9.jpg",
-        "rating": 4.6
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV9.jpg",
+        "rating": 4.6,
+        "upcomingEventCount": 0
     },
     {
         "djId": "CH-DJ-GHI78901",
@@ -52,8 +55,9 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["London", "United Kingdom"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV11.jpg",
-        "rating": 4.5
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV11.jpg",
+        "rating": 4.5,
+        "upcomingEventCount": 0
     },
     {
         "djId": "CH-DJ-JKL01234",
@@ -66,8 +70,9 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["Paris", "France"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV10.jpg",
-        "rating": 4.4
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV10.jpg",
+        "rating": 4.4,
+        "upcomingEventCount": 0
     },
     {
         "djId": "CH-DJ-MNO34567",
@@ -80,8 +85,9 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["California", "United States"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV8.jpg",
-        "rating": 4.3
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV8.jpg",
+        "rating": 4.3,
+        "upcomingEventCount": 0
     },
     {
         "djId": "CH-DJ-PQR67890",
@@ -94,8 +100,9 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["London", "United Kingdom"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV13.jpg",
-        "rating": 3.2
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV13.jpg",
+        "rating": 3.2,
+        "upcomingEventCount": 0
     },
     {
         "djId": "CH-DJ-STU90123",
@@ -108,8 +115,9 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["Paris", "France"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV14.jpg",
-        "rating": 2.9
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV14.jpg",
+        "rating": 2.9,
+        "upcomingEventCount": 0
     },
     {
         "djId": "CH-DJ-VWX01234",
@@ -122,8 +130,9 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["London", "United Kingdom"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV9.jpg",
-        "rating": 2.8
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV9.jpg",
+        "rating": 2.8,
+        "upcomingEventCount": 0
     },
     {
         "djId": "CH-DJ-YZ012345",
@@ -136,8 +145,9 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["Paris", "France"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV11.jpg",
-        "rating": 2.7
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV11.jpg",
+        "rating": 2.7,
+        "upcomingEventCount": 0
     },
     {
         "djId": "CH-DJ-12345678",
@@ -150,8 +160,9 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["London", "United Kingdom"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV6.jpg",
-        "rating": 2.6
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV6.jpg",
+        "rating": 2.6,
+        "upcomingEventCount": 0
     },
     {
         "djId": "CH-DJ-23456789",
@@ -164,7 +175,8 @@
         "socials": ["spotify", "instagram", "youtube", "twitter"],
         "socialLinks": [],
         "location": ["Accra", "Ghana"],
-        "avatar": "public/assets/profileAvatars/djAvatars/DJAV12.jpg",
-        "rating": 2.5
+        "avatar": "../assets/profileAvatars/djAvatars/DJAV12.jpg",
+        "rating": 2.5,
+        "upcomingEventCount": 0
     }
 ]
