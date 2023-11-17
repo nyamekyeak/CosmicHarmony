@@ -452,3 +452,149 @@ section[id = "chatScreen"]
     background-size: cover;
     /* filter: blur(1.2vw); */
 }
+
+section[id = "musicLibrary"]
+{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 40vh;
+    background-color: rgba(114, 147, 160);
+    align-self: center;
+    border-radius: 0 10% 10% 0;
+    overflow: hidden;
+    backdrop-filter: blur(1.2vw);
+    background-image: url("../../../assets/images/placeholderImages/placeholder6.jpg");
+    background-size: cover;
+    /* filter: blur(1.2vw); */
+}
+
+    div[id = "miniLibraryHeader"]
+    {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        /* align-items: center; */
+        width: 100%;
+        height: 5vh;
+        line-height: 0.05vh;
+        background-color: rgb(0, 0, 0);
+        color: white;
+    }
+    div[id = "miniLibrary"]
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+
+    }
+
+        div[id = "miniLibraryHeader"] h3
+        {
+            font-size: 1.5vh;
+            text-transform: uppercase;
+            text-align: left;
+            margin-left: 0.15vw;
+        }
+
+        div[id = "miniLibraryHeader"] p
+        {
+            font-size: 0.75vh;
+            text-align: left;
+            margin-left: 0.15vw;
+        }
+        div[id = "miniLibrary"]
+        {
+            height: 85%;
+            width: 100%;
+            /* overflow-y: scroll; */
+            margin-top: 1vh;
+        }
+        
+        div[id = "miniLibrary"] .miniLibrarySong
+        {
+            display: flex;
+            width: 85%;
+            height: 5vh;
+            line-height: 0.05vh;
+            /* background-color: rgb(105, 105, 105); */
+            color: white;
+            margin-top: 0.05vh;
+            background: rgba(63, 178, 210, 0.618);
+            box-shadow: 0 8px 32px 0 rgba(111, 118, 224, 0.001);
+            backdrop-filter: blur( 20.5px );
+            -webkit-backdrop-filter: blur( 20.5px );
+            border-radius: 10px;
+            /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+        }
+
+            div[id = "miniLibrary"] .miniLibrarySong .mlCoverImage
+            {
+                display: flex;
+                overflow: hidden;
+                object-fit: cover;
+                width: 5vh;
+                height: 5vh;
+            }
+            div[id = "miniLibrary"] .miniLibrarySong .mlInfo
+            {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                line-height: 0.15vh;
+                justify-content: center;
+                width: 75%;
+                margin-left: 0.25vw;
+            }
+
+                div[id = "miniLibrary"] .miniLibrarySong .mlInfo .genre
+                {
+                    font-size: 0.75vh;
+                    text-transform: uppercase;
+                }
+
+                div[id = "miniLibrary"] .miniLibrarySong .mlInfo .songTitle
+                {
+                    font-size: 1.05vh;
+                    margin-top: 1.05vh;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                }
+                div[id = "miniLibrary"] .miniLibrarySong .mlInfo .songArtist
+                {
+                    /* display: none; */
+                    margin-top: 0.75vh;
+                    font-size: 0.75vh;
+                    text-transform: uppercase;
+                }
+
+                div[id = "miniLibrary"] .miniLibrarySong .mlInfo .songDuration
+                {
+                    /* display: none; */
+                    font-size: 0.75vh;
+                    margin-top: 1.05vh;
+                    text-transform: uppercase;
+                }
+
+                div[id = "miniLibrary"] .miniLibrarySong .intButtons
+                {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                    div[id = "miniLibrary"] .miniLibrarySong .intButtons button
+                    {
+                        width: 1.75vh;
+                        height: 1.65vh;
+                        font-size: 0.75vh;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    div[id = "miniLibrary"] .miniLibrarySong .intButtons .stopButton
+                    {
+                        display: none;
+                    }

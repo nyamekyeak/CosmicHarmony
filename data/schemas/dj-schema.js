@@ -17,7 +17,8 @@ const djSchema = new mongoose.Schema(
     socialLinks: [String], // array of social media links
     location: [String], // [state, country]
     avatar: String,
-    rating: Number
+    rating: Number,
+    upcomingEventCount : Number
 })
 
 const dj = mongoose.model('dj', djSchema);

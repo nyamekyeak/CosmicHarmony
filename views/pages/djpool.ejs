@@ -23,18 +23,11 @@
             <%- include('../partials/searchBar.ejs') %>
             <!-- DJ cards -->
             <div id = "djPoolContainer">
-                <%- 
-                    include('../partials/djCard.ejs', 
-                    {
-                        djStatus : "Available", 
-                        djName : "Dj Messi", 
-                        djState: "Abuja", 
-                        djCountry : "Nigeria",
-                        djRating : 3.5,
-                        eventCount : 2,
-                        djPhoto : "assets/images/placeholderImages/djPlaceholder1.jpg" 
-                    }) 
-                %>
+                <% if (documents.length > 0) { %>
+                    <% for (let i = 0; i < documents.length; i++) { %>
+                      <% include('../partials/djCard.ejs', { document: documents[i] }) %>
+                    <% } %>
+                  <% } %>
             </div>
         </main>
         <footer><%- include('../partials/footer.ejs') %></footer>
@@ -43,5 +36,6 @@
     <script src="javascript/playlistManage.js"></script>
     <script src="javascript/searchFeature.js"></script>
     <script src = "javascript/chatFeature.js"></script>
+    <script src = "javascript/djPool.js"></script>
     <script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
 </html>

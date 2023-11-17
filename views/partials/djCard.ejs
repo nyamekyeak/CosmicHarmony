@@ -1,18 +1,16 @@
+
 <span class="djCard">
     <span class="djStatus">
-        <span><%= djStatus %></span>
+        <span><%= document.djStatus %></span>
     </span>
-    <span class = "djBasics">
-        <span class = "djProfilePhoto">
-            <img src="<%= djPhoto %>">
+    <span class="djBasics">
+        <span class="djProfilePhoto">
+            <img src="<%= document.avatar %>">
         </span>
         <span class="djInfo">
-            <span class="djName"><%= djName %></span>
-            <span class = "djLocation">
-                <%= djState %>, <%= djCountry %>
-                <!-- <span>
-                    <progress value="<%= djRating %>" max="5">rating</progress>
-                </span> -->
+            <span class="djName"><%= document.stageName %></span>
+            <span class="djLocation">
+                <%= document.location[0] %>, <%= document.location[1] %>
             </span>
         </span>
         <span class="managementButtons">
@@ -22,15 +20,12 @@
         </span>
     </span>
     <span class="aboutDJ">
-        This is some text talking about who the dj is and highlights
-        their genre of interest.
+        <span class="djDescription"><%= document.bio %></span>
     </span>
-    <span class="eventNote"><%= eventCount %> events in 24hrs</span>
+    <span class="eventNote">0 events in 24hrs</span>
     <span class="djSocials">
-        <span><i class="fa-brands fa-instagram"></i></span>
-        <span><i class="fa-brands fa-facebook"></i></span>
-        <span><i class="fa-brands fa-twitter"></i></span>
-        <span><i class="fa-brands fa-youtube"></i></span>
-        <span><i class="fa-brands fa-spotify"></i></span>
+        <% document.socials.forEach(function(social) { %>
+            <span><i class="fa-brands fa-<%= social %>"></i></span>
+        <% }); %>
     </span>
 </span>

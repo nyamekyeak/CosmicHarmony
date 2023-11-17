@@ -465,6 +465,9 @@
                     }) 
                 %>
                 <!-- DJ 14 -->
+
+
+
                 <%- 
                 include('../partials/djCard.ejs', 
                 {
@@ -477,3 +480,41 @@
                     djPhoto : "assets/images/placeholderImages/djPlaceholder8.jpg" 
                 }) 
             %>
+
+
+   <!-- <span class="djCard">
+    <span class="djStatus">
+        <span><%= djStatus %></span>
+    </span>
+    <span class = "djBasics">
+        <span class = "djProfilePhoto">
+            <img src="<%= djPhoto %>">
+        </span>
+        <span class="djInfo">
+            <span class="djName"><%= djName %></span>
+            <span class = "djLocation">
+                <%= djState %>, <%= djCountry %>
+            </span>
+        </span>
+        <span class="managementButtons">
+            <button><i class="fa-solid fa-headphones-simple"></i> assign</button>
+            <button><i class="fa-solid fa-message"></i> message</button>
+            <button><i class="fa-solid fa-calendar-week"></i> schedule</button>
+        </span>
+    </span>
+    <span class="aboutDJ">
+        <span class="djDescription"><%= djBio %></span>
+    </span>
+    <span class="eventNote"><%= eventCount %> events in 24hrs</span>
+    <span class="djSocials">
+        <span><i class="fa-brands fa-instagram"></i></span>
+        <span><i class="fa-brands fa-facebook"></i></span>
+        <span><i class="fa-brands fa-twitter"></i></span>
+        <span><i class="fa-brands fa-youtube"></i></span>
+        <span><i class="fa-brands fa-spotify"></i></span>
+    </span>
+</span> -->
+
+
+
+<%= document.events.length %>

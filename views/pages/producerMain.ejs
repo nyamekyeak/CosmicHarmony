@@ -263,61 +263,22 @@
 					  </span>
 				  </div>
 			  </section>
-			  <section id="chatScreen">
-				  <div id="messages">
-					  <div id="recipientInfoContainer">
-						  <span id="recipientPhoto">
-							  <!-- <img src="../../assets/images/placeholderImages/placeholder3.jpg" alt="profile photo"> -->
-						  </span>
-						  <span id="recipientInfo">
-							  <span id="recipientName">Recipient Name</span>
-							  <span id="recipientRole">Recipient Role</span>
-						  </span>
-					  </div>
-					  <div class="incomingMessage">
-						  <span class="timeStamp">
-							  3:45<sub>PM</sub>
-						  </span>
-						  <span class="messageContent">This is a message coming in to a recipient</span>
-					  </div>
-					  <div class="outgoingMessage">
-						  <span class="timeStamp">
-							  3:48<sub>PM</sub>
-						  </span>
-						  <span class="messageContent">This is a message going out to a recipient</span>
-					  </div>
-					  <div class="incomingMessage">
-						  <span class="timeStamp">
-							  3:49<sub>PM</sub>
-						  </span>
-						  <span class="messageContent"> Hey, how's it going?</span>
-					  </div>
-					  <div class="outgoingMessage">
-						  <span class="timeStamp">
-							  3:57<sub>PM</sub>
-						  </span>
-						  <span class="messageContent">Hi! I'm doing well, thanks. How about you?</span>
-					  </div>
-					  <div class="incomingMessage">
-						  <span class="timeStamp">
-							  3:58<sub>PM</sub>
-						  </span>
-						  <span class="messageContent">I'm good too. Just working on a project.&#x1F622; <br> What about you?</span>
-					  </div>
-					  <div class="outgoingMessage">
-						  <span class="timeStamp">
-							  4:00<sub>PM</sub>
-						  </span>
-						  <span class="messageContent">
-							  I believe we should be all set for your show later on Mr DJ &#x1F600;
-							  <br>The time should still be the same as planned &#x1F44D;
-						  </span>
-					  </div>
-				  </div>
-				  <div id="newMessage">
-					  <input type="text" id = "newMessageInput" placeholder="Type a message...">
-					  <button id="sendMessage"><i class="fa-regular fa-paper-plane"></i></button>
-				  </div>
+			  <section id="musicLibrary">
+				<div id="miniLibraryHeader">
+					<h3>Music Library</h3>
+					<p>Quickly add songs to loaded playlist</p>
+				</div>
+				<div id="miniLibrary">
+					<%- include('../partials/miniLibrarySong.ejs',
+					{
+						songGenre : "genre",
+						songTitle : "Song Title",
+						songDuration : "3:45",
+						songArtist : "Artist",
+						songSource : "../../assets/audio/placeholderAudio/placeholder1.mp3"
+					}) 
+					%>
+				</div>
 			  </section>
 		  </div>
 		  <!-- Timeline -->

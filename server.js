@@ -23,7 +23,7 @@ app.get('/', function (req, res)
         heroHeader: "Producer Home", 
         heroCaption: "Welcome back Mr Producer, time to get to work!",
         heroImage: "assets/images/placeholderImages/placeholder3.jpg"
-    })
+    });
 });
 
 app.get('/about', function (req, res)
@@ -42,15 +42,53 @@ app.get('/stats', function (req, res)
     });
 });
 
-app.get('/djpool', function (req, res)
+app.get('/djpool', async function (req, res)
 {
-    res.render('pages/djpool', 
-    {
-        pageTitle: "DJ Pool", 
-        heroHeader: "DJ Pool", 
-        heroCaption: "Browse our massive collection of DJs from all over the world",
-        heroImage: "assets/images/placeholderImages/placeholder3.jpg"
-    });
+    console.log('Retrieving data from MongoDB');
+    try {
+      const collection = publicDataBase.collection('DJPool');
+      const documents = await collection.find({}).toArray();
+  
+      if (documents.length > 0) {
+        console.log('DJ Pool retrieved successfully');
+        console.log(documents);
+      } else {
+        console.log('DJ Pool is empty');
+      }
+      const data = documents
+      res.render('pages/djpool', 
+      {
+          pageTitle: "DJ Pool", 
+          heroHeader: "DJ Pool", 
+          heroCaption: "Browse our massive collection of DJs from all over the world",
+          heroImage: "assets/images/placeholderImages/placeholder3.jpg",
+          documents: documents
+      });
+    } catch (error) {
+      console.error('Error retrieving data from MongoDB', error);
+      res.status(500).send('Error retrieving data');
+    }
+
+});
+
+app.get('/djPoolPopulate', async function (req, res) {
+    console.log('Retrieving data from MongoDB');
+    try {
+      const collection = publicDataBase.collection('DJPool');
+      const documents = await collection.find({}).toArray();
+  
+      if (documents.length > 0) {
+        console.log('DJ Pool retrieved successfully');
+        console.log(documents);
+      } else {
+        console.log('DJ Pool is empty');
+      }
+      const data = documents
+      res.render('pages/djpool', { data: data }); // Make sure the variable name is correct here
+    } catch (error) {
+      console.error('Error retrieving data from MongoDB', error);
+      res.status(500).send('Error retrieving data');
+    }
 });
 
 app.get('/schedule', function (req, res)
@@ -84,6 +122,7 @@ const { MongoClient } = require('mongodb');
 
 const uri = 'mongodb://localhost:27017'; // replace with your MongoDB connection string
 const client = new MongoClient(uri);
+var publicDataBase;
 
 async function connectToMongoDB() 
 {
@@ -91,12 +130,16 @@ async function connectToMongoDB()
   {
     await client.connect();
     console.log('Connected to MongoDB');
-    const publicDataBase = client.db('CosmicHarmony');
+    publicDataBase = client.db('CosmicHarmony');
   } 
   catch (error) 
   {
     console.error('Failed to connect to MongoDB', error);
   }
 }
-
+module.exports =
+{
+    publicDataBase,
+    connectToMongoDB
+}
 connectToMongoDB();
