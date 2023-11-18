@@ -15,15 +15,58 @@ app.set('view engine', 'ejs');
 
 // *** GET Routes - display pages ***
 // Root Route
-app.get('/', function (req, res) 
+app.get('/', async function (req, res) 
 {
-    res.render('pages/producerMain',
-    {        
-        pageTitle: "Producer Home", 
-        heroHeader: "Producer Home", 
-        heroCaption: "Welcome back Mr Producer, time to get to work!",
-        heroImage: "assets/images/placeholderImages/placeholder3.jpg"
-    });
+    try
+    {
+        const ProducerPool = publicDataBase.collection('ProducerPool');
+        const miniLibrary = publicDataBase.collection('TempSongs');
+        const miniLibrarySongs = await miniLibrary.find({}).toArray();
+        
+        const loadedPlaylist = publicDataBase.collection('PlaylistPool');
+        const loadedPlaylists = await loadedPlaylist.find({}).toArray();
+
+        const songArray = loadedPlaylists[0].songs;
+        const loadedPlaylistSongs = [];
+
+        const producer = await ProducerPool.find({producerId : loadedPlaylist.creatorId}).toArray();
+        console.log(loadedPlaylist);
+        var songQuery = "";
+        for(var i = 0; i < songArray.length; i++)
+        {
+
+            songQuery = await miniLibrary.find({songId: songArray[i]}).toArray();
+            loadedPlaylistSongs.push(songQuery[0]);
+            // console.log(songQuery);
+        }
+        
+
+        if(miniLibrarySongs.length > 0)
+        {
+            console.log('Mini Library retrieved successfully');
+            // console.log(miniLibrarySongs);
+        }
+        else
+        {
+            console.log('No songs in Mini Library');
+        }
+        res.render('pages/producerMain',
+        {        
+            pageTitle: "Producer Home", 
+            heroHeader: "Producer Home", 
+            heroCaption: "Welcome back Mr Producer, time to get to work!",
+            heroImage: "assets/images/placeholderImages/placeholder3.jpg",
+            miniLibrarySongs: miniLibrarySongs,
+            loadedPlaylists: loadedPlaylists,
+            loadedPlaylistSongs: loadedPlaylistSongs,
+            producer: producer
+        });
+    }
+    catch (error)
+    {
+        console.error('Error retrieving data from MongoDB', error);
+        res.status(500).send('Error retrieving data');
+    }
 });
 
 app.get('/about', function (req, res)
@@ -64,31 +107,13 @@ app.get('/djpool', async function (req, res)
           heroImage: "assets/images/placeholderImages/placeholder3.jpg",
           documents: documents
       });
-    } catch (error) {
+    } 
+    catch (error) 
+    {
       console.error('Error retrieving data from MongoDB', error);
       res.status(500).send('Error retrieving data');
     }
 
-});
-
-app.get('/djPoolPopulate', async function (req, res) {
-    console.log('Retrieving data from MongoDB');
-    try {
-      const collection = publicDataBase.collection('DJPool');
-      const documents = await collection.find({}).toArray();
-  
-      if (documents.length > 0) {
-        console.log('DJ Pool retrieved successfully');
-        console.log(documents);
-      } else {
-        console.log('DJ Pool is empty');
-      }
-      const data = documents
-      res.render('pages/djpool', { data: data }); // Make sure the variable name is correct here
-    } catch (error) {
-      console.error('Error retrieving data from MongoDB', error);
-      res.status(500).send('Error retrieving data');
-    }
 });
 
 app.get('/schedule', function (req, res)

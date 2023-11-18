@@ -158,6 +158,135 @@ div[id = "metricsContainer"]
                     text-transform: uppercase;
                 }
 
+
+/* New Playlist Display */
+div[id = "loadedPlaylist"]
+{
+    display: flex;
+    color: white;
+    flex-direction: column;
+    height: 25vh;
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    overflow: scroll;
+}
+
+    span[id = "playlist"]
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+        span[id = "loadedPlaylistInfo"]
+        {
+            display: flex;
+            flex-direction: column;
+        }
+
+        span[id = "playlistName"]
+        {
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+        }
+
+            span[id = "playlistName"] .name
+            {
+                text-transform: uppercase;
+            }
+
+            span[id = "playlistName"] .id
+            {
+                font-size: 9px;
+            }
+
+    span[id = "loadedPlaylistSongs"]
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25vh;
+        align-items: center;
+    }
+        span[id = "loadedPlaylistSongs"] .loadedPlaylistSong
+        {
+            display: flex;
+            width: 95%;
+            height: 4.5vh;
+            background: rgba(63, 178, 210, 0.618);
+            box-shadow: 0 8px 32px 0 rgba(111, 118, 224, 0.001);
+            backdrop-filter: blur( 20.5px );
+            -webkit-backdrop-filter: blur( 20.5px );
+            border-radius: 10px;
+            align-items: center;
+        }
+            span[id = "loadedPlaylistSongs"] .loadedPlaylistSong .songArt
+            {
+                width: 2.05vw;
+                height: 2.05vw;
+                border-radius : 30%;
+                overflow: hidden;
+                object-fit: cover;
+                margin-left: 0.25vw;
+            }
+                span[id = "loadedPlaylistSongs"] .loadedPlaylistSong .songArt img
+                {
+                    object-fit: cover;
+                    width: 2.05vw;
+                    height: 2.05vw;
+                }
+
+                span[id = "loadedPlaylistSongs"] .loadedPlaylistSong .songInfo
+                {
+                    display: flex;
+                    flex-direction: column;
+                    text-transform: uppercase;
+                    width: 75%;
+                    margin-left: 0.5vw;
+                }
+
+                    span[id = "loadedPlaylistSongs"] .loadedPlaylistSong .songInfo .songName
+                    {
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+
+                    span[id = "loadedPlaylistSongs"] .loadedPlaylistSong .songInfo .songArtist
+                    {
+                        font-size: 10px;
+                    }
+
+                    span[id = "loadedPlaylistSongs"] .loadedPlaylistSong .songInfo .songDuration
+                    {
+                        font-size: 8px;
+                    }
+
+            span[id = "loadedPlaylistSongs"] .loadedPlaylistSong .songControls
+            {
+                display: flex;
+                gap: 0.25vw;
+                margin-left: 5vw;
+            }
+
+                span[id = "loadedPlaylistSongs"] .loadedPlaylistSong .songControls button
+                {
+                    width: 1.95vh;
+                    height: 1.95vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                span[id = "loadedPlaylistSongs"] .loadedPlaylistSong .songControls .stopPlaylistAudio
+                {
+                    display: none;
+                }
 div[id = "djGlance"]
 {
     display: flex;

@@ -1,0 +1,22 @@
+[
+    {
+        "playlistId": "CH-PL-98765432",
+        "playlistTitle": "Drive time at 8PM",
+        "playlistDescription": "A collection of relaxing and soothing tracks to help you unwind.",
+        "playlistGenreScope": ["HipHop Music", "Afrobeats Music"],
+        "playlistCover": "public/assets/images/placeholderImages/placeholder2.jpg",
+        "creatorId": "CH-PROD-ABC12345",
+        "duration": 120,
+        "songCount": 7,
+        "songs": 
+        [
+            "CH-SNG-ABC12345",
+            "CH-SNG-XYZ98765",
+            "CH-SNG-MNO01234",
+            "CH-SNG-PQR34567",
+            "CH-SNG-10PQR9TUV",
+            "CH-SNG-11TUV0WXY",
+            "CH-SNG-9MNO8PQR"
+        ]
+    }
+]

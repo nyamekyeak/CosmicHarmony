@@ -1,19 +1,18 @@
-<span class="miniLibrarySong">
-    <span class="mlCoverImage">
-        <img src="<%= miniLibrarySong.songAlbumCover %>" alt="cover image">
+<span class="loadedPlaylistSong">
+    <span class="songArt">
+        <img src="<%= loadedPlaylistSong.songAlbumCover %>" alt="cover image">
     </span>
-    <span class="mlInfo">
-        <span class = "genre"> <%= miniLibrarySong.songGenre  || 'Genre'%></span>
-        <span class = "songTitle"> <%= miniLibrarySong.songName || 'Song Title'%> </span>
-        <span class = "songArtist"> <%= miniLibrarySong.songLeadArtist|| 'Artist'%> </span>
-        <span class = "songDuration"> <%= miniLibrarySong.songDuration || 'Duration'%> </span>
+    <span class="songInfo">
+        <span class="songDuration"><%= loadedPlaylistSong.songDuration || '__:__'%></span>
+        <span class="songName"><%= loadedPlaylistSong.songName %></span>
+        <span class="songArtist"><%= loadedPlaylistSong.songLeadArtist %></span>
     </span>
-    <span class="intButtons">
-        <audio src= " <%= miniLibrarySong.songSource%>"></audio>
+    <span class="songControls">
+        <audio src="<%= loadedPlaylistSong.songSource %>"></audio>
         <button onclick="playMiniAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
-        <button onclick="stopMiniAudio(this)" class = "stopButton"><i class="fa-regular fa-circle-stop"></i></button>
-        <button><i class="fa-solid fa-circle-plus"></i></button>
-        <button><i class="fa-solid fa-share"></i></button>
+        <button onclick="stopMiniAudio(this)" class="stopPlaylistAudio"><i class="fa-regular fa-circle-stop"></i></button>
+        <button><i class="fa-solid fa-pen-to-square"></i></button>
+        <button><i class="fa-solid fa-trash"></i></button>
     </span>
 </span>
 
@@ -46,5 +45,5 @@
         soundTrack.pause();
         soundTrack.currentTime = 0;
 
-    }
+}
 </script>

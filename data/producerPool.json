@@ -1,0 +1,18 @@
+[
+    {
+        "producerId": "CH-PROD-ABC12345",
+        "producerName": "Nyamekye Kutortse",
+        "producerBio": "Passionate music producer with a love for creating unique and captivating sounds.",
+        "producerStatus": "active",
+        "socials": ["spotify", "instagram", "youtube", "soundcloud"],
+        "socialLinks": ["https://spotify.com/johndoe", "https://instagram.com/johndoe", "https://youtube.com/johndoe", "https://soundcloud.com/johndoe"],
+        "location": ["Virginia", "United States"],
+        "avatar": "public/assets/profileAvatars/producerAvatars/PRAV1.jpg",
+        "programLineup": [],
+        "playlistsCreated": [],
+        "contacts": [],
+        "chats": [],
+        "upcomingEventCount": 0
+
+    }
+]

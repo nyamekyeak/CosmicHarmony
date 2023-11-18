@@ -13,9 +13,10 @@ const playlistSchema = new mongoose.Schema(
             default: "public/assets/images/placeholderImages/placeholder2.jpg" 
         },
         creatorId : String,
-        duration : Number
-    }
-)
+        duration : Number,
+        songCount : Number,
+        songs: [String]
+    })
 
 const playlist = mongoose.model('playlist', playlistSchema);
 module.exports = playlist

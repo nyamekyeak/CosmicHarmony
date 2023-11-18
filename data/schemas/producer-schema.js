@@ -17,6 +17,7 @@ const producerSchema = new mongoose.Schema(
         programLineup: [String], // array of event ids
         playlistsCreated: [String], // array of playlist ids
         contacts: [String], // array of contact ids
-        chats: [String] // array of chat ids
+        chats: [String], // array of chat ids
+        upcomingEventCount : Number
     }
 )

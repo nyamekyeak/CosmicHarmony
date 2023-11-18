@@ -8,9 +8,9 @@
         "songDuration": "02:59",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/afrobeats/Abracadabra_Lordmoon.mp3",
+        "songSource" : "../assets/audio/songsByGenre/afrobeats/Abracadabra_Lordmoon.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt1.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt1.jpg"
     },
     {
         "songId": "CH-SNG-XYZ98765",
@@ -21,9 +21,9 @@
         "releaseYear" : 2023,
         "songGenre" : "Afrobeats Music",
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/afrobeats/Choice_Lordmoon.mp3",
+        "songSource" : "../assets/audio/songsByGenre/afrobeats/Choice_Lordmoon.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt2.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt2.jpg"
     },
     {
         "songId": "CH-SNG-MNO01234",
@@ -34,9 +34,9 @@
         "songDuration": "03:07",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",    
-        "songSource" : "public/assets/audio/songsByGenre/afrobeats/Don't Stop The Party_Tadz.mp3",
+        "songSource" : "../assets/audio/songsByGenre/afrobeats/Don't Stop The Party_Tadz.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt3.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt3.jpg"
     },
     {
         "songId": "CH-SNG-PQR34567",
@@ -47,9 +47,9 @@
         "songDuration": "02:41",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/afrobeats/Mary Christmas_Nexto.mp3",
+        "songSource" : "../assets/audio/songsByGenre/afrobeats/Mary Christmas_Nexto.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt4.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt4.jpg"
     },
     {
         "songId": "CH-SNG-ABC12345",
@@ -60,9 +60,9 @@
         "songDuration": "02:33",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/afrobeats/Welcome To Africa_Nexto.mp3",
+        "songSource" : "../assets/audio/songsByGenre/afrobeats/Welcome To Africa_Nexto.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt5.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt5.jpg"
     },
     {
         "songId" : "CH-SNG-XYZ98765",
@@ -73,9 +73,9 @@
         "songDuration" : "03:25",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/electronic/Bass Fire_Freccero.mp3",
+        "songSource" : "../assets/audio/songsByGenre/electronic/Bass Fire_Freccero.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt6.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt6.jpg"
     },
     {
         "songId" : "CH-SNG-MZO01234",
@@ -86,9 +86,9 @@
         "songDuration" : "03:17",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/electronic/BigBoom_AlexiAction.mp3",
+        "songSource" : "../assets/audio/songsByGenre/electronic/BigBoom_AlexiAction.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt7.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt7.jpg"
     },
     {
         "songId" : "CH-SNG-HGT34567",
@@ -99,9 +99,9 @@
         "songDuration" : "02:03",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/electronic/Blast_AlexiAction.mp3",
+        "songSource" : "../assets/audio/songsByGenre/electronic/Blast_AlexiAction.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt8.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt8.jpg"
     },
     {
         "songId" : "CH-SNG-OYT98567",
@@ -112,9 +112,9 @@
         "songDuration" : "02:47",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/electronic/ESPP_AlexiAction.mp3",
+        "songSource" : "../assets/audio/songsByGenre/electronic/ESPP_AlexiAction.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt9.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt9.jpg"
     },
     {
         "songId" : "CH-SNG-XSW2ZAQ1",
@@ -125,9 +125,9 @@
         "songDuration" : "03:39",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/electronic/Get Up_86349.mp3",
+        "songSource" : "../assets/audio/songsByGenre/electronic/Get Up_86349.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt10.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt10.jpg"
     },
     {
         "songId" : "CH-SNG-1QAZ2WSX",
@@ -138,9 +138,9 @@
         "songDuration" : "04:35",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/electronic/Modern Energetic_TimTaj.mp3",
+        "songSource" : "../assets/audio/songsByGenre/electronic/Modern Energetic_TimTaj.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt11.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt11.jpg"
     },
     {
         "songId" : "CH-SNG-2WSX3EDC",
@@ -151,9 +151,9 @@
         "songDuration" : "02:20",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/electronic/Synthwave 80s_AlexiAction.mp3",
+        "songSource" : "../assets/audio/songsByGenre/electronic/Synthwave 80s_AlexiAction.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt12.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt12.jpg"
     },
     {
         "songId" : "CH-SNG-3EDC4RFV",
@@ -164,9 +164,9 @@
         "songDuration" : "02:13",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt13.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt13.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/electronic/TLNC_Evegeny.mp3"
+        "songSource" : "../assets/audio/songsByGenre/electronic/TLNC_Evegeny.mp3"
     },
     {
         "songId" : "CH-SNG-5TGB6YHN",
@@ -177,9 +177,9 @@
         "songDuration" : "01:45",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt14.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt14.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/electronic/Trap_The Mountain.mp3"
+        "songSource" : "../assets/audio/songsByGenre/electronic/Trap_The Mountain.mp3"
     },
     {
         "songId" : "CH-SNG-6YHN7UJM",
@@ -190,9 +190,9 @@
         "songDuration" : "02:17",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt15.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt15.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Auld Lang Syne_Roger McGuinn.mp3"
+        "songSource" : "../assets/audio/songsByGenre/folk/Auld Lang Syne_Roger McGuinn.mp3"
     },
     {
         "songId" : "CH-SNG-7UJM8KLO",
@@ -203,9 +203,9 @@
         "songDuration" : "02:48",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt16.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt16.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Away In A Manger_Roger McGuinn.mp3"
+        "songSource" : "../assets/audio/songsByGenre/folk/Away In A Manger_Roger McGuinn.mp3"
     },
     {
         "songId" : "CH-SNG-9I0J1KLM",
@@ -216,9 +216,9 @@
         "songDuration" : "05:22",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt17.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt17.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Christiana_Peter Biedermann.mp3"
+        "songSource" : "../assets/audio/songsByGenre/folk/Christiana_Peter Biedermann.mp3"
     },
     {
         "songId" : "CH-SNG-0KLM9OPQ",
@@ -229,9 +229,9 @@
         "songDuration" : "02:47",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt18.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt18.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Deep River Blues_Janet Bean.mp3"
+        "songSource" : "../assets/audio/songsByGenre/folk/Deep River Blues_Janet Bean.mp3"
     },
     {
         "songId" : "CH-SNG-1OPQ0RST",
@@ -242,9 +242,9 @@
         "songDuration" : "03:02",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt5.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt5.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Delia's Gone_Roger McGuinn.mp3"
+        "songSource" : "../assets/audio/songsByGenre/folk/Delia's Gone_Roger McGuinn.mp3"
     },
     {
         "songId" : "CH-SNG-2RST1UVW",
@@ -255,9 +255,9 @@
         "songDuration" : "02:54",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt6.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt6.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Every Time I Feel The Spirit_Roger McGuinn.mp3"
+        "songSource" : "../assets/audio/songsByGenre/folk/Every Time I Feel The Spirit_Roger McGuinn.mp3"
     },
     {
         "songId" : "CH-SNG-3UVW2XYZ",
@@ -268,9 +268,9 @@
         "songDuration" : "03:28",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt7.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt7.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Fier_Quimorucru.mp3"
+        "songSource" : "../assets/audio/songsByGenre/folk/Fier_Quimorucru.mp3"
     },
     {
         "songId" : "CH-SNG-4XYZ3ABC",
@@ -281,9 +281,9 @@
         "songDuration" : "03:32",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt8.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt8.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Florcita_La Cantine Boga.mp3"
+        "songSource" : "../assets/audio/songsByGenre/folk/Florcita_La Cantine Boga.mp3"
     },
     {
         "songId" : "CH-SNG-5ABC4DEF",
@@ -294,9 +294,9 @@
         "songDuration" : "05:12",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt9.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt9.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Greensleeves_Roger McGuinn.mp3"
+        "songSource" : "../assets/audio/songsByGenre/folk/Greensleeves_Roger McGuinn.mp3"
     },
     {
         "songId" : "CH-SNG-6DEF5GHI",
@@ -307,9 +307,9 @@
         "songDuration" : "03:51",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt10.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt10.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Idle_Folk Festival Massacre.mp3"
+        "songSource" : "../assets/audio/songsByGenre/folk/Idle_Folk Festival Massacre.mp3"
     },
     {
         "songId" : "CH-SNG-7GHI6JKL",
@@ -320,9 +320,9 @@
         "songDuration" : "02:46",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt11.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt11.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Impulsive_Folk Festival Massacre.mp3"  
+        "songSource" : "../assets/audio/songsByGenre/folk/Impulsive_Folk Festival Massacre.mp3"  
     },
     {
         "songId" : "CH-SNG-8JKL7MNO",
@@ -333,9 +333,9 @@
         "songDuration" : "08:25",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt12.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt12.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/folk/Inside the Rain_Steffen Basho ft Junghans.mp3"
+        "songSource" : "../assets/audio/songsByGenre/folk/Inside the Rain_Steffen Basho ft Junghans.mp3"
     }, 
     {
         "songId" : "CH-SNG-9MNO8PQR",
@@ -346,9 +346,9 @@
         "songDuration" : "02:59",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt13.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt13.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/hiphop/512 Spittin_K.I.R.K.mp3"
+        "songSource" : "../assets/audio/songsByGenre/hiphop/512 Spittin_K.I.R.K.mp3"
     },
     {
         "songId": "CH-SNG-10PQR9TUV",
@@ -359,9 +359,9 @@
         "songDuration": "03:11",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songSource" : "public/assets/audio/songsByGenre/hiphop/Agit-Prop_Propaganda Anonymous.mp3",
+        "songSource" : "../assets/audio/songsByGenre/hiphop/Agit-Prop_Propaganda Anonymous.mp3",
         "songLyrics" : "No lyrics available",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt14.jpg"
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt14.jpg"
     },
     {
         "songId": "CH-SNG-11TUV0WXY",
@@ -372,8 +372,8 @@
         "songDuration" : "05:08",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "public/assets/images/songCoverArt/albumArt15.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt15.jpg",
         "songLyrics" : "No lyrics available",
-        "songSource" : "public/assets/audio/songsByGenre/hiphop/Air Jordan_The Kid Daytona ft Harlem's Cash.mp3"
+        "songSource" : "../assets/audio/songsByGenre/hiphop/Air Jordan_The Kid Daytona ft Harlem's Cash.mp3"
     } 
 ]
