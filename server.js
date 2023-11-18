@@ -127,15 +127,33 @@ app.get('/schedule', function (req, res)
     });
 });
 
-app.get('/library', function (req, res)
+app.get('/library', async function (req, res)
 {
-    res.render('pages/library',
+    console.log('Retrieving data from MongoDB');
+    try {
+      const genreCollection = publicDataBase.collection('Genres');
+      const genres = await genreCollection.find({}).toArray();
+  
+      if (genres.length > 0) {
+        console.log('Genre retrieved successfully');
+        console.log(genres);
+      } else {
+        console.log('Genre is empty');
+      }
+      res.render('pages/library', 
+      {
+            pageTitle: "DJ Pool", 
+            heroHeader: "DJ Pool", 
+            heroCaption: "Browse our massive collection of DJs from all over the world",
+            heroImage: "assets/images/placeholderImages/placeholder3.jpg",
+            genres: genres
+      });
+    } 
+    catch (error) 
     {
-        pageTitle: "Library", 
-        heroHeader: "Library", 
-        heroCaption: "Browse our expansive collection of songs from all over the world",
-        heroImage: "assets/images/placeholderImages/placeholder2.jpg"
-    });
+      console.error('Error retrieving data from MongoDB', error);
+      res.status(500).send('Error retrieving data');
+    }
 
 });
 // Port website will run on

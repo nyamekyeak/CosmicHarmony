@@ -22,78 +22,11 @@
             <%- include('../partials/hero.ejs') %>
             <%- include('../partials/searchBar.ejs') %>
             <span id="genreCardsContainer">
-                <!-- Genre 1 -->
-                <%- include('../partials/genreCard.ejs', 
-                    {
-                        genreID: "hiphop",
-                        genreName: "Hip-Hop",
-                        genreDescription: "Experience urban culture through music. Here, rhythm and rhymes come together to form creative, catchy songs that you can bop your head along to.",
-                        genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
-                    }) 
-                %>
-                <!-- Genre 2 -->
-                <%- include('../partials/genreCard.ejs', 
-                    {
-                        genreID: "afroBeats",
-                        genreName: "AfroBeats",
-                        genreDescription: "All the way from africa and beyond! AfroBeats are the best afro beats you can find!",
-                        genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
-                    }) 
-                %>
-                <!-- Genre 3 -->
-                <%- include('../partials/genreCard.ejs', 
-                {
-                    genreID: "indiePop",
-                    genreName: "Indie-Pop",
-                    genreDescription: "Get acquainted with new independent artists who are amazing at making waves across the pop genre!",
-                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
-                }) 
-                %>
-                <!-- Genre 4 -->
-                <%- include('../partials/genreCard.ejs', 
-                {
-                    genreID: "folkMusic",
-                    genreName: "Folk",
-                    genreDescription: "Dive headfirst into some heartwarming tunes that use simple melodies and acoustic instruments to capture your heart.!",
-                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
-                }) 
-                %>
-                <!-- Genre 5 -->
-                <%- include('../partials/genreCard.ejs', 
-                {
-                    genreID: "electronicMusic",
-                    genreName: "Electronic",
-                    genreDescription: "Explore electronic sounds and rhythms that will make you feel like you’ve been transported to the future. If you love energetic music, this is the genre for you.!",
-                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
-                }) 
-                %>
-                <!-- Genre 6 -->
-                <%- include('../partials/genreCard.ejs', 
-                {
-                    genreID: "internationalMusic",
-                    genreName: "International",
-                    genreDescription: "Want to learn more about music from different countries? Hear the latest hits in over 40 different languages!!",
-                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
-                }) 
-                %>
-                <!-- Genre 7 -->
-                <%- include('../partials/genreCard.ejs', 
-                {
-                    genreID: "funkMusic",
-                    genreName: "Funk",
-                    genreDescription: "Get ready to groove along to funky basslines and upbeat melodies. This is great music to dance and move along to",
-                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
-                }) 
-                %>
-                <!-- Genre 8 -->
-                <%- include('../partials/genreCard.ejs',
-                {
-                    genreID: "rockMusic",
-                    genreName: "Rock",
-                    genreDescription: "Featuring heavy drums and guitars, these tunes can make sure that you are jamming to the percussion and lyrics.",
-                    genreImage: "../../assets/images/placeholderImages/placeholder2.jpg",
-                })
-                %>
+               <% if (genres.length > 0) { %>
+                  <% genres.forEach((genre) => { %>
+                    <%- include('../partials/genreCard.ejs', { genre: genre }) %>
+                  <% }) %>
+                 <% } %>
             </span>
             <span id="songsByGenre">
                 <!-- Hiphop -->
