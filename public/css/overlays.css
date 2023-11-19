@@ -1,0 +1,30 @@
+span[id = "playlistViewOverlay"]
+{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1000;
+    background-color: aliceblue;
+    margin-left: 15%;
+    margin-top: -2%;
+}
+
+    span[id = "playlistViewOverlay"] .closeOverlay
+    {
+        width: 2vw;
+        height: 2vw;
+        align-self: center;
+    }
+
+    span[id = "playlistViewOverlay"] .playlistOverlayCard
+    {
+        display: flex;
+        align-self: center;
+        width: 95%;
+        height: 20vw;
+        background-color: black;
+    }

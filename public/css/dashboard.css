@@ -287,6 +287,18 @@ div[id = "loadedPlaylist"]
                 {
                     display: none;
                 }
+
+                span[id = "loadedPlaylistMetrics"]
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    text-transform: uppercase;
+                }
+
+                span[id = "songCount"]
+                {
+                    margin-left: 2.75vw;
+                }
 div[id = "djGlance"]
 {
     display: flex;

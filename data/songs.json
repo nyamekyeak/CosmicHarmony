@@ -216,7 +216,7 @@
         "songDuration" : "05:22",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "../assets/images/songCoverArt/albumArt17.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt17.jpeg",
         "songLyrics" : "No lyrics available",
         "songSource" : "../assets/audio/songsByGenre/folk/Christiana_Peter Biedermann.mp3"
     },
@@ -437,7 +437,7 @@
         "songDuration" : "02:01",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "../assets/images/songCoverArt/albumArt17.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt17.jpeg",
         "songLyrics" : "No lyrics available",
         "songSource" : "../assets/audio/songsByGenre/folk/The News_Folk Festival Massacre.mp3"
     },
@@ -528,7 +528,7 @@
         "songDuration" : "02:14",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "../assets/images/songCoverArt/albumArt17.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt17.jpeg",
         "songLyrics" : "No lyrics available",
         "songSource" : "../assets/audio/songsByGenre/hiphop/BLESSINGS_BLESSINGS_JOEY HENDRIXX ft NBA YOUNGBOY X JUICE WRLD X TOOSII.mp3"
     },
@@ -697,7 +697,7 @@
         "songDuration" : "03:23",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "../assets/images/songCoverArt/albumArt17.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt17.jpeg",
         "songLyrics" : "No lyrics available",
         "songSource" : "../assets/audio/songsByGenre/indiepop/Bootstraps_Blanket Music.mp3"
     },
@@ -905,7 +905,7 @@
         "songDuration" : "03:29",
         "releaseYear" : 2023,
         "songAlbum" : "Unknown",
-        "songAlbumCover" : "../assets/images/songCoverArt/albumArt17.jpg",
+        "songAlbumCover" : "../assets/images/songCoverArt/albumArt17.jpeg",
         "songLyrics" : "No lyrics available",
         "songSource" : "../assets/audio/songsByGenre/international/GENI_Senyawa.mp3"
     },

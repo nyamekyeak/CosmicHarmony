@@ -4,23 +4,23 @@
     <span><%= heroCaption || 'The best way to listen to music'%></span>
     <div id = "heroButtons">
         <span class="heroButtonContainer">
-            <button>create playlist</button>
+            <button><i class="fa-solid fa-folder-plus"></i></button>
             <p>create playlist</p>
         </span>
         <span class="heroButtonContainer" style="margin-left: 8vw;">
-            <button>create event</button>
+            <button><i class="fa-solid fa-calendar-plus"></i></button>
             <p>create event</p>
         </span>
         <span class="heroButtonContainer" style="margin-left: 16vw;">
-            <button>switch user</button>
+            <button><i class="fa-solid fa-users-line"></i></button>
             <p>switch user</p>
         </span>
         <span class="heroButtonContainer" style="margin-left: 24vw;">
-            <button>view playlists</button>
+            <button onclick="showOverlay(this)" class = "playlistViewOverlay"><i class="fa-solid fa-folder-open"></i></button>
             <p>view playlists</p>
         </span>
         <span class="heroButtonContainer" style="margin-left: 32vw;">
-            <button>view events</button>
+            <button><i class="fa-solid fa-calendar"></i></button>
             <p>view events</p>
         </span>
     </div>

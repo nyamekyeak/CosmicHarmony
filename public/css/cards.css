@@ -245,7 +245,8 @@ span[id = "songsByGenre"]
         margin-bottom: 0.75vh;
     }
 
-    span[id = "songsByGenre"] .genreContainer
+    span[id = "songsByGenre"] .genreContainer,
+    span[id = "allSongs"] 
     {
         display: grid;
         place-items: center;
@@ -255,7 +256,8 @@ span[id = "songsByGenre"]
         /* display: none; */
     }
 
-        span[id = "songsByGenre"] .genreContainer .songCard
+        span[id = "songsByGenre"] .genreContainer .songCard,
+        span[id = "allSongs"] .songCard
         {
             width: 17vw;
             height: 3.5vw;
@@ -272,7 +274,8 @@ span[id = "songsByGenre"]
             transition: all 0.5s ease-in-out;
         }
 
-        span[id = "songsByGenre"] .genreContainer .songCard:hover
+        span[id = "songsByGenre"] .genreContainer .songCard:hover,
+        span[id = "allSongs"] .songCard:hover
         {
             background: linear-gradient(145deg, #00067a, #6cb8d9);
             box-shadow:  3px 3px 1px #d9d9d95c,
@@ -280,7 +283,8 @@ span[id = "songsByGenre"]
             transition: all 0.5s ease-in-out;
         }
 
-            span[id = "songsByGenre"] .genreContainer .songCard .songArt
+            span[id = "songsByGenre"] .genreContainer .songCard .songArt,
+            span[id = "allSongs"] .songCard .songArt
             {
                 width: 3.25vw;
                 height: 3.5vw;
@@ -288,14 +292,16 @@ span[id = "songsByGenre"]
                 overflow: hidden;
             }
 
-                span[id = "songsByGenre"] .genreContainer .songCard .songArt img
+                span[id = "songsByGenre"] .genreContainer .songCard .songArt img,
+                span[id = "allSongs"] .songCard .songArt img
                 {
                     width: 3.25vw;
                     height: 3.5vw;
                     object-fit: cover;
                 }
             
-            span[id = "songsByGenre"] .genreContainer .songCard .songInfo
+            span[id = "songsByGenre"] .genreContainer .songCard .songInfo,
+            span[id = "allSongs"] .songCard .songInfo
             {
                 display: flex;
                 flex-direction: column;
@@ -304,7 +310,8 @@ span[id = "songsByGenre"]
                 margin-left: 0.1vw;
             }
 
-                span[id = "songsByGenre"] .genreContainer .songCard .songInfo .songTitle
+                span[id = "songsByGenre"] .genreContainer .songCard .songInfo .songTitle,
+                span[id = "allSongs"] .songCard .songInfo .songTitle
                 {
                     text-transform: uppercase;
                     font-weight: 600;
@@ -312,17 +319,20 @@ span[id = "songsByGenre"]
                     width: 13.8vw;
                 }
 
-                span[id = "songsByGenre"] .genreContainer .songCard .songInfo .songArtist
+                span[id = "songsByGenre"] .genreContainer .songCard .songInfo .songArtist,
+                span[id = "allSongs"] .songCard .songInfo .songArtist
                 {
                     font-size: 0.45vw;
                 }
 
-                span[id = "songsByGenre"] .genreContainer .songCard .songInfo .songDuration
+                span[id = "songsByGenre"] .genreContainer .songCard .songInfo .songDuration,
+                span[id = "allSongs"] .songCard .songInfo .songDuration
                 {
                     font-size: 0.35vw;
                 }
 
-            span[id = "songsByGenre"] .genreContainer .songCard .songButtons
+            span[id = "songsByGenre"] .genreContainer .songCard .songButtons,
+            span[id = "allSongs"] .songCard .songButtons
             {
                 margin-top: 2.45vw;
                 margin-left: 12.75vw;
@@ -332,6 +342,18 @@ span[id = "songsByGenre"]
                 position: absolute;
                 z-index: 10;
             }
+
+                span[id = "allSongs"] .songCard .songButtons button
+                {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                } 
+
+                span[id = "allSongs"] .songCard .songButtons .stopAudio
+                {
+                    display: none;
+                }
 
 /* Cards for profiles on about page */
 /* Cards for events */

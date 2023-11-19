@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="../../css/footer.css">
 		<link rel="stylesheet" href="css/dashboard.css">
 		<link rel="stylesheet" href="css/pageHero.css">
+		<link rel="stylesheet" href="css/overlays.css">
         <!-- Title -->
         <title>Cosmic Harmony - Producer</title>
         <!-- Logo Icon -->
@@ -16,6 +17,11 @@
      </head>
      <body>
 		<header><%- include('../partials/navbar.ejs') %></header>
+		<!-- Playlist View Overlay -->
+		<span id = "playlistViewOverlay">
+			<button onclick = "closeOverlay(this)" class = "closeOverlay"><i class="fa-solid fa-xmark"></i></button>
+			<span class = "playlistOverlayCard"></span>
+		</span>
 		<main>
 		  <%- include('../partials/hero.ejs') %>
 		  <%- include('../partials/searchBar.ejs') %>
@@ -94,10 +100,10 @@
 							</span>
 							<span id="loadedPlaylistMetrics">
 								<span><%= loadedPlaylists[0].playlistGenreScope[0] %></span>
-								<span><%= loadedPlaylists[0].songCount.toString() %> songs</span>
+								<span id = "songCount"><%= loadedPlaylists[0].songCount.toString() %> songs</span>
 								<span><%= ((loadedPlaylists[0].duration % 3600) / 60).toString() %> minutes <%= ((loadedPlaylists[0].duration % 60)).toString() %> seconds</span>
 							</span>
-							<span id="loadedPlaylistDescription">Playlist Description dfvdf fsd s dfv d</span>
+							<span id="loadedPlaylistDescription"><%= loadedPlaylists[0].playlistDescription %></span>
 						</span>
 						<span id="loadedPlaylistSongs">
 							<% if (loadedPlaylistSongs.length > 0) { %>
@@ -321,6 +327,7 @@
 		<script src="javascript/playlistManage.js"></script>
 		<script src="javascript/searchFeature.js"></script>
 		<script src = "javascript/chatFeature.js"></script>
+		<script src = "javascript/overlays.js"></script>
 		<script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
 	   </body>
 </html>
