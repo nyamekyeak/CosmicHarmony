@@ -11,6 +11,7 @@ span[id = "playlistViewOverlay"]
     background-color: aliceblue;
     margin-left: 15%;
     margin-top: -2%;
+    color: white;
 }
 
     span[id = "playlistViewOverlay"] .closeOverlay
@@ -28,3 +29,57 @@ span[id = "playlistViewOverlay"]
         height: 20vw;
         background-color: black;
     }
+
+        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist
+        {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            background-color: red;
+        }
+
+        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistDescription
+        {
+            display: flex;
+            height: 15%;
+            background-color: aqua;
+        }
+
+    span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo
+    {
+        display:flex;
+        flex-direction: column;
+        /* background-color: aquamarine; */
+        background-image: url("../assets/images/backgrounds/backg3.jpg");
+        background-size: cover;
+        height: 100%;
+        width: 30%;
+        color: white;
+    }
+
+        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo .playlistDetails
+        {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-self: center;
+            align-items: center;
+            margin-top : 35%;
+        }
+
+    span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard
+        {
+            display: flex;
+        }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .songInformation
+            {
+                display: flex;
+                flex-direction: column;
+            }

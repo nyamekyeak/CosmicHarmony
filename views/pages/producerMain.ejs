@@ -20,7 +20,45 @@
 		<!-- Playlist View Overlay -->
 		<span id = "playlistViewOverlay">
 			<button onclick = "closeOverlay(this)" class = "closeOverlay"><i class="fa-solid fa-xmark"></i></button>
-			<span class = "playlistOverlayCard"></span>
+			<span class = "playlistOverlayCard">
+				<span class = "playlistInfo">
+					<span class = "playlistDetails">
+						<span class="playlistCreator"> Playlist Creator </span>
+						<span class = "playlistTitle"> Playlist Title </span>
+						<span class="playlistID">Playlist ID</span>
+					</span>
+					<span class="managementButtons">
+						<button>share</button>
+						<button>edit</button>
+						<button>delete</button>
+					</span>
+				</span>
+				<span class = "playlist">
+					<span class="playlistDescription">
+						<span class="genre">genre</span>
+						<span class="description">description</span>
+					</span>
+					<span class="playlistSongs">
+						<span class="overlaySongCard">
+							<span class="songImage">
+								<!-- <img src="../../assets/images/placeholderImages/placeholder3.jpg" alt=""> -->
+							</span>
+							<span class="songInformation">
+								<span class="songName">Song Name</span>
+								<span class="songArtist">Artist</span>
+								<span class="songDuration">00:00</span>
+								<span class="songGenre">genre</span>
+							</span>
+							<span class="controlButtons">
+								<button>play</button>
+								<button>pause</button>
+								<button>download</button>
+								<button>delete</button>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
 		</span>
 		<main>
 		  <%- include('../partials/hero.ejs') %>
@@ -326,7 +364,7 @@
 		<script src="javascript/main.js"></script>
 		<script src="javascript/playlistManage.js"></script>
 		<script src="javascript/searchFeature.js"></script>
-		<script src = "javascript/chatFeature.js"></script>
+		<!-- <script src = "javascript/chatFeature.js"></script> -->
 		<script src = "javascript/overlays.js"></script>
 		<script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
 	   </body>
