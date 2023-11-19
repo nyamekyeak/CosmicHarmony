@@ -37,3 +37,33 @@ div[id = "heroContainer"]
         /* opacity: 0.2; */
         /* display: none; */
     }
+
+    div[id = "heroButtons"]
+    {
+        display: flex;
+        width: 100vw;
+        position: absolute;
+        z-index: 10;
+        background-color: red;
+        gap: 0.5vw;
+        margin-left: 64vw;
+    }
+
+        div[id = "heroButtons"] .heroButtonContainer
+        {
+            display: flex;
+            flex-direction: column;
+            width: 7vw;
+            text-align: center;
+            align-items: center;
+        }
+
+        div[id = "heroButtons"] .heroButtonContainer button
+        {
+            width: 2.75vw;
+            height: 2.75vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-self: center;
+        }

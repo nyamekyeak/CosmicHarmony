@@ -133,7 +133,10 @@ app.get('/library', async function (req, res)
     try {
       const genreCollection = publicDataBase.collection('Genres');
       const genres = await genreCollection.find({}).toArray();
-  
+      
+      const songCollection = publicDataBase.collection('TempSongs');
+      const songs = await songCollection.find({}).toArray();
+
       if (genres.length > 0) {
         console.log('Genre retrieved successfully');
         console.log(genres);
@@ -146,7 +149,8 @@ app.get('/library', async function (req, res)
             heroHeader: "DJ Pool", 
             heroCaption: "Browse our massive collection of DJs from all over the world",
             heroImage: "assets/images/placeholderImages/placeholder3.jpg",
-            genres: genres
+            genres: genres,
+            songs: songs
       });
     } 
     catch (error) 
