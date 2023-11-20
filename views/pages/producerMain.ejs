@@ -104,7 +104,7 @@
 							</span>
 							<span id="loadedPlaylistMetrics">
 								<span><%= loadedPlaylists[0].playlistGenreScope[0] %></span>
-								<span id = "songCount"><%= loadedPlaylists[0].songCount.toString() %> songs</span>
+								<span id = "songCount"><%= loadedPlaylists[0].songs.length.toString() %> songs</span>
 								<span><%= ((loadedPlaylists[0].duration % 3600) / 60).toString() %> minutes <%= ((loadedPlaylists[0].duration % 60)).toString() %> seconds</span>
 							</span>
 							<span id="loadedPlaylistDescription"><%= loadedPlaylists[0].playlistDescription %></span>

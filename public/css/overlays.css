@@ -21,6 +21,7 @@ span[id = "playlistViewOverlay"]
         width: 2vw;
         height: 2vw;
         align-self: center;
+        position: fixed;
     }
 
     span[id = "playlistViewOverlay"] .playlistOverlayCard
@@ -30,6 +31,7 @@ span[id = "playlistViewOverlay"]
         width: 95%;
         height: 20vw;
         background-color: black;
+        
     }
 
         span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist
