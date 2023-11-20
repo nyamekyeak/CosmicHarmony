@@ -1,3 +1,4 @@
+/* Overlay that shows when view playlists is clicked */
 span[id = "playlistViewOverlay"]
 {
     display: flex;
@@ -34,17 +35,30 @@ span[id = "playlistViewOverlay"]
         {
             width: 70%;
             display: flex;
+            height: 100%;
             flex-direction: column;
-            background-color: red;
+            overflow-y: scroll;
+            background: rgb(102,163,244);
+            background: linear-gradient(162deg, rgba(102,163,244,1) 0%, rgba(43,113,193,1) 28%, rgba(17,115,195,1) 53%, rgba(53,102,200,1) 77%, rgba(86,142,227,1) 100%);
         }
 
         span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistDescription
         {
             display: flex;
-            height: 15%;
-            background-color: aqua;
+            flex-direction: column;
+            height: 25%;
+            text-align: center;
+            background: rgb(17,88,142);
+            background: linear-gradient(333deg, rgba(17,88,142,1) 0%, rgba(17,83,142,0.9962359943977591) 100%);
         }
 
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistDescription .metrics
+            {
+                text-transform : uppercase;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+            }
     span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo
     {
         display:flex;
@@ -54,7 +68,7 @@ span[id = "playlistViewOverlay"]
         background-size: cover;
         height: 100%;
         width: 30%;
-        color: white;
+        color: rgb(255, 255, 255);
     }
 
         span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo .playlistDetails
@@ -65,21 +79,108 @@ span[id = "playlistViewOverlay"]
             justify-self: center;
             align-items: center;
             margin-top : 35%;
+            text-transform: uppercase;
         }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo .playlistDetails .playlistCreator
+            {
+                font-weight: 400;
+                font-size: 0.65vw;
+            }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo .playlistDetails .playlistTitle
+            {
+                font-weight: 600;
+                font-size: 1.5vw;
+            }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo .playlistDetails .playlistID
+            {
+                font-weight: 400;
+                font-size: 0.5vw;
+            }
+
 
     span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs
     {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        margin-top: 1.75vh;
+        gap: 0.5vh;
     }
 
         span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard
         {
             display: flex;
+            position: relative;
+            background: rgb(47,68,96);
+            background: linear-gradient(162deg, rgba(47, 68, 96, 0.677) 0%, rgba(34,50,74,0.677) 100%);
+            width: 90%;
+            height: 8.5vh;
+            outline: 0.25px solid white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.5s linear;
+            cursor: pointer;
+        }
+
+        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard:hover
+        {
+            background: rgb(47,68,96);
+            background: linear-gradient(162deg, rgb(47, 68, 96) 0%, rgb(34, 50, 74) 100%);
+            transition: all 0.5s linear;
         }
 
             span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .songInformation
             {
                 display: flex;
                 flex-direction: column;
+            }
+
+                span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .songInformation .songName
+                {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.2vw;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    margin-left: -3vw;
+                    width: 35vw;
+                }
+
+        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .songImage
+        {
+            width: 3vw;
+            height: 3vw;
+            overflow: hidden;
+            object-fit: cover;
+            align-self: flex-end;
+        }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .songImage img
+            {
+                width: 3vw;
+                height: 3vw;
+                object-fit: cover;
+            }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .controlButtons
+            {
+                display: flex;
+                align-self: center;
+                gap: 0.25vw;
+            }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .managementButtons
+            {
+                display: flex;
+                align-self: center;
+                gap: 0.25vw;
+                margin-top: 0.5vh;
+            }
+
+            span[id = "playlistViewOverlay"] hr
+            {
+                width: 100%;
             }

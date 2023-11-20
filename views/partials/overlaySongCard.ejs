@@ -1,22 +1,23 @@
-<span class="songCard">
-    <span class="songArt">
-        <img src="<%= ../../assets/images/placeholderImages/placeholder1.jpg || song.songAlbumCover %>" alt="placeholder">
+<span class="overlaySongCard">
+    <span class="songImage">
+        <img src="<%= songMap.get(song).songAlbumCover %>" alt="cover art">
     </span>
-    <span class="songInfo">
-        <span class="songTitle"><%= "song Name" || song.songName %></span>
-        <span class="songArtist"><%= "Artist Name" || song.SongLeadArtist %></span>
-        <span class="songDuration"><%= "00:00" || song.songDuration %></span>
-        <span><%= "Genre" || song.songGenre %></span>
+    <span class="songInformation">
+        <span class="songName"><%= songMap.get(song).songName %></span>
+        <span class="songArtist"><%= songMap.get(song).SongLeadArtist %></span>
+        <span class="songDuration"><%= songMap.get(song).songDuration  %></span>
+        <span class="songGenre"><%= songMap.get(song).songGenre  %></span>
     </span>
-    <span class="songButtons">
-        <audio src="<%= ../../assets/audio/placeholderAudio/placeholder1.mp3 || song.songSource %>"></audio>
+    <span class="controlButtons">
+        <audio src="<%= songMap.get(song).songSource  %>"></audio>
         <button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
-        <button onclick="stopAudio(this)" class="stopAudio"><i class="fa-solid fa-circle-stop"></i></button>
-        <button><i class="fa-solid fa-circle-plus"></i></button>
-        <button><i class="fa-solid fa-share"></i></button>
+        <button><i class="fa-regular fa-circle-stop"></i></button>
+        <button><i class="fa-solid fa-download"></i></button>
+        <button><i class="fa-solid fa-trash"></i></button>
     </span>
 </span>
-<script>								
+
+<script>
     function playAudio(button)
     {
         var allAudio = document.getElementsByTagName("audio");

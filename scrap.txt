@@ -518,3 +518,73 @@
 
 
 <%= document.events.length %>
+
+
+
+------------
+
+			<span class = "playlistOverlayCard">
+				<span class = "playlistInfo">
+					<span class = "playlistDetails">
+						<span class="playlistCreator"> Playlist Creator </span>
+						<span class = "playlistTitle"> Playlist Title </span>
+						<span class="playlistID">Playlist ID</span>
+					</span>
+					<span class="managementButtons">
+						<button>share</button>
+						<button>edit</button>
+						<button>delete</button>
+					</span>
+				</span>
+				<span class = "playlist">
+					<span class="playlistDescription">
+						<span class="metrics">
+							<span>genre</span> | <span>__ songs</span> | <span>__ : __</span>
+						</span>
+						<hr>
+						<span class="description">Descriptive text describing the playlist</span>
+					</span>
+					<span class="playlistSongs">
+						<span class="overlaySongCard">
+							<span class="songImage">
+								<img src="../../assets/images/placeholderImages/placeholder3.jpg" alt="">
+							</span>
+							<span class="songInformation">
+								<span class="songName">Song Name</span>
+								<span class="songArtist">Artist</span>
+								<span class="songDuration">__:__</span>
+								<span class="songGenre">genre</span>
+							</span>
+							<span class="controlButtons">
+								<audio src="../../assets/audio/placeholderAudio"></audio>
+								<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+								<button><i class="fa-regular fa-circle-stop"></i></button>
+								<button><i class="fa-solid fa-download"></i></button>
+								<button><i class="fa-solid fa-trash"></i></button>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+
+
+-----------------
+
+            <span class="overlaySongCard">
+                <span class="songImage">
+                    <img src="../../assets/images/placeholderImages/placeholder3.jpg" alt="">
+                </span>
+                <span class="songInformation">
+                    <span class="songName">Song Name</span>
+                    <span class="songArtist">Artist</span>
+                    <span class="songDuration">__:__</span>
+                    <span class="songGenre">genre</span>
+                </span>
+                <span class="controlButtons">
+                    <audio src="../../assets/audio/placeholderAudio"></audio>
+                    <button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+                    <button><i class="fa-regular fa-circle-stop"></i></button>
+                    <button><i class="fa-solid fa-download"></i></button>
+                    <button><i class="fa-solid fa-trash"></i></button>
+                </span>
+            </span>

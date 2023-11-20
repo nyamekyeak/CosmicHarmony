@@ -29,8 +29,25 @@ app.get('/', async function (req, res)
         const songArray = loadedPlaylists[0].songs;
         const loadedPlaylistSongs = [];
 
+
+        const idObject_songMap = new Map();
+        for(var i = 0; i < miniLibrarySongs.length; i++)
+        {
+            idObject_songMap.set(miniLibrarySongs[i].songId, miniLibrarySongs[i]);
+            console.log("Mapping Complete")
+        }
+
+        console.log(idObject_songMap);
         const producer = await ProducerPool.find({producerId : loadedPlaylist.creatorId}).toArray();
-        console.log(loadedPlaylist);
+        const allProducers = await ProducerPool.find({}).toArray();
+        const idOpject_producerMap = new Map();
+
+        for(var i = 0; i < allProducers.length; i++)
+        {
+            idOpject_producerMap.set(allProducers[i].producerId, allProducers[i]);
+            console.log("Mapping Complete")
+        }
+        // console.log(loadedPlaylist);
         var songQuery = "";
         for(var i = 0; i < songArray.length; i++)
         {
@@ -59,7 +76,9 @@ app.get('/', async function (req, res)
             miniLibrarySongs: miniLibrarySongs,
             loadedPlaylists: loadedPlaylists,
             loadedPlaylistSongs: loadedPlaylistSongs,
-            producer: producer
+            producer: producer,
+            songMap: idObject_songMap,
+            producerMap: idOpject_producerMap
         });
     }
     catch (error)

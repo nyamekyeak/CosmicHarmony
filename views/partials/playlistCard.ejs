@@ -1,0 +1,30 @@
+<span class = "playlistOverlayCard">
+    <span class = "playlistInfo">
+        <span class = "playlistDetails">
+            <span class="playlistCreator"> <%= producerMap.get(playlist.creatorId).producerName %> </span>
+            <span class = "playlistTitle"> <%= playlist.playlistTitle %> </span>
+            <span class="playlistID"><%= playlist.playlistId %></span>
+        </span>
+        <span class="managementButtons">
+            <button>share</button>
+            <button>edit</button>
+            <button>delete</button>
+        </span>
+    </span>
+    <span class = "playlist">
+        <span class="playlistDescription">
+            <span class="metrics">
+                <span>genre</span> | <span><%= playlist.songs.length.toString() %> songs</span> | <span><%= playlist.duration.toString() %></span>
+            </span>
+            <hr>
+            <span class="description"><%= playlist.playlistDescription %></span>
+        </span>
+        <div class="playlistSongs">
+            <% if(playlist.songs.length > 0) { %>
+                <% playlist.songs.forEach((song) => { %>
+                    <%- include('../partials/overlaySongCard.ejs', {song: song})  %>
+                <% }) %>
+            <% } %>
+        </div>
+    </span>
+</span>
