@@ -13,6 +13,50 @@
         "contacts": [],
         "chats": [],
         "upcomingEventCount": 0
-
+    },
+    {
+        "producerId": "CH-PROD-XYZ98765",
+        "producerName": "Nikita Alluri",
+        "producerBio": "Creative and innovative producer with a passion for producing high-quality music.",
+        "producerStatus": "active",
+        "socials": ["spotify", "instagram", "youtube", "soundcloud"],
+        "socialLinks": ["https://spotify.com/johndoe", "https://instagram.com/johndoe", "https://youtube.com/johndoe", "https://soundcloud.com/johndoe"],
+        "location": ["Texas", "United States"],
+        "avatar": "public/assets/profileAvatars/producerAvatars/PRAV2.jpg",
+        "programLineup": [],
+        "playlistsCreated": ["CH-PL-12345678"],
+        "contacts": [],
+        "chats": [],
+        "upcomingEventCount": 0
+    },
+    {
+        "producerId": "CH-PROD-MNO01234",
+        "producerName": "Shruti Sekar",
+        "producerBio": "Passionate producer with a love for producing unique and beautiful music.",
+        "producerStatus": "active",
+        "socials": ["spotify", "instagram", "youtube", "soundcloud"],
+        "socialLinks": ["https://spotify.com/johndoe", "https://instagram.com/johndoe", "https://youtube.com/johndoe", "https://soundcloud.com/johndoe"],
+        "location": ["London", "United Kingdom"],
+        "avatar": "public/assets/profileAvatars/producerAvatars/PRAV3.jpg",
+        "programLineup": [],
+        "playlistsCreated": [],
+        "contacts": [],
+        "chats": [],
+        "upcomingEventCount": 0
+    },
+    {
+        "producerId": "CH-PROD-PQR34567",
+        "producerName": "Pranav Kulkarni",
+        "producerBio": "Creative and innovative producer with a passion for producing high-quality music.",
+        "producerStatus": "inactive",
+        "socials": ["spotify", "instagram", "youtube", "soundcloud"],
+        "socialLinks": ["https://spotify.com/johndoe", "https://instagram.com/johndoe", "https://youtube.com/johndoe", "https://soundcloud.com/johndoe"],
+        "location": ["California", "United States"],
+        "avatar": "public/assets/profileAvatars/producerAvatars/PRAV4.jpg",
+        "programLineup": [],
+        "playlistsCreated": [],
+        "contacts": [], 
+        "chats": [],
+        "upcomingEventCount": 0
     }
 ]

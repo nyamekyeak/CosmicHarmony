@@ -1,6 +1,6 @@
 [
     {
-        "songId": "CH-SNG-ABC12345",
+        "songId": "CH-SNG-ABC12CR5",
         "songName": "Abracadabra",
         "songLeadArtist" : "Lordmoon",
         "songFeaturedArtists": [],
@@ -13,7 +13,7 @@
         "songAlbumCover" : "../assets/images/songCoverArt/albumArt1.jpg"
     },
     {
-        "songId": "CH-SNG-XYZ98765",
+        "songId": "CH-SNG-XYZ9K765",
         "songName" : "Choice",
         "songLeadArtist" : "Lordmoon",
         "songFeaturedArtists": [],
@@ -754,7 +754,7 @@
         "songSource" : "../assets/audio/songsByGenre/indiepop/Soldier's Story_Blanket Music.mp3"
     },
     {
-        "sondId" : "CH-SNG-13PWAN9TO",
+        "songId" : "CH-SNG-13PWAN9TO",
         "songName" : "Unabridged",
         "songLeadArtist" : "Blanket Music",
         "songFeaturedArtists": [],

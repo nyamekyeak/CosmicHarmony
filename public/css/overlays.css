@@ -1,7 +1,7 @@
 /* Overlay that shows when view playlists is clicked */
 span[id = "playlistViewOverlay"]
 {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 70%;
     height: 90%;
@@ -13,6 +13,7 @@ span[id = "playlistViewOverlay"]
     margin-left: 15%;
     margin-top: -2%;
     color: white;
+    gap: 0.5vh;
 }
 
     span[id = "playlistViewOverlay"] .closeOverlay
@@ -64,7 +65,7 @@ span[id = "playlistViewOverlay"]
         display:flex;
         flex-direction: column;
         /* background-color: aquamarine; */
-        background-image: url("../assets/images/backgrounds/backg3.jpg");
+        /* background-image: url("../assets/images/backgrounds/backg3.jpg"); */
         background-size: cover;
         height: 100%;
         width: 30%;
