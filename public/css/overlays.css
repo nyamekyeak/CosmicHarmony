@@ -219,11 +219,18 @@ span[id = "createPlaylistOverlay"]
     overflow-x: hidden;
     position: fixed;
     z-index: 1000;
-    background-color: aliceblue;
+    background-color: rgba(240, 248, 255, 0.316);
     margin-left: 15%;
     margin-top: -2%;
     color: black;
     gap: 0.5vh;
+    /* /* background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    
+    /* -webkit-backdrop-filter: blur( 16.5px ); */
+    /* backdrop-filter: blur( 16.5px ); */
+    /* border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 }
 
     span[id = "musicSelection"]
@@ -237,7 +244,7 @@ span[id = "createPlaylistOverlay"]
         {
             display: flex;
             flex-direction: column;
-            background: purple;
+            border-right: 5px solid white;
             width: 55%;
             height: 55vh;
             overflow-y : scroll;
@@ -321,7 +328,7 @@ span[id = "createPlaylistOverlay"]
             {
                 display: flex;
                 flex-direction: column;
-                background: pink;
+                /* background: pink; */
                 width: 40%;
                 height: 55vh;
                 overflow-y : scroll;
@@ -554,3 +561,17 @@ span[id = "switchUserOverlay"]
                 height: 9vh;
                 object-fit: cover;
             }
+
+            span[id = "switchUserOverlay"] .buttonGroup
+            {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5vw;
+            }
+
+
+/* View Events Overlay */
+
+/* Create event overlay */
