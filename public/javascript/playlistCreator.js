@@ -90,8 +90,25 @@ function generatePlaylistID()
 
 function resetEntries(button)
 {
-
+    const overlayRoot = button.parentElement.parentElement; 
+    console.log(overlayRoot);
+    var addedSongCards = overlayRoot.getElementsByClassName("addedSongCard");
+    console.log(addedSongCards.length);
+    const addedSongsContainer = document.getElementById("musicSelected");
+    for (var i = addedSongCards.length - 1; i >= 0; i--) {
+        addedSongsContainer.removeChild(addedSongCards[i]);
+        addedSongs.pop();
+      }
+    console.log(addedSongsContainer.length);
 }
+
+function discardCreation(button)
+{
+    const overlayRoot = button.parentElement.parentElement; 
+    resetEntries(button);
+    closeOverlay(button.parentElement);
+}
+
 function playAudio(button)
 {
     var allAudio = document.getElementsByTagName("audio");
