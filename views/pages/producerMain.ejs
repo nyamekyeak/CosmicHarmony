@@ -29,18 +29,19 @@
 		<!-- Create Playlist Overlay -->
 		<span id = "createPlaylistOverlay">
 			<button onclick="closeOverlay(this)" class = "closeOverlay"><i class="fa-solid fa-xmark"></i></button>
-			<span>Build-a-Playlist &trade;</span>
+			<span style = "font-size: 1.5vw; font-weight: bold; text-align: center;">BUILD-a-PLAYLIST&trade;<p style = "font-size: 0.75vw; font-weight: normal; margin-top: -1vh; font-style: italic;">by CosmicHarmony</p></span>
 			<span id="generatedInfo">
-				<span>genre</span>
-				<span>playlist id</span>
+				<span id = "generatedGenre">genre</span>
+				<span id = "generatedID">playlist id</span>
 			</span>
 			<input type="text" id="newPlaylistName" placeholder="Playlist Name"></input>
 			<textarea name="playlistDescription" id="newPlaylistDescription" cols="30" rows="10" placeholder="Playlist Description"></textarea>
 			<span id = "musicSelection">
 				<span id="musicSelected">Music Added from Glance
-					<span class="addedSongCard">
+					<span id="selectedSongCount">00</span>songs added to playlist
+					<span class="addedSongCard" id = "templateSongCard">
 						<span class="songArt">
-							<!-- <img src="../../assets/images/placeholderImages/placeholder3.jpg" alt=""> -->
+							<img src="../../assets/images/placeholderImages/placeholder3.jpg" alt="">
 						</span>
 						<span class="songInfo">
 							<span class="songName">Song Name</span>
@@ -49,15 +50,22 @@
 						</span>
 						<span class="controlButtons">
 							<audio src="../../assets/audio/placeholderAudio"></audio>
-							<button>play</button>
-							<button>stop</button>
-							<button><i class="fa-solid fa-trash"></i></button>
+							<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+							<button class = "stopButton" onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+							<button><i class="fa-solid fa-download"></i></button>
+							<button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button>
 						</span>
 					</span>
 				</span>
-				<span id="libraryGlance">Music in Library</span>
+				<span id="libraryGlance">Music in Library
+					<% if (miniLibrarySongs.length > 0) { %>
+						<% miniLibrarySongs.forEach((song) => { %>
+							<%- include('../partials/selectionLibrarySong.ejs', {song: song}) %>
+						<% }) %>
+					<% } %>
+				</span>
 			</span>
-			<span>
+			<span id = "playlistCreationButtons">
 				<button>Reset</button>
 				<button id="createPlaylistButton">Create Playlist</button>
 				<button>Cancel</button>
@@ -368,6 +376,7 @@
 		<script src="javascript/playlistManage.js"></script>
 		<script src="javascript/searchFeature.js"></script>
 		<!-- <script src = "javascript/chatFeature.js"></script> -->
+		<script src = "javascript/playlistCreator.js"></script>
 		<script src = "javascript/overlays.js"></script>
 		<script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
 	   </body>

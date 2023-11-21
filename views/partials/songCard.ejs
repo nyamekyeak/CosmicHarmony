@@ -9,7 +9,7 @@
         <span><%= "Genre" || song.songGenre %></span>
     </span>
     <span class="songButtons">
-        <audio src="<%= song.songSource %>"></audio>
+        <audio src="<%= song.songSource %>" id = "<%= song.songId %>"></audio>
         <button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
         <button onclick="stopAudio(this)" class="stopAudio"><i class="fa-solid fa-circle-stop"></i></button>
         <button><i class="fa-solid fa-circle-plus"></i></button>

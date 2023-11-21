@@ -9,7 +9,7 @@
         <span class = "songDuration"> <%= miniLibrarySong.songDuration || 'Duration'%> </span>
     </span>
     <span class="intButtons">
-        <audio src= " <%= miniLibrarySong.songSource%>"></audio>
+        <audio src= " <%= miniLibrarySong.songSource%>" id = "<%= miniLibrarySong.songId%>"></audio>
         <button onclick="playMiniAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
         <button onclick="stopMiniAudio(this)" class = "stopButton"><i class="fa-regular fa-circle-stop"></i></button>
         <button><i class="fa-solid fa-circle-plus"></i></button>

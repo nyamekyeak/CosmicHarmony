@@ -223,6 +223,8 @@ span[id = "createPlaylistOverlay"]
     span[id = "musicSelection"]
     {
         display: flex;
+        justify-content: center;
+        overflow-y: scroll;
     }
 
         span[id = "musicSelected"]
@@ -231,19 +233,215 @@ span[id = "createPlaylistOverlay"]
             flex-direction: column;
             background: purple;
             width: 55%;
-            height: 40vh;
+            height: 55vh;
             overflow-y : scroll;
             align-items: center;
+        }
+
+        #templateSongCard
+        {
+            display: none;
         }
 
             span[id = "musicSelected"] .addedSongCard
             {
                 display: flex;
                 width: 90%;
+                height: 6.75vh;
                 background-color: aqua;
+                margin-top: 0.5vh;
+                background: rgba(63, 178, 210, 0.618);
+                box-shadow: 0 8px 32px 0 rgba(111, 118, 224, 0.001);
+                backdrop-filter: blur( 20.5px );
+                -webkit-backdrop-filter: blur( 20.5px );
+                border-radius: 10px;
             }
                 span[id = "musicSelected"] .addedSongCard .songInfo
                 {
                     display: flex;
                     flex-direction: column;
+                    width: 69%;
+                    text-transform: uppercase;
+                }
+
+                    span[id = "musicSelected"] .addedSongCard .songArt
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 5vh;
+                        height: 5vh;
+                        overflow: hidden;
+                        object-fit: cover;
+                        align-self: flex-end;
+                    }
+
+                        span[id = "musicSelected"] .addedSongCard .songArt img
+                        {
+                            width: 5vh;
+                            height: 5vh;
+                            object-fit: cover;
+                        }
+
+                        span[id = "musicSelected"] .addedSongCard .songInfo .songName
+                        {
+                            display: flex;
+                            align-items: center;
+                            font-size: 1vw;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            margin-left: -2.65vw;
+                            margin-top: -0.45vh;
+                        }
+
+                span[id = "musicSelected"] .addedSongCard .controlButtons
+                {
+                    display: flex;
+                    align-self: center;
+                    gap: 0.25vw;
+                    margin-left: 2vw;
+                }
+
+                    span[id = "musicSelected"] .addedSongCard .controlButtons .stopButton
+                    {
+                        display: none;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+
+            span[id = "libraryGlance"]
+            {
+                display: flex;
+                flex-direction: column;
+                background: pink;
+                width: 40%;
+                height: 55vh;
+                overflow-y : scroll;
+                align-items: center;
+                margin-left: 1.75vw;
+                gap: 0.5vh;
+            }
+
+                span[id = "generatedInfo"]
+                {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-left: 1.75vw;
+                    margin-right: 1.75vw;
+                }
+
+                span[id = "libraryGlance"] .songCard
+                {
+                    display: flex;
+                    width: 95%;
+                    height: 6.75vh;
+                    background-color: bisque;
+                    background: rgba(63, 178, 210, 0.618);
+                    box-shadow: 0 8px 32px 0 rgba(111, 118, 224, 0.001);
+                    backdrop-filter: blur( 20.5px );
+                    -webkit-backdrop-filter: blur( 20.5px );
+                    border-radius: 10px;
+                }
+
+                    span[id = "libraryGlance"] .songCard .songInfo
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        width: 69%;
+                        text-transform: uppercase;
+                    }
+
+                        span[id = "libraryGlance"] .songCard .songInfo .songGenre
+                        {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            text-transform: uppercase;
+                            text-align: center;
+                            width: 123%;
+                            justify-content: center;
+                            margin-top: -0.45vh;
+                        }
+
+                    span[id = "libraryGlance"] .songCard .songArt
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 5vh;
+                        height: 5vh;
+                        overflow: hidden;
+                        object-fit: cover;
+                        align-self: flex-end;
+                    }
+
+                        span[id = "libraryGlance"] .songCard .songArt img
+                        {
+                            width: 5vh;
+                            height: 5vh;
+                            object-fit: cover;
+                        }
+
+                        span[id = "libraryGlance"] .songCard .songInfo .songName
+                        {
+                            display: flex;
+                            align-items: center;
+                            font-size: 1vw;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            margin-left: -2.55vw;
+                            margin-top: -0.45vh;
+                        }
+
+                        span[id = "libraryGlance"] .songCard .controlButtons
+                        {
+                            display: flex;
+                            align-self: center;
+                            gap: 0.25vw;
+                        }
+
+                            span[id = "libraryGlance"] .songCard .controlButtons .stopButton
+                            {
+                                display: none;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                span[id = "playlistCreationButtons"]
+                {
+                    display: flex;
+                    justify-content: center;
+                    gap: 0.25vw;
+                    margin-top: 0.75vh;
+                }
+
+                input[id = "newPlaylistName"]
+                {
+                    width: 80%;
+                    height: 2.75vh;
+                    align-self: center;
+                    margin-left: 1.75vw;
+                }
+
+                textarea[id = "newPlaylistDescription"]
+                {
+                    width: 80%;
+                    height: 4.75vh;
+                    align-self: center;
+                    margin-left: 1.75vw;
+                }
+
+                span[id = "createPlaylistOverlay"] .closeOverlay
+                {
+                    display: flex;
+                    width: 3vh;
+                    height: 3vh;
+                    align-self: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    margin-top: 0.5vh;
                 }

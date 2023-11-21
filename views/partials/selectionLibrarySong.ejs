@@ -1,19 +1,19 @@
-<span class="overlaySongCard">
-    <span class="songImage">
-        <img src="<%= songMap.get(song).songAlbumCover %>" alt="cover art">
+<span class="songCard">
+    <span class="songArt">	
+        <img src="<%= song.songAlbumCover %>" alt="coverImage">
     </span>
-    <span class="songInformation">
-        <span class="songName"><%= songMap.get(song).songName %></span>
-        <span class="songArtist"><%= songMap.get(song).SongLeadArtist %></span>
-        <span class="songDuration"><%= songMap.get(song).songDuration  %></span>
-        <span class="songGenre"><%= songMap.get(song).songGenre  %></span>
+    <span class="songInfo">
+        <span class="songName"><%= song.songName  %></span>
+        <span class="songArtist"><%= song.songLeadArtist %></span>
+        <span class="songDuration"><%= song.songDuration %></span>
+        <span class="songGenre"><%= song.songGenre %></span>
     </span>
-    <span class="controlButtons">
-        <audio src="<%= songMap.get(song).songSource %>" id = "<%= song %>"></audio>
+    <span class = "controlButtons">
+        <audio src="<%= song.songSource %>" id = "<%= song.songId %>"></audio>
         <button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
-        <button onclick="stopAudio(this)" class="stopMusic"><i class="fa-regular fa-circle-stop"></i></button>
+        <button class = "stopButton" onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+        <button onclick="addToSelection(this)"><i class="fa-solid fa-plus"></i></button>
         <button><i class="fa-solid fa-download"></i></button>
-        <button><i class="fa-solid fa-trash"></i></button>
     </span>
 </span>
 

@@ -8,7 +8,7 @@
         <span class="songArtist"><%= loadedPlaylistSong.songLeadArtist %></span>
     </span>
     <span class="songControls">
-        <audio src="<%= loadedPlaylistSong.songSource %>"></audio>
+        <audio src="<%= loadedPlaylistSong.songSource %>" id = "<%= loadedPlaylistSong.songId %>" ></audio>
         <button onclick="playMiniAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
         <button onclick="stopMiniAudio(this)" class="stopPlaylistAudio"><i class="fa-regular fa-circle-stop"></i></button>
         <button><i class="fa-solid fa-pen-to-square"></i></button>
