@@ -72,6 +72,20 @@
 				<button onclick="discardCreation(this)">Cancel</button>
 			</span>
 		</span>
+		<!-- User Switching Overlay -->
+		<span id="switchUserOverlay">
+			<button onclick="closeOverlay(this)" class="closeOverlay"><i class="fa-solid fa-xmark"></i></button>
+			<span class="producers">
+				<% producers.forEach((producer) => { %>
+					<%- include('../partials/producerSlot.ejs', {producer: producer}) %>
+				<% }) %>
+
+			</span>
+			<span class="buttonGroup">
+				<button>new</button>
+				<button>guest</button>
+			</span>
+		</span>
 		<main>
 		  <%- include('../partials/hero.ejs') %>
 		  <%- include('../partials/searchBar.ejs') %>

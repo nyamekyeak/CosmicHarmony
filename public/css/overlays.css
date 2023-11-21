@@ -14,6 +14,12 @@ span[id = "playlistViewOverlay"]
     margin-top: -2%;
     color: white;
     gap: 0.5vh;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
     span[id = "playlistViewOverlay"] .closeOverlay
@@ -205,7 +211,7 @@ span[id = "playlistViewOverlay"]
 /* Overlay that shows when create event is clicked */
 span[id = "createPlaylistOverlay"]
 {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 70%;
     height: 90%;
@@ -451,3 +457,100 @@ span[id = "createPlaylistOverlay"]
                     width: 45%;
                     margin-left: 11%;
                 }
+
+/* User Switch Overlay */
+span[id = "switchUserOverlay"]
+{
+    display: none;
+    flex-direction: column;
+    width: 70%;
+    height: 45%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1000;
+    background-color: aliceblue;
+    margin-left: 15%;
+    margin-top: 10%;
+    color: white;
+    gap: 0.5vh;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+    span[id = "switchUserOverlay"] .closeOverlay
+    {
+        display: flex;
+        width: 3vh;
+        height: 3vh;
+        align-self: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-top: 0.5vh;
+    }
+
+    span[id = "switchUserOverlay"] .producers
+    {
+        width: 100%;
+        display: flex;
+        overflow-x : scroll;
+        height: 25vh;
+        /* background-color: green; */
+        gap: 0.5vh;
+        justify-content: center;
+        align-items: center;
+        color: azure;
+        margin-top: 5vh;
+    }
+
+    span[id = "switchUserOverlay"] .producers .producerButton
+    {
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+    }
+
+    span[id = "switchUserOverlay"] .producers .producerButton .producerSlot
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 20vh;
+        height: 15vh;
+        transition: all 0.3s ease-in-out;
+        /* background-color: black; */
+    }
+
+    span[id = "switchUserOverlay"] .producers .producerButton .producerSlot:hover
+    {
+        filter: drop-shadow(0 0 0.5rem rgb(0, 0, 0));
+    }
+
+        span[id = "switchUserOverlay"] .producers .producerButton .producerSlot .producerDetails
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        span[id = "switchUserOverlay"] .producers .producerButton .producerSlot .producerPhoto
+        {
+            width: 9vh;
+            height: 9vh;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 0.5vh;
+            overflow: hidden;
+        }
+
+            span[id = "switchUserOverlay"] .producers .producerButton .producerSlot .producerPhoto img
+            {
+                width: 9vh;
+                height: 9vh;
+                object-fit: cover;
+            }

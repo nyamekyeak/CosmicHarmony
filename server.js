@@ -78,7 +78,8 @@ app.get('/', async function (req, res)
             loadedPlaylistSongs: loadedPlaylistSongs,
             producer: producer,
             songMap: idObject_songMap,
-            producerMap: idOpject_producerMap
+            producerMap: idOpject_producerMap,
+            producers : allProducers
         });
     }
     catch (error)
