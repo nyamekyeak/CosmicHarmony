@@ -88,6 +88,10 @@ function generatePlaylistID()
     return prefix + id;
 }
 
+function resetEntries(button)
+{
+
+}
 function playAudio(button)
 {
     var allAudio = document.getElementsByTagName("audio");

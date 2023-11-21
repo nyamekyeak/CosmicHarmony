@@ -445,3 +445,9 @@ span[id = "createPlaylistOverlay"]
                     border-radius: 50%;
                     margin-top: 0.5vh;
                 }
+
+                input[id = "eventAssignment"]
+                {
+                    width: 45%;
+                    margin-left: 11%;
+                }
