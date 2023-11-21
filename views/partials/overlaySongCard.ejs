@@ -11,7 +11,7 @@
     <span class="controlButtons">
         <audio src="<%= songMap.get(song).songSource  %>"></audio>
         <button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
-        <button><i class="fa-regular fa-circle-stop"></i></button>
+        <button onclick="stopAudio(this)" class="stopMusic"><i class="fa-regular fa-circle-stop"></i></button>
         <button><i class="fa-solid fa-download"></i></button>
         <button><i class="fa-solid fa-trash"></i></button>
     </span>

@@ -187,3 +187,63 @@ span[id = "playlistViewOverlay"]
             {
                 width: 100%;
             }
+
+    span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .controlButtons .stopMusic
+    {
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button
+    {
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* Overlay that shows when create event is clicked */
+span[id = "createPlaylistOverlay"]
+{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1000;
+    background-color: aliceblue;
+    margin-left: 15%;
+    margin-top: -2%;
+    color: black;
+    gap: 0.5vh;
+}
+
+    span[id = "musicSelection"]
+    {
+        display: flex;
+    }
+
+        span[id = "musicSelected"]
+        {
+            display: flex;
+            flex-direction: column;
+            background: purple;
+            width: 55%;
+            height: 40vh;
+            overflow-y : scroll;
+            align-items: center;
+        }
+
+            span[id = "musicSelected"] .addedSongCard
+            {
+                display: flex;
+                width: 90%;
+                background-color: aqua;
+            }
+                span[id = "musicSelected"] .addedSongCard .songInfo
+                {
+                    display: flex;
+                    flex-direction: column;
+                }

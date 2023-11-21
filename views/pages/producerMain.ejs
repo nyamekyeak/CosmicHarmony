@@ -26,6 +26,43 @@
 				<% }) %>
 			<% } %>
 		</span>
+		<!-- Create Playlist Overlay -->
+		<span id = "createPlaylistOverlay">
+			<button onclick="closeOverlay(this)" class = "closeOverlay"><i class="fa-solid fa-xmark"></i></button>
+			<span>Build-a-Playlist &trade;</span>
+			<span id="generatedInfo">
+				<span>genre</span>
+				<span>playlist id</span>
+			</span>
+			<input type="text" id="newPlaylistName" placeholder="Playlist Name"></input>
+			<textarea name="playlistDescription" id="newPlaylistDescription" cols="30" rows="10" placeholder="Playlist Description"></textarea>
+			<span id = "musicSelection">
+				<span id="musicSelected">Music Added from Glance
+					<span class="addedSongCard">
+						<span class="songArt">
+							<!-- <img src="../../assets/images/placeholderImages/placeholder3.jpg" alt=""> -->
+						</span>
+						<span class="songInfo">
+							<span class="songName">Song Name</span>
+							<span class="songArtist">Artist</span>
+							<span class="songDuration">__:__</span>
+						</span>
+						<span class="controlButtons">
+							<audio src="../../assets/audio/placeholderAudio"></audio>
+							<button>play</button>
+							<button>stop</button>
+							<button><i class="fa-solid fa-trash"></i></button>
+						</span>
+					</span>
+				</span>
+				<span id="libraryGlance">Music in Library</span>
+			</span>
+			<span>
+				<button>Reset</button>
+				<button id="createPlaylistButton">Create Playlist</button>
+				<button>Cancel</button>
+			</span>
+		</span>
 		<main>
 		  <%- include('../partials/hero.ejs') %>
 		  <%- include('../partials/searchBar.ejs') %>

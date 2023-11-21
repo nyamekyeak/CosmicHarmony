@@ -3,7 +3,7 @@ const express = require('express');
 // Initialise Express
 var app = express();
 
-const port = 3000;
+const port = 8080;
 // Render static files
 app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'));
