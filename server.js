@@ -157,6 +157,12 @@ app.get('/library', async function (req, res)
       const songCollection = publicDataBase.collection('TempSongs');
       const songs = await songCollection.find({}).toArray();
 
+      const genreSongMap = new Map();
+      for(var i = 0; i < genres.length; i++)
+      {
+          genreSongMap.set(genres[i].genreName, await songCollection.find({songGenre: {$regex: genres[i].genreName, $options: 'i'}}).toArray());
+      }
+
       if (genres.length > 0) {
         console.log('Genre retrieved successfully');
         console.log(genres);
@@ -170,7 +176,10 @@ app.get('/library', async function (req, res)
             heroCaption: "Browse our massive collection of DJs from all over the world",
             heroImage: "assets/images/placeholderImages/placeholder3.jpg",
             genres: genres,
-            songs: songs
+            songs: songs,
+            songCollection : songCollection,
+            genreCollection : genreCollection,
+            genreSongMap : genreSongMap
       });
     } 
     catch (error) 

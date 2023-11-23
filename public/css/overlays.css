@@ -577,9 +577,9 @@ span[id = "switchUserOverlay"]
 /* Create event overlay */
 
 /* Genre Browsing Overlay */
-section[id = "genreBrowseOverlay"]
+section[class = "genreBrowseOverlay"]
 {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -598,7 +598,7 @@ section[id = "genreBrowseOverlay"]
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-    section[id = "genreBrowseOverlay"] .closeOverlay
+    section[class = "genreBrowseOverlay"] .closeOverlay
     {
         display: flex;
         width: 3vh;
@@ -609,7 +609,7 @@ section[id = "genreBrowseOverlay"]
         margin-top: 0.5vh;
     }
 
-    section[id = "genreBrowseOverlay"] .genreInfo
+    section[class = "genreBrowseOverlay"] .genreInfo
     {
         display: flex;
         flex-direction: column;
@@ -618,7 +618,7 @@ section[id = "genreBrowseOverlay"]
         background-color: green;
     }
 
-        section[id = "genreBrowseOverlay"] .genreInfo .genreArt
+        section[class = "genreBrowseOverlay"] .genreInfo .genreArt
         {
             display: flex;
             width: 100%;
@@ -627,14 +627,14 @@ section[id = "genreBrowseOverlay"]
             object-fit: cover;
         }
 
-            section[id = "genreBrowseOverlay"] .genreInfo .genreArt img
+            section[class = "genreBrowseOverlay"] .genreInfo .genreArt img
             {
                 width: 100%;
                 object-fit: cover;
                 z-index: 0;
             }
 
-        section[id = "genreBrowseOverlay"] .genreInfo .genreName
+        section[class = "genreBrowseOverlay"] .genreInfo .genreName
         {
             display: flex;
             position: absolute;
@@ -649,33 +649,34 @@ section[id = "genreBrowseOverlay"]
             align-items: center;
         }
 
-        section[id = "genreBrowseOverlay"] .genreInfo .genreDescription
+        section[class = "genreBrowseOverlay"] .genreInfo .genreDescription
         {
             display: flex;
             position: absolute;
         }
 
-    section[id = "genreBrowseOverlay"] .musicBox
+    section[class = "genreBrowseOverlay"] .musicBox
     {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        row-gap: 0.5vh;
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
         width: 100%;
         height: 65%;
-        /* background-color: red; */
+        background-color: red;
         overflow-y: scroll;
+        justify-content: center;
+        row-gap: 0.5vh;
+        gap: 0.5vh;
     }
 
-        section[id = "genreBrowseOverlay"] .musicBox .musicCard
+        section[class = "genreBrowseOverlay"] .musicBox .musicCard
         {
             display: flex;
             height: 7vh;
-            width: 25vw;
+            width: 22vw;
             background-color: aliceblue;
         }
 
-            section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicArt
+            section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicArt
             {
                 display: flex;
                 width: 7vh;
@@ -684,30 +685,31 @@ section[id = "genreBrowseOverlay"]
                 object-fit: cover;
             }
 
-                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicArt img
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicArt img
                 {
                     width: 7vh;
                     object-fit: cover;
                 }
 
-            section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo
+            section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo
             {
                 display: flex;
+                width: 17.5vh;
                 flex-direction: column;
                 text-transform: uppercase;
+                
             }
 
-                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicName
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicName
                 {
-                    font-size: 1.25vw;
+                    font-size: 0.80vw;
                     font-weight: 600;
-                    width: 14vw;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
                 }
 
-                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicArtist
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicArtist
                 {
                     font-size: 0.85vw;
                     font-weight: 300;
@@ -717,7 +719,7 @@ section[id = "genreBrowseOverlay"]
                     white-space: nowrap;
                 }
 
-                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicDuration
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicDuration
                 {
                     font-size: 0.75vw;
                     font-weight: 300;
@@ -727,7 +729,7 @@ section[id = "genreBrowseOverlay"]
                     white-space: nowrap;
                 }
 
-            section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons
+            section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons
             {
                 display: flex;
                 align-items: center;
@@ -735,12 +737,12 @@ section[id = "genreBrowseOverlay"]
                 margin-left: 2.05vw;
             }
 
-                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons .stopMusic
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons .stopMusic
                 {
                     display: none;
                 }
 
-                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons button
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons button
                 {
                     display: flex;
                     justify-content: center;

@@ -26,3 +26,11 @@ function currentTime()
         returnArray[0] = returnArray[0] % 12;
     return returnArray;
 }
+
+function capitalizeString(str) 
+{
+    return str.toLowerCase().replace(/(?:^|\s)\S/g, function (char) 
+    {
+      return char.toUpperCase();
+    });
+  }

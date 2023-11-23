@@ -1,0 +1,24 @@
+<span class="genreInfo">
+    <span class="genreArt">
+        <img src="<%= genre.genreCover %>" alt="Genre Art">
+    </span>
+    <span class="genreName">
+        <%= genre.genreName %>
+    </span>
+    <span class="genreDescription">
+        <%= genre.genreDescription %>
+    </span>
+</span>
+<!-- TODO: Implement string formatting later -->
+<span class="songCount"><%= songList.length.toString() %> songs listed</span>
+<span class="musicBox">
+        <% if (songList.length > 0) { %>
+            <% for (let i = 0; i < songList.length; i++) { %>
+                <%- include("partials/musicCard.ejs", { song: songList[i] }) %>
+            <% } %>
+        <% } 
+        <%else { %>
+            <span class="noSongs">No songs in this genre</span>
+        <% } %>
+    </span>
+</span>

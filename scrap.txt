@@ -588,3 +588,41 @@
                     <button><i class="fa-solid fa-trash"></i></button>
                 </span>
             </span>
+
+_______________________
+
+
+<section class="genreBrowseOverlay" id = "genre_overlay">
+            <button class = "closeOverlay">close</button>
+            <span class="genreInfo">
+                <span class="genreArt">
+					<img src="../../assets/images/placeholderImages/placeholder4.jpg" alt="Genre Art">
+				</span>
+				<span class="genreName">
+					Genre Name
+				</span>
+				<span class="genreDescription">
+					Genre Description here
+				</span>
+            </span>
+			<span class="songCount">__ songs listed</span>
+			<span class="musicBox">
+				<span class="musicCard">
+					<span class="musicArt">
+						<img src="../../assets/images/placeholderImages/placeholder1.jpg" alt="">
+					</span>
+					<span class="musicInfo">
+						<span class="musicName">Song Name</span>
+						<span class="musicArtist">Song Artist</span>
+						<span class="musicDuration">__ : __</span>
+					</span>
+					<span class="musicButtons">
+						<audio src=""></audio>
+						<button><i class="fa-regular fa-circle-play"></i></button>
+						<button class ="stopMusic"><i class="fa-solid fa-circle-stop"></i></button>
+						<button><i class="fa-solid fa-circle-plus"></i></button>
+						<button><i class="fa-solid fa-download"></i></button>
+					</span>
+				</span>
+			</span>
+        </section>

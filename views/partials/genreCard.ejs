@@ -1,3 +1,4 @@
+<% var genreGenration = "" %>
 <span id="<%= genre.genreName %>" class="genreCard">
     <span class="genreTitle"><%= genre.genreName.split(" ")[0] %></span>
     <span class="genreDescription"><%= genre.genreDescription %></span>
@@ -8,15 +9,31 @@
     </span>
     <img src="<%= genre.genreCover %>" alt="genre background">
     <span class="managementButtons">
-        <button onclick="showAndRender(this)">Browse</button>
+        <button onclick="showGenreOverlay(this)" class = "<%= genre.genreName.split(" ")[0] %>">
+            Browse
+          </button>
     </span>
 </span>
 
 <script>
+    var genreGenration = "";
+    function showGenreOverlay(button)
+    {
+        const overlayID = button.className + "_overlay";
+        console.log(overlayID);
+        const overlay = document.getElementById(overlayID);
+        overlay.style.display = "flex";
+    }
+
     function showAndRender(button)
     {
-        const songInfoEntry = button.parentElement.parentElement;
-        var genreName = songInfoEntry.id;
-        var genreCover = songInfoEntry.children[3].src;
+        showGenreOverlay();
+        genreGenration = button.parentElement.parentElement.id
+        console.log(genreGenration)
+    }
+
+    function getGenreName()
+    {
+        return capitalizeString(genreGenration);
     }
 </script>

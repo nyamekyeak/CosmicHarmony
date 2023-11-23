@@ -1,0 +1,23 @@
+<section class="genreBrowseOverlay" id = "<%= genre.genreName.split(" ")[0] %>_overlay">
+    <button class = "closeOverlay">close</button>
+    <span class="genreInfo">
+        <span class="genreArt">
+            <img src="<%= genre.genreCover %>" alt="Genre Art">
+        </span>
+        <span class="genreName">
+            <%= genre.genreName %>
+        </span>
+        <span class="genreDescription">
+            <%= genre.genreDescription %>
+        </span>
+    </span>
+    <span class="songCount"><%= genreSongMap.get(genre.genreName).length %> songs listed</span>
+    <span class="musicBox">
+        <% if(genreSongMap.get(genre.genreName).length > 0){ %>
+            <% let songList = genreSongMap.get(genre.genreName); %>
+            <% for(let i = 0; i < songList.length; i++){ %>
+                <%- include("../partials/musicCard.ejs", {music: songList[i]})  %>
+            <% } %>
+        <% } %>
+    </span>
+</section>

@@ -19,40 +19,11 @@
      </head>
     <body>
         <header><%- include('../partials/navbar.ejs') %></header>
-        <section id="genreBrowseOverlay">
-			<!-- <button class = "closeOverlay">close</button> -->
-            <span class="genreInfo">
-                <span class="genreArt">
-					<img src="../../assets/images/placeholderImages/placeholder2.jpg" alt="Genre Art">
-				</span>
-				<span class="genreName">
-					Genre Name
-				</span>
-				<span class="genreDescription">
-					Genre Description here
-				</span>
-            </span>
-			<span class="songCount">__ songs listed</span>
-			<span class="musicBox">
-				<span class="musicCard">
-					<span class="musicArt">
-						<img src="../../assets/images/placeholderImages/placeholder1.jpg" alt="">
-					</span>
-					<span class="musicInfo">
-						<span class="musicName">Song Name</span>
-						<span class="musicArtist">Song Artist</span>
-						<span class="musicDuration">__ : __</span>
-					</span>
-					<span class="musicButtons">
-						<audio src=""></audio>
-						<button><i class="fa-regular fa-circle-play"></i></button>
-						<button class ="stopMusic"><i class="fa-solid fa-circle-stop"></i></button>
-						<button><i class="fa-solid fa-circle-plus"></i></button>
-						<button><i class="fa-solid fa-download"></i></button>
-					</span>
-				</span>
-			</span>
-        </section>
+        <% if(genres.length > 0) {%>
+            <% genres.forEach((genre) => { %>
+                <%- include('../partials/genreBrowseOverlay.ejs', { genre: genre }) %>
+            <% }) %>
+        <% } %>
         <main>
             <%- include('../partials/hero.ejs') %>
             <%- include('../partials/searchBar.ejs') %>
@@ -63,13 +34,6 @@
                   <% }) %>
                  <% } %>
             </span>
-            <span id="allSongs">
-               <% if (songs.length > 0) { %>
-                  <% songs.forEach((song) => { %>
-                    <%- include('../partials/songCard.ejs', { song: song }) %>
-                  <% }) %>
-                 <% } %> 
-            </span>
         </main>
         <footer><%- include('../partials/footer.ejs') %></footer>
     </body>
@@ -78,5 +42,6 @@
     <script src="javascript/searchFeature.js"></script>
     <script src = "javascript/chatFeature.js"></script>
     <script src="javascript/musicLibrary.js"></script>
+    <script src="javascript/overlays.js"></script>
     <script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
 </html>
