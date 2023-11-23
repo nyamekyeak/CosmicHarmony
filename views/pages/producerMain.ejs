@@ -38,8 +38,8 @@
 			<textarea name="playlistDescription" id="newPlaylistDescription" cols="30" rows="10" placeholder="Playlist Description"></textarea>
 			<input type="text" placeholder="assign to event (optional)" id = "eventAssignment"></input>
 			<span id = "musicSelection">
-				<span id="musicSelected">Music Added from Glance
-					<span id="selectedSongCount">00</span>songs added to playlist
+				<span id="musicSelected">
+					<span id="selectedSongCount">00</span>
 					<span class="addedSongCard" id = "templateSongCard">
 						<span class="songArt">
 							<img src="../../assets/images/placeholderImages/placeholder3.jpg" alt="">
@@ -79,7 +79,6 @@
 				<% producers.forEach((producer) => { %>
 					<%- include('../partials/producerSlot.ejs', {producer: producer}) %>
 				<% }) %>
-
 			</span>
 			<span class="buttonGroup">
 				<button>new</button>

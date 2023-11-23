@@ -134,12 +134,12 @@ span[id = "playlistViewOverlay"]
             cursor: pointer;
         }
 
-        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard:hover
+        /* span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard:hover
         {
             background: rgb(47,68,96);
             background: linear-gradient(162deg, rgb(47, 68, 96) 0%, rgb(34, 50, 74) 100%);
             transition: all 0.5s linear;
-        }
+        } */
 
             span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .songInformation
             {
@@ -575,3 +575,169 @@ span[id = "switchUserOverlay"]
 /* View Events Overlay */
 
 /* Create event overlay */
+
+/* Genre Browsing Overlay */
+section[id = "genreBrowseOverlay"]
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 80%;
+    overflow-y: scroll;
+    position: fixed;
+    z-index: 10000;
+    background-color: aliceblue;
+    margin-left: 15%;
+}
+
+    section[id = "genreBrowseOverlay"] .closeOverlay
+    {
+        display: flex;
+        width: 3vh;
+        height: 3vh;
+        align-self: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-top: 0.5vh;
+    }
+
+    section[id = "genreBrowseOverlay"] .genreInfo
+    {
+        display: flex;
+        flex-direction: column;
+        height: 35%;
+        width: 100%;
+        background-color: green;
+    }
+
+        section[id = "genreBrowseOverlay"] .genreInfo .genreArt
+        {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            object-fit: cover;
+        }
+
+            section[id = "genreBrowseOverlay"] .genreInfo .genreArt img
+            {
+                width: 100%;
+                object-fit: cover;
+                z-index: 0;
+            }
+
+        section[id = "genreBrowseOverlay"] .genreInfo .genreName
+        {
+            display: flex;
+            position: absolute;
+            font-size: 4.5vw;
+            color: white;
+            text-transform: uppercase;
+            font-weight: 700;
+            width: 100%;
+            margin-top: -0.5vh;
+            /* background-color: purple; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        section[id = "genreBrowseOverlay"] .genreInfo .genreDescription
+        {
+            display: flex;
+            position: absolute;
+        }
+
+    section[id = "genreBrowseOverlay"] .musicBox
+    {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 0.5vh;
+        flex-direction: column;
+        width: 100%;
+        height: 65%;
+        background-color: red;
+        overflow-y: scroll;
+    }
+
+        section[id = "genreBrowseOverlay"] .musicBox .musicCard
+        {
+            display: flex;
+            height: 7vh;
+            width: 25vw;
+            background-color: aliceblue;
+        }
+
+            section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicArt
+            {
+                display: flex;
+                width: 7vh;
+                height: 7vh;
+                overflow: hidden;
+                object-fit: cover;
+            }
+
+                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicArt img
+                {
+                    width: 7vh;
+                    object-fit: cover;
+                }
+
+            section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo
+            {
+                display: flex;
+                flex-direction: column;
+                text-transform: uppercase;
+            }
+
+                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicName
+                {
+                    font-size: 1.25vw;
+                    font-weight: 600;
+                    width: 14vw;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicArtist
+                {
+                    font-size: 0.85vw;
+                    font-weight: 300;
+                    width: 14vw;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicDuration
+                {
+                    font-size: 0.75vw;
+                    font-weight: 300;
+                    width: 14vw;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+            section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons
+            {
+                display: flex;
+                align-items: center;
+                gap: 0.5vw;
+                margin-left: 2.05vw;
+            }
+
+                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons .stopMusic
+                {
+                    display: none;
+                }
+
+                section[id = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons button
+                {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+

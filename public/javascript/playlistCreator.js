@@ -59,6 +59,14 @@ function removeSong(button)
     var index = addedSongs.indexOf(songId);
     addedSongs.splice(index, 1);
     button.parentElement.parentElement.remove();
+    if(addedSongs.length < 10)
+    {
+        document.getElementById("selectedSongCount").innerText = "0" + addedSongs.length.toString();
+    }
+    else
+    {
+        document.getElementById("selectedSongCount").innerText = addedSongs.length.toString();
+    }
 }
 
 
@@ -95,11 +103,20 @@ function resetEntries(button)
     var addedSongCards = overlayRoot.getElementsByClassName("addedSongCard");
     console.log(addedSongCards.length);
     const addedSongsContainer = document.getElementById("musicSelected");
-    for (var i = addedSongCards.length - 1; i >= 0; i--) {
+    for (var i = addedSongCards.length - 1; i >= 0; i--) 
+    {
         addedSongsContainer.removeChild(addedSongCards[i]);
         addedSongs.pop();
-      }
-    console.log(addedSongsContainer.length);
+    }
+    if(addedSongs.length < 10)
+    {
+        document.getElementById("selectedSongCount").innerText = "0" + addedSongs.length.toString();
+    }
+    else
+    {
+        document.getElementById("selectedSongCount").innerText = addedSongs.length.toString();
+    }
+
 }
 
 function discardCreation(button)
