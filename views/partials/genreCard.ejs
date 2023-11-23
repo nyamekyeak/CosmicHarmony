@@ -8,6 +8,15 @@
     </span>
     <img src="<%= genre.genreCover %>" alt="genre background">
     <span class="managementButtons">
-        <button onclick="">Browse</button>
+        <button onclick="showAndRender(this)">Browse</button>
     </span>
 </span>
+
+<script>
+    function showAndRender(button)
+    {
+        const songInfoEntry = button.parentElement.parentElement;
+        var genreName = songInfoEntry.id;
+        var genreCover = songInfoEntry.children[3].src;
+    }
+</script>
