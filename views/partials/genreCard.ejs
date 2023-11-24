@@ -23,6 +23,8 @@
         console.log(overlayID);
         const overlay = document.getElementById(overlayID);
         overlay.style.display = "flex";
+        overlay.style.top = "10%";
+        document.getElementsByTagName("main")[0].style.filter = "blur(1115px)";
     }
 
     function showAndRender(button)
