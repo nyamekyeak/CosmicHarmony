@@ -40,11 +40,11 @@ app.get('/', async function (req, res)
         console.log(idObject_songMap);
         const producer = await ProducerPool.find({producerId : loadedPlaylist.creatorId}).toArray();
         const allProducers = await ProducerPool.find({}).toArray();
-        const idOpject_producerMap = new Map();
+        const idObject_producerMap = new Map();
 
         for(var i = 0; i < allProducers.length; i++)
         {
-            idOpject_producerMap.set(allProducers[i].producerId, allProducers[i]);
+            idObject_producerMap.set(allProducers[i].producerId, allProducers[i]);
             console.log("Mapping Complete")
         }
         // console.log(loadedPlaylist);
@@ -57,6 +57,11 @@ app.get('/', async function (req, res)
             // console.log(songQuery);
         }
         
+        const djPool = publicDataBase.collection('DJPool');
+        const activeDJs = await djPool.find({djStatus: "active"}).toArray();
+
+        const eventPool = publicDataBase.collection('Programs');
+        const upcomingEvents = await eventPool.find({eventStatus: "upcoming"}).toArray();
 
         if(miniLibrarySongs.length > 0)
         {
@@ -78,8 +83,10 @@ app.get('/', async function (req, res)
             loadedPlaylistSongs: loadedPlaylistSongs,
             producer: producer,
             songMap: idObject_songMap,
-            producerMap: idOpject_producerMap,
-            producers : allProducers
+            producerMap: idObject_producerMap,
+            producers : allProducers,
+            activeDJs: activeDJs,
+            upcomingEvents: upcomingEvents
         });
     }
     catch (error)

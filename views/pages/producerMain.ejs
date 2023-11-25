@@ -86,7 +86,185 @@
 			</span>
 		</span>
 		<!-- Event Creation Overlay -->
-		<span id="creatEventOverlay"></span>
+		<span id="createEventOverlay">
+			<button onclick="closeOverlay(this)" class="closeOverlay"><i class="fa-solid fa-xmark"></i></button>
+			<span style = "font-size: 1.5vw; font-weight: bold; text-align: center;">EVENT-o-NATOR&trade;<p style = "font-size: 0.75vw; font-weight: normal; margin-top: -1vh; font-style: italic;">by CosmicHarmony</p></span>
+			<span class = "basicInfo">
+				<input type="text" id="newEventName" placeholder = "Enter Event Name">
+				<span class="otherInfo">
+					<span class="dateTime">
+						<input type="date">
+						<span id="duration">
+							<input type="time">
+							<input type="number" name="eventRuntime" id="eventRuntime" placeholder="__ hrs" min="1" max="3" step="1" style="width: 2.75vw;">
+						</span>
+						
+					</span>
+					<span class="description">
+						<textarea name="eventDescription" id="newEventDescription" cols="30" rows="10" placeholder="Event Description"></textarea>
+					</span>
+				</span>
+				<input type="text" id="djAssignment" placeholder="select dj" list = "djDatalist">
+				<datalist id="djDatalist">
+					<% activeDJs.forEach((dj) => { console.log(dj.djId);%>
+						<option value="<%= dj.djId %>"><%= dj.stageName %></option>
+					<% }) %>
+				</datalist>
+			</span>
+			<span class="playlistAssignment">
+				<span>Playlist<br>Assignment</span>
+				<span class = "radioGroup">
+					<input type="radio" id = "noPlaylist" name = "radio" onclick="noPlaylistAllocation(this)">
+					<label for="noPlaylist">None</label>
+				</span>
+				<span class = "radioGroup">
+					<input type="radio" name = "radio" id = "loadPlaylist" onclick="playlistLoader(this)">
+					<label for="loadPlaylist">Load</label>
+				</span>
+				<span class = "radioGroup">
+					<input type="radio" name = "radio" id = "createPlaylist" onclick="playlistCreator(this)">
+					<label for="createPlaylist">Create</label>
+				</span>
+			</span>
+			<span class="builders">
+				<!-- load a created playlist -->
+				<span class="playlistLoader">
+					<span class="playlistSelector">
+						<span class="playlistDrop">
+							<select name="" id="playlistSelect">
+								<option value="0">Select A Playlist</option>
+								<% if(loadedPlaylists.length > 0 ) { %>
+									<% loadedPlaylists.forEach((playlist) => { %>
+										<% console.log(playlist.playlistName) %>
+										<option value="<%= playlist.playlistId %>"> <%= playlist.playlistTitle %> by <%= producerMap.get(playlist.creatorId).producerName %></option>
+									<% }) %>
+								<% } %>
+							</select>
+						</span>
+						<% if(loadedPlaylists.length > 0 ) { %>
+							<% loadedPlaylists.forEach((playlist) => { %>
+								<span class="playlistContent" id = "<%= playlist.playlistId %>">
+									<% if(playlist.songs.length > 0){ %>
+										<% playlist.songs.forEach((song) => { %>
+											<span class="playlistLoadSong">
+												<span class="songArt">
+													<img src="<%= songMap.get(song).songAlbumCover %>" alt="">
+												</span>
+												<span class="songInfo">
+													<span class="songName"><%= songMap.get(song).songName %></span>
+													<span class="songArtist"><%= songMap.get(song).songLeadArtist %></span>
+													<span class="songDuration"><%= songMap.get(song).songDuration %></span>
+												</span>
+												<span class="buttonGroup">
+													<audio src="<%= songMap.get(song).songSource %>"></audio>
+													<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+													<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+													<button><i class="fa-solid fa-download"></i></button>
+													<button><i class="fa-solid fa-trash"></i></button>
+												</span>
+											</span>
+										<% }) %>
+									<% } %>
+								</span>
+							<% }) %>
+						<% } %>
+					</span>
+					<span class="miniLibrary">
+						<span class="songs">
+							<% if(miniLibrarySongs.length > 0) { %>
+								<% miniLibrarySongs.forEach((song) => { %>
+									<span class="songCard" id = "<%= song.songId %>">
+										<span class="songArt">
+											<img src="<%= song.songAlbumCover %>" alt="">
+										</span>
+										<span class="songInfo">
+											<span class="songName"><%= song.songName %></span>
+											<span class="songArtist"><%= song.songLeadArtist %></span>
+											<span class="songDuration"><%= song.songDuration %></span>
+											<span class="songGenre"><%= song.songGenre %></span>
+										</span>
+										<span class="buttonGroup">
+											<audio src="<%= song.songSource %>"></audio>
+											<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+											<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+											<button><i class="fa-solid fa-circle-plus"></i></button>
+											<button><i class="fa-solid fa-download"></i></button>
+										</span>
+									</span>
+								<% }) %>
+							<% } %>
+						</span>
+					</span>
+				</span>
+				<!-- create a new playlist for the event -->
+				<span class="playlistCreator">
+					<span class="songSelection">
+						<span class="newPlaylistInfo">
+							<span id="playlistIdentification">
+								<span id="newPlaylistId">CH-PL-00000000</span>
+								<input type="text" id="newPlaylistTitle" placeholder="Playlist Title">
+							</span>
+							<textarea name="" id="newPlaylistDescription" cols="30" rows="10" placeholder="Playlist Description"></textarea>
+							<span id="newPlaylistGenreScope">genre | genre</span>
+						</span>
+						<span class = "songListing" id = "newPlaylistSongSelection">
+							<span class="songCard">
+								<span class="songArt">
+									<img src="../../assets/images/placeholderImages/djPlaceholder3.jpg" alt="">
+								</span>
+								<span class="songInfo">
+									<span class="songName">Song Name</span>
+									<span class="songArtist">Artist</span>
+									<span class="songDuration">00:00</span>
+								</span>
+								<span class="buttonGroup">
+									<audio src=""></audio>
+									<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+									<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+									<button><i class="fa-solid fa-download"></i></button>
+									<button><i class="fa-solid fa-trash"></i></button>
+								</span>
+							</span>
+						</span>
+					</span>
+					<span class="miniLibrary">
+						<span class="songs">
+							<% if(miniLibrarySongs.length > 0) { %>
+								<% miniLibrarySongs.forEach((song) => { %>
+									<span class="songCard songSelectionCard">
+										<span class="songArt">
+											<img src="<%= song.songAlbumCover %>" alt="">
+										</span>
+										<span class="songInfo">
+											<span class="songName"><%= song.songName %></span>
+											<span class="songArtist"><%= song.songLeadArtist %></span>
+											<span class="songDuration"><%= song.songDuration %></span>
+											<span class="songGenre"><%= song.songGenre %></span>
+										</span>
+										<span class="buttonGroup">
+											<audio src = "<%= song.songSource %>" id = "<%= song.songId %>"></audio>
+											<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+											<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+											<button onclick="addToNewPlaylist(this)"><i class="fa-solid fa-circle-plus"></i></button>
+											<button><i class="fa-solid fa-download"></i></button>
+										</span>
+									</span>	
+								<% }) %>
+							<% } %>
+						</span>
+					</span>
+				</span>
+			<span class="managementButtons">
+				<button onclick="resetEventCreation()"><i class="fa-solid fa-arrows-rotate"></i> reset</button>
+				<button onclick = "createEvent()"><i class="fa-regular fa-square-check"></i> create</button>
+				<button onclick = "cancelEventCreation()"><i class="fa-solid fa-xmark"></i> cancel</button>
+			</span>
+			</span>
+		</span>
+		<!-- Event Viewing Overlay -->
+		<span id = "eventsViewOverlay">
+			<button onclick="closeOverlay(this)" class="closeOverlay"><i class="fa-solid fa-xmark"></i></button>
+		</span>
 		<main>
 		  <%- include('../partials/hero.ejs') %>
 		  <%- include('../partials/searchBar.ejs') %>
@@ -392,6 +570,7 @@
 		<script src="javascript/playlistManage.js"></script>
 		<script src="javascript/searchFeature.js"></script>
 		<!-- <script src = "javascript/chatFeature.js"></script> -->
+		<script src = "javascript/eventCreator.js"></script>
 		<script src = "javascript/playlistCreator.js"></script>
 		<script src = "javascript/overlays.js"></script>
 		<script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>

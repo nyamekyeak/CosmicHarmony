@@ -7,18 +7,14 @@ const eventSchema = new mongoose.Schema(
         type: String,
         required: true
     },
-    title: 
+    eventName: 
     {
         type: String,
         required: true
     },
     description: String,
     genre : [String],
-    playlist: 
-    {
-        type: [String],
-        required: true
-    },
+    playlist: String, // id for playlist
     leadProducer: 
     {
         type: String,

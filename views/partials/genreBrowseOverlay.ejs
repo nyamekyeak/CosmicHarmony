@@ -5,13 +5,13 @@
             <img src="<%= genre.genreCover %>" alt="Genre Art">
         </span>
         <span class="genreName">
-            <%= genre.genreName %>
+            <%= genre.genreName.split(" ")[0] %>
         </span>
         <span class="genreDescription">
             <%= genre.genreDescription %>
         </span>
+        <span class="songCount"><%= genreSongMap.get(genre.genreName).length %> songs listed</span>
     </span>
-    <span class="songCount"><%= genreSongMap.get(genre.genreName).length %> songs listed</span>
     <span class="musicBox">
         <% if(genreSongMap.get(genre.genreName).length > 0){ %>
             <% let songList = genreSongMap.get(genre.genreName); %>
