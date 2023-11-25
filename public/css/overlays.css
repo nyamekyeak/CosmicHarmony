@@ -1222,3 +1222,49 @@ span[id = "eventsViewOverlay"]
         border-radius: 50%;
         margin-top: 0.5vh;
     }
+
+
+    span[id = "eventsViewOverlay"] .eventListing
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90%;
+        overflow-y: scroll;
+        align-items: center;
+    }
+
+        span[id = "eventsViewOverlay"] .eventListing .eventCard
+        {
+            width: 50vw;
+            height: 25vh;
+            background-color: aliceblue;
+            display: flex;
+        }
+
+            span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics
+            {
+                background-color: pink;
+                display: flex;
+                flex-direction: column;
+                width: 25vh;
+                height: 100%;
+                text-transform: uppercase;
+            }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics .eventId
+                {
+                    display: flex;
+                    text-align: center;
+                    width: 100%;
+                    justify-content: center;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics .productionInfo
+                {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+
+    
