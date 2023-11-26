@@ -1256,8 +1256,13 @@ span[id = "eventsViewOverlay"]
                 {
                     display: flex;
                     text-align: center;
-                    width: 100%;
+                    min-width: 30%;
                     justify-content: center;
+                    margin-top: 6vh;
+                    border-bottom: 3px solid white;
+                    align-self: center;
+                    font-size: 0.85vw;
+                    font-weight: 500;
                 }
 
                 span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics .productionInfo
@@ -1267,4 +1272,49 @@ span[id = "eventsViewOverlay"]
                 }
 
 
+            span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo
+            {
+                display: flex;
+                flex-direction: column;
+                text-transform: uppercase;
+                width: calc(100% - 25vh);
+            }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .eventTitle
+                {
+                    display: flex;
+                    width: 100%;
+                    font-size: 1.75vw;
+                    font-weight: 600;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .date
+                {
+                    display: flex;
+                    width: 100%;
+                    font-size: 0.75vw;
+                    font-weight: 300;
+                    text-align: center;
+                    justify-content: center;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .timing
+                {
+                    display: flex;
+                    width: 100%;
+                    font-size: 0.75vw;
+                    font-weight: 300;
+                    text-align: center;
+                    justify-content: center;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .duration
+                {
+                    display: flex;
+                    width: 100%;
+                    font-size: 0.75vw;
+                    font-weight: 300;
+                    text-align: center;
+                    justify-content: center;
+                }
     
