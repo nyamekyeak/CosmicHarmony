@@ -1269,7 +1269,26 @@ span[id = "eventsViewOverlay"]
                 {
                     display: flex;
                     flex-direction: column;
+                    margin-top: 1.75vh;
+                    width: 100%;
+                    align-items: center;
                 }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics .buttonGroup
+                {
+                    display: flex;
+                    gap: 0.5vw;
+                    align-self: center;
+                    margin-top: 0.5vh;
+                }
+
+                    span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics .buttonGroup button
+                    {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-transform: uppercase;
+                    }
 
 
             span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo
@@ -1286,6 +1305,25 @@ span[id = "eventsViewOverlay"]
                     width: 100%;
                     font-size: 1.75vw;
                     font-weight: 600;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .eventPlaylist
+                {
+                    display: flex;
+                    width: 100%;
+                    font-weight: 500;
+                    font-style: oblique;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .status
+                {
+                    display: flex;
+                    background-color: darkgreen;
+                    text-align: center;
+                    align-self: center;
+                    justify-content: center;
+                    width: 100%;
+                    color: white;
                 }
 
                 span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .date
@@ -1317,4 +1355,11 @@ span[id = "eventsViewOverlay"]
                     text-align: center;
                     justify-content: center;
                 }
-    
+                
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .description
+                {
+                    display: flex;
+                    width: 90%;
+                    margin-left: 0.5vw;
+                    text-transform: none;
+                }

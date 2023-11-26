@@ -264,32 +264,43 @@
 		<!-- Event Viewing Overlay -->
 		<span id = "eventsViewOverlay">
 			<button onclick="closeOverlay(this)" class="closeOverlay"><i class="fa-solid fa-xmark"></i></button>
+			<span style = "font-size: 1.5vw; font-weight: bold; text-align: center;">EVENT-LINEUP&trade;<p style = "font-size: 0.75vw; font-weight: normal; margin-top: -1vh; font-style: italic;">by CosmicHarmony</p></span>
 			<span class="eventListing">
-				<span class="eventCard">
-					<span class="graphics" style="background-image: url('../../assets/images/placeholderImages/placeholder2.jpg'); background-size: cover;"> <!--FIXME: Use background attribute for cover -->
-						<span class="eventId">eventId</span>
-						<span class="productionInfo">
-							<span class="leadProducer">lead producer</span>
-							<span class="assistantProducer">assistant producer</span>
+				<% if(upcomingEvents.length > 0) { %>
+					<% upcomingEvents.forEach((event) => { %>
+						<span class="eventCard">
+							<span class="graphics" style="background-image: url('<%= event.cover %>'); background-size: cover;"> <!--FIXME: Use background attribute for cover -->
+								<span class="eventId"><%= event.eventId %></span>
+								<span class="productionInfo">
+									<span class="leadProducer"><%= event.leadProducer %></span>
+									<span class="assistantProducer"><%= event.assistantProducer %></span>
+								</span>
+								<span class="buttonGroup">
+									<button>suspend</button>
+									<button>save</button>
+									<button>cancel</button>
+								</span>
+							</span>
+							<span class="eventInfo">
+								<span class="status"><%= event.eventStatus  %></span>
+								<span class="eventTitle"><%= event.eventName %></span>
+								<% if(event.playlist !== ""){ %>
+									<span class="eventPlaylist"><%= playlistMap.get(event.playlist).playlistTitle  %> | <%= event.playlist %></span>
+								<% } %>
+								<% if(event.playlist === ""){ %>
+									<span class="eventPlaylist" style="color: red">No Playlist Assigned</span>
+								<% } %>
+								<span class="assignedDJ"><%= event.assignedDJ  %></span>
+								<span class="date"><%= event.eventDate %></span>
+								<span class="timing">
+									<span class="startTime"><%= event.eventTime  %></span>&nbsp;|&nbsp;<span class="endTime">__ : __</span>
+								</span>
+								<span class="duration">__ hours</span>
+								<span class="description">description</span>
+							</span>
 						</span>
-						<span class="buttonGroup">
-							<button>option 1</button>
-							<button>option 2</button>
-							<button>option 3</button>
-						</span>
-					</span>
-					<span class="eventInfo">
-						<span class="status">status</span>
-						<span class="eventTitle">event title</span>
-						<span class="eventPlaylist">playlist name</span>
-						<span class="date">date</span>
-						<span class="timing">
-							<span class="startTime">__ : __</span>&nbsp;|&nbsp;<span class="endTime">__ : __</span>
-						</span>
-						<span class="duration">__ hours</span>
-						<span class="description">description</span>
-					</span>
-				</span>
+					<% }) %>
+				<% } %>
 			</span>
 		</span>
 		<main>

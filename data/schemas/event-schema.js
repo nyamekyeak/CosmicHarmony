@@ -25,7 +25,13 @@ const eventSchema = new mongoose.Schema(
     date: Date,
     startTime: String,
     endTime: String,
-    duration: Number,
+    eventRuntime:
+    {
+        type: Number,
+        min: 1,
+        max: 3,
+        default: 1
+    },
     eventStatus: String, //live, upcoming, ended, cancelled, rescheduled
     cover: String, // link to image
 })

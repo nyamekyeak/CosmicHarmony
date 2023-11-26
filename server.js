@@ -26,6 +26,13 @@ app.get('/', async function (req, res)
         const loadedPlaylist = publicDataBase.collection('PlaylistPool');
         const loadedPlaylists = await loadedPlaylist.find({}).toArray();
 
+        const idObject_playlistMap = new Map();
+        for(var i = 0; i < loadedPlaylists.length; i++)
+        {
+            idObject_playlistMap.set(loadedPlaylists[i].playlistId, loadedPlaylists[i]);
+            console.log("Mapping Complete")
+        }
+
         const songArray = loadedPlaylists[0].songs;
         const loadedPlaylistSongs = [];
 
@@ -60,18 +67,11 @@ app.get('/', async function (req, res)
         const djPool = publicDataBase.collection('DJPool');
         const activeDJs = await djPool.find({djStatus: "active"}).toArray();
 
+        // const obje
+
         const eventPool = publicDataBase.collection('Programs');
         const upcomingEvents = await eventPool.find({eventStatus: "upcoming"}).toArray();
 
-        if(miniLibrarySongs.length > 0)
-        {
-            console.log('Mini Library retrieved successfully');
-            // console.log(miniLibrarySongs);
-        }
-        else
-        {
-            console.log('No songs in Mini Library');
-        }
         res.render('pages/producerMain',
         {        
             pageTitle: "Producer Home", 
@@ -84,6 +84,7 @@ app.get('/', async function (req, res)
             producer: producer,
             songMap: idObject_songMap,
             producerMap: idObject_producerMap,
+            playlistMap: idObject_playlistMap,
             producers : allProducers,
             activeDJs: activeDJs,
             upcomingEvents: upcomingEvents
