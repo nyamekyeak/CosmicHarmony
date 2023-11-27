@@ -1,0 +1,85 @@
+/* Styling for search container */
+div[id = "SearchBox"]
+{
+    display: flex;
+    width: 90vw;
+    justify-content: center;
+    margin-left: 5vw;
+}
+
+    /* Styling for search input */
+    input[id = "searchEntry"]
+    {
+        width: 50%;
+        height: 2.75vh;
+        color: black;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Styling for search button container*/
+    span[id = "searchButtonBox"]
+    {
+        overflow: hidden;
+        height: 2.5vh;
+        width: 2.5vh;
+    }
+
+    /* Styling for search button */
+    button[id = "searchButton"]
+    {
+        height: 3.35vh;
+        width: 3.5vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        border: none;
+    }
+
+    /* Styling for search icons 
+        * TODO: Add hover effect
+    */
+    img[id = "searchIcon"]
+    {
+        height: 2.5vh;
+        width: 2.5vh;
+    }
+
+    img[id = "searchIconActive"]
+    {
+        height: 2.5vh;
+        width: 2.5vh;
+        display: none;
+    }
+
+div[id = "searchFilters"]
+{
+    display: flex;
+    gap: 0.25vw;
+    margin-left: 50.90vw;
+}
+
+    div[id = "searchFilters"] span
+    {
+        background-color: aliceblue;
+        width: 5.5vw;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+span[id = "invalidAlert"]
+{
+    
+    position: absolute;
+    z-index: -1;
+    left: 26.85vw;
+    /* top: -2vh; */
+    top: 11.75vh;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bold;
+    color: red;
+    transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,1370 @@
+/* Overlay that shows when view playlists is clicked */
+span[id = "playlistViewOverlay"]
+{
+    display: none;
+    flex-direction: column;
+    width: 70%;
+    height: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1000;
+    background-color: aliceblue;
+    margin-left: 15%;
+    margin-top: -2%;
+    color: white;
+    gap: 0.5vh;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+    span[id = "playlistViewOverlay"] .closeOverlay
+    {
+        width: 2vw;
+        height: 2vw;
+        align-self: center;
+        position: fixed;
+    }
+
+    span[id = "playlistViewOverlay"] .playlistOverlayCard
+    {
+        display: flex;
+        align-self: center;
+        width: 95%;
+        height: 20vw;
+        background-color: black;
+        
+    }
+
+        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist
+        {
+            width: 70%;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            overflow-y: scroll;
+            background: rgb(102,163,244);
+            background: linear-gradient(162deg, rgba(102,163,244,1) 0%, rgba(43,113,193,1) 28%, rgba(17,115,195,1) 53%, rgba(53,102,200,1) 77%, rgba(86,142,227,1) 100%);
+        }
+
+        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistDescription
+        {
+            display: flex;
+            flex-direction: column;
+            height: 25%;
+            text-align: center;
+            background: rgb(17,88,142);
+            background: linear-gradient(333deg, rgba(17,88,142,1) 0%, rgba(17,83,142,0.9962359943977591) 100%);
+        }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistDescription .metrics
+            {
+                text-transform : uppercase;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+            }
+    span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo
+    {
+        display:flex;
+        flex-direction: column;
+        /* background-color: aquamarine; */
+        /* background-image: url("../assets/images/backgrounds/backg3.jpg"); */
+        background-size: cover;
+        height: 100%;
+        width: 30%;
+        color: rgb(255, 255, 255);
+    }
+
+        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo .playlistDetails
+        {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-self: center;
+            align-items: center;
+            margin-top : 35%;
+            text-transform: uppercase;
+        }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo .playlistDetails .playlistCreator
+            {
+                font-weight: 400;
+                font-size: 0.65vw;
+            }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo .playlistDetails .playlistTitle
+            {
+                font-weight: 600;
+                font-size: 1.5vw;
+            }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlistInfo .playlistDetails .playlistID
+            {
+                font-weight: 400;
+                font-size: 0.5vw;
+            }
+
+
+    span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1.75vh;
+        gap: 0.5vh;
+    }
+
+        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard
+        {
+            display: flex;
+            position: relative;
+            background: rgb(47,68,96);
+            background: linear-gradient(162deg, rgba(47, 68, 96, 0.677) 0%, rgba(34,50,74,0.677) 100%);
+            width: 90%;
+            height: 8.5vh;
+            outline: 0.25px solid white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.5s linear;
+            cursor: pointer;
+        }
+
+        /* span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard:hover
+        {
+            background: rgb(47,68,96);
+            background: linear-gradient(162deg, rgb(47, 68, 96) 0%, rgb(34, 50, 74) 100%);
+            transition: all 0.5s linear;
+        } */
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .songInformation
+            {
+                display: flex;
+                flex-direction: column;
+            }
+
+                span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .songInformation .songName
+                {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.2vw;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    margin-left: -3vw;
+                    width: 35vw;
+                }
+
+        span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .songImage
+        {
+            width: 3vw;
+            height: 3vw;
+            overflow: hidden;
+            object-fit: cover;
+            align-self: flex-end;
+        }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .songImage img
+            {
+                width: 3vw;
+                height: 3vw;
+                object-fit: cover;
+            }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .controlButtons
+            {
+                display: flex;
+                align-self: center;
+                gap: 0.25vw;
+            }
+
+            span[id = "playlistViewOverlay"] .playlistOverlayCard .managementButtons
+            {
+                display: flex;
+                align-self: center;
+                gap: 0.25vw;
+                margin-top: 0.5vh;
+            }
+
+            span[id = "playlistViewOverlay"] hr
+            {
+                width: 100%;
+            }
+
+    span[id = "playlistViewOverlay"] .playlistOverlayCard .playlist .playlistSongs .overlaySongCard .controlButtons .stopMusic
+    {
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button
+    {
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* Overlay that shows when create event is clicked */
+span[id = "createPlaylistOverlay"]
+{
+    display: none;
+    flex-direction: column;
+    width: 70%;
+    height: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(240, 248, 255, 0.316);
+    margin-left: 15%;
+    margin-top: -2%;
+    color: black;
+    gap: 0.5vh;
+    /* /* background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    
+    /* -webkit-backdrop-filter: blur( 16.5px ); */
+    /* backdrop-filter: blur( 16.5px ); */
+    /* border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
+
+    span[id = "musicSelection"]
+    {
+        display: flex;
+        justify-content: center;
+        overflow-y: scroll;
+    }
+
+        span[id = "musicSelected"]
+        {
+            display: flex;
+            flex-direction: column;
+            border-right: 5px solid white;
+            width: 55%;
+            height: 55vh;
+            overflow-y : scroll;
+            align-items: center;
+        }
+
+        #templateSongCard
+        {
+            display: none;
+        }
+
+            span[id = "musicSelected"] .addedSongCard
+            {
+                display: flex;
+                width: 90%;
+                height: 6.75vh;
+                background-color: aqua;
+                margin-top: 0.5vh;
+                background: rgba(63, 178, 210, 0.618);
+                box-shadow: 0 8px 32px 0 rgba(111, 118, 224, 0.001);
+                backdrop-filter: blur( 20.5px );
+                -webkit-backdrop-filter: blur( 20.5px );
+                border-radius: 10px;
+            }
+                span[id = "musicSelected"] .addedSongCard .songInfo
+                {
+                    display: flex;
+                    flex-direction: column;
+                    width: 69%;
+                    text-transform: uppercase;
+                }
+
+                    span[id = "musicSelected"] .addedSongCard .songArt
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 5vh;
+                        height: 5vh;
+                        overflow: hidden;
+                        object-fit: cover;
+                        align-self: flex-end;
+                    }
+
+                        span[id = "musicSelected"] .addedSongCard .songArt img
+                        {
+                            width: 5vh;
+                            height: 5vh;
+                            object-fit: cover;
+                        }
+
+                        span[id = "musicSelected"] .addedSongCard .songInfo .songName
+                        {
+                            display: flex;
+                            align-items: center;
+                            font-size: 1vw;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            margin-left: -2.65vw;
+                            margin-top: -0.45vh;
+                        }
+
+                span[id = "musicSelected"] .addedSongCard .controlButtons
+                {
+                    display: flex;
+                    align-self: center;
+                    gap: 0.25vw;
+                    margin-left: 2vw;
+                }
+
+                    span[id = "musicSelected"] .addedSongCard .controlButtons .stopButton
+                    {
+                        display: none;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+
+            span[id = "libraryGlance"]
+            {
+                display: flex;
+                flex-direction: column;
+                /* background: pink; */
+                width: 40%;
+                height: 55vh;
+                overflow-y : scroll;
+                align-items: center;
+                margin-left: 1.75vw;
+                gap: 0.5vh;
+            }
+
+                span[id = "generatedInfo"]
+                {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-left: 1.75vw;
+                    margin-right: 1.75vw;
+                }
+
+                span[id = "libraryGlance"] .songCard
+                {
+                    display: flex;
+                    width: 95%;
+                    height: 6.75vh;
+                    background-color: bisque;
+                    background: rgba(63, 178, 210, 0.618);
+                    box-shadow: 0 8px 32px 0 rgba(111, 118, 224, 0.001);
+                    backdrop-filter: blur( 20.5px );
+                    -webkit-backdrop-filter: blur( 20.5px );
+                    border-radius: 10px;
+                }
+
+                    span[id = "libraryGlance"] .songCard .songInfo
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        width: 69%;
+                        text-transform: uppercase;
+                    }
+
+                        span[id = "libraryGlance"] .songCard .songInfo .songGenre
+                        {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            text-transform: uppercase;
+                            text-align: center;
+                            width: 123%;
+                            justify-content: center;
+                            margin-top: -0.45vh;
+                        }
+
+                    span[id = "libraryGlance"] .songCard .songArt
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 5vh;
+                        height: 5vh;
+                        overflow: hidden;
+                        object-fit: cover;
+                        align-self: flex-end;
+                    }
+
+                        span[id = "libraryGlance"] .songCard .songArt img
+                        {
+                            width: 5vh;
+                            height: 5vh;
+                            object-fit: cover;
+                        }
+
+                        span[id = "libraryGlance"] .songCard .songInfo .songName
+                        {
+                            display: flex;
+                            align-items: center;
+                            font-size: 1vw;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            margin-left: -2.55vw;
+                            margin-top: -0.45vh;
+                        }
+
+                        span[id = "libraryGlance"] .songCard .controlButtons
+                        {
+                            display: flex;
+                            align-self: center;
+                            gap: 0.25vw;
+                        }
+
+                            span[id = "libraryGlance"] .songCard .controlButtons .stopButton
+                            {
+                                display: none;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                span[id = "playlistCreationButtons"]
+                {
+                    display: flex;
+                    justify-content: center;
+                    gap: 0.25vw;
+                    margin-top: 0.75vh;
+                }
+
+                input[id = "newPlaylistName"]
+                {
+                    width: 80%;
+                    height: 2.75vh;
+                    align-self: center;
+                    margin-left: 1.75vw;
+                }
+
+                textarea[id = "newPlaylistDescription"]
+                {
+                    width: 70%;
+                    display: flex;
+                    height: 4.75vh;
+                    align-self: center;
+                    margin-left: 4.75vw;
+                }
+
+                span[id = "createPlaylistOverlay"] .closeOverlay
+                {
+                    display: flex;
+                    width: 3vh;
+                    height: 3vh;
+                    align-self: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    margin-top: 0.5vh;
+                }
+
+                select[id = "eventAssignment"]
+                {
+                    width: 45%;
+                    margin-left: 11%;
+                }
+
+/* User Switch Overlay */
+span[id = "switchUserOverlay"]
+{
+    display: none;
+    flex-direction: column;
+    width: 70%;
+    height: 45%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1000;
+    background-color: aliceblue;
+    margin-left: 15%;
+    margin-top: 10%;
+    color: white;
+    gap: 0.5vh;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+    span[id = "switchUserOverlay"] .closeOverlay
+    {
+        display: flex;
+        width: 3vh;
+        height: 3vh;
+        align-self: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-top: 0.5vh;
+    }
+
+    span[id = "switchUserOverlay"] .producers
+    {
+        width: 100%;
+        display: flex;
+        overflow-x : scroll;
+        height: 25vh;
+        /* background-color: green; */
+        gap: 0.5vh;
+        justify-content: center;
+        align-items: center;
+        color: azure;
+        margin-top: 5vh;
+    }
+
+    span[id = "switchUserOverlay"] .producers .producerButton
+    {
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+    }
+
+    span[id = "switchUserOverlay"] .producers .producerButton .producerSlot
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 20vh;
+        height: 15vh;
+        transition: all 0.3s ease-in-out;
+        /* background-color: black; */
+    }
+
+    span[id = "switchUserOverlay"] .producers .producerButton .producerSlot:hover
+    {
+        filter: drop-shadow(0 0 0.5rem rgb(0, 0, 0));
+    }
+
+        span[id = "switchUserOverlay"] .producers .producerButton .producerSlot .producerDetails
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        span[id = "switchUserOverlay"] .producers .producerButton .producerSlot .producerPhoto
+        {
+            width: 9vh;
+            height: 9vh;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 0.5vh;
+            overflow: hidden;
+        }
+
+            span[id = "switchUserOverlay"] .producers .producerButton .producerSlot .producerPhoto img
+            {
+                width: 9vh;
+                height: 9vh;
+                object-fit: cover;
+            }
+
+            span[id = "switchUserOverlay"] .buttonGroup
+            {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5vw;
+            }
+
+/* Create event overlay */
+span[id = "createEventOverlay"]
+{
+    display: none;
+    flex-direction: column;
+    width: 70%;
+    height: 90%;
+    position: fixed;
+    z-index: 1000;
+    background-color: aliceblue;
+    margin-left: 15%;
+    margin-top: -2.5%;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+    span[id = "createEventOverlay"] .managementButtons
+    {
+        display: flex;
+        gap: 0.5vw;
+        align-self: center;
+        position: absolute;
+        top: 87vh;
+    }
+
+    span[id = "createEventOverlay"] .closeOverlay
+    {
+        display: flex;
+        width: 3vh;
+        height: 3vh;
+        align-self: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-top: 0.5vh;
+    }
+
+    span[id = "createEventOverlay"] .basicInfo
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+        span[id = "createEventOverlay"] .basicInfo
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3.5vh;
+        }
+
+            input[id = "newEventName"]
+            {
+                width: 30vw;
+                height: 2.75vh;
+            }
+
+            input[id = "djAssignment"]
+            {
+                width: 30vw;
+                height: 2.75vh;
+                margin-top: 1.5vh;
+            }
+
+            span[id = "createEventOverlay"] .basicInfo .otherInfo
+            {
+                display: flex;
+                gap: 1.5vw;
+                margin-top: 1.5vh;
+            }
+
+                span[id = "createEventOverlay"] .basicInfo .otherInfo .dateTime
+                {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75vh;
+                }  
+
+
+
+
+                    span[id = "createEventOverlay"] .basicInfo .otherInfo .dateTime input
+                    {
+                        width: 7.5vw;
+                        height: 2.5vh;
+                    }
+
+                    input[id = "eventRuntime"]
+                    {
+                        display: flex;
+                    }
+
+                    textarea[id = "newEventDescription"]
+                    {
+                        width: 20.75vw;
+                        height: 5.9vh;
+                    }
+
+
+                span[id = "createEventOverlay"] .basicInfo .otherInfo .location
+                {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75vh;
+                }
+
+                    span[id = "createEventOverlay"] .playlistAssignment
+                    {
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 1.5vh;
+                        gap: 1.5vw;
+                    }
+
+                        span[id = "createEventOverlay"] .playlistAssignment .radioGroup
+                        {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                span[id = "createEventOverlay"] .builders
+                {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 1.5vh;
+                }
+
+                /* Load Playlist */
+                    span[id = "createEventOverlay"] .builders .playlistLoader
+                    {
+                        /* FIXME: turn on when done */
+                        display: none;
+                        /* border: 2px black solid; */
+                        overflow: hidden;
+                        width: 90%;
+                        height: 50vh;
+                        gap: 1.75vw;
+                    }
+
+                        span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector
+                        {
+                            display: flex;
+                            flex-direction: column;
+                            height: 55vh;
+                            width: 32vw;
+                            border-right: 0.25vw solid black;
+                        }
+
+                        select
+                        {
+                            width: 80%;
+                            height: 2.75vh;
+                            margin-left: 10%;
+                        }
+
+                        span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector .playlistContent
+                        {
+                            display: none;
+                            flex-direction: column;
+                            overflow-y: scroll;
+                            gap: 0.5vh;
+                            margin-top: 0.75vh;
+                            background-color: red;
+                            height: 46.5vh;
+                        }
+
+                            span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector .playlistContent .playlistLoadSong
+                            {
+                                display: flex;
+                                background-color: blue;
+                            }
+
+                                span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector .playlistContent .playlistLoadSong .songInfo
+                                {
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+
+                                    span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector .playlistContent .playlistLoadSong .songInfo .songName
+                                    {
+                                        font-weight: bold;
+                                        text-transform: uppercase;
+                                        font-size: 1.15vw;
+                                        width: 21vw;
+                                    }
+
+                                span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector .playlistContent .playlistLoadSong .songArt
+                                {
+                                    display: flex;
+                                    width: 7vh;
+                                    height: 7vh;
+                                    object-fit: cover;
+                                    overflow: hidden;
+                                }
+
+                                    span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector .playlistContent .playlistLoadSong .songArt img
+                                    {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+
+                            span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector .playlistContent .playlistLoadSong .buttonGroup
+                            {
+                                display: flex;
+                                gap: 0.5vw;
+                                align-self: center;
+                            }
+
+                /* Mini Library */
+                span[id = "createEventOverlay"] .builders .playlistLoader .miniLibrary
+                {
+                    display: flex;
+                    flex-direction: column;
+                    width: 90%;
+                    height: 50vh;
+                    gap: 1.75vw;
+                }
+
+                    span[id = "createEventOverlay"] .builders .playlistLoader .miniLibrary .songs
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        height: 55vh;
+                        width: 32vw;
+                        /* background-color: aquamarine; */
+                        overflow-y: scroll;
+                        gap: 0.5vh;
+                    }
+                        
+                        span[id = "createEventOverlay"] .builders .playlistLoader .miniLibrary .songs .songCard
+                        {
+                            display: flex;
+                            background-color: aliceblue;
+                            width: 90%;
+                            height: 8.5vh;
+                        }
+
+                            span[id = "createEventOverlay"] .builders .playlistLoader .miniLibrary .songs .songCard .songInfo
+                            {
+                                display: flex;
+                                flex-direction: column;
+                                width: 16vw;
+                                text-transform: uppercase;
+                                margin-left: 0.5vw;
+                            }
+
+                                span[id = "createEventOverlay"] .builders .playlistLoader .miniLibrary .songs .songCard .songInfo .songName
+                                {
+                                    font-weight: bold;
+                                    font-size: 0.95vw;
+                                }
+
+                                span[id = "createEventOverlay"] .builders .playlistLoader .miniLibrary .songs .songCard .songArt
+                                {
+                                    display: flex;
+                                    width: 8.5vh;
+                                    height: 8.5vh;
+                                    object-fit: cover;
+                                    overflow: hidden;
+                                }
+
+                                    span[id = "createEventOverlay"] .builders .playlistLoader .miniLibrary .songs .songCard .songArt img
+                                    {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+
+                                span[id = "createEventOverlay"] .builders .playlistLoader .miniLibrary .songs .songCard .buttonGroup
+                                {
+                                    display: flex;
+                                    gap: 0.5vw;
+                                    align-self: center;
+                                }
+
+            /* Create Playlist */
+            span[id = "createEventOverlay"] .builders .playlistCreator
+            {
+                display: none;
+                /* border: 2px black solid; */
+                overflow: hidden;
+                width: 90%;
+                height: 50vh;
+                gap: 1.75vw;
+            }
+
+                span[id = "createEventOverlay"] .builders .playlistCreator .songSelection
+                {
+                    height: 50vh;
+                    width: 25vw;
+                    display: flex;
+                    flex-direction: column;
+                    border-right: 8px solid white;
+                }
+
+                    span[id = "createEventOverlay"] .builders .playlistCreator .songSelection .newPlaylistInfo
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                input[id = "newPlaylistTitle"]
+                {
+                    width: calc(20vw - 0.15vh);
+                    height: 2.5vh;
+                    margin-bottom: 0.75vh;
+                }
+
+                textarea[id = "newPlaylistDescription"]
+                {
+                    margin-bottom: 0.75vh;
+                    margin-left: -0.15vw;
+                }
+
+                span[id = "playlistIdentification"]
+                {
+                    display: flex;
+                    gap: 0.05vw;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                    span[id = "createEventOverlay"] .builders .playlistCreator .songSelection .songListing
+                    {
+                        height: 33vh;
+                        width: 25vw;
+                        gap: 0.5vh;
+                        display: flex;
+                        flex-direction: column;
+                        overflow-y: scroll;
+                        margin-top: 3.95vh;
+                    }
+
+                        span[id = "createEventOverlay"] .builders .playlistCreator .songSelection .songListing .songCard
+                        {
+                            display: flex;
+                            background-color: rgba(3, 100, 184);
+                            width: 95%;
+                            height: 7vh;
+                            align-self: center;
+                        }
+
+                            span[id = "createEventOverlay"] .builders .playlistCreator .songSelection .songListing .songCard .songInfo
+                            {
+                                display: flex;
+                                flex-direction: column;
+                                width: 12vw;
+                                text-transform: uppercase;
+                                margin-left: 0.5vw;
+                            }
+
+                                span[id = "createEventOverlay"] .builders .playlistCreator .songSelection .songListing .songCard .songInfo .songName
+                                {
+                                    font-weight: bold;
+                                    font-size: 0.95vw;
+                                }
+
+                                span[id = "createEventOverlay"] .builders .playlistCreator .songSelection .songListing .songCard .songArt
+                                {
+                                    display: flex;
+                                    width: 7vh;
+                                    height: 7vh;
+                                    object-fit: cover;
+                                    overflow: hidden;
+                                }
+
+                                    span[id = "createEventOverlay"] .builders .playlistCreator .songSelection .songListing .songCard .songArt img
+                                    {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+
+                                span[id = "createEventOverlay"] .builders .playlistCreator .songSelection .songListing .songCard .buttonGroup
+                                {
+                                    display: flex;
+                                    gap: 0.5vw;
+                                    align-self: center;
+                                }
+
+                        span[id = "createEventOverlay"] .builders .playlistCreator .miniLibrary
+                        {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%
+                        }
+
+                            span[id = "createEventOverlay"] .builders .playlistCreator .miniLibrary .songs
+                            {
+                                display: flex;
+                                flex-direction: column;
+                                height: 55vh;
+                                width: 100%;
+                                overflow-y: scroll;
+                                gap: 0.5vh;
+                            }
+
+                                span[id = "createEventOverlay"] .builders .playlistCreator .miniLibrary .songs .songCard
+                                {
+                                    display: flex;
+                                    background-color: rgba(3, 100, 184);
+                                    width: 90%;
+                                    height: 8vh;
+                                    align-self: center;
+                                }
+
+                                    span[id = "createEventOverlay"] .builders .playlistCreator .miniLibrary .songs .songCard .songInfo
+                                    {
+                                        display: flex;
+                                        flex-direction: column;
+                                        width: 19vw;
+                                        text-transform: uppercase;
+                                        margin-left: 0.5vw;
+                                    }
+
+                                        span[id = "createEventOverlay"] .builders .playlistCreator .miniLibrary .songs .songCard .songInfo .songName
+                                        {
+                                            font-weight: bold;
+                                            font-size: 1.05vw;
+                                        }
+
+                                        span[id = "createEventOverlay"] .builders .playlistCreator .miniLibrary .songs .songCard .songArt
+                                        {
+                                            display: flex;
+                                            width: 8vh;
+                                            height: 8vh;
+                                            object-fit: cover;
+                                            overflow: hidden;
+                                        }
+
+                                            span[id = "createEventOverlay"] .builders .playlistCreator .miniLibrary .songs .songCard .songArt img
+                                            {
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: cover;
+                                            }
+
+                                        span[id = "createEventOverlay"] .builders .playlistCreator .miniLibrary .songs .songCard .buttonGroup
+                                        {
+                                            display: flex;
+                                            gap: 0.5vw;
+                                            align-self: center;
+                                        }
+
+/* Genre Browsing Overlay */
+section[class = "genreBrowseOverlay"]
+{
+    display: none;
+    flex-direction: column;
+    width: 70%;
+    height: 80%;
+    overflow-y: scroll;
+    position: fixed;
+    z-index: 10000;
+    background-color: aliceblue;
+    margin-left: 15%;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transition: all 1.7s ease-in-out;
+}
+
+    section[class = "genreBrowseOverlay"] .closeOverlay
+    {
+        display: flex;
+        width: 3vh;
+        height: 3vh;
+        align-self: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-top: 0.5vh;
+    }
+
+    section[class = "genreBrowseOverlay"] .genreInfo
+    {
+        display: flex;
+        flex-direction: column;
+        height: 35%;
+        width: 100%;
+        /* background-color: green; */
+    }
+
+        section[class = "genreBrowseOverlay"] .genreInfo .genreArt
+        {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            object-fit: cover;
+        }
+
+            section[class = "genreBrowseOverlay"] .genreInfo .genreArt img
+            {
+                width: 100%;
+                object-fit: cover;
+                z-index: 0;
+            }
+
+        section[class = "genreBrowseOverlay"] .genreInfo .genreName
+        {
+            display: flex;
+            position: absolute;
+            font-size: 4.5vw;
+            color: white;
+            text-transform: uppercase;
+            font-weight: 700;
+            width: 100%;
+            margin-top: -0.5vh;
+            /* background-color: purple; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        section[class = "genreBrowseOverlay"] .genreInfo .genreDescription
+        {
+            display: flex;
+            position: absolute;
+        }
+
+    section[class = "genreBrowseOverlay"] .musicBox
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        height: 55vh;
+        background-color: aqua;
+        overflow-y: scroll;
+    }
+
+        section[class = "genreBrowseOverlay"] .musicBox .musicCard
+        {
+            display: flex;
+            height: 7vh;
+            width: 22vw;
+            background-color: aliceblue;
+        }
+
+            section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicArt
+            {
+                display: flex;
+                width: 7vh;
+                height: 7vh;
+                overflow: hidden;
+                object-fit: cover;
+            }
+
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicArt img
+                {
+                    width: 7vh;
+                    object-fit: cover;
+                }
+
+            section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo
+            {
+                display: flex;
+                width: 17.5vh;
+                flex-direction: column;
+                text-transform: uppercase;
+                
+            }
+
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicName
+                {
+                    font-size: 0.80vw;
+                    font-weight: 600;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicArtist
+                {
+                    font-size: 0.85vw;
+                    font-weight: 300;
+                    width: 14vw;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicInfo .musicDuration
+                {
+                    font-size: 0.75vw;
+                    font-weight: 300;
+                    width: 14vw;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+            section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons
+            {
+                display: flex;
+                align-items: center;
+                gap: 0.5vw;
+                margin-left: 2.05vw;
+            }
+
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons .stopMusic
+                {
+                    display: none;
+                }
+
+                section[class = "genreBrowseOverlay"] .musicBox .musicCard .musicButtons button
+                {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+/* View Events Overlay */
+span[id = "eventsViewOverlay"]
+{
+    display: none;
+    flex-direction: column;
+    width: 70%;
+    height: 80%;
+    overflow-y: scroll;
+    position: fixed;
+    z-index: 10000;
+    background-color: aliceblue;
+    margin-left: 15%;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transition: all 1.7s ease-in-out;
+}
+
+    span[id = "eventsViewOverlay"] .closeOverlay
+    {
+        display: flex;
+        width: 3vh;
+        height: 3vh;
+        align-self: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-top: 0.5vh;
+    }
+
+
+    span[id = "eventsViewOverlay"] .eventListing
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90%;
+        overflow-y: scroll;
+        align-items: center;
+        gap: 0.75vh;
+    }
+
+        span[id = "eventsViewOverlay"] .eventListing .eventCard
+        {
+            width: 50vw;
+            height: 25vh;
+            background-color: aliceblue;
+            display: flex;
+        }
+
+            span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics
+            {
+                background-color: pink;
+                display: flex;
+                flex-direction: column;
+                width: 25vh;
+                height: 100%;
+                text-transform: uppercase;
+            }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics .eventId
+                {
+                    display: flex;
+                    text-align: center;
+                    min-width: 30%;
+                    justify-content: center;
+                    margin-top: 6vh;
+                    border-bottom: 3px solid white;
+                    align-self: center;
+                    font-size: 0.85vw;
+                    font-weight: 500;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics .productionInfo
+                {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 1.75vh;
+                    width: 100%;
+                    align-items: center;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics .buttonGroup
+                {
+                    display: flex;
+                    gap: 0.5vw;
+                    align-self: center;
+                    margin-top: 0.5vh;
+                }
+
+                    span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics .buttonGroup button
+                    {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-transform: uppercase;
+                    }
+
+
+            span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo
+            {
+                display: flex;
+                flex-direction: column;
+                text-transform: uppercase;
+                width: calc(100% - 25vh);
+            }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .eventTitle
+                {
+                    display: flex;
+                    width: 100%;
+                    font-size: 1.75vw;
+                    font-weight: 600;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .eventPlaylist
+                {
+                    display: flex;
+                    width: 100%;
+                    font-weight: 500;
+                    font-style: oblique;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .status
+                {
+                    display: flex;
+                    background-color: darkgreen;
+                    text-align: center;
+                    align-self: center;
+                    justify-content: center;
+                    width: 100%;
+                    color: white;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .date
+                {
+                    display: flex;
+                    width: 100%;
+                    font-size: 0.75vw;
+                    font-weight: 300;
+                    text-align: center;
+                    justify-content: center;
+                    margin-top : 0.5vh;
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .timing
+                {
+                    display: flex;
+                    width: 100%;
+                    font-size: 0.75vw;
+                    font-weight: 300;
+                    text-align: center;
+                    justify-content: center;
+                    
+                }
+
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .duration
+                {
+                    display: flex;
+                    width: 100%;
+                    font-size: 0.75vw;
+                    font-weight: 300;
+                    text-align: center;
+                    justify-content: center;
+                }
+                
+                span[id = "eventsViewOverlay"] .eventListing .eventCard .eventInfo .description
+                {
+                    display: flex;
+                    width: 90%;
+                    margin-left: 0.5vw;
+                    text-transform: none;
+                    margin-top: 0.75vh;
+                }

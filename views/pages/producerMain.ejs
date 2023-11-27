@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+     <head>
+        <!-- Base CSS -->
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/navbar.css">
+        <link rel="stylesheet" href="../../css/mainWidget.css">
+        <link rel="stylesheet" href="../../css/timeline.css">
+        <link rel="stylesheet" href="../../css/searchBar.css">
+		<link rel="stylesheet" href="../../css/footer.css">
+		<link rel="stylesheet" href="css/dashboard.css">
+		<link rel="stylesheet" href="css/pageHero.css">
+		<link rel="stylesheet" href="css/overlays.css">
+        <!-- Title -->
+        <title>Cosmic Harmony - Producer</title>
+        <!-- Logo Icon -->
+        <link rel="icon" href="../../assets/squareLogo.png">
+     </head>
+     <body>
+		<header><%- include('../partials/navbar.ejs') %></header>
+		<!-- Playlist View Overlay -->
+		<span id = "playlistViewOverlay">
+			<button onclick = "closeOverlay(this)" class = "closeOverlay"><i class="fa-solid fa-xmark"></i></button>
+			<% if (loadedPlaylists.length > 0) { %>
+				<% loadedPlaylists.forEach((playlist) => { %>
+					<%- include('../partials/playlistCard.ejs', {playlist: playlist}) %>
+				<% }) %>
+			<% } %>
+		</span>
+		<!-- Create Playlist Overlay -->
+		<span id = "createPlaylistOverlay">
+			<button onclick="closeOverlay(this)" class = "closeOverlay"><i class="fa-solid fa-xmark"></i></button>
+			<span style = "font-size: 1.5vw; font-weight: bold; text-align: center;">BUILD-a-PLAYLIST&trade;<p style = "font-size: 0.75vw; font-weight: normal; margin-top: -1vh; font-style: italic;">by CosmicHarmony</p></span>
+			<span id="generatedInfo">
+				<span id = "generatedGenre">genre</span>
+				<span id = "generatedID">playlist id</span>
+			</span>
+			<input type="text" id="newPlaylistName" placeholder="Playlist Name"></input>
+			<textarea name="playlistDescription" id="newPlaylistDescription" cols="30" rows="10" placeholder="Playlist Description"></textarea>
+			<!-- <input type="text" placeholder="assign to event (optional)" id = "eventAssignment"></input> -->
+			<select name="eventAssignment" id="eventAssignment">
+				<option value="0">assign to event (optional)</option>
+				<% if(allEvents.length > 0) { %>
+					<% allEvents.forEach((event) => { %>
+						<option value="<%= event.eventId %>"><%= event.eventName %></option>
+					<% }) %>
+				<% } %>
+			</select>
+			<span id="selectedSongCount">00</span>
+			<span id = "musicSelection">
+				<span id="musicSelected">
+					<span class="addedSongCard" id = "templateSongCard">
+						<span class="songArt">
+							<img src="../../assets/images/placeholderImages/placeholder3.jpg" alt="">
+						</span>
+						<span class="songInfo">
+							<span class="songName">Song Name</span>
+							<span class="songArtist">Artist</span>
+							<span class="songDuration">__:__</span>
+						</span>
+						<span class="controlButtons">
+							<audio src="../../assets/audio/placeholderAudio"></audio>
+							<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+							<button class = "stopButton" onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+							<button><i class="fa-solid fa-download"></i></button>
+							<button onclick="removeSong(this)"><i class="fa-solid fa-trash"></i></button>
+						</span>
+					</span>
+				</span>
+				<span id="libraryGlance">Music in Library
+					<% if (miniLibrarySongs.length > 0) { %>
+						<% miniLibrarySongs.forEach((song) => { %>
+							<%- include('../partials/selectionLibrarySong.ejs', {song: song}) %>
+						<% }) %>
+					<% } %>
+				</span>
+			</span>
+			<span id = "playlistCreationButtons">
+				<button onclick = "resetEntries(this)">Reset</button>
+				<button id="createPlaylistButton" onclick="confirmCreation(this)">Create Playlist</button>
+				<button onclick="discardCreation(this)">Cancel</button>
+			</span>
+		</span>
+		<!-- User Switching Overlay -->
+		<span id="switchUserOverlay">
+			<button onclick="closeOverlay(this)" class="closeOverlay"><i class="fa-solid fa-xmark"></i></button>
+			<span class="producers">
+				<% producers.forEach((producer) => { %>
+					<%- include('../partials/producerSlot.ejs', {producer: producer}) %>
+				<% }) %>
+			</span>
+			<span class="buttonGroup">
+				<button>new</button>
+				<button>guest</button>
+			</span>
+		</span>
+		<!-- Event Creation Overlay -->
+		<span id="createEventOverlay">
+			<button onclick="closeOverlay(this)" class="closeOverlay"><i class="fa-solid fa-xmark"></i></button>
+			<span style = "font-size: 1.5vw; font-weight: bold; text-align: center;">EVENT-o-NATOR&trade;<p style = "font-size: 0.75vw; font-weight: normal; margin-top: -1vh; font-style: italic;">by CosmicHarmony</p></span>
+			<span class = "basicInfo">
+				<input type="text" id="newEventName" placeholder = "Enter Event Name">
+				<span class="otherInfo">
+					<span class="dateTime">
+						<input type="date">
+						<span id="duration">
+							<input type="time">
+							<input type="number" name="eventRuntime" id="eventRuntime" placeholder="__ hrs" min="1" max="3" step="1" style="width: 2.75vw;">
+						</span>
+						
+					</span>
+					<span class="description">
+						<textarea name="eventDescription" id="newEventDescription" cols="30" rows="10" placeholder="Event Description"></textarea>
+					</span>
+				</span>
+				<input type="text" id="djAssignment" placeholder="select dj" list = "djDatalist">
+				<datalist id="djDatalist">
+					<% activeDJs.forEach((dj) => { console.log(dj.djId);%>
+						<option value="<%= dj.djId %>"><%= dj.stageName %></option>
+					<% }) %>
+				</datalist>
+			</span>
+			<span class="playlistAssignment">
+				<span>Playlist<br>Assignment</span>
+				<span class = "radioGroup">
+					<input type="radio" id = "noPlaylist" name = "radio" onclick="noPlaylistAllocation(this)">
+					<label for="noPlaylist">None</label>
+				</span>
+				<span class = "radioGroup">
+					<input type="radio" name = "radio" id = "loadPlaylist" onclick="playlistLoader(this)">
+					<label for="loadPlaylist">Load</label>
+				</span>
+				<span class = "radioGroup">
+					<input type="radio" name = "radio" id = "createPlaylist" onclick="playlistCreator(this)">
+					<label for="createPlaylist">Create</label>
+				</span>
+			</span>
+			<span class="builders">
+				<!-- load a created playlist -->
+				<span class="playlistLoader">
+					<span class="playlistSelector">
+						<span class="playlistDrop">
+							<select name="" id="playlistSelect">
+								<option value="0">Select A Playlist</option>
+								<% if(loadedPlaylists.length > 0 ) { %>
+									<% loadedPlaylists.forEach((playlist) => { %>
+										<% console.log(playlist.playlistName) %>
+										<option value="<%= playlist.playlistId %>"> <%= playlist.playlistTitle %> by <%= producerMap.get(playlist.creatorId).producerName %></option>
+									<% }) %>
+								<% } %>
+							</select>
+						</span>
+						<% if(loadedPlaylists.length > 0 ) { %>
+							<% loadedPlaylists.forEach((playlist) => { %>
+								<span class="playlistContent" id = "<%= playlist.playlistId %>">
+									<% if(playlist.songs.length > 0){ %>
+										<% playlist.songs.forEach((song) => { %>
+											<span class="playlistLoadSong">
+												<span class="songArt">
+													<img src="<%= songMap.get(song).songAlbumCover %>" alt="">
+												</span>
+												<span class="songInfo">
+													<span class="songName"><%= songMap.get(song).songName %></span>
+													<span class="songArtist"><%= songMap.get(song).songLeadArtist %></span>
+													<span class="songDuration"><%= songMap.get(song).songDuration %></span>
+												</span>
+												<span class="buttonGroup">
+													<audio src="<%= songMap.get(song).songSource %>"></audio>
+													<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+													<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+													<button><i class="fa-solid fa-download"></i></button>
+													<button><i class="fa-solid fa-trash"></i></button>
+												</span>
+											</span>
+										<% }) %>
+									<% } %>
+								</span>
+							<% }) %>
+						<% } %>
+					</span>
+					<span class="miniLibrary">
+						<span class="songs">
+							<% if(miniLibrarySongs.length > 0) { %>
+								<% miniLibrarySongs.forEach((song) => { %>
+									<span class="songCard" id = "<%= song.songId %>">
+										<span class="songArt">
+											<img src="<%= song.songAlbumCover %>" alt="">
+										</span>
+										<span class="songInfo">
+											<span class="songName"><%= song.songName %></span>
+											<span class="songArtist"><%= song.songLeadArtist %></span>
+											<span class="songDuration"><%= song.songDuration %></span>
+											<span class="songGenre"><%= song.songGenre %></span>
+										</span>
+										<span class="buttonGroup">
+											<audio src="<%= song.songSource %>"></audio>
+											<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+											<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+											<button><i class="fa-solid fa-circle-plus"></i></button>
+											<button><i class="fa-solid fa-download"></i></button>
+										</span>
+									</span>
+								<% }) %>
+							<% } %>
+						</span>
+					</span>
+				</span>
+				<!-- create a new playlist for the event -->
+				<span class="playlistCreator">
+					<span class="songSelection">
+						<span class="newPlaylistInfo">
+							<span id="playlistIdentification">
+								<span id="newPlaylistId">CH-PL-00000000</span>
+								<input type="text" id="newPlaylistTitle" placeholder="Playlist Title">
+							</span>
+							<textarea name="" id="newPlaylistDescription" cols="30" rows="10" placeholder="Playlist Description"></textarea>
+							<span id="newPlaylistGenreScope">genre | genre</span>
+						</span>
+						<span class = "songListing" id = "newPlaylistSongSelection">
+							<span class="songCard">
+								<span class="songArt">
+									<img src="../../assets/images/placeholderImages/djPlaceholder3.jpg" alt="">
+								</span>
+								<span class="songInfo">
+									<span class="songName">Song Name</span>
+									<span class="songArtist">Artist</span>
+									<span class="songDuration">00:00</span>
+								</span>
+								<span class="buttonGroup">
+									<audio src=""></audio>
+									<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+									<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+									<button><i class="fa-solid fa-download"></i></button>
+									<button><i class="fa-solid fa-trash"></i></button>
+								</span>
+							</span>
+						</span>
+					</span>
+					<span class="miniLibrary">
+						<span class="songs">
+							<% if(miniLibrarySongs.length > 0) { %>
+								<% miniLibrarySongs.forEach((song) => { %>
+									<span class="songCard songSelectionCard">
+										<span class="songArt">
+											<img src="<%= song.songAlbumCover %>" alt="">
+										</span>
+										<span class="songInfo">
+											<span class="songName"><%= song.songName %></span>
+											<span class="songArtist"><%= song.songLeadArtist %></span>
+											<span class="songDuration"><%= song.songDuration %></span>
+											<span class="songGenre"><%= song.songGenre %></span>
+										</span>
+										<span class="buttonGroup">
+											<audio src = "<%= song.songSource %>" id = "<%= song.songId %>"></audio>
+											<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+											<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+											<button onclick="addToNewPlaylist(this)"><i class="fa-solid fa-circle-plus"></i></button>
+											<button><i class="fa-solid fa-download"></i></button>
+										</span>
+									</span>	
+								<% }) %>
+							<% } %>
+						</span>
+					</span>
+				</span>
+			<span class="managementButtons">
+				<button onclick="resetEventCreation()"><i class="fa-solid fa-arrows-rotate"></i> reset</button>
+				<button onclick = "createEvent()"><i class="fa-regular fa-square-check"></i> create</button>
+				<button onclick = "cancelEventCreation()"><i class="fa-solid fa-xmark"></i> cancel</button>
+			</span>
+			</span>
+		</span>
+		<!-- Event Viewing Overlay -->
+		<span id = "eventsViewOverlay">
+			<button onclick="closeOverlay(this)" class="closeOverlay"><i class="fa-solid fa-xmark"></i></button>
+			<span style = "font-size: 1.5vw; font-weight: bold; text-align: center;">EVENT-LINEUP&trade;<p style = "font-size: 0.75vw; font-weight: normal; margin-top: -1vh; font-style: italic;">by CosmicHarmony</p></span>
+			<span class="eventListing">
+				<% if(upcomingEvents.length > 0) { %>
+					<% upcomingEvents.forEach((event) => { %>
+						<span class="eventCard">
+							<span class="graphics" style="background-image: url('<%= event.cover %>'); background-size: cover;"> <!--FIXME: Use background attribute for cover -->
+								<span class="eventId"><%= event.eventId %></span>
+								<span class="productionInfo">
+									<span class="leadProducer"><%= event.leadProducer %></span>
+									<span class="assistantProducer"><%= event.assistantProducer %></span>
+								</span>
+								<span class="buttonGroup">
+									<button>suspend</button>
+									<button>save</button>
+									<button>cancel</button>
+								</span>
+							</span>
+							<span class="eventInfo">
+								<span class="status"><%= event.eventStatus  %></span>
+								<span class="eventTitle"><%= event.eventName %></span>
+								<% if(event.playlist !== ""){ %>
+									<span class="eventPlaylist"><%= playlistMap.get(event.playlist).playlistTitle  %> | <%= event.playlist %></span>
+								<% } %>
+								<% if(event.playlist === ""){ %>
+									<span class="eventPlaylist" style="color: red">No Playlist Assigned</span>
+								<% } %>
+								<% if(event.dj !== ""){ %>
+									<span class="assignedDJ"><%= djMap.get(event.dj).stageName %></span>
+								<% } %>
+								<% if(event.dj === ""){ %>
+									<span class="assignedDJ" style="color: red">No Active DJ Assigned</span>
+								<% } %>
+								<span class="date"><%= event.eventDate %></span>
+								<span class="timing">
+									<span class="startTime"><%= event.eventTime %></span>&nbsp;|&nbsp;<span class="endTime">__ : __</span>
+								</span>
+								<span class="duration"><%=  event.eventRuntime.toString() %> hours</span>
+								<span class="description"><%= event.description %></span>
+							</span>
+						</span>
+					<% }) %>
+				<% } %>
+			</span>
+		</span>
+		<main>
+		  <%- include('../partials/hero.ejs') %>
+		  <%- include('../partials/searchBar.ejs') %>
+		  <!-- Main widget -->
+		  <div id="MainWidget">
+			  <section id="glance">
+				  <div id="djGlance">
+					  <span id="djStatus">
+						  live now
+					  </span>
+					  <span id = "highlightDJ">
+						  <span id="currentDJphoto">
+							  <img src="../../assets/images/placeholderImages/djPlaceholder3.jpg" alt="">
+						  </span>
+						  <span id="djInfo">
+							  <span id="djName">
+								  DJ Name
+							  </span>
+							  <span id="glanceDJgenre">
+								  genre | genre | genre
+							  </span>
+							  <span id ="highlightDJsocials">
+								  <i class="fa-brands fa-facebook"></i>
+								  <i class="fa-brands fa-instagram"></i>
+								  <i class="fa-brands fa-spotify"></i>
+							  </span>
+						  </span>
+					  </span>
+  
+					  <span id="sessionInfo">
+						  <span id="leadProducer">
+							  leadProducer Name
+						  </span>
+						  <span id="assistantProducer">
+							  Assistant Producer Name
+						  </span>
+						  <span id="sessionTime">
+							  00:00<sub>PM</sub> - 00:20<sub>PM</sub>
+						  </span>
+					  </span>
+				  </div>
+			  </section>
+			  <section id = mainDashboard>
+				  <div id="metricsContainer">
+					  <div id="metrics">
+						  <span id="currentListeners">
+							  <span>current listeners</span>
+							  <span id="currentListenerCount">
+								  00
+							  </span>
+						  </span>
+						  <span id="totalListeners">
+							  <span>total listeners</span>
+							  <span id="totalListenerCount">
+								  00
+							  </span>
+						  </span>
+						  <span id="programReactions">
+							  <span>program reactions</span>
+							  <span id="programReactionCount">
+								  00
+							  </span>
+						  </span>
+					  </div>
+					  <span id="detailedMetrics">
+						  <a href="#" id="detailedMetricsLink">detailed metrics</a>
+					  </span>
+				  </div>
+				  <!-- Producer Playlist -->
+				  <div id="loadedPlaylist">
+					  <span id = "playlist">
+						<span id="loadedPlaylistInfo">
+							<span id="playlistName">
+								<span class = "name"><%= loadedPlaylists[0].playlistTitle  %> </span>
+								<span class = "id"><%= loadedPlaylists[0].playlistId %></span>
+							</span>
+							<span id="loadedPlaylistMetrics">
+								<span><%= loadedPlaylists[0].playlistGenreScope[0] %></span>
+								<span id = "songCount"><%= loadedPlaylists[0].songs.length.toString() %> songs</span>
+								<span><%= ((loadedPlaylists[0].duration % 3600) / 60).toString() %> minutes <%= ((loadedPlaylists[0].duration % 60)).toString() %> seconds</span>
+							</span>
+							<span id="loadedPlaylistDescription"><%= loadedPlaylists[0].playlistDescription %></span>
+						</span>
+						<span id="loadedPlaylistSongs">
+							<% if (loadedPlaylistSongs.length > 0) { %>
+								<% loadedPlaylistSongs.forEach((loadedPlaylistSong) => { %>
+								  <%- include('../partials/loadedPlaylistSong.ejs', { loadedPlaylistSong: loadedPlaylistSong }) %>
+								<% }) %>
+							  <% } %>
+						</span>
+					  </span>
+				  </div>
+			  </section>
+			  <section id="musicLibrary">
+				<div id="miniLibraryHeader">
+					<h3>Music Library</h3>
+					<p>Quickly add songs to loaded playlist</p>
+				</div>
+				<div id="miniLibrary">
+					<% if (miniLibrarySongs.length > 0) { %>
+						<% miniLibrarySongs.forEach((miniLibrarySong) => { %>
+						  <%- include('../partials/miniLibrarySong.ejs', { miniLibrarySong: miniLibrarySong }) %>
+						<% }) %>
+					  <% } %>
+				</div>
+			  </section>
+		  </div>
+		  <!-- Timeline -->
+		  <div id="timeLine"> 
+			  <div class="event" id = "earlierEvent">
+				  <span class="eventHeader">
+					  <span class="djName" style="text-transform: uppercase;">
+						  DJ Name
+					  </span>
+					  <span class="programContent">
+						  genre | genre | genre
+					  </span>
+				  </span>
+				  <span id="earlierDJcover">
+					  <span id="earlierDJsocials">
+						  <i class="fa-brands fa-twitter"></i>
+						  <i class="fa-brands fa-facebook"></i>
+						  <i class="fa-brands fa-instagram"></i>
+						  <i class="fa-brands fa-spotify"></i>
+					  </span>
+					  <!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
+				  </span>
+				  <span class="eventInteractions">
+					  <div class="eventButtons">
+						  <div class="buttonContainer-small">
+							  <button id="likeButton">
+								  <!-- TODO: like icon and counter go here -->
+							  </button>
+						  </div>
+						  <div class="buttonContainer-wide" style="margin-top: 0.35vh;">
+							  <button id="eventDetailsButton">
+								  <i class="fa-solid fa-circle-info"></i>details
+							  </button>
+						  </div>
+						  <div class="buttonContainer-small">
+							  <button id="dislikeButton">
+								  <!-- TODO: dislike icon and counter go here -->
+							  </button>
+						  </div>
+					  </div>
+					  <span class="eventFooter">
+						  Produced by
+						  <span id="producerName">
+							  Producer Name
+						  </span>
+					  </span>
+				  </span>
+			  </div>
+			  <div class="event" id = "mostRecentEvent">
+				  <span class="eventHeader">
+					  <span class="djName" style="text-transform: uppercase;">
+						  DJ Name
+					  </span>
+					  <span class="programContent">
+						  genre | genre | genre
+					  </span>
+				  </span>
+				  <span id="mostRecentDJcover">
+					  <span id="mostRecentDJsocials">
+						  <i class="fa-brands fa-twitter"></i>
+						  <i class="fa-brands fa-facebook"></i>
+						  <i class="fa-brands fa-instagram"></i>
+						  <i class="fa-brands fa-spotify"></i>
+					  </span>
+					  <!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
+				  </span>
+				  <span class="eventInteractions">
+					  <div class="eventButtons">
+						  <div class="buttonContainer-small">
+							  <button id="likeButton">
+								  <!-- TODO: like icon and counter go here -->
+							  </button>
+						  </div>
+						  <div class="buttonContainer-wide" style="margin-top: 0.35vh;">
+							  <button id="eventDetailsButton">
+								  <i class="fa-solid fa-circle-info"></i>details
+							  </button>
+						  </div>
+						  <div class="buttonContainer-small">
+							  <button id="dislikeButton">
+								  <!-- TODO: dislike icon and counter go here -->
+							  </button>
+						  </div>
+					  </div>
+					  <span class="eventFooter">
+						  Produced by
+						  <span id="producerName">
+							  Producer Name
+						  </span>
+					  </span>
+				  </span>
+			  </div>
+  
+			  <div class="nextEvent" id = "nextEvent">
+				  <span class="eventHeader">
+					  <span id="nextDJname" class = "djName">
+						  Dj Name
+					  </span>
+					  <span class="programContent">
+						  genre | genre | genre
+					  </span>
+				  </span>
+			  </div>
+			  <!-- event card 4 -->
+			  <div class="event" id = "comingUp">
+				  <span class="eventHeader">
+					  <span class="djName" style="text-transform: uppercase;">
+						  DJ Name
+					  </span>
+					  <span class="programContent">
+						  genre | genre | genre
+					  </span>
+				  </span>
+				  <span id="comingUpDJcover">
+					  <span id="comingUpDJsocials">
+						  <i class="fa-brands fa-twitter"></i>
+						  <i class="fa-brands fa-facebook"></i>
+						  <i class="fa-brands fa-instagram"></i>
+						  <i class="fa-brands fa-spotify"></i>
+					  </span>
+					  <!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
+				  </span>
+				  <span class="eventInteractions">
+					  <div class="eventButtons">
+						  <div class="buttonContainer-small">
+							  <button id="likeButton">
+								  <!-- TODO: like icon and counter go here -->
+							  </button>
+						  </div>
+						  <div class="buttonContainer-wide" style="margin-top: 0.35vh;">
+							  <button id="eventDetailsButton">
+								  <i class="fa-solid fa-circle-info"></i>details
+							  </button>
+						  </div>
+						  <div class="buttonContainer-small">
+							  <button id="dislikeButton">
+								  <!-- TODO: dislike icon and counter go here -->
+							  </button>
+						  </div>
+					  </div>
+					  <span class="eventFooter">
+						  Produced by
+						  <span id="producerName">
+							  Producer Name
+						  </span>
+					  </span>
+				  </span>
+			  </div>
+			  <!-- event card 5 -->
+			  <div class="event" id = "laterEvent">
+				  <span class="eventHeader">
+					  <span class="djName" style="text-transform: uppercase;">
+						  DJ Name
+					  </span>
+					  <span class="programContent">
+						  genre | genre | genre
+					  </span>
+				  </span>
+				  <span id="laterDJcover">
+					  <span id="laterDJsocials">
+						  <i class="fa-brands fa-twitter"></i>
+						  <i class="fa-brands fa-facebook"></i>
+						  <i class="fa-brands fa-instagram"></i>
+						  <i class="fa-brands fa-spotify"></i>
+					  </span>
+					  <!-- <img src="../../assets/images/placeholderImages/djPlaceholder1.jpg" alt="profile photo"> -->
+				  </span>
+				  <span class="eventInteractions">
+					  <div class="eventButtons">
+						  <div class="buttonContainer-small">
+							  <button id="likeButton">
+								  <!-- TODO: like icon and counter go here -->
+							  </button>
+						  </div>
+						  <div class="buttonContainer-wide" style="margin-top: 0.35vh;">
+							  <button id="eventDetailsButton">
+								  <i class="fa-solid fa-circle-info"></i>details
+							  </button>
+						  </div>
+						  <div class="buttonContainer-small">
+							  <button id="dislikeButton">
+								  <!-- TODO: dislike icon and counter go here -->
+							  </button>
+						  </div>
+					  </div>
+					  <span class="eventFooter">
+						  Produced by
+						  <span id="producerName">
+							  Producer Name
+						  </span>
+					  </span>
+				  </span>
+			  </div>
+		  </div>
+		</main>
+		<footer><%- include('../partials/footer.ejs') %></footer>
+		<script src="javascript/main.js"></script>
+		<script src="javascript/playlistManage.js"></script>
+		<script src="javascript/searchFeature.js"></script>
+		<!-- <script src = "javascript/chatFeature.js"></script> -->
+		<script src = "javascript/eventCreator.js"></script>
+		<script src = "javascript/playlistCreator.js"></script>
+		<script src = "javascript/overlays.js"></script>
+		<script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
+	   </body>
+</html>

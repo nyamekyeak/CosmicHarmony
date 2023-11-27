@@ -1,0 +1,41 @@
+<% var genreGenration = "" %>
+<span id="<%= genre.genreName %>" class="genreCard">
+    <span class="genreTitle"><%= genre.genreName.split(" ")[0] %></span>
+    <span class="genreDescription"><%= genre.genreDescription %></span>
+    <span class="thirdPartyFeatured">
+        <span><i class="fa-brands fa-spotify"></i></span>
+        <span><i class="fa-brands fa-deezer"></i></span>
+        <span><i class="fa-brands fa-apple"></i></span>
+    </span>
+    <img src="<%= genre.genreCover %>" alt="genre background">
+    <span class="managementButtons">
+        <button onclick="showGenreOverlay(this)" class = "<%= genre.genreName.split(" ")[0] %>">
+            Browse
+          </button>
+    </span>
+</span>
+
+<script>
+    var genreGenration = "";
+    function showGenreOverlay(button)
+    {
+        const overlayID = button.className + "_overlay";
+        console.log(overlayID);
+        const overlay = document.getElementById(overlayID);
+        overlay.style.display = "flex";
+        overlay.style.top = "10%";
+        document.getElementsByTagName("main")[0].style.filter = "blur(1115px)";
+    }
+
+    function showAndRender(button)
+    {
+        showGenreOverlay();
+        genreGenration = button.parentElement.parentElement.id
+        console.log(genreGenration)
+    }
+
+    function getGenreName()
+    {
+        return capitalizeString(genreGenration);
+    }
+</script>

@@ -1,0 +1,48 @@
+<span class="songCard">
+    <span class="songArt">	
+        <img src="<%= song.songAlbumCover %>" alt="coverImage">
+    </span>
+    <span class="songInfo">
+        <span class="songName"><%= song.songName  %></span>
+        <span class="songArtist"><%= song.songLeadArtist %></span>
+        <span class="songDuration"><%= song.songDuration %></span>
+        <span class="songGenre"><%= song.songGenre %></span>
+    </span>
+    <span class = "controlButtons">
+        <audio src="<%= song.songSource %>" id = "<%= song.songId %>"></audio>
+        <button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+        <button class = "stopButton" onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
+        <button onclick="addToSelection(this)"><i class="fa-solid fa-plus"></i></button>
+        <button><i class="fa-solid fa-download"></i></button>
+    </span>
+</span>
+
+<script>
+    function playAudio(button)
+    {
+        var allAudio = document.getElementsByTagName("audio");
+        console.log("got audio??")
+        for(var i = 0; i < allAudio.length; i++)
+        {
+            allAudio[i].pause();
+            allAudio[i].currentTime = 0;
+        }
+        var soundParent = button.parentElement;
+        var soundSiblings = soundParent.children;
+        var soundTrack = soundSiblings[0];
+        console.log(soundTrack);
+        soundTrack.play();
+        button.style.display = "none";
+        soundSiblings[2].style.display = "flex";
+    }
+    function stopAudio(button) 
+    {
+        var soundParent = button.parentElement;
+        var soundSiblings = soundParent.children;
+        var soundTrack = soundSiblings[0];
+        button.style.display = "none";
+        soundSiblings[1].style.display = "flex";
+        soundTrack.pause();
+        soundTrack.currentTime = 0;
+    }
+</script>

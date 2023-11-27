@@ -1,0 +1,628 @@
+--- Song inserts ----
+<!-- Song 17 -->
+<%- include('../partials/songCard.ejs',
+{
+    songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+    songTitle: "placeholder 1",
+    songArtist: "Artist 1 ft. artist 2 ",
+    songDuration: "3:45",
+    songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+})
+%>
+<!-- Song 18 -->
+<%- include('../partials/songCard.ejs',
+{
+    songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+    songTitle: "placeholder 1",
+    songArtist: "Artist 1 ft. artist 2 ",
+    songDuration: "3:45",
+    songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+})
+%>
+<!-- Song 19 -->
+<%- include('../partials/songCard.ejs',
+{
+    songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+    songTitle: "placeholder 1",
+    songArtist: "Artist 1 ft. artist 2 ",
+    songDuration: "3:45",
+    songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+})
+%>
+<!-- Song 20 -->
+<%- include('../partials/songCard.ejs',
+{
+    songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+    songTitle: "placeholder 1",
+    songArtist: "Artist 1 ft. artist 2 ",
+    songDuration: "3:45",
+    songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+})
+%>
+
+
+                    <!-- Song 6 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 7 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 8 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 9 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 10 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 11 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 12 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 13 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 14 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 15 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 16 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 17 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 18 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 19 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 20 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+
+                                        <!-- Song 11 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 12 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 13 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 14 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 15 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 16 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 17 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 18 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 19 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+                    <!-- Song 20 -->
+                    <%- include('../partials/songCard.ejs',
+                    {
+                       songArt: "../../assets/images/placeholderImages/placeholder1.jpg",
+                       songTitle: "placeholder 1",
+                       songArtist: "Artist 1 ft. artist 2 ",
+                       songDuration: "3:45",
+                       songSource: "../../assets/audio/placeholderAudio/placeholder1.mp3",
+                    })
+                    %>
+--------------------------------------------
+
+
+                <!-- DJ 1 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "Online", 
+                        djName : "Dj Ikie", 
+                        djState: "Tema", 
+                        djCountry : "Ghana",
+                        djRating : 4.8,
+                        eventCount : 2,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder5.jpg" 
+                    }) 
+                %>
+                <!-- DJ 2 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "Live Now", 
+                        djName : "Dj Felix", 
+                        djState: "Tema", 
+                        djCountry : "Ghana",
+                        djRating : 4.8,
+                        eventCount : 2,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder4.jpg" 
+                    }) 
+                %>
+                <!-- DJ 3 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "offline", 
+                        djName : "Dj Felix", 
+                        djState: "Tema", 
+                        djCountry : "Ghana",
+                        djRating : 4.8,
+                        eventCount : 2,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder6.jpg" 
+                    }) 
+                %>
+                <!-- DJ 4 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "offline", 
+                        djName : "Dj Felix", 
+                        djState: "Tema", 
+                        djCountry : "Ghana",
+                        djRating : 4.8,
+                        eventCount : 2,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder5.jpg" 
+                    }) 
+                %>
+                <!-- DJ 5 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "offline", 
+                        djName : "Dj Felix", 
+                        djState: "Tema", 
+                        djCountry : "Ghana",
+                        djRating : 4.8,
+                        eventCount : 2,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder1.jpg" 
+                    }) 
+                %>
+                <!-- DJ 6 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "Live Now", 
+                        djName : "Dj Logic", 
+                        djState: "Maryland", 
+                        djCountry : "USA",
+                        djRating : 3.5,
+                        eventCount : 2,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder8.jpg" 
+                    }) 
+                %>
+                <!-- DJ 7 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "Online", 
+                        djName : "Dj Trinket", 
+                        djState: "Sao Paolo", 
+                        djCountry : "Brazil",
+                        djRating : 3.5,
+                        eventCount : 2,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder9.jpg" 
+                    }) 
+                %>
+                <!-- DJ 8 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "Online", 
+                        djName : "Dj Leo", 
+                        djState: "New York", 
+                        djCountry : "USA",
+                        djRating : 2.5,
+                        eventCount : 3,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder4.jpg" 
+                    }) 
+                %>
+                <!-- DJ 9 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "unavailable", 
+                        djName : "Dj Trouble", 
+                        djState: "Madrid", 
+                        djCountry : "Spain",
+                        djRating : 1.5,
+                        eventCount : 2,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder2.jpg" 
+                    }) 
+                %>
+                <!-- DJ 10 -->
+                <%- 
+                include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "Online", 
+                        djName : "Dj Trinket", 
+                        djState: "Sao Paolo", 
+                        djCountry : "Brazil",
+                        djRating : 3.5,
+                        eventCount : 0,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder10.jpg" 
+                    }) 
+                %>
+                <!-- DJ 11 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "Live Now", 
+                        djName : "Dj Marley", 
+                        djState: "Ohio", 
+                        djCountry : "USA",
+                        djRating : 3.5,
+                        eventCount : 4,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder1.jpg" 
+                    }) 
+                %>
+                <!-- DJ 12 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "Available", 
+                        djName : "Dj pavlov", 
+                        djState: "Kiev", 
+                        djCountry : "Ukraine",
+                        djRating : 1.5,
+                        eventCount : 2,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder9.jpg" 
+                    }) 
+                %>
+                <!-- DJ 13 -->
+                <%- 
+                    include('../partials/djCard.ejs', 
+                    {
+                        djStatus : "Available", 
+                        djName : "Dj Messi", 
+                        djState: "Abuja", 
+                        djCountry : "Nigeria",
+                        djRating : 3.5,
+                        eventCount : 2,
+                        djPhoto : "assets/images/placeholderImages/djPlaceholder1.jpg" 
+                    }) 
+                %>
+                <!-- DJ 14 -->
+
+
+
+                <%- 
+                include('../partials/djCard.ejs', 
+                {
+                    djStatus : "Available", 
+                    djName : "Dj Blinker", 
+                    djState: "Accra", 
+                    djCountry : "Ghana",
+                    djRating : 4.5,
+                    eventCount : 5,
+                    djPhoto : "assets/images/placeholderImages/djPlaceholder8.jpg" 
+                }) 
+            %>
+
+
+   <!-- <span class="djCard">
+    <span class="djStatus">
+        <span><%= djStatus %></span>
+    </span>
+    <span class = "djBasics">
+        <span class = "djProfilePhoto">
+            <img src="<%= djPhoto %>">
+        </span>
+        <span class="djInfo">
+            <span class="djName"><%= djName %></span>
+            <span class = "djLocation">
+                <%= djState %>, <%= djCountry %>
+            </span>
+        </span>
+        <span class="managementButtons">
+            <button><i class="fa-solid fa-headphones-simple"></i> assign</button>
+            <button><i class="fa-solid fa-message"></i> message</button>
+            <button><i class="fa-solid fa-calendar-week"></i> schedule</button>
+        </span>
+    </span>
+    <span class="aboutDJ">
+        <span class="djDescription"><%= djBio %></span>
+    </span>
+    <span class="eventNote"><%= eventCount %> events in 24hrs</span>
+    <span class="djSocials">
+        <span><i class="fa-brands fa-instagram"></i></span>
+        <span><i class="fa-brands fa-facebook"></i></span>
+        <span><i class="fa-brands fa-twitter"></i></span>
+        <span><i class="fa-brands fa-youtube"></i></span>
+        <span><i class="fa-brands fa-spotify"></i></span>
+    </span>
+</span> -->
+
+
+
+<%= document.events.length %>
+
+
+
+------------
+
+			<span class = "playlistOverlayCard">
+				<span class = "playlistInfo">
+					<span class = "playlistDetails">
+						<span class="playlistCreator"> Playlist Creator </span>
+						<span class = "playlistTitle"> Playlist Title </span>
+						<span class="playlistID">Playlist ID</span>
+					</span>
+					<span class="managementButtons">
+						<button>share</button>
+						<button>edit</button>
+						<button>delete</button>
+					</span>
+				</span>
+				<span class = "playlist">
+					<span class="playlistDescription">
+						<span class="metrics">
+							<span>genre</span> | <span>__ songs</span> | <span>__ : __</span>
+						</span>
+						<hr>
+						<span class="description">Descriptive text describing the playlist</span>
+					</span>
+					<span class="playlistSongs">
+						<span class="overlaySongCard">
+							<span class="songImage">
+								<img src="../../assets/images/placeholderImages/placeholder3.jpg" alt="">
+							</span>
+							<span class="songInformation">
+								<span class="songName">Song Name</span>
+								<span class="songArtist">Artist</span>
+								<span class="songDuration">__:__</span>
+								<span class="songGenre">genre</span>
+							</span>
+							<span class="controlButtons">
+								<audio src="../../assets/audio/placeholderAudio"></audio>
+								<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+								<button><i class="fa-regular fa-circle-stop"></i></button>
+								<button><i class="fa-solid fa-download"></i></button>
+								<button><i class="fa-solid fa-trash"></i></button>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+
+
+-----------------
+
+            <span class="overlaySongCard">
+                <span class="songImage">
+                    <img src="../../assets/images/placeholderImages/placeholder3.jpg" alt="">
+                </span>
+                <span class="songInformation">
+                    <span class="songName">Song Name</span>
+                    <span class="songArtist">Artist</span>
+                    <span class="songDuration">__:__</span>
+                    <span class="songGenre">genre</span>
+                </span>
+                <span class="controlButtons">
+                    <audio src="../../assets/audio/placeholderAudio"></audio>
+                    <button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+                    <button><i class="fa-regular fa-circle-stop"></i></button>
+                    <button><i class="fa-solid fa-download"></i></button>
+                    <button><i class="fa-solid fa-trash"></i></button>
+                </span>
+            </span>
+
+_______________________
+
+
+<section class="genreBrowseOverlay" id = "genre_overlay">
+            <button class = "closeOverlay">close</button>
+            <span class="genreInfo">
+                <span class="genreArt">
+					<img src="../../assets/images/placeholderImages/placeholder4.jpg" alt="Genre Art">
+				</span>
+				<span class="genreName">
+					Genre Name
+				</span>
+				<span class="genreDescription">
+					Genre Description here
+				</span>
+            </span>
+			<span class="songCount">__ songs listed</span>
+			<span class="musicBox">
+				<span class="musicCard">
+					<span class="musicArt">
+						<img src="../../assets/images/placeholderImages/placeholder1.jpg" alt="">
+					</span>
+					<span class="musicInfo">
+						<span class="musicName">Song Name</span>
+						<span class="musicArtist">Song Artist</span>
+						<span class="musicDuration">__ : __</span>
+					</span>
+					<span class="musicButtons">
+						<audio src=""></audio>
+						<button><i class="fa-regular fa-circle-play"></i></button>
+						<button class ="stopMusic"><i class="fa-solid fa-circle-stop"></i></button>
+						<button><i class="fa-solid fa-circle-plus"></i></button>
+						<button><i class="fa-solid fa-download"></i></button>
+					</span>
+				</span>
+			</span>
+        </section>

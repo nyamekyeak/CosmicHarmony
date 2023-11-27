@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Base CSS -->
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/navbar.css">
+        <link rel="stylesheet" href="../../css/mainWidget.css">
+        <link rel="stylesheet" href="../../css/timeline.css">
+        <link rel="stylesheet" href="../../css/searchBar.css">
+		<link rel="stylesheet" href="../../css/footer.css">
+        <link rel="stylesheet" href="css/pageHero.css">
+		<link rel="stylesheet" href="css/dashboard.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <!-- Title -->
+        <title>Cosmic Harmony - <%= pageTitle %></title>
+        <!-- Logo Icon -->
+        <link rel="icon" href="../../assets/squareLogo.png">
+     </head>
+    <body>
+        <header><%- include('../partials/navbar.ejs') %></header>
+        <main>
+            <%- include('../partials/hero.ejs') %>
+            <%- include('../partials/searchBar.ejs') %>
+            <!-- DJ cards -->
+            <div id = "djPoolContainer">
+                <% if (documents.length > 0) { %>
+                    <% documents.forEach((document) => { %>
+                      <%- include('../partials/djCard.ejs', { document: document }) %>
+                    <% }) %>
+                  <% } %>
+            </div>
+        </main>
+        <footer><%- include('../partials/footer.ejs') %></footer>
+    </body>
+    <script src="javascript/main.js"></script>
+    <script src="javascript/playlistManage.js"></script>
+    <script src="javascript/searchFeature.js"></script>
+    <script src = "javascript/chatFeature.js"></script>
+    <script src = "javascript/djPool.js"></script>
+    <script src="https://kit.fontawesome.com/8c9fcb09a3.js" crossorigin="anonymous"></script>
+</html>

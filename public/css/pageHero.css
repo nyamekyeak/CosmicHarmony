@@ -1,0 +1,69 @@
+div[id = "heroContainer"]
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin-left: -10px;
+    height: 45vh;
+    color: white;
+    /* background-image: url(../assets/images/placeholderImages/placeholder3.jpg); */
+    line-height: 0.75vh;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+    div[id = "heroContainer"] h1
+    {
+        font-size: 3.5vw;
+        text-transform: uppercase;
+        position: absolute;
+        z-index: 10;
+    }
+
+    div[id = "heroContainer"] span
+    {
+        font-size: 0.75vw;
+        position: absolute;
+        z-index: 10;
+        margin-top: 8vh;
+    }
+
+    div[id = heroContainer] img
+    {
+        z-index: 0;
+        position: relative;
+        /* opacity: 0.2; */
+        /* display: none; */
+    }
+
+    div[id = "heroButtons"]
+    {
+        display: flex;
+        width: 100vw;
+        position: absolute;
+        z-index: 10;
+        background-color: red;
+        gap: 0.5vw;
+        margin-left: 64vw;
+    }
+
+        div[id = "heroButtons"] .heroButtonContainer
+        {
+            display: flex;
+            flex-direction: column;
+            width: 7vw;
+            text-align: center;
+            align-items: center;
+        }
+
+        div[id = "heroButtons"] .heroButtonContainer button
+        {
+            width: 2.75vw;
+            height: 2.75vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-self: center;
+        }

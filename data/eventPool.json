@@ -1,0 +1,50 @@
+[
+    {
+        "eventId": "CH-EVT-ABC12345",
+        "eventName": "Winter Groove",
+        "description": "Get into the winter vibes with this winter groove!",
+        "genre": ["Folk Music"],
+        "eventDate": "2023-12-15",
+        "eventTime": "12:00",
+        "eventRuntime": 2,
+        "playlist": "CH-PL-12345678",
+        "leadProducer": "CH-PROD-ABC12345",
+        "assistantProducer": "CH-PROD-XYZ98765",
+        "dj": "CH-DJ-ABC12345",
+        "eventStatus": "upcoming",
+        "cover": "../assets/images/eventCovers/eventCover1.jpg"
+    },
+    {
+        "eventId": "CH-EVT-XYZ98765",
+        "eventName": "Electrify",
+        "description": "Whether you are on a long late night drive or doing late night chores, skip along to an exciting electrifying party.",
+        "genre": ["Electronic Music"],
+        "eventDate": "2023-12-20",
+        "eventTime": "19:00",
+        "eventRuntime": 1,
+        "playlist": "",
+        "leadProducer": "CH-PROD-ABC12345",
+        "assistantProducer": "CH-PROD-XYZ98765",
+        "dj": "CH-DJ-ABC12345",
+        "eventStatus": "upcoming",
+        "cover": "../assets/images/eventCovers/eventCover2.jpg"
+    },
+    {
+        "eventId": "CH-EVT-ABC12R45",
+        "eventName": "Around The World In 60",
+        "description": "Get into the winter vibes with this winter groove!",
+        "genre": [
+          "International Music",
+          "Afrobeats Music"
+        ],
+        "eventDate": "2023-12-17",
+        "eventTime": "15:00",
+        "eventRuntime": 1,
+        "playlist": "",
+        "leadProducer": "CH-PROD-ABC12345",
+        "assistantProducer": "CH-PROD-XYZ98765",
+        "dj": "",
+        "eventStatus": "upcoming",
+        "cover": "../assets/images/eventCovers/eventCover4.jpg"
+    }
+]

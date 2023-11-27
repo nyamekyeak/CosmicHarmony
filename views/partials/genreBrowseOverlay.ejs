@@ -1,0 +1,32 @@
+<section class="genreBrowseOverlay" id = "<%= genre.genreName.split(" ")[0] %>_overlay">
+    <button class = "closeOverlay" onclick="hideOverlay(this)">close</button>
+    <span class="genreInfo">
+        <span class="genreArt">
+            <img src="<%= genre.genreCover %>" alt="Genre Art">
+        </span>
+        <span class="genreName">
+            <%= genre.genreName.split(" ")[0] %>
+        </span>
+        <span class="genreDescription">
+            <%= genre.genreDescription %>
+        </span>
+        <span class="songCount"><%= genreSongMap.get(genre.genreName).length %> songs listed</span>
+    </span>
+    <span class="musicBox">
+        <% if(genreSongMap.get(genre.genreName).length > 0){ %>
+            <% let songList = genreSongMap.get(genre.genreName); %>
+            <% for(let i = 0; i < songList.length; i++){ %>
+                <%- include("../partials/musicCard.ejs", {music: songList[i]})  %>
+            <% } %>
+        <% } %>
+    </span>
+</section>
+
+<script>
+    function hideOverlay(button)
+    {
+        const overlay = button.parentElement;
+        overlay.style.top = "-1000%";
+        document.getElementsByTagName("main")[0].style.filter = "blur(0px)";
+    }
+</script>

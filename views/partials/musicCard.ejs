@@ -1,0 +1,17 @@
+<span class="musicCard">
+    <span class="musicArt">
+        <img src="<%= music.songAlbumCover %>" alt="">
+    </span>
+    <span class="musicInfo">
+        <span class="musicName"><%= music.songName %></span>
+        <span class="musicArtist"><%= music.songLeadArtist %></span>
+        <span class="musicDuration"><%= music.songDuration %></span>
+    </span>
+    <span class="musicButtons">
+        <audio src = "<%= music.songSource %>"></audio>
+        <button><i class="fa-regular fa-circle-play"></i></button>
+        <button class ="stopMusic"><i class="fa-solid fa-circle-stop"></i></button>
+        <button><i class="fa-solid fa-circle-plus"></i></button>
+        <button><i class="fa-solid fa-download"></i></button>
+    </span>
+</span>

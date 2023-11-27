@@ -1,0 +1,49 @@
+<span class="loadedPlaylistSong">
+    <span class="songArt">
+        <img src="<%= loadedPlaylistSong.songAlbumCover %>" alt="cover image">
+    </span>
+    <span class="songInfo">
+        <span class="songDuration"><%= loadedPlaylistSong.songDuration || '__:__'%></span>
+        <span class="songName"><%= loadedPlaylistSong.songName %></span>
+        <span class="songArtist"><%= loadedPlaylistSong.songLeadArtist %></span>
+    </span>
+    <span class="songControls">
+        <audio src="<%= loadedPlaylistSong.songSource %>" id = "<%= loadedPlaylistSong.songId %>" ></audio>
+        <button onclick="playMiniAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
+        <button onclick="stopMiniAudio(this)" class="stopPlaylistAudio"><i class="fa-regular fa-circle-stop"></i></button>
+        <button><i class="fa-solid fa-pen-to-square"></i></button>
+        <button><i class="fa-solid fa-trash"></i></button>
+    </span>
+</span>
+
+<script>
+    function playMiniAudio(button) 
+    {
+        var allAudio = document.getElementsByTagName("audio");
+        console.log("got audio??")
+        for(var i = 0; i < allAudio.length; i++)
+        {
+            allAudio[i].pause();
+            allAudio[i].currentTime = 0;
+        }
+        var soundParent = button.parentElement;
+        var soundSiblings = soundParent.children;
+        var soundTrack = soundSiblings[0];
+        console.log(soundTrack);
+        soundTrack.play();
+        button.style.display = "none";
+        soundSiblings[2].style.display = "flex";
+    }
+
+    function stopMiniAudio(button)
+    {
+        var soundParent = button.parentElement;
+        var soundSiblings = soundParent.children;
+        var soundTrack = soundSiblings[0];
+        button.style.display = "none";
+        soundSiblings[1].style.display = "flex";
+        soundTrack.pause();
+        soundTrack.currentTime = 0;
+
+}
+</script>

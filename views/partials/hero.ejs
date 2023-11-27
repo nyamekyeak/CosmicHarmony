@@ -1,0 +1,27 @@
+<div id = "heroContainer">
+    <img src="<%= heroImage || '/assets/images/placeholderImages/placeholder3.jpg'%>" alt="hero image">
+    <h1><%= heroHeader || 'Welcome to Cosmic Harmony'%></h1>
+    <span><%= heroCaption || 'The best way to listen to music'%></span>
+    <div id = "heroButtons">
+        <span class="heroButtonContainer">
+            <button onclick="showOverlay(this)" class = "createPlaylistOverlay"><i class="fa-solid fa-folder-plus"></i></button>
+            <p>create playlist</p>
+        </span>
+        <span class="heroButtonContainer" style="margin-left: 8vw;">
+            <button onclick="showOverlay(this)" class = "createEventOverlay"><i class="fa-solid fa-calendar-plus"></i></button>
+            <p>create event</p>
+        </span>
+        <span class="heroButtonContainer" style="margin-left: 16vw;">
+            <button onclick="showOverlay(this)" class = "switchUserOverlay"><i class="fa-solid fa-users-line"></i></button>
+            <p>switch user</p>
+        </span>
+        <span class="heroButtonContainer" style="margin-left: 24vw;">
+            <button onclick="showOverlay(this)" class = "playlistViewOverlay"><i class="fa-solid fa-folder-open"></i></button>
+            <p>view playlists</p>
+        </span>
+        <span class="heroButtonContainer" style="margin-left: 32vw;">
+            <button onclick="showOverlay(this)" class = "eventsViewOverlay"><i class="fa-solid fa-calendar"></i></button>
+            <p>view events</p>
+        </span>
+    </div>
+</div>

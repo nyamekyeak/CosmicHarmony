@@ -1,0 +1,62 @@
+[
+    {
+        "playlistId": "CH-PL-98765432",
+        "playlistTitle": "Drive time at 8PM",
+        "playlistDescription": "A collection of relaxing and soothing tracks to help you unwind.",
+        "playlistGenreScope": ["HipHop Music", "Afrobeats Music"],
+        "playlistCover": "../assets/images/placeholderImages/placeholder2.jpg",
+        "creatorId": "CH-PROD-ABC12345",
+        "duration": 120,
+        "songCount": 7,
+        "songs": 
+        [
+            "CH-SNG-ABC12345",
+            "CH-SNG-XYZ98765",
+            "CH-SNG-MNO01234",
+            "CH-SNG-PQR34567",
+            "CH-SNG-10PQR9TUV",
+            "CH-SNG-11TUV0WXY",
+            "CH-SNG-9MNO8PQR"
+        ]
+    },
+    {
+        "playlistId": "CH-PL-12345678",
+        "playlistTitle": "Happy Hour",
+        "playlistDescription": "A collection of upbeat and upbeat tracks to help you unwind.",
+        "playlistGenreScope": ["Folk Music", "Afrobeats Music"],
+        "playlistCover" : "../assets/images/backgrounds/backg1.jpg",
+        "creatorId": "CH-PROD-XYZ98765",
+        "duration": 120,
+        "songCount": 5,
+        "songs":
+        [
+            "CH-SNG-6YHN7UJM",
+            "CH-SNG-7UJM8KLO",
+            "CH-SNG-9I0J1KLM",
+            "CH-SNG-2RST1UVW",
+            "CH-SNG-ABC12CR5",
+            "CH-SNG-ABC12345",
+            "CH-SNG-2RST1UVW",
+            "CH-SNG-11RST0UVW"
+        ]
+    },
+    {
+        "playlistId": "CH-PL-45678901",
+        "playlistTitle": "Romantic Hits",
+        "playlistDescription": "A collection of romantic and upbeat tracks to help you unwind.",
+        "playlistGenreScope": ["Folk Music", "Indie Pop Music"],
+        "playlistCover": "../assets/images/backgrounds/backg2.jpg",
+        "creatorId": "CH-PROD-MNO01234",
+        "duration": 120,
+        "songCount": 5,
+        "songs":
+        [
+            "CH-SNG-13PWAN9TI",
+            "CH-SNG-13PWAN9TO",
+            "CH-SNG-13PWAN9TQ",
+            "CH-SNG-13PWAN9TR",
+            "CH-SNG-9I0J1KLM",
+            "CH-SNG-0KLM9OPQ"
+        ]
+    }
+]

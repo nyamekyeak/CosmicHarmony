@@ -1,0 +1,31 @@
+
+<span class="djCard">
+    <span class="djStatus">
+        <span><%= document.djStatus %></span>
+    </span>
+    <span class="djBasics">
+        <span class="djProfilePhoto">
+            <img src="<%= document.avatar %>">
+        </span>
+        <span class="djInfo">
+            <span class="djName"><%= document.stageName %></span>
+            <span class="djLocation">
+                <%= document.location[0] %>, <%= document.location[1] %>
+            </span>
+        </span>
+        <span class="managementButtons">
+            <button><i class="fa-solid fa-headphones-simple"></i> assign</button>
+            <button><i class="fa-solid fa-message"></i> message</button>
+            <button><i class="fa-solid fa-calendar-week"></i> schedule</button>
+        </span>
+    </span>
+    <span class="aboutDJ">
+        <span class="djDescription" style="font-size: 10px; max-width: 95%; height: 4vh; overflow: hidden; display: flex; align-items: center; margin-left: 2.5%;"><%= document.bio %></span>
+    </span>
+    <span class="eventNote"><%= document.upcomingEventCount %> events in 24hrs</span>
+    <span class="djSocials">
+        <% document.socials.forEach(function(social) { %>
+            <span><i class="fa-brands fa-<%= social %>"></i></span>
+        <% }); %>
+    </span>
+</span>
