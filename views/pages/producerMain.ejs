@@ -36,10 +36,18 @@
 			</span>
 			<input type="text" id="newPlaylistName" placeholder="Playlist Name"></input>
 			<textarea name="playlistDescription" id="newPlaylistDescription" cols="30" rows="10" placeholder="Playlist Description"></textarea>
-			<input type="text" placeholder="assign to event (optional)" id = "eventAssignment"></input>
+			<!-- <input type="text" placeholder="assign to event (optional)" id = "eventAssignment"></input> -->
+			<select name="eventAssignment" id="eventAssignment">
+				<option value="0">assign to event (optional)</option>
+				<% if(allEvents.length > 0) { %>
+					<% allEvents.forEach((event) => { %>
+						<option value="<%= event.eventId %>"><%= event.eventName %></option>
+					<% }) %>
+				<% } %>
+			</select>
+			<span id="selectedSongCount">00</span>
 			<span id = "musicSelection">
 				<span id="musicSelected">
-					<span id="selectedSongCount">00</span>
 					<span class="addedSongCard" id = "templateSongCard">
 						<span class="songArt">
 							<img src="../../assets/images/placeholderImages/placeholder3.jpg" alt="">
@@ -68,7 +76,7 @@
 			</span>
 			<span id = "playlistCreationButtons">
 				<button onclick = "resetEntries(this)">Reset</button>
-				<button id="createPlaylistButton">Create Playlist</button>
+				<button id="createPlaylistButton" onclick="confirmCreation(this)">Create Playlist</button>
 				<button onclick="discardCreation(this)">Cancel</button>
 			</span>
 		</span>
@@ -290,13 +298,18 @@
 								<% if(event.playlist === ""){ %>
 									<span class="eventPlaylist" style="color: red">No Playlist Assigned</span>
 								<% } %>
-								<span class="assignedDJ"><%= event.assignedDJ  %></span>
+								<% if(event.dj !== ""){ %>
+									<span class="assignedDJ"><%= djMap.get(event.dj).stageName %></span>
+								<% } %>
+								<% if(event.dj === ""){ %>
+									<span class="assignedDJ" style="color: red">No Active DJ Assigned</span>
+								<% } %>
 								<span class="date"><%= event.eventDate %></span>
 								<span class="timing">
-									<span class="startTime"><%= event.eventTime  %></span>&nbsp;|&nbsp;<span class="endTime">__ : __</span>
+									<span class="startTime"><%= event.eventTime %></span>&nbsp;|&nbsp;<span class="endTime">__ : __</span>
 								</span>
-								<span class="duration">__ hours</span>
-								<span class="description">description</span>
+								<span class="duration"><%=  event.eventRuntime.toString() %> hours</span>
+								<span class="description"><%= event.description %></span>
 							</span>
 						</span>
 					<% }) %>

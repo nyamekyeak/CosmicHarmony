@@ -107,3 +107,12 @@ playlistSelect.addEventListener("change", function()
     }
 })
 
+function computeNewTime(timeString, hourChange)
+{
+    
+}
+
+function runtimeUpdate(runtimeString, minuteChange)
+{
+
+}

@@ -1,9 +1,25 @@
-const addedSongsBox = document.getElementById("musicSelected");
-const addedSongs = [] //array of song ids for the db
-var templateSongCard = document.getElementsByClassName("addedSongCard")[0];
+const addedSongs = [];
 const genreScope = [];
+const eventAssign = document.getElementById("eventAssignment");
 const genreText = document.getElementById("generatedGenre");
+const addedSongsBox = document.getElementById("musicSelected");
+const playlistTitleIn = document.getElementById("newPlaylistName");
+const playlistDescriptionIn = document.getElementById("newPlaylistDescription");
+var templateSongCard = document.getElementsByClassName("addedSongCard")[0];
 document.getElementById("generatedID").innerText = generatePlaylistID();
+
+const createdPlaylist = 
+{
+    playlistId : document.getElementById("generatedID").innerText,
+    playlistTitle : "",
+    playlistDescription : "",
+    playlistGenreScope: [ ],
+    playlistCover: "../assets/images/backgrounds/backg6.jpg", //randomize covers 1 - 6
+    playlistCreator: "", //to be updated
+    playlistDuration: 0,
+    playlistSongs: [ ],
+    playlistSongCount: 0,
+}
 function addToSelection(button)
 {
     if(!addedSongs.includes(button.parentElement.children[0].id))
@@ -35,6 +51,7 @@ function addToSelection(button)
         {
             console.log(genreScope);
             genreScope.push(newSongGenre);
+            createdPlaylist.playlistGenreScope.push(newSongGenre); //TODO: may need to update remove function to cater for the opposite
             if(genreScope.length <= 3)
                 genreText.innerText = scopeString(genreScope);
         }
@@ -46,6 +63,9 @@ function addToSelection(button)
         {
             document.getElementById("selectedSongCount").innerText = addedSongs.length.toString();
         }
+        createdPlaylist.playlistSongCount += 1;
+        createdPlaylist.playlistSongs.push(newSongId);
+        //update playlist duration
     }
     else
     {
@@ -67,6 +87,8 @@ function removeSong(button)
     {
         document.getElementById("selectedSongCount").innerText = addedSongs.length.toString();
     }
+    createdPlaylist.playlistSongCount -= 1;
+    createdPlaylist.playlistSongs.splice(index, 1);
 }
 
 
@@ -84,7 +106,6 @@ function generatePlaylistID()
       "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
     ];
     
-    // Generate a random number between 0 and (alphaNumArray.length^8 - 1)
     var randomNum = Math.floor(Math.random() * Math.pow(alphaNumArray.length, 8));
     
     for (var i = 0; i < 8; i++) {
@@ -152,4 +173,60 @@ function stopAudio(button)
     soundSiblings[1].style.display = "flex";
     soundTrack.pause();
     soundTrack.currentTime = 0;
+}
+
+eventAssign.addEventListener("change", function()
+{
+    if(eventAssign.value === "0")
+    {
+        createdPlaylist.eventAssignment = "";
+    }
+    else
+    {
+        createdPlaylist.eventAssignment = eventAssign.value;
+        console.log(createdPlaylist);
+    }
+
+})
+
+playlistTitleIn.addEventListener("change", function()
+{
+    createdPlaylist.playlistTitle = playlistTitleInput.value;
+    console.log(createdPlaylist);
+})
+
+playlistDescriptionIn.addEventListener("change", function()
+{
+    createdPlaylist.playlistDescription = playlistDescriptionInput.value;
+    console.log(createdPlaylist);
+})
+
+async function confirmCreation(button)
+{
+    //break if playlistName is empty
+    //adjust for event assignment
+    createdPlaylist.playlistTitle = playlistTitleIn.value;
+    createdPlaylist.playlistDescription = playlistDescriptionIn.value;
+    console.log(createdPlaylist);
+    await fetch('/playlistCreation', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(createdPlaylist),
+    })
+    .then(res => {
+        console.log(body);
+        console.log(res); // Log the response object
+        return res.json();
+      })
+    .then(data => {
+        console.log(data);
+        closeOverlay(button.parentElement);
+        alert("Playlist Created");
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Playlist Creation Failed");
+    })
 }

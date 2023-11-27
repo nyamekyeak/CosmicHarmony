@@ -1,5 +1,9 @@
 // Load Node modules
 const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+// Loading external schemas
+const PlaylistModel = require('./data/schemas/playlist-schema.js');
 // Initialise Express
 var app = express();
 
@@ -9,6 +13,7 @@ app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/javascript', express.static(__dirname + 'public/javascript'));
 app.use('/assets', express.static(__dirname + 'public/assets'));
+app.use(bodyParser.json());
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
@@ -67,10 +72,23 @@ app.get('/', async function (req, res)
         const djPool = publicDataBase.collection('DJPool');
         const activeDJs = await djPool.find({djStatus: "active"}).toArray();
 
-        // const obje
+        const idObject_djMap = new Map();
+        for(var i = 0; i < activeDJs.length; i++)
+        {
+            idObject_djMap.set(activeDJs[i].djId, activeDJs[i]);
+            console.log("Mapping Complete")
+        }
 
         const eventPool = publicDataBase.collection('Programs');
         const upcomingEvents = await eventPool.find({eventStatus: "upcoming"}).toArray();
+        const allEvents = await eventPool.find({}).toArray();
+
+        const idObject_allEventsMap = new Map();
+        for(var i = 0; i < allEvents.length; i++)
+        {
+            idObject_allEventsMap.set(allEvents[i].eventId, allEvents[i]);
+            console.log("Mapping Complete")
+        }
 
         res.render('pages/producerMain',
         {        
@@ -85,6 +103,9 @@ app.get('/', async function (req, res)
             songMap: idObject_songMap,
             producerMap: idObject_producerMap,
             playlistMap: idObject_playlistMap,
+            allEventsMap: idObject_allEventsMap,
+            allEvents: allEvents,
+            djMap : idObject_djMap,
             producers : allProducers,
             activeDJs: activeDJs,
             upcomingEvents: upcomingEvents
@@ -96,6 +117,19 @@ app.get('/', async function (req, res)
         res.status(500).send('Error retrieving data');
     }
 });
+
+app.post('/playlistCreation', async (req, res) =>
+{
+	// const newPlaylist = new PlaylistModel(req.body);
+	const newPlaylist = await PlaylistModel.create(req.body);
+	console.log(req.body);
+	console.log("------------------------------------");
+	// console.log(newPlaylist);
+	// await newPlaylist.create();
+	// await newPlaylist.save();
+	res.send(newPlaylist);
+
+})
 
 app.get('/about', function (req, res)
 {
@@ -203,6 +237,7 @@ app.listen(port);
 
 // Database connection
 const { MongoClient } = require('mongodb');
+const playlist = require('./data/schemas/playlist-schema');
 
 const uri = 'mongodb://localhost:27017'; // replace with your MongoDB connection string
 const client = new MongoClient(uri);

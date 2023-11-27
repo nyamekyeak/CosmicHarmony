@@ -28,5 +28,23 @@
         "dj": "CH-DJ-ABC12345",
         "eventStatus": "upcoming",
         "cover": "../assets/images/eventCovers/eventCover2.jpg"
+    },
+    {
+        "eventId": "CH-EVT-ABC12R45",
+        "eventName": "Around The World In 60",
+        "description": "Get into the winter vibes with this winter groove!",
+        "genre": [
+          "International Music",
+          "Afrobeats Music"
+        ],
+        "eventDate": "2023-12-17",
+        "eventTime": "15:00",
+        "eventRuntime": 1,
+        "playlist": "",
+        "leadProducer": "CH-PROD-ABC12345",
+        "assistantProducer": "CH-PROD-XYZ98765",
+        "dj": "",
+        "eventStatus": "upcoming",
+        "cover": "../assets/images/eventCovers/eventCover4.jpg"
     }
 ]

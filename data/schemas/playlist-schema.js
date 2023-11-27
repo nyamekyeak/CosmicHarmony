@@ -16,7 +16,9 @@ const playlistSchema = new mongoose.Schema(
         duration : Number,
         songCount : Number,
         songs: [String]
-    })
+    },
+    { collection : "PlaylistPool" }
+)
 
 const playlist = mongoose.model('playlist', playlistSchema);
 module.exports = playlist

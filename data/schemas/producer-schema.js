@@ -19,5 +19,8 @@ const producerSchema = new mongoose.Schema(
         contacts: [String], // array of contact ids
         chats: [String], // array of chat ids
         upcomingEventCount : Number
-    }
-)
+    },
+    { collection : "Producer Pool" })
+
+const Producer = mongoose.model('producer', producerSchema);
+module.exports = Producer
