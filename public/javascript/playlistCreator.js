@@ -227,6 +227,6 @@ async function confirmCreation(button)
     })
     .catch(error => {
         console.error('Error:', error);
-        alert("Playlist Creation Failed");
+        alert("Playlist Creation Failed:(");
     })
 }
