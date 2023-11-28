@@ -7,18 +7,18 @@ const playlistTitleIn = document.getElementById("newPlaylistName");
 const playlistDescriptionIn = document.getElementById("newPlaylistDescription");
 var templateSongCard = document.getElementsByClassName("addedSongCard")[0];
 document.getElementById("generatedID").innerText = generatePlaylistID();
-
+var randomCoverSuffix = Math.floor(Math.random() * 7);
 const createdPlaylist = 
 {
-    playlistId : document.getElementById("generatedID").innerText,
-    playlistTitle : "",
-    playlistDescription : "",
-    playlistGenreScope: [ ],
-    playlistCover: "../assets/images/backgrounds/backg6.jpg", //randomize covers 1 - 6
-    playlistCreator: "", //to be updated
-    playlistDuration: 0,
-    playlistSongs: [ ],
-    playlistSongCount: 0,
+    playlistId: document.getElementById("generatedID").innerText,
+    playlistTitle: "",
+    playlistDescription: "",
+    playlistGenreScope: [],
+    playlistCover: `../assets/images/backgrounds/backg${randomCoverSuffix}.jpg`,
+    creatorId: "CH-PROD-MNO01234",
+    duration: 0,
+    songCount: 0,
+    songs: []
 }
 function addToSelection(button)
 {
@@ -64,7 +64,8 @@ function addToSelection(button)
             document.getElementById("selectedSongCount").innerText = addedSongs.length.toString();
         }
         createdPlaylist.playlistSongCount += 1;
-        createdPlaylist.playlistSongs.push(newSongId);
+        createdPlaylist.songs.push(newSongId);
+
         //update playlist duration
     }
     else
@@ -87,8 +88,8 @@ function removeSong(button)
     {
         document.getElementById("selectedSongCount").innerText = addedSongs.length.toString();
     }
-    createdPlaylist.playlistSongCount -= 1;
-    createdPlaylist.playlistSongs.splice(index, 1);
+    createdPlaylist.songCount -= 1;
+    createdPlaylist.songs.splice(index, 1);
 }
 
 
@@ -137,6 +138,13 @@ function resetEntries(button)
     {
         document.getElementById("selectedSongCount").innerText = addedSongs.length.toString();
     }
+    playlistTitleIn.value = "";
+    playlistDescriptionIn.value = "";
+    for(var i = 0; i < genreScope.length; i++)
+    {
+        genreScope.pop();
+    }
+    genreText.innerText = "";
 
 }
 
@@ -203,30 +211,49 @@ playlistDescriptionIn.addEventListener("change", function()
 
 async function confirmCreation(button)
 {
-    //break if playlistName is empty
-    //adjust for event assignment
-    createdPlaylist.playlistTitle = playlistTitleIn.value;
-    createdPlaylist.playlistDescription = playlistDescriptionIn.value;
-    console.log(createdPlaylist);
-    await fetch('/playlistCreation', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(createdPlaylist),
-    })
-    .then(res => {
-        console.log(body);
-        console.log(res); // Log the response object
-        return res.json();
-      })
-    .then(data => {
-        console.log(data);
-        closeOverlay(button.parentElement);
-        alert("Playlist Created");
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert("Playlist Creation Failed");
-    })
+    if(playlistTitleIn.value === "")
+    {
+        alert("Playlist Name cannot be empty");
+        return;
+    }
+    else
+    {
+        createdPlaylist.playlistTitle = playlistTitleIn.value;
+        createdPlaylist.playlistDescription = playlistDescriptionIn.value;
+        if(document.getElementById("eventAssignment").value === "0") //playlist not being assigned an event
+        {
+            await fetch('/playlistCreation', 
+            {
+                method: 'POST',
+                headers: 
+                {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(createdPlaylist),
+            })
+            .then(res => 
+            {
+                console.log(res);
+                return res.json();
+            })
+            .then(data => 
+            {
+                console.log(data);
+                resetEntries(button.parentElement);
+                closeOverlay(button.parentElement);
+                alert("Playlist Created");
+                document.getElementById("generatedID").innerText = generatePlaylistID();
+                createdPlaylist.playlistID = document.getElementById("generatedID").innerText;
+            })
+            .catch(error => 
+            {
+                console.log(error);
+                alert("Playlist Creation Failed");
+            })
+        }
+        else
+        {
+            //update assigned event
+        }
+    }
 }

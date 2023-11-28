@@ -114,7 +114,7 @@
 				</span>
 				<input type="text" id="djAssignment" placeholder="select dj" list = "djDatalist">
 				<datalist id="djDatalist">
-					<% activeDJs.forEach((dj) => { console.log(dj.djId);%>
+					<% activeDJs.forEach((dj) => {%>
 						<option value="<%= dj.djId %>"><%= dj.stageName %></option>
 					<% }) %>
 				</datalist>
@@ -277,7 +277,7 @@
 				<% if(upcomingEvents.length > 0) { %>
 					<% upcomingEvents.forEach((event) => { %>
 						<span class="eventCard">
-							<span class="graphics" style="background-image: url('<%= event.cover %>'); background-size: cover;"> <!--FIXME: Use background attribute for cover -->
+							<span class="graphics" style="background-image: url('<%= event.cover %>'); background-size: cover;">
 								<span class="eventId"><%= event.eventId %></span>
 								<span class="productionInfo">
 									<span class="leadProducer"><%= event.leadProducer %></span>

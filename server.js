@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 // Loading external schemas
 const PlaylistModel = require('./data/schemas/playlist-schema.js');
-// Initialise Express
+// Initialize Express
 var app = express();
 
 const port = 8080;
@@ -59,14 +59,11 @@ app.get('/', async function (req, res)
             idObject_producerMap.set(allProducers[i].producerId, allProducers[i]);
             console.log("Mapping Complete")
         }
-        // console.log(loadedPlaylist);
         var songQuery = "";
         for(var i = 0; i < songArray.length; i++)
         {
-
             songQuery = await miniLibrary.find({songId: songArray[i]}).toArray();
             loadedPlaylistSongs.push(songQuery[0]);
-            // console.log(songQuery);
         }
         
         const djPool = publicDataBase.collection('DJPool');
@@ -121,15 +118,20 @@ app.get('/', async function (req, res)
 app.post('/playlistCreation', async (req, res) =>
 {
 	// const newPlaylist = new PlaylistModel(req.body);
-	const newPlaylist = await PlaylistModel.create(req.body);
-	console.log(req.body);
-	console.log("------------------------------------");
-	// console.log(newPlaylist);
-	// await newPlaylist.create();
-	// await newPlaylist.save();
-	res.send(newPlaylist);
-
-})
+	const playlistDocuments = publicDataBase.collection('PlaylistPool');
+	if(await playlistDocuments.findOne({playlistId: req.body.playlistId}))
+	{
+		console.log("Playlist Already Exists");
+		res.send("Playlist Already Exists");
+		return;
+	}
+	else
+	{
+		playlistDocuments.insertOne(req.body);
+		console.log("Playlist Created server side");
+		res.send(playlistDocuments.findOne({playlistId: req.body.playlistId}));
+	}
+});
 
 app.get('/about', function (req, res)
 {
