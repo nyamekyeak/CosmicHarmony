@@ -133,6 +133,12 @@ app.post('/playlistCreation', async (req, res) =>
 	}
 });
 
+app.post('/eventCreation', async (req, res) =>
+{
+  //for events with no assigned playlist 
+    //has assigned dj
+});
+
 app.get('/about', function (req, res)
 {
     res.render('pages/about');

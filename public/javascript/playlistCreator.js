@@ -187,11 +187,11 @@ eventAssign.addEventListener("change", function()
 {
     if(eventAssign.value === "0")
     {
-        createdPlaylist.eventAssignment = "";
+        // createdPlaylist.eventAssignment = "";
     }
     else
     {
-        createdPlaylist.eventAssignment = eventAssign.value;
+        // createdPlaylist.eventAssignment = eventAssign.value;
         console.log(createdPlaylist);
     }
 
@@ -222,6 +222,7 @@ async function confirmCreation(button)
         createdPlaylist.playlistDescription = playlistDescriptionIn.value;
         if(document.getElementById("eventAssignment").value === "0") //playlist not being assigned an event
         {
+            alert("fetching data");
             await fetch('/playlistCreation', 
             {
                 method: 'POST',
@@ -242,13 +243,32 @@ async function confirmCreation(button)
                 resetEntries(button.parentElement);
                 closeOverlay(button.parentElement);
                 alert("Playlist Created");
+                // Resetting globals
+                //-------------------------------------------------------------------
                 document.getElementById("generatedID").innerText = generatePlaylistID();
-                createdPlaylist.playlistID = document.getElementById("generatedID").innerText;
+                genreText.innerText = "";
+                while(genreScope.length > 0 && addedSongs.length > 0)
+                {
+                    genreScope.pop();
+                    addedSongs.pop();
+                }
+                randomCoverSuffix = Math.floor(Math.random() * 7);
+                //resetting created playlist object
+                createdPlaylist.songCount = 0;
+                createdPlaylist.songs = [];
+                createdPlaylist.cover = `../assets/images/backgrounds/backg${randomCoverSuffix}.jpg`;
+                createdPlaylist.duration = 0;
+                createdPlaylist.songCount = 0;
+                createdPlaylist.playlistTitle = "";
+                createdPlaylist.genreScope = [];
+                createdPlaylist.playlistId = document.getElementById("generatedID").innerText;
+                //dom operation into playlist views
             })
             .catch(error => 
             {
+                console.log(createdPlaylist);
                 console.log(error);
-                alert("Playlist Creation Failed");
+                alert("Playlist Creation Failed Client Side");
             })
         }
         else
