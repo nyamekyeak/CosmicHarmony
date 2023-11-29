@@ -20,11 +20,61 @@
 		<!-- Playlist View Overlay -->
 		<span id = "playlistViewOverlay">
 			<button onclick = "closeOverlay(this)" class = "closeOverlay"><i class="fa-solid fa-xmark"></i></button>
-			<% if (loadedPlaylists.length > 0) { %>
+			<span style = "font-size: 1.5vw; font-weight: bold; text-align: center;">PLAYLIST-ARCHIVES&trade;<p style = "font-size: 0.75vw; font-weight: normal; margin-top: -1vh; font-style: italic;">by CosmicHarmony</p></span>
+			<select name="playlistId" id="playlistViewSelector"> <!-- TODO: Remember to name with playlist id-->
+				<option value="none">Select Playlist To View</option>
+				<% for (var i = 0; i < loadedPlaylists.length; i++) { %>
+					<option value="<%= loadedPlaylists[i].playlistId %>"><%= loadedPlaylists[i].playlistTitle %></option>
+				<% } %>
+			</select>
+			<!-- Create one for all -->
+			<% if(loadedPlaylists.length > 0){ %>
 				<% loadedPlaylists.forEach((playlist) => { %>
-					<%- include('../partials/playlistCard.ejs', {playlist: playlist}) %>
+					<span class="playlistPreview" id = "<%= playlist.playlistId %>"> <!-- TODO: use playlist id for id of span-->
+						<span class="playlistBanner" style="background-image: url('<%= playlist.playlistCover %>'); background-size: cover;">
+							<span class="playlistCreator"><%= producerMap.get(playlist.creatorId).producerName %></span>
+							<span class="playlistName"><%= playlist.playlistTitle %></span>
+							<span class="playlistId"><%= playlist.playlistId %></span>
+						</span>
+						<span class="playlistDescription">
+							<span class="descriptiveText"><%= playlist.playlistDescription %></span>
+							<span class="metrics">
+								<span class="genre">genre</span>
+								<span class="songCount"><%= playlist.songs.length %> songs</span>
+								<span class="runtime"><%= playlist.duration %> min</span>
+							</span>
+						</span>
+						<span class="playlistViewsQueue">
+							<% playlist.songs.forEach((song) => { %>
+								<% song = songMap.get(song) %>
+								<span class="songCard" id = "<%= song.songId %>">
+									<span class="songArt"">
+										<img src="<%= song.songAlbumCover %>">
+									</span>
+									<span class="songInfo">
+										<span class="songName"><%= song.songName %></span>
+										<span class="songArtist"><%= song.songLeadArtist %></span>
+										<span class="songDuration"><%= song.duration %></span>
+									</span>
+									<span class="buttonGroup">
+										<audio src="<%= song.songSource  %>"></audio>
+										<button class="playButton" onclick="playAudio(this)"><i class="fa-solid fa-circle-play"></i></button>
+										<button onclick="stopAudio(this)"><i class="fa-solid fa-circle-stop"></i></button>
+										<button><i class="fa-solid fa-download"></i></button>
+										<button><i class="fa-solid fa-trash"></i></button>
+									</span>
+								</span>
+							<% }) %>
+						</span>
+						<span class="buttonGroup">
+							<button>1</button>
+							<button>save</button>
+							<button>delete</button>
+						</span>
+					</span>		
 				<% }) %>
 			<% } %>
+
 		</span>
 		<!-- Create Playlist Overlay -->
 		<span id = "createPlaylistOverlay">

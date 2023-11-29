@@ -29,4 +29,5 @@ main
 button
 {
     cursor: pointer;
+    text-transform: uppercase;
 }

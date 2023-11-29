@@ -49,13 +49,13 @@ eventAssign.addEventListener("change", function()
 
 playlistTitleIn.addEventListener("change", function()
 {
-    createdPlaylist.playlistTitle = playlistTitleInput.value;
+    createdPlaylist.playlistTitle = playlistTitleIn.value;
     console.log(createdPlaylist);
 })
 
 playlistDescriptionIn.addEventListener("change", function()
 {
-    createdPlaylist.playlistDescription = playlistDescriptionInput.value;
+    createdPlaylist.playlistDescription = playlistDescriptionIn.value;
     console.log(createdPlaylist);
 })
 
@@ -278,8 +278,8 @@ function stopAudio(button)
  */
 function appendNewPlaylistCard(playlistObject)
 {
-    const playlistCardTemplate = document.getElementsByClassName("playlistOverlayCard")[0];
-    const entryPoint = playlistCardTemplate.parentElement;
+    // const playlistCardTemplate = document.getElementsByClassName("playlistOverlayCard")[0];
+    // const entryPoint = playlistCardTemplate.parentElement;
     fetch('/')
     .then(response => {
         console.log(response); // Log the response object
@@ -288,21 +288,20 @@ function appendNewPlaylistCard(playlistObject)
     .then(html => {
         const parser = new DOMParser();
         const newPage = parser.parseFromString(html, 'text/html');
-        const element = newPage.getElementsByClassName('playlistOverlayCard');
-        const newPlaylistSelector = newPage.getElementById('playlistSelect');
-        const recentAddition = newPlaylistSelector.children[newPlaylistSelector.children.length - 1];
+        const newPagePreviews = newPage.getElementsByClassName('playlistPreview');
+        //add new page preview to playlist archives
+        document.getElementById("playlistViewOverlay").appendChild(newPagePreviews[newPagePreviews.length - 1]);
+        // add new playlist to preview selector
+        const newPlaylistPreviewSelector = newPage.getElementById('playlistViewSelector');
+        document.getElementById("playlistViewSelector").appendChild(newPlaylistPreviewSelector.children[newPlaylistPreviewSelector.children.length - 1]);
         
-        document.getElementById("playlistSelect").appendChild(newPlaylistSelector.children[newPlaylistSelector.children.length - 1]); //playlist added to selector
-        const lastAdded = element[element.length - 1];
-        entryPoint.appendChild(lastAdded); //addition of new playlist card
-        // console.log(lastAdded);
+        // add new playlist to event creation playlist selector
+       const newEventPlaylistSelector = newPage.getElementById('playlistSelect');
+       document.getElementById("playlistSelect").appendChild(newEventPlaylistSelector.children[newEventPlaylistSelector.children.length - 1]);
 
-        // add recent playlist for viewing where playlist is loaded for event assignment
-        const playlistPreviewTemplate = document.getElementsByClassName("playlistContent")[1];
-        const newPlaylistPreviews = newPage.getElementsByClassName('playlistContent');
-        const lastAddedPreview = newPlaylistPreviews[newPlaylistPreviews.length - 1];
-        const previewsEntry = playlistPreviewTemplate.parentElement;
-        previewsEntry.appendChild(lastAddedPreview);
+       //add new playlist content to event creation
+       const newPlaylistContent = newPage.getElementsByClassName('playlistContent');
+       document.getElementsByClassName("playlistSelector")[0].appendChild(newPlaylistContent[newPlaylistContent.length - 1]);
     })
     .catch(error => {
         console.error('Error retrieving data from the server', error);
