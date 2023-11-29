@@ -713,6 +713,8 @@ span[id = "createEventOverlay"]
                         width: 90%;
                         height: 50vh;
                         gap: 1.75vw;
+                        justify-content: center;
+
                     }
 
                         span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector
@@ -721,7 +723,6 @@ span[id = "createEventOverlay"]
                             flex-direction: column;
                             height: 55vh;
                             width: 32vw;
-                            border-right: 0.25vw solid black;
                         }
 
                         select
@@ -738,14 +739,13 @@ span[id = "createEventOverlay"]
                             overflow-y: scroll;
                             gap: 0.5vh;
                             margin-top: 0.75vh;
-                            background-color: red;
                             height: 46.5vh;
                         }
 
                             span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector .playlistContent .playlistLoadSong
                             {
                                 display: flex;
-                                background-color: blue;
+                                background-color: aliceblue;
                             }
 
                                 span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector .playlistContent .playlistLoadSong .songInfo
@@ -914,7 +914,7 @@ span[id = "createEventOverlay"]
 
                         span[id = "createEventOverlay"] .builders .playlistCreator .songSelection .songListing .songCard
                         {
-                            display: flex;
+                            display: none;
                             background-color: rgba(3, 100, 184);
                             width: 95%;
                             height: 7vh;

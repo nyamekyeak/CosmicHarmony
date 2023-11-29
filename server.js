@@ -35,7 +35,7 @@ app.get('/', async function (req, res)
         for(var i = 0; i < loadedPlaylists.length; i++)
         {
             idObject_playlistMap.set(loadedPlaylists[i].playlistId, loadedPlaylists[i]);
-            console.log("Mapping Complete")
+            // console.log("Mapping Complete")
         }
 
         const songArray = loadedPlaylists[0].songs;
@@ -46,10 +46,10 @@ app.get('/', async function (req, res)
         for(var i = 0; i < miniLibrarySongs.length; i++)
         {
             idObject_songMap.set(miniLibrarySongs[i].songId, miniLibrarySongs[i]);
-            console.log("Mapping Complete")
+            // console.log("Mapping Complete")
         }
 
-        console.log(idObject_songMap);
+        // console.log(idObject_songMap);
         const producer = await ProducerPool.find({producerId : loadedPlaylist.creatorId}).toArray();
         const allProducers = await ProducerPool.find({}).toArray();
         const idObject_producerMap = new Map();
@@ -57,7 +57,7 @@ app.get('/', async function (req, res)
         for(var i = 0; i < allProducers.length; i++)
         {
             idObject_producerMap.set(allProducers[i].producerId, allProducers[i]);
-            console.log("Mapping Complete")
+            // console.log("Mapping Complete")
         }
         var songQuery = "";
         for(var i = 0; i < songArray.length; i++)
@@ -73,7 +73,7 @@ app.get('/', async function (req, res)
         for(var i = 0; i < activeDJs.length; i++)
         {
             idObject_djMap.set(activeDJs[i].djId, activeDJs[i]);
-            console.log("Mapping Complete")
+            // console.log("Mapping Complete")
         }
 
         const eventPool = publicDataBase.collection('Programs');
@@ -84,7 +84,7 @@ app.get('/', async function (req, res)
         for(var i = 0; i < allEvents.length; i++)
         {
             idObject_allEventsMap.set(allEvents[i].eventId, allEvents[i]);
-            console.log("Mapping Complete")
+            // console.log("Mapping Complete")
         }
 
         res.render('pages/producerMain',
@@ -137,6 +137,19 @@ app.post('/eventCreation', async (req, res) =>
 {
   //for events with no assigned playlist 
     //has assigned dj
+    const eventDocuments = publicDataBase.collection('Programs');
+    if(await eventDocuments.findOne({eventId: req.body.eventId}))
+    {
+        console.log("Event Already Exists");
+        res.send("Event Already Exists");
+        return;
+    }
+    else
+    {
+        eventDocuments.insertOne(req.body);
+        console.log("Event Created server side");
+        res.send(eventDocuments.findOne({eventId: req.body.eventId}));
+    }
 });
 
 app.get('/about', function (req, res)
@@ -164,7 +177,7 @@ app.get('/djpool', async function (req, res)
   
       if (documents.length > 0) {
         console.log('DJ Pool retrieved successfully');
-        console.log(documents);
+        // console.log(documents);
       } else {
         console.log('DJ Pool is empty');
       }
@@ -213,9 +226,10 @@ app.get('/library', async function (req, res)
           genreSongMap.set(genres[i].genreName, await songCollection.find({songGenre: {$regex: genres[i].genreName, $options: 'i'}}).toArray());
       }
 
-      if (genres.length > 0) {
+      if (genres.length > 0) 
+      {
         console.log('Genre retrieved successfully');
-        console.log(genres);
+        // console.log(genres);
       } else {
         console.log('Genre is empty');
       }

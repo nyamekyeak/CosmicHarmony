@@ -1,3 +1,16 @@
+// fetching data that might come in handy
+// fetch('/')
+//   .then(response => {
+//     console.log(response); // Log the response object
+//     return response.text(); // Try reading the response body as text
+//   })
+//   .then(data => {
+//     console.log(data); // Log the response body
+//   })
+//   .catch(error => {
+//     console.error('Error retrieving data from the server', error);
+//   });
+
 const addedSongs = [];
 const genreScope = [];
 const eventAssign = document.getElementById("eventAssignment");
@@ -20,6 +33,37 @@ const createdPlaylist =
     songCount: 0,
     songs: []
 }
+
+eventAssign.addEventListener("change", function()
+{
+    if(eventAssign.value === "0")
+    {
+        // createdPlaylist.eventAssignment = "";
+    }
+    else
+    {
+        // createdPlaylist.eventAssignment = eventAssign.value;
+        console.log(createdPlaylist);
+    }
+})
+
+playlistTitleIn.addEventListener("change", function()
+{
+    createdPlaylist.playlistTitle = playlistTitleInput.value;
+    console.log(createdPlaylist);
+})
+
+playlistDescriptionIn.addEventListener("change", function()
+{
+    createdPlaylist.playlistDescription = playlistDescriptionInput.value;
+    console.log(createdPlaylist);
+})
+
+/**
+ * Adds a song to the selection if it is not already added.
+ * @param {Element} button - The button element to be added to the selection.
+ * @return {void} This function does not return a value.
+ */
 function addToSelection(button)
 {
     if(!addedSongs.includes(button.parentElement.children[0].id))
@@ -66,7 +110,7 @@ function addToSelection(button)
         createdPlaylist.playlistSongCount += 1;
         createdPlaylist.songs.push(newSongId);
 
-        //update playlist duration
+        //TODO: update playlist duration
     }
     else
     {
@@ -74,6 +118,11 @@ function addToSelection(button)
     }
 }
 
+/**
+ * Removes a song from the playlist being created.
+ * @param {HTMLElement} button - The button element that triggered the removal.
+ * @return {void} This function does not return a value.
+ */
 function removeSong(button)
 {
     var songId = button.parentElement.children[0].id;
@@ -93,10 +142,22 @@ function removeSong(button)
 }
 
 
+/**
+ * Returns a string that represents the concatenation of all elements in the given genreArray,
+ * separated by the ' | ' delimiter.
+ * @param {array} genreArray - An array of genres.
+ * @return {string} - A string representing the concatenated genres.
+ */
 function scopeString(genreArray)
 {
     return genreArray.join(' | ');
 }
+
+
+/**
+ * Generates a unique playlist ID.
+ * @return {string} The generated playlist ID.
+ */
 function generatePlaylistID()
 {
     var prefix = "CH-PL-";
@@ -106,18 +167,29 @@ function generatePlaylistID()
       "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
       "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
     ];
-    
     var randomNum = Math.floor(Math.random() * Math.pow(alphaNumArray.length, 8));
-    
     for (var i = 0; i < 8; i++) {
       var index = randomNum % alphaNumArray.length;
       id += alphaNumArray[index];
       randomNum = Math.floor(randomNum / alphaNumArray.length);
     }
-    
+    while(document.getElementById(prefix + id) != null)
+    {
+        andomNum = Math.floor(Math.random() * Math.pow(alphaNumArray.length, 8));
+        for (var i = 0; i < 8; i++) {
+          index = randomNum % alphaNumArray.length;
+          id += alphaNumArray[index];
+          randomNum = Math.floor(randomNum / alphaNumArray.length);
+        }
+        console.log(id);
+    }
     return prefix + id;
 }
 
+/**
+ * Resets the entries in the UI when the reset button is clicked.
+ * @param {Element} button - The reset button element.
+ */
 function resetEntries(button)
 {
     const overlayRoot = button.parentElement.parentElement; 
@@ -148,6 +220,11 @@ function resetEntries(button)
 
 }
 
+/**
+ * Discard the creation by resetting the entries and closing the overlay.
+ * @param {Element} button - The button element that triggered the function.
+ * @return {undefined} This function does not return a value.
+ */
 function discardCreation(button)
 {
     const overlayRoot = button.parentElement.parentElement; 
@@ -155,6 +232,11 @@ function discardCreation(button)
     closeOverlay(button.parentElement);
 }
 
+/**
+ * Plays an audio track and hides the corresponding button.
+ * @param {HTMLElement} button - The button element that triggered the audio play.
+ * @return {undefined} This function does not return a value.
+ */
 function playAudio(button)
 {
     var allAudio = document.getElementsByTagName("audio");
@@ -172,6 +254,12 @@ function playAudio(button)
     button.style.display = "none";
     soundSiblings[2].style.display = "flex";
 }
+
+/**
+ * Stops the audio playback and hides the audio control button.
+ * @param {Element} button - The button element that triggered the audio stop.
+ * @return {void} This function does not return a value.
+ */
 function stopAudio(button) 
 {
     var soundParent = button.parentElement;
@@ -183,32 +271,49 @@ function stopAudio(button)
     soundTrack.currentTime = 0;
 }
 
-eventAssign.addEventListener("change", function()
+/**
+ * Appends a new playlist card to the DOM based on the provided playlist object.
+ * @param {Object} playlistObject - The playlist object to be used for creating the new card.
+ * @return {undefined} This function does not return a value.
+ */
+function appendNewPlaylistCard(playlistObject)
 {
-    if(eventAssign.value === "0")
-    {
-        // createdPlaylist.eventAssignment = "";
-    }
-    else
-    {
-        // createdPlaylist.eventAssignment = eventAssign.value;
-        console.log(createdPlaylist);
-    }
+    const playlistCardTemplate = document.getElementsByClassName("playlistOverlayCard")[0];
+    const entryPoint = playlistCardTemplate.parentElement;
+    fetch('/')
+    .then(response => {
+        console.log(response); // Log the response object
+        return response.text(); // Try reading the response body as text
+    })
+    .then(html => {
+        const parser = new DOMParser();
+        const newPage = parser.parseFromString(html, 'text/html');
+        const element = newPage.getElementsByClassName('playlistOverlayCard');
+        const newPlaylistSelector = newPage.getElementById('playlistSelect');
+        const recentAddition = newPlaylistSelector.children[newPlaylistSelector.children.length - 1];
+        
+        document.getElementById("playlistSelect").appendChild(newPlaylistSelector.children[newPlaylistSelector.children.length - 1]); //playlist added to selector
+        const lastAdded = element[element.length - 1];
+        entryPoint.appendChild(lastAdded); //addition of new playlist card
+        // console.log(lastAdded);
 
-})
+        // add recent playlist for viewing where playlist is loaded for event assignment
+        const playlistPreviewTemplate = document.getElementsByClassName("playlistContent")[1];
+        const newPlaylistPreviews = newPage.getElementsByClassName('playlistContent');
+        const lastAddedPreview = newPlaylistPreviews[newPlaylistPreviews.length - 1];
+        const previewsEntry = playlistPreviewTemplate.parentElement;
+        previewsEntry.appendChild(lastAddedPreview);
+    })
+    .catch(error => {
+        console.error('Error retrieving data from the server', error);
+    });
+}
 
-playlistTitleIn.addEventListener("change", function()
-{
-    createdPlaylist.playlistTitle = playlistTitleInput.value;
-    console.log(createdPlaylist);
-})
-
-playlistDescriptionIn.addEventListener("change", function()
-{
-    createdPlaylist.playlistDescription = playlistDescriptionInput.value;
-    console.log(createdPlaylist);
-})
-
+/**
+ * Confirms the creation of a playlist.
+ * @param {Element} button - The button element that triggered the playlist creation.
+ * @return {Promise} A promise that resolves when the playlist creation is confirmed.
+ */
 async function confirmCreation(button)
 {
     if(playlistTitleIn.value === "")
@@ -243,6 +348,8 @@ async function confirmCreation(button)
                 resetEntries(button.parentElement);
                 closeOverlay(button.parentElement);
                 alert("Playlist Created");
+                //dom operation into playlist views
+                appendNewPlaylistCard(createdPlaylist);
                 // Resetting globals
                 //-------------------------------------------------------------------
                 document.getElementById("generatedID").innerText = generatePlaylistID();
@@ -262,7 +369,6 @@ async function confirmCreation(button)
                 createdPlaylist.playlistTitle = "";
                 createdPlaylist.genreScope = [];
                 createdPlaylist.playlistId = document.getElementById("generatedID").innerText;
-                //dom operation into playlist views
             })
             .catch(error => 
             {
@@ -273,7 +379,7 @@ async function confirmCreation(button)
         }
         else
         {
-            //update assigned event
+            //TODO: update assigned event
         }
     }
 }

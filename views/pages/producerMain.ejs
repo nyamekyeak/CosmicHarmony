@@ -177,32 +177,6 @@
 							<% }) %>
 						<% } %>
 					</span>
-					<span class="miniLibrary">
-						<span class="songs">
-							<% if(miniLibrarySongs.length > 0) { %>
-								<% miniLibrarySongs.forEach((song) => { %>
-									<span class="songCard" id = "<%= song.songId %>">
-										<span class="songArt">
-											<img src="<%= song.songAlbumCover %>" alt="">
-										</span>
-										<span class="songInfo">
-											<span class="songName"><%= song.songName %></span>
-											<span class="songArtist"><%= song.songLeadArtist %></span>
-											<span class="songDuration"><%= song.songDuration %></span>
-											<span class="songGenre"><%= song.songGenre %></span>
-										</span>
-										<span class="buttonGroup">
-											<audio src="<%= song.songSource %>"></audio>
-											<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
-											<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
-											<button><i class="fa-solid fa-circle-plus"></i></button>
-											<button><i class="fa-solid fa-download"></i></button>
-										</span>
-									</span>
-								<% }) %>
-							<% } %>
-						</span>
-					</span>
 				</span>
 				<!-- create a new playlist for the event -->
 				<span class="playlistCreator">
@@ -230,7 +204,7 @@
 									<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
 									<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
 									<button><i class="fa-solid fa-download"></i></button>
-									<button><i class="fa-solid fa-trash"></i></button>
+									<button onclick="removeEventPlaylistSong(this)"><i class="fa-solid fa-trash"></i></button>
 								</span>
 							</span>
 						</span>
@@ -262,11 +236,11 @@
 						</span>
 					</span>
 				</span>
-			<span class="managementButtons">
-				<button onclick="resetEventCreation()"><i class="fa-solid fa-arrows-rotate"></i> reset</button>
-				<button onclick = "createEvent()"><i class="fa-regular fa-square-check"></i> create</button>
-				<button onclick = "cancelEventCreation()"><i class="fa-solid fa-xmark"></i> cancel</button>
-			</span>
+				<span class="managementButtons">
+					<button onclick="resetEventCreation(this)"><i class="fa-solid fa-arrows-rotate"></i> reset</button>
+					<button onclick = "confirmEvent(this)"><i class="fa-regular fa-square-check"></i> create</button>
+					<button onclick = "cancelEventCreation(this)"><i class="fa-solid fa-xmark"></i> cancel</button>
+				</span>
 			</span>
 		</span>
 		<!-- Event Viewing Overlay -->
