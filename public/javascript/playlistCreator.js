@@ -175,7 +175,7 @@ function generatePlaylistID()
     }
     while(document.getElementById(prefix + id) != null)
     {
-        andomNum = Math.floor(Math.random() * Math.pow(alphaNumArray.length, 8));
+        randomNum = Math.floor(Math.random() * Math.pow(alphaNumArray.length, 8));
         for (var i = 0; i < 8; i++) {
           index = randomNum % alphaNumArray.length;
           id += alphaNumArray[index];
@@ -326,7 +326,6 @@ async function confirmCreation(button)
         createdPlaylist.playlistDescription = playlistDescriptionIn.value;
         if(document.getElementById("eventAssignment").value === "0") //playlist not being assigned an event
         {
-            alert("fetching data");
             await fetch('/playlistCreation', 
             {
                 method: 'POST',
@@ -381,8 +380,7 @@ async function confirmCreation(button)
             //TODO: update assigned event
         }
     }
-
-})
+}
 
 playlistTitleIn.addEventListener("change", function()
 {
@@ -396,32 +394,32 @@ playlistDescriptionIn.addEventListener("change", function()
     console.log(createdPlaylist);
 })
 
-async function confirmCreation(button)
-{
-    //break if playlistName is empty
-    //adjust for event assignment
-    createdPlaylist.playlistTitle = playlistTitleIn.value;
-    createdPlaylist.playlistDescription = playlistDescriptionIn.value;
-    console.log(createdPlaylist);
-    await fetch('/playlistCreation', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(createdPlaylist),
-    })
-    .then(res => {
-        console.log(body);
-        console.log(res); // Log the response object
-        return res.json();
-      })
-    .then(data => {
-        console.log(data);
-        closeOverlay(button.parentElement);
-        alert("Playlist Created");
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert("Playlist Creation Failed:(");
-    })
-}
+// async function confirmCreation(button)
+// {
+//     //break if playlistName is empty
+//     //adjust for event assignment
+//     createdPlaylist.playlistTitle = playlistTitleIn.value;
+//     createdPlaylist.playlistDescription = playlistDescriptionIn.value;
+//     console.log(createdPlaylist);
+//     await fetch('/playlistCreation', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(createdPlaylist),
+//     })
+//     .then(res => {
+//         console.log(body);
+//         console.log(res); // Log the response object
+//         return res.json();
+//       })
+//     .then(data => {
+//         console.log(data);
+//         closeOverlay(button.parentElement);
+//         alert("Playlist Created");
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//         alert("Playlist Creation Failed:(");
+//     })
+// }

@@ -795,9 +795,6 @@ span[id = "createEventOverlay"]
                     gap: 0.75vh;
                 }  
 
-
-
-
                     span[id = "createEventOverlay"] .basicInfo .otherInfo .dateTime input
                     {
                         width: 7.5vw;
@@ -1430,6 +1427,7 @@ span[id = "eventsViewOverlay"]
                     margin-top: 1.75vh;
                     width: 100%;
                     align-items: center;
+                    color: aliceblue;
                 }
 
                 span[id = "eventsViewOverlay"] .eventListing .eventCard .graphics .buttonGroup

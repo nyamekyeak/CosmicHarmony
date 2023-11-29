@@ -305,35 +305,76 @@ function appendNewEventCard(event)
 
 async function confirmEvent(button)
 {
-    await fetch('/eventCreation',
+    if(noPlaylistRadio.checked == true) //event with no playlist assignment
     {
-        method: 'POST',
-        headers: 
+        await fetch('/eventCreation',
         {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(eventCreated),
-    })
-    .then(res =>
+            method: 'POST',
+            headers: 
+            {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(eventCreated),
+        })
+        .then(res =>
+        {
+            console.log(res);
+            return res.json();
+        })
+        .then(data =>
+        {
+            console.log(data);
+            alert("Event Created");
+            // dom operation into event views
+            appendNewEventCard(eventCreated);
+            // resetting globals
+            eventIDspan.innerText = generateEventID();
+            eventCreated.eventId = eventIDspan.innerText;
+            eventCreated.eventName = document.getElementById("newEventName").value;
+        })
+        .catch(error =>
+        {
+            console.error('Error:', error);
+            alert("Event Creation Failed");
+        })
+    }
+    else if(playlistLoaderRadio.checked == true) //event with preset playlist
     {
-        console.log(res);
-        return res.json();
-    })
-    .then(data =>
+        eventCreated.eventPlaylistId = playlistSelect.value;
+        await fetch('/eventCreation',
+        {
+            method: 'POST',
+            headers: 
+            {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(eventCreated),
+        })
+        .then(res =>
+        {
+            console.log(res);
+            return res.json();
+        })
+        .then(data =>
+            {
+                console.log(data);
+                alert("Event Created");
+                // dom operation into event views
+                appendNewEventCard(eventCreated);
+                // resetting globals
+                eventIDspan.innerText = generateEventID();
+                eventCreated.eventId = eventIDspan.innerText;
+                eventCreated.eventName = document.getElementById("newEventName").value;
+            })
+            .catch(error =>
+            {
+                console.error('Error:', error);
+                alert("Event Creation with assigned playlist Failed");
+            })
+    }
+    else if(playlistCreatorRadio.checked == true)
     {
-        console.log(data);
-        alert("Event Created");
-        // dom operation into event views
-        appendNewEventCard(eventCreated);
-        // resetting globals
-        eventIDspan.innerText = generateEventID();
-        eventCreated.eventId = eventIDspan.innerText;
-        eventCreated.eventName = document.getElementById("newEventName").value;
-    })
-    .catch(error =>
-    {
-        console.error('Error:', error);
-        alert("Event Creation Failed");
-    })
-    // playlist with no assigned playlist
+        eventCreated.eventPlaylistId = "2";
+    }
+    
 }
