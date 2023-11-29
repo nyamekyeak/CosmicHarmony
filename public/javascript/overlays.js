@@ -15,3 +15,39 @@ function showOverlay(button)
     // mainTag.style.filter = "grayscale(70%)";
 }
 
+
+// Playlist Viewer
+
+const playlistViewSelector = document.getElementById("playlistViewSelector");
+
+playlistViewSelector.addEventListener("change", function()
+{
+    const entryPoint = document.getElementById("playlistViewOverlay");
+    var allPlaylistViews = entryPoint.getElementsByClassName("playlistPreview");
+    var targetPlaylistView = "";
+    var targetId = "";
+    if(playlistViewSelector.value == "none")
+    {
+        // disable  all playlist views
+        for(let i = 0; i < allPlaylistViews.length; i++)
+        {
+            allPlaylistViews[i].style.display = "none";
+        }
+    }
+    else
+    {
+        targetId = playlistViewSelector.value;
+        for(let i = 0; i < allPlaylistViews.length; i++)
+        {
+            if(allPlaylistViews[i].id === playlistViewSelector.value)
+            {
+                targetPlaylistView = allPlaylistViews[i];
+            }
+            else
+            {
+                allPlaylistViews[i].style.display = "none";
+            }
+        }
+        targetPlaylistView.style.display = "flex";
+    }
+})

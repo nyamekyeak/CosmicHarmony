@@ -20,11 +20,61 @@
 		<!-- Playlist View Overlay -->
 		<span id = "playlistViewOverlay">
 			<button onclick = "closeOverlay(this)" class = "closeOverlay"><i class="fa-solid fa-xmark"></i></button>
-			<% if (loadedPlaylists.length > 0) { %>
+			<span style = "font-size: 1.5vw; font-weight: bold; text-align: center;">PLAYLIST-ARCHIVES&trade;<p style = "font-size: 0.75vw; font-weight: normal; margin-top: -1vh; font-style: italic;">by CosmicHarmony</p></span>
+			<select name="playlistId" id="playlistViewSelector"> <!-- TODO: Remember to name with playlist id-->
+				<option value="none">Select Playlist To View</option>
+				<% for (var i = 0; i < loadedPlaylists.length; i++) { %>
+					<option value="<%= loadedPlaylists[i].playlistId %>"><%= loadedPlaylists[i].playlistTitle %></option>
+				<% } %>
+			</select>
+			<!-- Create one for all -->
+			<% if(loadedPlaylists.length > 0){ %>
 				<% loadedPlaylists.forEach((playlist) => { %>
-					<%- include('../partials/playlistCard.ejs', {playlist: playlist}) %>
+					<span class="playlistPreview" id = "<%= playlist.playlistId %>"> <!-- TODO: use playlist id for id of span-->
+						<span class="playlistBanner" style="background-image: url('<%= playlist.playlistCover %>'); background-size: cover;">
+							<span class="playlistCreator"><%= producerMap.get(playlist.creatorId).producerName %></span>
+							<span class="playlistName"><%= playlist.playlistTitle %></span>
+							<span class="playlistId"><%= playlist.playlistId %></span>
+						</span>
+						<span class="playlistDescription">
+							<span class="descriptiveText"><%= playlist.playlistDescription %></span>
+							<span class="metrics">
+								<span class="genre">genre</span>
+								<span class="songCount"><%= playlist.songs.length %> songs</span>
+								<span class="runtime"><%= playlist.duration %> min</span>
+							</span>
+						</span>
+						<span class="playlistViewsQueue">
+							<% playlist.songs.forEach((song) => { %>
+								<% song = songMap.get(song) %>
+								<span class="songCard" id = "<%= song.songId %>">
+									<span class="songArt"">
+										<img src="<%= song.songAlbumCover %>">
+									</span>
+									<span class="songInfo">
+										<span class="songName"><%= song.songName %></span>
+										<span class="songArtist"><%= song.songLeadArtist %></span>
+										<span class="songDuration"><%= song.duration %></span>
+									</span>
+									<span class="buttonGroup">
+										<audio src="<%= song.songSource  %>"></audio>
+										<button class="playButton" onclick="playAudio(this)"><i class="fa-solid fa-circle-play"></i></button>
+										<button onclick="stopAudio(this)"><i class="fa-solid fa-circle-stop"></i></button>
+										<button><i class="fa-solid fa-download"></i></button>
+										<button><i class="fa-solid fa-trash"></i></button>
+									</span>
+								</span>
+							<% }) %>
+						</span>
+						<span class="buttonGroup">
+							<button>1</button>
+							<button>save</button>
+							<button>delete</button>
+						</span>
+					</span>		
 				<% }) %>
 			<% } %>
+
 		</span>
 		<!-- Create Playlist Overlay -->
 		<span id = "createPlaylistOverlay">
@@ -98,15 +148,15 @@
 			<button onclick="closeOverlay(this)" class="closeOverlay"><i class="fa-solid fa-xmark"></i></button>
 			<span style = "font-size: 1.5vw; font-weight: bold; text-align: center;">EVENT-o-NATOR&trade;<p style = "font-size: 0.75vw; font-weight: normal; margin-top: -1vh; font-style: italic;">by CosmicHarmony</p></span>
 			<span class = "basicInfo">
+				<span id = "newEventId">CH-EVT-00000000</span>
 				<input type="text" id="newEventName" placeholder = "Enter Event Name">
 				<span class="otherInfo">
 					<span class="dateTime">
-						<input type="date">
+						<input type="date" id = "newEventDate">
 						<span id="duration">
-							<input type="time">
+							<input type="time" id = "newEventStartTime">
 							<input type="number" name="eventRuntime" id="eventRuntime" placeholder="__ hrs" min="1" max="3" step="1" style="width: 2.75vw;">
 						</span>
-						
 					</span>
 					<span class="description">
 						<textarea name="eventDescription" id="newEventDescription" cols="30" rows="10" placeholder="Event Description"></textarea>
@@ -114,7 +164,7 @@
 				</span>
 				<input type="text" id="djAssignment" placeholder="select dj" list = "djDatalist">
 				<datalist id="djDatalist">
-					<% activeDJs.forEach((dj) => { console.log(dj.djId);%>
+					<% activeDJs.forEach((dj) => {%>
 						<option value="<%= dj.djId %>"><%= dj.stageName %></option>
 					<% }) %>
 				</datalist>
@@ -177,32 +227,6 @@
 							<% }) %>
 						<% } %>
 					</span>
-					<span class="miniLibrary">
-						<span class="songs">
-							<% if(miniLibrarySongs.length > 0) { %>
-								<% miniLibrarySongs.forEach((song) => { %>
-									<span class="songCard" id = "<%= song.songId %>">
-										<span class="songArt">
-											<img src="<%= song.songAlbumCover %>" alt="">
-										</span>
-										<span class="songInfo">
-											<span class="songName"><%= song.songName %></span>
-											<span class="songArtist"><%= song.songLeadArtist %></span>
-											<span class="songDuration"><%= song.songDuration %></span>
-											<span class="songGenre"><%= song.songGenre %></span>
-										</span>
-										<span class="buttonGroup">
-											<audio src="<%= song.songSource %>"></audio>
-											<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
-											<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
-											<button><i class="fa-solid fa-circle-plus"></i></button>
-											<button><i class="fa-solid fa-download"></i></button>
-										</span>
-									</span>
-								<% }) %>
-							<% } %>
-						</span>
-					</span>
 				</span>
 				<!-- create a new playlist for the event -->
 				<span class="playlistCreator">
@@ -230,7 +254,7 @@
 									<button onclick="playAudio(this)"><i class="fa-regular fa-circle-play"></i></button>
 									<button onclick="stopAudio(this)"><i class="fa-regular fa-circle-stop"></i></button>
 									<button><i class="fa-solid fa-download"></i></button>
-									<button><i class="fa-solid fa-trash"></i></button>
+									<button onclick="removeEventPlaylistSong(this)"><i class="fa-solid fa-trash"></i></button>
 								</span>
 							</span>
 						</span>
@@ -262,11 +286,11 @@
 						</span>
 					</span>
 				</span>
-			<span class="managementButtons">
-				<button onclick="resetEventCreation()"><i class="fa-solid fa-arrows-rotate"></i> reset</button>
-				<button onclick = "createEvent()"><i class="fa-regular fa-square-check"></i> create</button>
-				<button onclick = "cancelEventCreation()"><i class="fa-solid fa-xmark"></i> cancel</button>
-			</span>
+				<span class="managementButtons">
+					<button onclick="resetEventCreation(this)"><i class="fa-solid fa-arrows-rotate"></i> reset</button>
+					<button onclick = "confirmEvent(this)"><i class="fa-regular fa-square-check"></i> create</button>
+					<button onclick = "cancelEventCreation(this)"><i class="fa-solid fa-xmark"></i> cancel</button>
+				</span>
 			</span>
 		</span>
 		<!-- Event Viewing Overlay -->
@@ -277,7 +301,7 @@
 				<% if(upcomingEvents.length > 0) { %>
 					<% upcomingEvents.forEach((event) => { %>
 						<span class="eventCard">
-							<span class="graphics" style="background-image: url('<%= event.cover %>'); background-size: cover;"> <!--FIXME: Use background attribute for cover -->
+							<span class="graphics" style="background-image: url('<%= event.cover %>'); background-size: cover;">
 								<span class="eventId"><%= event.eventId %></span>
 								<span class="productionInfo">
 									<span class="leadProducer"><%= event.leadProducer %></span>

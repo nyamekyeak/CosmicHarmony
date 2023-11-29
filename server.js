@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 // Loading external schemas
 const PlaylistModel = require('./data/schemas/playlist-schema.js');
-// Initialise Express
+// Initialize Express
 var app = express();
 
 const port = 8080;
@@ -35,7 +35,7 @@ app.get('/', async function (req, res)
         for(var i = 0; i < loadedPlaylists.length; i++)
         {
             idObject_playlistMap.set(loadedPlaylists[i].playlistId, loadedPlaylists[i]);
-            console.log("Mapping Complete")
+            // console.log("Mapping Complete")
         }
 
         const songArray = loadedPlaylists[0].songs;
@@ -46,10 +46,10 @@ app.get('/', async function (req, res)
         for(var i = 0; i < miniLibrarySongs.length; i++)
         {
             idObject_songMap.set(miniLibrarySongs[i].songId, miniLibrarySongs[i]);
-            console.log("Mapping Complete")
+            // console.log("Mapping Complete")
         }
 
-        console.log(idObject_songMap);
+        // console.log(idObject_songMap);
         const producer = await ProducerPool.find({producerId : loadedPlaylist.creatorId}).toArray();
         const allProducers = await ProducerPool.find({}).toArray();
         const idObject_producerMap = new Map();
@@ -57,16 +57,13 @@ app.get('/', async function (req, res)
         for(var i = 0; i < allProducers.length; i++)
         {
             idObject_producerMap.set(allProducers[i].producerId, allProducers[i]);
-            console.log("Mapping Complete")
+            // console.log("Mapping Complete")
         }
-        // console.log(loadedPlaylist);
         var songQuery = "";
         for(var i = 0; i < songArray.length; i++)
         {
-
             songQuery = await miniLibrary.find({songId: songArray[i]}).toArray();
             loadedPlaylistSongs.push(songQuery[0]);
-            // console.log(songQuery);
         }
         
         const djPool = publicDataBase.collection('DJPool');
@@ -76,7 +73,7 @@ app.get('/', async function (req, res)
         for(var i = 0; i < activeDJs.length; i++)
         {
             idObject_djMap.set(activeDJs[i].djId, activeDJs[i]);
-            console.log("Mapping Complete")
+            // console.log("Mapping Complete")
         }
 
         const eventPool = publicDataBase.collection('Programs');
@@ -87,7 +84,7 @@ app.get('/', async function (req, res)
         for(var i = 0; i < allEvents.length; i++)
         {
             idObject_allEventsMap.set(allEvents[i].eventId, allEvents[i]);
-            console.log("Mapping Complete")
+            // console.log("Mapping Complete")
         }
 
         res.render('pages/producerMain',
@@ -121,15 +118,39 @@ app.get('/', async function (req, res)
 app.post('/playlistCreation', async (req, res) =>
 {
 	// const newPlaylist = new PlaylistModel(req.body);
-	const newPlaylist = await PlaylistModel.create(req.body);
-	console.log(req.body);
-	console.log("------------------------------------");
-	// console.log(newPlaylist);
-	// await newPlaylist.create();
-	// await newPlaylist.save();
-	res.send(newPlaylist);
+	const playlistDocuments = publicDataBase.collection('PlaylistPool');
+	if(await playlistDocuments.findOne({playlistId: req.body.playlistId}))
+	{
+		console.log("Playlist Already Exists");
+		res.send("Playlist Already Exists");
+		return;
+	}
+	else
+	{
+		playlistDocuments.insertOne(req.body);
+		console.log("Playlist Created server side");
+		res.send(playlistDocuments.findOne({playlistId: req.body.playlistId}));
+	}
+});
 
-})
+app.post('/eventCreation', async (req, res) =>
+{
+  //for events with no assigned playlist 
+    //has assigned dj
+    const eventDocuments = publicDataBase.collection('Programs');
+    if(await eventDocuments.findOne({eventId: req.body.eventId}))
+    {
+        console.log("Event Already Exists");
+        res.send("Event Already Exists");
+        return;
+    }
+    else
+    {
+        eventDocuments.insertOne(req.body);
+        console.log("Event Created server side");
+        res.send(eventDocuments.findOne({eventId: req.body.eventId}));
+    }
+});
 
 app.get('/about', function (req, res)
 {
@@ -156,7 +177,7 @@ app.get('/djpool', async function (req, res)
   
       if (documents.length > 0) {
         console.log('DJ Pool retrieved successfully');
-        console.log(documents);
+        // console.log(documents);
       } else {
         console.log('DJ Pool is empty');
       }
@@ -205,9 +226,10 @@ app.get('/library', async function (req, res)
           genreSongMap.set(genres[i].genreName, await songCollection.find({songGenre: {$regex: genres[i].genreName, $options: 'i'}}).toArray());
       }
 
-      if (genres.length > 0) {
+      if (genres.length > 0) 
+      {
         console.log('Genre retrieved successfully');
-        console.log(genres);
+        // console.log(genres);
       } else {
         console.log('Genre is empty');
       }

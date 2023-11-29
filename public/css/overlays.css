@@ -24,11 +24,152 @@ span[id = "playlistViewOverlay"]
 
     span[id = "playlistViewOverlay"] .closeOverlay
     {
-        width: 2vw;
-        height: 2vw;
+        display: flex;
+        width: 3vh;
+        height: 3vh;
         align-self: center;
-        position: fixed;
+        justify-content: center;
+        border-radius: 50%;
+        margin-top: 0.5vh;
     }
+
+    span[id = "playlistViewOverlay"] select
+    {
+
+    }
+
+    span[id = "playlistViewOverlay"] .playlistPreview
+    {
+        display: none;
+        flex-direction: column;
+        align-self: center;
+        width: 95%;
+        height: 40vw;
+        background-color: aliceblue;
+        margin-top: 1.75vh;
+        overflow: hidden;   
+    }
+
+        span[id = "playlistViewOverlay"] .playlistPreview .playlistBanner
+        {
+            display: flex;
+            width: 100%;
+            height: 35%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+            span[id = "playlistViewOverlay"] .playlistPreview .playlistBanner .playlistCreator
+            {
+                text-transform: uppercase;
+            }
+
+            span[id = "playlistViewOverlay"] .playlistPreview .playlistBanner .playlistName
+            {
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 1.5vw;
+            }
+
+            span[id = "playlistViewOverlay"] .playlistPreview .playlistBanner .playlistId
+            {
+                text-transform: uppercase;
+            }
+
+        span[id = "playlistViewOverlay"] .playlistPreview .playlistDescription
+        {
+            display: flex;
+            flex-direction: column;
+            text-transform: uppercase;
+            width: 100%;
+            height: 10%;
+            background: rgb(102,163,244);
+            background: linear-gradient(162deg, rgba(102,163,244,1) 0%, rgba(43,113,193,1) 28%, rgba(17,115,195,1) 53%, rgba(53,102,200,1) 77%, rgba(86,142,227,1) 100%);
+        }
+
+            span[id = "playlistViewOverlay"] .playlistPreview .playlistDescription .descriptiveText
+            {
+                text-transform: none;
+                width: 100%;
+                height: 80%;
+                text-align: center;
+            }
+
+            span[id = "playlistViewOverlay"] .playlistPreview .playlistDescription .metrics
+            {
+                display: flex;
+                justify-content: space-between;
+                width: 80%;
+                align-self: center;
+            }
+
+        span[id = "playlistViewOverlay"] .playlistPreview .playlistViewsQueue
+        {
+            display: flex;
+            width: 100%;
+            height: 50%;
+            flex-direction: column;
+            overflow-y: scroll;
+            background: black;
+            align-items: center;
+            gap: 0.75vh;
+        }
+
+            span[id = "playlistViewOverlay"] .playlistPreview .playlistViewsQueue .songCard
+            {
+                display: flex;
+                width: 85%;
+                height: 7vh;
+                background-color: rgb(93, 93, 93);
+            }
+
+                span[id = "playlistViewOverlay"] .playlistPreview .playlistViewsQueue .songCard .songInfo
+                {
+                    text-transform: uppercase;
+                    display: flex;
+                    flex-direction: column;
+                    width: 70%
+                }
+
+                    span[id = "playlistViewOverlay"] .playlistPreview .playlistViewsQueue .songCard .songInfo .songName
+                    {
+                        font-size: 1.25vw;
+                        font-weight: 500;
+                    }
+
+                span[id = "playlistViewOverlay"] .playlistPreview .playlistViewsQueue .songCard .buttonGroup
+                {
+                    display: flex;
+                    align-self: center;
+                    gap: 0.5vw;
+                    margin-left: 2.75vw;
+                }
+
+                    span[id = "playlistViewOverlay"] .playlistPreview .playlistViewsQueue .songCard .buttonGroup button
+                    {
+                        width: 1.75vw;
+                        height: 1.75vw;
+                        border-radius: 25%;
+                    }
+
+                span[id = "playlistViewOverlay"] .playlistPreview .playlistViewsQueue .songCard .songArt
+                {
+                    width: 7vh;
+                    height: 7vh;
+                    overflow: hidden;
+                    object-fit: cover;
+                }
+
+                    span[id = "playlistViewOverlay"] .playlistPreview .playlistViewsQueue .songCard .songArt img
+                    {
+                        width: 7vh;
+                        height: 7vh;
+                        object-fit: cover;
+                    }
+
+
+    /* -------SCRAP--------- */
 
     span[id = "playlistViewOverlay"] .playlistOverlayCard
     {
@@ -713,6 +854,8 @@ span[id = "createEventOverlay"]
                         width: 90%;
                         height: 50vh;
                         gap: 1.75vw;
+                        justify-content: center;
+
                     }
 
                         span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector
@@ -721,7 +864,6 @@ span[id = "createEventOverlay"]
                             flex-direction: column;
                             height: 55vh;
                             width: 32vw;
-                            border-right: 0.25vw solid black;
                         }
 
                         select
@@ -738,14 +880,13 @@ span[id = "createEventOverlay"]
                             overflow-y: scroll;
                             gap: 0.5vh;
                             margin-top: 0.75vh;
-                            background-color: red;
                             height: 46.5vh;
                         }
 
                             span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector .playlistContent .playlistLoadSong
                             {
                                 display: flex;
-                                background-color: blue;
+                                background-color: aliceblue;
                             }
 
                                 span[id = "createEventOverlay"] .builders .playlistLoader .playlistSelector .playlistContent .playlistLoadSong .songInfo
@@ -914,7 +1055,7 @@ span[id = "createEventOverlay"]
 
                         span[id = "createEventOverlay"] .builders .playlistCreator .songSelection .songListing .songCard
                         {
-                            display: flex;
+                            display: none;
                             background-color: rgba(3, 100, 184);
                             width: 95%;
                             height: 7vh;
@@ -1099,6 +1240,20 @@ section[class = "genreBrowseOverlay"]
         {
             display: flex;
             position: absolute;
+            background-color: rgba(240, 248, 255, 0.652);
+            width: 80%;
+            text-align: center;
+            margin-top: 8.75vh;
+            margin-left: 10%;
+        }
+
+        section[class = "genreBrowseOverlay"] .genreInfo .songCount
+        {
+            display: flex;
+            text-transform: uppercase;
+            text-align: center;
+            width: 100%;
+            justify-content: center;
         }
 
     section[class = "genreBrowseOverlay"] .musicBox
@@ -1106,8 +1261,9 @@ section[class = "genreBrowseOverlay"]
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         width: 100%;
-        height: 55vh;
-        background-color: aqua;
+        max-height: 55vh;
+        row-gap: 0.5vh;
+        /* background-color: aqua; */
         overflow-y: scroll;
     }
 
