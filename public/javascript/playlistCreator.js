@@ -381,4 +381,47 @@ async function confirmCreation(button)
             //TODO: update assigned event
         }
     }
+
+})
+
+playlistTitleIn.addEventListener("change", function()
+{
+    createdPlaylist.playlistTitle = playlistTitleInput.value;
+    console.log(createdPlaylist);
+})
+
+playlistDescriptionIn.addEventListener("change", function()
+{
+    createdPlaylist.playlistDescription = playlistDescriptionInput.value;
+    console.log(createdPlaylist);
+})
+
+async function confirmCreation(button)
+{
+    //break if playlistName is empty
+    //adjust for event assignment
+    createdPlaylist.playlistTitle = playlistTitleIn.value;
+    createdPlaylist.playlistDescription = playlistDescriptionIn.value;
+    console.log(createdPlaylist);
+    await fetch('/playlistCreation', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(createdPlaylist),
+    })
+    .then(res => {
+        console.log(body);
+        console.log(res); // Log the response object
+        return res.json();
+      })
+    .then(data => {
+        console.log(data);
+        closeOverlay(button.parentElement);
+        alert("Playlist Created");
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Playlist Creation Failed:(");
+    })
 }
